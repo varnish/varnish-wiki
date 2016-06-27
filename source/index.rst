@@ -12,7 +12,7 @@ Here you will find all the resources you need to start using varnish. Lets get y
 Introduction
 ============
 
-Varnish as you may already know is known to be a reverse-proxy HTTP Accelerator designed for heavily consumed API sites and also for dynamic heavy-content websites. Varnish also provides other services such as caching, load balancer, web application firewall, Authentication and Authroization Mechanism, HTTP routing, Hotlinking protection, DDoS Attack Defender etc.
+Varnish is a reverse-proxy HTTP Accelerator designed for heavily consumed API sites and also for dynamic heavy-content websites. Varnish also provides other services such as caching, load balancer, web application firewall, Authentication and Authroization Mechanism, HTTP routing, Hotlinking protection, DDoS Attack Defender etc.
 
 Varnish currently provides services to high-profile, high-traffic sites such as Facebook, Wikipedia, Vimeo, Twitter, Tumblr, The Guardian, VG.no and many other websites. 
 
@@ -28,7 +28,4 @@ Varnish currently provides services to high-profile, high-traffic sites such as 
 
    intro/index
    start/index
-   news/index
    faq/index
-   docs/index
-

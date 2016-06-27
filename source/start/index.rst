@@ -13,7 +13,17 @@ First of if youw ant to read more about Varnish, below are a few resources:
 
 Installation
 ============
-1. Installing Varnish
+
+If you haven't read what varnish is, refer to 
+:ref:`What is Varnish? <intro>`
+
+Varnish supports many different environments:
+
+Installation process for each envirnments are listed below.
+
+:ref:`Magento <magento>`
+
+:ref:`Wordpress <wordpress>`
 
 
 Training links
@@ -27,5 +37,9 @@ Tutorials
 
 
 .. toctree::
+	/intro/index
+	/magento/index
+	/wordpress/index
+
 
 

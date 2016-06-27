@@ -2,14 +2,15 @@
 
 FAQ for Beginners
 =================
-.. toctree::
-	./intro/index
+
+:ref:`What is Varnish? <intro>`
 
 
 
 Other FAQ
 =========
 .. toctree::
+  	/intro/index
 	comm
 	find
 	what
