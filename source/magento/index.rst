@@ -16,7 +16,6 @@ Magento 2 with all its excellent features can be very demanding of resources and
 
 - Write caching based on your own caching policies such as stripping cookies, over ride caching time, set which pages and much more.
  
-:ref: `To read more about varnish click here <start>`
 
 
 Implementing Magento 2 with Varnish
@@ -24,9 +23,12 @@ Implementing Magento 2 with Varnish
 
 Magento by itself had a caching mechanism, but it does not cache pages. However now, Magento 2 supports varnish cache out of the shelf. So in order to run Varnish on your Magento 2 implementation all you need to do is install Varnish and deploy the Varnish configuration file (A Varnish VCL file) into your Varnish implementation. Then your website can fly.
 
-:ref:`Installing Varnish with Magento <installation>`
+:ref:`Installing Varnish with Magento <install_varnish>`
 
-Please note that Magento 2 supports :ref: `varnish 3 <varnish3>` and :ref: `varnish 4 <varnish4>` out-of-the-box.
+Please note that Magento 2 supports 
+
+:ref: `varnish 3 <varnish3>` and 
+:ref: `varnish 4 <varnish4>` out-of-the-box.
 
 Each new upgrade includes a section about the changes that have been made.
 
@@ -37,36 +39,7 @@ To make your life easier, there is a :ref: `VCL Migrator <varnish3to4>`, which c
 .. toctree::
 	:hidden:
 
-	/start/index
 	install_varnish
 	/intro/varnish3
 	/intro/varnish4
 	/intro/varnish3to4
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.. toctree::

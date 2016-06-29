@@ -33,6 +33,17 @@ Further reading
 There is a good article describing `Varnish Cache on
 Wikipedia <http://en.wikipedia.org/wiki/Varnish_(software)>`_.
 
+Get to know about the different versions and their support:
+
+:ref:`Varnish 3 <varnish3>`
+---------------------------
+
+:ref:`Varnish 4 <varnish4>`
+---------------------------
+
+**Varnish 5 Coming Soon!**
+--------------------------
+
 
 Licence and origin
 ~~~~~~~~~~~~~~~~~~
@@ -74,3 +85,6 @@ httpd on top of FreeBSD. It flies thanks to Varnish Cache. :-) 
 
 .. toctree::
 	:hidden:
+
+	/intro/varnish3
+	/intro/varnish4

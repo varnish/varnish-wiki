@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Installing VARNISH with Magento &mdash; Varnish Documentation 0.0.1 documentation</title>
+    <title>Varnish in Magento &mdash; Varnish Documentation 0.0.1 documentation</title>
     
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -26,7 +26,7 @@
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="top" title="Varnish Documentation 0.0.1 documentation" href="../index.html" />
     <link rel="up" title="Getting Started" href="../start/index.html" />
-    <link rel="next" title="Installing VARNISH with WORDPRESS" href="../wordpress/index.html" />
+    <link rel="next" title="Installing VARNISH with Magento" href="install_varnish.html" />
     <link rel="prev" title="Getting Started" href="../start/index.html" /> 
   </head>
   <body role="document">
@@ -37,7 +37,7 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="../wordpress/index.html" title="Installing VARNISH with WORDPRESS"
+          <a href="install_varnish.html" title="Installing VARNISH with Magento"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="../start/index.html" title="Getting Started"
@@ -52,165 +52,35 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="installing-varnish-with-magento">
-<span id="magento"></span><h1>Installing VARNISH with Magento<a class="headerlink" href="#installing-varnish-with-magento" title="Permalink to this headline">¶</a></h1>
-<p>The following text discusses how to configure your webserver and Magneto to use Varnish.</p>
-<div class="section" id="audience">
-<h2>Audience:<a class="headerlink" href="#audience" title="Permalink to this headline">¶</a></h2>
-<p>This reference has been prepared for web developers to get them started with
-Varnish installation and configuration.</p>
-</div>
-<div class="section" id="prerequisites">
-<h2>Prerequisites:<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
-<p>It is assumed that the user has root access, has Magento installed on the
-webserver and is here to learn how to get varnish for their website.</p>
-</div>
-<div class="section" id="step-1-installing-varnish-on-ubuntu-unix">
-<h2>Step 1 : Installing Varnish on Ubuntu/UNIX:<a class="headerlink" href="#step-1-installing-varnish-on-ubuntu-unix" title="Permalink to this headline">¶</a></h2>
-<p>It is recommended to install the varnish package from its repository.
-Start by grabbing the repository:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>``sudo curl http://repo.varnish-cache.org/debian/GPG-key.txt | sudo apt-key add -``
-</pre></div>
-</div>
-<p>Add the repository to the source list:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>``sudo nano /etc/apt/sources.list``
-</pre></div>
-</div>
-<p>Add the repository by pasting the following line:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>``deb http://repo.varnish-cache.org/ubuntu/ trusty varnish-4.1``
-</pre></div>
-</div>
-<p>Save and exit.</p>
-<p>Now run update and install:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>``sudo apt-get update``
-``sudo apt-get install varnish``
-</pre></div>
-</div>
-</div>
-<div class="section" id="step-2-configure-varnish">
-<h2>Step 2: Configure VARNISH<a class="headerlink" href="#step-2-configure-varnish" title="Permalink to this headline">¶</a></h2>
-<p>Varnish comes with two configuration files:
-One with the starter parameter:</p>
-<blockquote>
-<div><code class="docutils literal"><span class="pre">/etc/default/varnish</span></code> or <code class="docutils literal"><span class="pre">/etc/sysconfig/varnish</span></code></div></blockquote>
-<p>This file contains all the starter parameters.</p>
-<blockquote>
-<div><code class="docutils literal"><span class="pre">/etc/varnish/default.vcl</span></code></div></blockquote>
-<p>This file contains all the default policies.
-It also tells varnish where to find the web content.</p>
-<ol class="arabic">
-<li><p class="first">Modify <strong>varnish</strong> config file</p>
-<blockquote>
-<div><ul>
-<li><p class="first">Open <code class="docutils literal"><span class="pre">/etc/default/varnish</span></code> in a text editor.</p>
-</li>
-<li><p class="first">Set the Varnish listen port to 80:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">VARNISH_LISTEN_PORT</span><span class="o">=</span><span class="mi">80</span>
-</pre></div>
-</div>
-</li>
-</ul>
-<p>if necessary comment out everything below.</p>
+  <div class="section" id="varnish-in-magento">
+<span id="magento"></span><h1>Varnish in Magento<a class="headerlink" href="#varnish-in-magento" title="Permalink to this headline">¶</a></h1>
+<p>Magento is a powerful ecommerce platform  for marketing, catalog management and search engine optimization. Magenoto provides online merchants with a flexible shopping cart system, a control over a user friendly WUI with contents and  various functionality for online users.</p>
+<p>Magento sites have been using varnish because it makes the websites super fast. Varnish is one of the most cost effective alternatives for web accelaration with powerful return on investments. With a proper setup of varnish, maintenance costs can be reduced by 85%.</p>
+<p>Magento 2 with all its excellent features can be very demanding of resources and thus is predicted to give poor performance as clients increase. With the latest realease of Magento 2, varnish has been included as a requirement as it will help the site fly with significant advantages.</p>
 <ul class="simple">
-<li>Otherwise you can browse down to alternative 2 and change port to 80. By default it is bound to port 6081.</li>
+<li>Varnish can detect devices and thus provide device friendly services.</li>
+<li>It allows modifying of cache control headers</li>
+<li>Write caching based on your own caching policies such as stripping cookies, over ride caching time, set which pages and much more.</li>
 </ul>
-<p>Alternative 2:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>DAEMON _OPTS=&quot;-a :80\
-
--T localhost:6082
-
--f /etc/varnish/default.vcl
-
--S /etc/varnish/secret
-
--s malloc,256m&quot;
-
--T : refers to which port manages this.
-
--f : refers to the other configuration file containing all the default policies.
-If you plan to change the name of the default policy file,
-make sure to come here and change the default.vcl to the given name.
-
--S : refers to the file containing secrets such as passwords etc.
-
--s : refers to the space varnish cache is allocated. 256m”
-is decided based on the current servers RAM of 1GB.
-</pre></div>
-</div>
-<p>This is all the configuration changes in this file.</p>
-</div></blockquote>
-</li>
-<li><p class="first">Modify <strong>default.vcl</strong> file</p>
-<blockquote>
-<div><p>This file contains configuration that points to the content. This is by default set to 8080
-and points to host as localhost as shown below.</p>
-<p>To minimally configure Varnish:</p>
-<ul>
-<li><p class="first">Back up default.vcl:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>``cp /etc/varnish/default.vcl /etc/varnish/default.vcl.bak``
-</pre></div>
-</div>
-</li>
-<li><p class="first">Open <code class="docutils literal"><span class="pre">/etc/varnish/default.vcl</span></code> in a text editor.</p>
-</li>
-<li><p class="first">Locate the following piece of code:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>Backend default {
-
-     .host = “127.0.0.1”;
-
-     .port = “80”;
-}
-</pre></div>
-</div>
-</li>
-<li><p class="first">The value of .host by default is the localhost. It should replaces with the fully qualified host name or IP address (typically, a webserver) and listen port of the Varnish backend or origin server; that is, the server providing the content Varnish will accelerate.</p>
-</li>
-<li><p class="first">The value of .port should re replaced with webservers listening port, for example 8080.</p>
-<blockquote>
-<div><p>Example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>Backend default {
-
-     .host = “192.168.1.0”;
-
-     .port = “8800”;
-}
-</pre></div>
-</div>
-</div></blockquote>
-</li>
-</ul>
-</div></blockquote>
-</li>
-</ol>
-<p>It is recommended that if changes are made to these files, it should be copied and remaned name,
-because when varnish updates, it will replace any changes made with it’s new default.vcl and varnish file.</p>
-</div>
-<div class="section" id="step-3-configure-apache2-to-work-with-varnish">
-<h2>Step 3: Configure Apache2 to work with Varnish<a class="headerlink" href="#step-3-configure-apache2-to-work-with-varnish" title="Permalink to this headline">¶</a></h2>
-<p>Configure your web server to listen on a port other than the default port 80 because
-Varnish responds directly to incoming HTTP requests, not the web server.</p>
-<p>In the sections that follow, we use port 8080 as an example as shown above.</p>
-<p>To change the Apache listen port:</p>
-<blockquote>
-<div>-Open /etc/httpd/conf/httpd.conf in a text editor.
--Locate the Listen directive.
--Change the value of the listen port to 8080. (You can use any available listen port.)
--Save your changes to httpd.conf and exit the text editor.</div></blockquote>
-</div>
-<div class="section" id="step-4-restart">
-<h2>Step 4: Restart<a class="headerlink" href="#step-4-restart" title="Permalink to this headline">¶</a></h2>
-<p>It is always required to restart all services one changes are made in configuration files.</p>
-<blockquote>
-<div><p><code class="docutils literal"><span class="pre">sudo</span> <span class="pre">service</span> <span class="pre">varnish</span> <span class="pre">restart</span></code></p>
-<p><code class="docutils literal"><span class="pre">sudo</span> <span class="pre">service</span> <span class="pre">apache2</span> <span class="pre">restart</span></code></p>
-</div></blockquote>
-<p>If Varnish fails to start, try running it from the command line as follows:</p>
-<blockquote>
-<div><code class="docutils literal"><span class="pre">varnishd</span> <span class="pre">-d</span> <span class="pre">-f</span> <span class="pre">/etc/varnish/default.vcl</span></code></div></blockquote>
-<p>This should display error messages.</p>
+<div class="section" id="implementing-magento-2-with-varnish">
+<h2>Implementing Magento 2 with Varnish<a class="headerlink" href="#implementing-magento-2-with-varnish" title="Permalink to this headline">¶</a></h2>
+<p>Magento by itself had a caching mechanism, but it does not cache pages. However now, Magento 2 supports varnish cache out of the shelf. So in order to run Varnish on your Magento 2 implementation all you need to do is install Varnish and deploy the Varnish configuration file (A Varnish VCL file) into your Varnish implementation. Then your website can fly.</p>
+<p><a class="reference internal" href="install_varnish.html#install-varnish"><span class="std std-ref">Installing Varnish with Magento</span></a></p>
+<p>Please note that Magento 2 supports</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">ref:</th><td class="field-body"><cite>varnish 3 &lt;varnish3&gt;</cite> and</td>
+</tr>
+<tr class="field-even field"><th class="field-name">ref:</th><td class="field-body"><cite>varnish 4 &lt;varnish4&gt;</cite> out-of-the-box.</td>
+</tr>
+</tbody>
+</table>
+<p>Each new upgrade includes a section about the changes that have been made.</p>
+<p><strong>We strictly recommend that you upgrade to varnish 4 as we no longer provide support for varnish 3.</strong></p>
+<p>To make your life easier, there is a :ref: <cite>VCL Migrator &lt;varnish3to4&gt;</cite>, which can help you upgrade from Varnish 3 to Varnish 4.</p>
 <div class="toctree-wrapper compound">
-<ul class="simple">
-</ul>
 </div>
 </div>
 </div>
@@ -223,13 +93,8 @@ Varnish responds directly to incoming HTTP requests, not the web server.</p>
         <div class="sphinxsidebarwrapper">
   <h3><a href="../index.html">Table Of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">Installing VARNISH with Magento</a><ul>
-<li><a class="reference internal" href="#audience">Audience:</a></li>
-<li><a class="reference internal" href="#prerequisites">Prerequisites:</a></li>
-<li><a class="reference internal" href="#step-1-installing-varnish-on-ubuntu-unix">Step 1 : Installing Varnish on Ubuntu/UNIX:</a></li>
-<li><a class="reference internal" href="#step-2-configure-varnish">Step 2: Configure VARNISH</a></li>
-<li><a class="reference internal" href="#step-3-configure-apache2-to-work-with-varnish">Step 3: Configure Apache2 to work with Varnish</a></li>
-<li><a class="reference internal" href="#step-4-restart">Step 4: Restart</a></li>
+<li><a class="reference internal" href="#">Varnish in Magento</a><ul>
+<li><a class="reference internal" href="#implementing-magento-2-with-varnish">Implementing Magento 2 with Varnish</a></li>
 </ul>
 </li>
 </ul>
@@ -238,8 +103,8 @@ Varnish responds directly to incoming HTTP requests, not the web server.</p>
   <p class="topless"><a href="../start/index.html"
                         title="previous chapter">Getting Started</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="../wordpress/index.html"
-                        title="next chapter">Installing VARNISH with WORDPRESS</a></p>
+  <p class="topless"><a href="install_varnish.html"
+                        title="next chapter">Installing VARNISH with Magento</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -268,7 +133,7 @@ Varnish responds directly to incoming HTTP requests, not the web server.</p>
           <a href="../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="../wordpress/index.html" title="Installing VARNISH with WORDPRESS"
+          <a href="install_varnish.html" title="Installing VARNISH with Magento"
              >next</a> |</li>
         <li class="right" >
           <a href="../start/index.html" title="Getting Started"

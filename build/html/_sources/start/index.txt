@@ -22,9 +22,13 @@ Varnish supports many different environments:
 
 Installation process for each envirnments are listed below.
 
-:ref:`Magento <magento>`
+:ref:`Magento 2 and after <magento>`
+
+:ref:`Magento 1.9 <oldmagento>`
 
 :ref:`Wordpress <wordpress>`
+
+:ref:`VCL <vcl>`
 
 
 Training links
@@ -38,9 +42,10 @@ Tutorials
 .. toctree::
 	:hidden:
 
-	/intro/index
 	/magento/index
+	/oldmagento/index
+	/intro/index
 	/wordpress/index
-
+	/vcl/index
 
 

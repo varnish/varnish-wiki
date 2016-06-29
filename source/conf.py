@@ -23,7 +23,7 @@ import os
 import shlex
 import sys
 
-sys.setrecursionlimit(10000)
+sys.setrecursionlimit(2000)
 # -- General configuration ------------------------------------------------
 
 # If your documentation needs a minimal Sphinx version, state it here.
