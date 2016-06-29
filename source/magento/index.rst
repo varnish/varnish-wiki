@@ -25,16 +25,22 @@ Magento by itself had a caching mechanism, but it does not cache pages. However 
 
 :ref:`Installing Varnish with Magento <install_varnish>`
 
-Please note that Magento 2 supports 
+Please note that Magento 2 supports;
 
-:ref: `varnish 3 <varnish3>` and 
-:ref: `varnish 4 <varnish4>` out-of-the-box.
+:ref:`varnish 3 <varnish3>` and 
+
+:ref:`varnish 4 <varnish4>` out-of-the-box.
 
 Each new upgrade includes a section about the changes that have been made.
 
 **We strictly recommend that you upgrade to varnish 4 as we no longer provide support for varnish 3.**
 
-To make your life easier, there is a :ref: `VCL Migrator <varnish3to4>`, which can help you upgrade from Varnish 3 to Varnish 4.
+To make your life easier, there is a Script:
+ 
+:ref:`VCL Migrator <varnish3to4>`, which can help you upgrade from Varnish 3 to Varnish 4.
+
+:ref: `How to place Magento 2 behind Varnish <magento2_varnish>`
+
 
 .. toctree::
 	:hidden:
@@ -43,3 +49,4 @@ To make your life easier, there is a :ref: `VCL Migrator <varnish3to4>`, which c
 	/intro/varnish3
 	/intro/varnish4
 	/intro/varnish3to4
+	magento2_varnish
