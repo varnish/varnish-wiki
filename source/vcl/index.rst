@@ -4,11 +4,3 @@ Varnish Configuration Language (VCL)
 ====================================
 
 
-
-
-
-
-
-
-.. toctree::
-   :hidden:

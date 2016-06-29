@@ -139,5 +139,3 @@ It is always required to restart all services one changes are made in configurat
 
 	``sudo service apache2 restart``
 
-.. toctree::
-	:hidden:
