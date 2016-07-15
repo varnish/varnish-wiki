@@ -30,6 +30,7 @@ Installation process for each envirnments are listed below.
 
 :ref:`VCL <vcl>`
 
+:ref: `Varnish and Memcache <varnish_memcache>`
 
 Training links
 ==============
@@ -47,5 +48,4 @@ Tutorials
 	/intro/index
 	/wordpress/index
 	/vcl/index
-
-
+	varnish_memcache

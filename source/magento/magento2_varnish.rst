@@ -24,7 +24,7 @@ Confguring Magento
 - Under the Additional section, find a button for exporting the ready-made configuration file for varnish 3 or 4. We recommned you used varnish 4.0 now.
 
 Therefore click on::
-	-> Export VCL for Varnish 4 
+	-> Export VCL for Varnish 4
 	this is usually named varnish.vcl
 
 Place the file in a varnish folder for configuration (any safe place for you).
@@ -53,7 +53,8 @@ As you may have already noticed above, there is a ``varnishlog`` process running
 
 
 If you are interested in trying out an installation try downloading Marko's Vagrant Box `marko_magento2github`_.
-His installation used niginx with varnish and magento.You can also read more about that at Marko's blogpost about Placing Magento2 behind Varnish `marko_magento2post`_.
+His installation used niginx with varnish and magento.You can also read more about that at Marko's blogpost about Placing Magento2 behind Varnish
+`marko_magento2post`_.
 
 
 .. _marko_magento2github: https://github.com/Marko-M/magento2-vagrant-nux
@@ -66,5 +67,3 @@ His installation used niginx with varnish and magento.You can also read more abo
 	:hidden:
 
 	install_varnish
-
-

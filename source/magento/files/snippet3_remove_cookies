@@ -1,0 +1,13 @@
+sub vcl_recv {
+  if (req.http.cookie) {
+    set req.http.cookie = ";" + req.http.cookie;
+    set req.http.cookie = regsuball(req.http.cookie, "; +", ";");
+    set req.http.cookie = regsuball(req.http.cookie, ";(COOKIE1|COOKIE2|COOKIE3)=", "; \1=");
+    set req.http.cookie = regsuball(req.http.cookie, ";[^ ][^;]*", "");
+    set req.http.cookie = regsuball(req.http.cookie, "^[; ]+|[; ]+$", "");
+
+    if (req.http.cookie == "") {
+      remove req.http.cookie;
+    }
+  }
+
