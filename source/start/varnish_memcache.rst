@@ -20,7 +20,4 @@ The performance characteristics are pretty different. Varnish will start deliver
 
 There are no good reason not to use both.
 
-
-
-
-.. here: https://www.quora.com/What-is-the-difference-between-using-varnish-and-caching-HTML-pages-in-memcached
+.. _`here`: https://www.quora.com/What-is-the-difference-between-using-varnish-and-caching-HTML-pages-in-memcached

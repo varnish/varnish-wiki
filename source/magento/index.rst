@@ -5,28 +5,28 @@ Varnish in Magento
 ==================
 
 Magento is a powerful e-commerce platform  for marketing, catalog management
-and search engine optimization.Magento provides online merchants with a flexible
-shopping cart system, a control over a user friendly WUI with contents and  various
+and search engine optimization. Magento provides online merchants with a flexible
+shopping cart system, a control over a user friendly WUI with contents and various
 functionality for online users.
 
 Magento sites have been using varnish because it makes the websites super fast.
 Varnish is one of the most cost effective alternatives for web accelaration with
-powerful return on investments. With a proper setup of varnish, maintenance
-costs can be reduced by 85%.
+powerful return on investments. We believe with a proper setup of varnish,
+maintenance costs can be reduced by 85%.
 
 Magento 2 with all its excellent features can be very demanding of resources and
 thus is predicted to give poor performance as clients increase. With the latest
 realease of Magento 2, varnish has been included as a requirement as it will
-help the site fly with significant advantages.
+help the site fly with significant advantages!
 
 - Varnish can detect devices and thus provide device friendly services.
 
 - It allows modifying of cache control headers
 
 - Write caching based on your own caching policies such as stripping cookies,
-over ride caching time, set which pages and much more.
+  over ride caching time, set which pages to cache and not and much more.
 
-To read more about installing magento2 http://devdocs.magento.com/guides/v2.1/install-gde/bk-install-guide.html
+To read more about installing `Magento 2`_
 
 Implementing Magento 2 with Varnish
 -----------------------------------
@@ -36,6 +36,10 @@ But Magento 2 supports varnish cache out of the shelf.
 So in order to run Varnish on your Magento 2 implementation all you need to do
 is install Varnish and deploy the Varnish configuration file (A Varnish VCL file)
 into your Varnish implementation. Then your website can fly!
+
+To read more on the basics of how varnish works with magento2 go to
+
+:ref:`Magento 2 and Varnish Basics <magento2_varnish_basics>`
 
 :ref:`Step by step guide to make your website fly! <step_by_step>`
 
@@ -51,15 +55,19 @@ Each new upgrade includes a section about the changes that have been made.
 
 To make your life easier, there is a Script:
 
+.. _`Magento 2` : http://devdocs.magento.com/guides/v2.1/install-gde/bk-install-guide.html
+
 :ref:`VCL Migrator <varnish3to4>`, which can help you upgrade from Varnish 3 to Varnish 4.
 
-:ref: `Get to know how Caching helps your site <magento2_ce>`
-
+:ref:`Get to know how Caching helps your site <magento2_ce>`
 
 .. toctree::
 	:hidden:
 
-	/intro/varnish3
-	/intro/varnish4
-	/intro/varnish3to4
-  step_by_step
+	intro/varnish3
+	intro/varnish4
+	intro/varnish3to4
+	step_by_step
+	magento2_ce
+	magento2_varnish_basics
+	top5_magento_plugins

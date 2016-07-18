@@ -9,8 +9,8 @@ The Magento2 Admin states that built-in Application cache is not recommended for
 
 We assume that you have Magento2 installed and running on your backend servers and that your server is a Debian based Linux Server.
 
-Confguring Magento
-------------------
+Configuring Magento
+-------------------
 
 1. Visit the Magento 2 Admin page and go to:
  	-> Stores
@@ -61,9 +61,7 @@ His installation used niginx with varnish and magento.You can also read more abo
 
 .. _marko_magento2post: http://www.techytalk.info/magento-2-behind-varnish-reverse-proxy/
 
-
-
 .. toctree::
-	:hidden:
+	 :hidden:
 
-	install_varnish
+	 install_varnish

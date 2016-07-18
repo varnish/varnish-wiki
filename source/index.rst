@@ -14,7 +14,7 @@ Introduction
 
 Varnish is a reverse-proxy HTTP Accelerator designed for heavily consumed API sites and also for dynamic heavy-content websites. Varnish also provides other services such as caching, load balancer, web application firewall, Authentication and Authroization Mechanism, HTTP routing, Hotlinking protection, DDoS Attack Defender etc.
 
-Varnish currently provides services to high-profile, high-traffic sites such as Facebook, Wikipedia, Vimeo, Twitter, Tumblr, The Guardian, VG.no and many other websites. 
+Varnish currently provides services to high-profile, high-traffic sites such as Facebook, Wikipedia, Vimeo, Twitter, Tumblr, The Guardian, VG.no and many other websites.
 
 :ref:`What is Varnish? <intro>`
 
@@ -22,10 +22,13 @@ Varnish currently provides services to high-profile, high-traffic sites such as 
 
 :ref:`Questions and Answers <faq>`
 
+:ref:`Magento 2 and Varnish <magento>`
+
 
 .. toctree::
-   :hidden:
+    :hidden:
 
-   intro/index
-   start/index
-   faq/index
+    intro/index
+    start/index
+    faq/index
+    magento/index

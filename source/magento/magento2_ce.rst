@@ -8,7 +8,7 @@ commerce platform. A large number of websites use magento and with magento 2
 the server performance has boosted to a new level.
 
 So why does Magento 2 varnish caching?
------------------------------------
+--------------------------------------
 
 Magento websites are expected to have large amount of traffic. For the website
 to fly varnish cache provides a caching mechanism that not only helps with

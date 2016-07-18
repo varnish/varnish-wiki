@@ -22,8 +22,6 @@ In order to do that, follow this link:
 
 .. literalinclude:: files/snippet2_restart
   :language: c
-	:linenothreshold: 1
-	:tab-width: 50
 
 5. Removing cookies
 
@@ -37,8 +35,6 @@ warning: Make sure to add the code below the default code given for `vcl_recv`
 
 .. literalinclude:: files/snippet3_remove_cookies
   :language: c
-  :linenothreshold: 1
-  :tab-width: 50
 
 6. Excluding certain URLs
 
@@ -47,9 +43,22 @@ information such as credit card information.
 
 .. literalinclude:: files/snippet4_exclude_url
   :language: c
-  :linenothreshold: 1
-  :tab-width: 50
 
+7.  Extend Caching
+
+There is a subroutine called *vcl_fetch* which is by default set to 120 seconds as can be seen.
+You can extend this caching value
+
+``sub vcl_fetch {``
+
+	``set beresp.ttl = 5s;``
+
+``}``
+
+This sets the ttl to 5 seconds, thus varnish picks up WordPress changes every 5sec.
+Add this subroutine right below the *backend default*.
+
+However, it is known that the most effective way of increasing a websites hit ratio is to increase the time-to-live (ttl) of the objects. But today we are moving fast and large amount of changes are continuosly made to websites. Therefore the caching process is much more complex.
 
 
 
@@ -59,7 +68,7 @@ information such as credit card information.
 
 
 .. toctree::
-	:hidden:
+  :hidden:
 
   install_varnish
   magento2_varnish

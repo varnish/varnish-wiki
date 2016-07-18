@@ -74,12 +74,10 @@ It also tells varnish where to find the web content.
 
 	- Otherwise you can browse down to alternative 2 and change port to 80. By default it is bound to port 6081.
 
-	Alternative 2::
+	Alternative 2:
 
 .. literalinclude:: files/snippet1_defaultvcl
   :language: c
-	:linenothreshold: 1
-	:tab-width: 50
 
 Description:
 
