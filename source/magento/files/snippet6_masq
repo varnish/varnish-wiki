@@ -1,0 +1,10 @@
+sub vcl_recv{
+    if (req.url ~ "^/masq") {
+        set req.backend_hint = google;
+        set req.http.host = "www.google.com";
+        set req.url = regsub(req.url, "^/masq", "");
+        return (hash);
+    } else {
+        set req.backend_hint = localhost;
+    }
+}

@@ -18,7 +18,7 @@ Flexibility
 ~~~~~~~~~~~
 
 One of the key features of Varnish Cache, in addition to its
-performance, is the flexibility of its configuration language, VCL. 
+performance, is the flexibility of its configuration language, VCL.
 VCL enables you to write policies on how incoming requests should be
 handled. In such a policy you can decide what content you want to serve,
 from where you want to get the content and how the request or response
@@ -43,6 +43,9 @@ Get to know about the different versions and their support:
 
 **Varnish 5 Coming Soon!**
 --------------------------
+
+Just want to test your already varnish-cached website?
+Check out this article on `Smash Magazine`_ by one of our own.
 
 
 Licence and origin
@@ -79,10 +82,11 @@ A high resolution version of the Varnish Cache logo can be found
 About this website
 ------------------
 
-This site is statically generated. Powered by Sphinx running on Apache 
+This site is statically generated. Powered by Sphinx running on Apache
 httpd on top of FreeBSD. It flies thanks to Varnish Cache. :-) 
 
 
+.. _`Smash Magazine`: https://www.smashingmagazine.com/2016/05/five-simple-steps-test-varnish-cache-deployment-varnishtest/
 .. toctree::
 	:hidden:
 

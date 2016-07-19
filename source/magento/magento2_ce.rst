@@ -7,8 +7,8 @@ Magento 2 with its great abilities is the next generation open source digital
 commerce platform. A large number of websites use magento and with magento 2
 the server performance has boosted to a new level.
 
-So why does Magento 2 varnish caching?
---------------------------------------
+So why does Magento 2 require varnish caching?
+----------------------------------------------
 
 Magento websites are expected to have large amount of traffic. For the website
 to fly varnish cache provides a caching mechanism that not only helps with
@@ -30,3 +30,104 @@ intermediate between the webservers running magento and the backened memory.
 
 Varnish cache on a magento 2 site caches all/if any static pages and also parts
 of dynamic pages.
+
+Cookies
+#######
+
+By default varnish does not cache a page if it has header fields from clients or
+servers. The main reason for that is to avoid delivering cookie based content to
+the wrong client and also to avoid bestrewing the cache with copies of the same
+content.
+
+Most importantly, when dealing with cookies to cache, it is discouraged to cache
+anything rather then caching personal client information that could jeopardize a
+client or your company if delivered to the wrong client.
+
+one of our recommended VMODs for handling cookies would be `libvmod-cookie`_ which
+is available in the varnish modules repository on `github`_ or you can download
+the whole module from the `varnish website` . The module also contains a `vmod-header`
+which can be used for manipulation of duplicated HTTP headers, such as multiple
+Set-Cookie headers!
+
+
+Edge Side Includes
+##################
+
+Edge Side Includes (ESI) helps Varnish deliver various objects together.
+On a magento website, a good example of a use of ESI would be to display emerging
+of new products on a top banner on a client home page or the cart.
+While most of the client home page contents can be cached, the top banner and
+the cart will have smaller TTL values.
+Let's say the TTL value of the banner would be about 5 minutues, the cart about
+1 hour while the user page content such as name, purchased products, watching,
+history would be cached for a day.
+
+
+AJAX Requests on Magento
+########################
+
+AJAX is of course a cool technology and developers love it.
+If you are a long term magento user you probably added them to your magento site
+to avoid page reloads or parts of page reloads. Of course you have already read
+about ESI's and they can do a similar task for you.
+
+But if you already have AJAX on your magento site, you should know that there are
+browser restrictions that doesnot allow AJAX to send requests across another doamin.
+What you can do to solve this issue, is masquerade all AJAX requests. To be able
+to do that you will need to add a  regular expression to masquerade the request url
+in the VCL code in the `vcl_recv` subroutine.
+
+.. literalinclude:: files/snippet6_masq
+  :language: c
+
+
+Cache Invalidation
+------------------
+
+Firstly to cache or not to cache. But once you decide to cache, cache invalidation
+becomes an important part of your cache policy. the good news is Varnish automatically
+invalidates expired objects for you. But you also have the advantage of taking charge
+of invalidating your websites cached objects.
+
+The easiest but not recommended way to invalidate cache is to assign small TTL
+values to cached objects. This would simply expire cached contents quickly.
+
+Just changing the ttl value in the `vcl_fetch` would speed up invalidation and
+return more fresh contents such as the code below::
+
+``sub vcl_fetch {``
+
+	``set beresp.ttl = 5s;``
+
+``}``
+
+This sets the ttl to 5seconds, thus varnish picks up Magento changes every 5sec.
+
+However, it is known that the most effective way of increasing a websites hit
+ratio is to increase the time-to-live (ttl) of the objects. Therefore there is
+more to the caching process then just the ttl value.
+
+Another alternative could be to validate cached contents per request.
+
+These alternatives can cause issues, as this creates higher load on the application
+server.
+
+However with Varnish, there are four mechanisms to invalidate caches.
+
+1. HTTP Purge
+
+2. Banning
+
+3. Force Cache Miss
+
+4. Hashtwo / Xkey
+
+Large scale caching!
+
+
+To get an overview of our cache invalidation process, you may also read the article by `Per Buer on Cache Invalidation at Smash Magazine`_
+
+.. _`Per Buer on Cache Invalidation at Smash Magazine`: https://www.smashingmagazine.com/2014/04/cache-invalidation-strategies-with-varnish-cache/
+.. _`libvmod-cookie`: https://download.varnish-software.com/varnish-modules/varnish4.0/libvmod-cookie-20151013.git7e453b4.tar.gz
+.. _`github`: https://github.com/varnish/varnish-modules
+.. _`varnish website`:  https://download.varnish-software.com/varnish-modules/

@@ -135,7 +135,10 @@ Description:
 It is recommended that if changes are made to these files, it should be copied and remaned name,
 because when varnish updates, it will replace any changes made with it’s new default.vcl and varnish file.
 
-
+VCL TEMPLATEs
+*************
+- install
+-
 
 Step 3: Configure Apache2 to work with Varnish
 -----------------------------------------------
@@ -153,7 +156,8 @@ To change the Apache listen port:
 	-Save your changes to httpd.conf and exit the text editor.
 
 Step 4: Restart
--------------------
+----------------
+
 It is always required to restart all services one changes are made in configuration files.
 
 	``sudo service varnish restart``
