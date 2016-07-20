@@ -1,14 +1,13 @@
-.. _magento2_ce:
 
 Caching in Magento 2
-====================
+--------------------
 
 Magento 2 with its great abilities is the next generation open source digital
 commerce platform. A large number of websites use magento and with magento 2
 the server performance has boosted to a new level.
 
 So why does Magento 2 require varnish caching?
-----------------------------------------------
+..............................................
 
 Magento websites are expected to have large amount of traffic. For the website
 to fly varnish cache provides a caching mechanism that not only helps with
@@ -32,7 +31,7 @@ Varnish cache on a magento 2 site caches all/if any static pages and also parts
 of dynamic pages.
 
 Cookies
-#######
+.......
 
 By default varnish does not cache a page if it has header fields from clients or
 servers. The main reason for that is to avoid delivering cookie based content to
@@ -51,7 +50,7 @@ Set-Cookie headers!
 
 
 Edge Side Includes
-##################
+..................
 
 Edge Side Includes (ESI) helps Varnish deliver various objects together.
 On a magento website, a good example of a use of ESI would be to display emerging
@@ -64,7 +63,7 @@ history would be cached for a day.
 
 
 AJAX Requests on Magento
-########################
+........................
 
 AJAX is of course a cool technology and developers love it.
 If you are a long term magento user you probably added them to your magento site
@@ -115,18 +114,46 @@ server.
 However with Varnish, there are four mechanisms to invalidate caches.
 
 1. HTTP Purge
+.............
+
+HTTP Purging is very straight forward. With the use of Varnish VCL subroutine
+`vcl_purge`, Varnish will discard the object from the cache and free up memory.
+A restart would immediately update the purged object.
 
 2. Banning
+..........
 
-3. Force Cache Miss
+Bans can be implemented for objects that are known to frequently change.
+In such a case, certain contents are banned to be retrieved from the cache based
+on the meta data. The ban is quite a reliable method, as it only works for
+objects in the cache but doesnot interfere with new content being cached or
+served.
+
+3. Forcing a Cache Miss
+.......................
+
+This mechanism is similar to flusing the entire cache,
+as in it follows the procedure that when an object is not found in the cache
+it is served from the backend. But it also very much like Bans.
+
+However *cache miss* is more reliable as it this is forced and very much like
+refreshing a page. This method refreshes an object by forcing a cache miss for a
+request. Thus enabling a force fetch from the backend and overriding the current
+one. But the old object does remain in the cache until its ttl expires.
 
 4. Hashtwo / Xkey
+.................
 
-Large scale caching!
+The hashtwo or xkey is for websites requiring large scale caching.
 
 
-To get an overview of our cache invalidation process, you may also read the article by `Per Buer on Cache Invalidation at Smash Magazine`_
+To get a better and more indepth overview of our cache invalidation process,
+a recommended read is the article by `Per Buer on Cache Invalidation at Smash Magazine`_
 
+There is also a great comparison table in The Varnish Book - `Cache Invalidation`_
+
+
+.. _`Cache Invalidation`: http://book.varnish-software.com/4.0/chapters/Cache_Invalidation.html
 .. _`Per Buer on Cache Invalidation at Smash Magazine`: https://www.smashingmagazine.com/2014/04/cache-invalidation-strategies-with-varnish-cache/
 .. _`libvmod-cookie`: https://download.varnish-software.com/varnish-modules/varnish4.0/libvmod-cookie-20151013.git7e453b4.tar.gz
 .. _`github`: https://github.com/varnish/varnish-modules

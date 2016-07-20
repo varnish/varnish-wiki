@@ -1,8 +1,8 @@
 .. _magento:
 
-
-Varnish in Magento
-==================
+********************
+Varnish with Magento
+********************
 
 Magento is a powerful e-commerce platform  for marketing, catalog management
 and search engine optimization. Magento provides online merchants with a flexible
@@ -29,7 +29,7 @@ help the site fly with significant advantages!
 To read more about installing `Magento 2`_
 
 Implementing Magento 2 with Varnish
------------------------------------
+===================================
 
 Magento by itself had a caching mechanism, but it does not cache pages.
 But Magento 2 supports varnish cache out of the shelf.
@@ -41,13 +41,13 @@ To read more on the basics of how varnish works with magento2 go to
 
 :ref:`Magento 2 and Varnish Basics <magento2_varnish_basics>`
 
-:ref:`Step by step guide to make your website fly! <step_by_step>`
+If you are ready and just want to get started with the installation go to:
+
+:ref:`Step by step Installation guide to make your website fly! <step-by-step>`
 
 Please note that Magento 2 supports;
 
-:ref:`varnish 3 <varnish3>` and
-
-:ref:`varnish 4 <varnish4>` out-of-the-box.
+`varnish 3` and `varnish 4` out-of-the-box.
 
 Each new upgrade includes a section about the changes that have been made.
 
@@ -55,19 +55,18 @@ Each new upgrade includes a section about the changes that have been made.
 
 To make your life easier, there is a Script:
 
+VCL Migrator, which can help you upgrade from Varnish 3 to Varnish 4.
+
+.. include:: magento_resources.rst
+
 .. _`Magento 2` : http://devdocs.magento.com/guides/v2.1/install-gde/bk-install-guide.html
 
-:ref:`VCL Migrator <varnish3to4>`, which can help you upgrade from Varnish 3 to Varnish 4.
 
-:ref:`Get to know how Caching helps your site <magento2_ce>`
+Site MAP
+========
 
 .. toctree::
-	:hidden:
 
-	intro/varnish3
-	intro/varnish4
-	intro/varnish3to4
-	step_by_step
-	magento2_ce
-	magento2_varnish_basics
-	top5_magento_plugins
+	 step-by-step
+	 magento2_varnish_basics
+	 top5_magento_plugins

@@ -1,0 +1,20 @@
+
+Which version of Varnish to use?
+================================
+
+We recommned that you always choose to use the latest stable release.
+
+.. include:: /intro/varnish3.rst
+
+.. include:: /intro/varnish4.rst
+
+
+Migrating to Varnish 4?
+-----------------------
+
+You recommend you use the VCL Migrator at your own liability.
+
+.. include:: /intro/varnish3to4.rst
+
+**Varnish 5 Coming Soon!**
+--------------------------

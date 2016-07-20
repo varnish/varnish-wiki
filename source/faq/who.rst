@@ -1,4 +1,4 @@
-.. _faq_who:
+
 
 Who is ... ?
 ------------
@@ -31,9 +31,6 @@ remembering what 'REST', 'CORS' and 'ALPN' means, and he flunked
 'CSS for dummies' because he was never a webmaster or webdeveloper.
 He does have 30+ years of experience in systems programming, and
 that seems useful too.
-
-PHK's `random outbursts </docs/trunk/phk/index.html>`_ has their own
-section in the Varnish documentation.
 
 Per Buer
 ~~~~~~~~

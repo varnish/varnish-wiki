@@ -1,10 +1,8 @@
-.. _intro:
-
-Introduction to Varnish
-=======================
+What is Varnish?
+================
 
 The basics
-~~~~~~~~~~
+----------
 
 Varnish Cache is a web application accelerator also known as a caching
 HTTP reverse proxy. You install it in front of any server that speaks
@@ -15,7 +13,7 @@ Varnish does can be seen in `this video <https://www.youtube.com/watch?v=fGD14Ch
 
 
 Flexibility
-~~~~~~~~~~~
+-----------
 
 One of the key features of Varnish Cache, in addition to its
 performance, is the flexibility of its configuration language, VCL.
@@ -27,68 +25,30 @@ should be altered. And, you can `extend Varnish with modules
 about this in our
 `tutorial <https://www.varnish-cache.org/docs/trunk/tutorial/>`_.
 
-Further reading
-~~~~~~~~~~~~~~~
-
-There is a good article describing `Varnish Cache on
-Wikipedia <http://en.wikipedia.org/wiki/Varnish_(software)>`_.
-
-Get to know about the different versions and their support:
-
-:ref:`Varnish 3 <varnish3>`
----------------------------
-
-:ref:`Varnish 4 <varnish4>`
----------------------------
-
-**Varnish 5 Coming Soon!**
---------------------------
-
-Just want to test your already varnish-cached website?
-Check out this article on `Smash Magazine`_ by one of our own.
 
 
-Licence and origin
-~~~~~~~~~~~~~~~~~~
+When to Use Varnish?
+====================
 
-Varnish is free software licensed under a two-clause BSD licence, also
-known as the FreeBSD licence. The project was initiated in 2005. Varnish
-Cache 1.0 was released in september 2006.
+If youa re wondering why you are on our website reading about our product,
+you are in the right section!
 
-The name "Varnish"
-~~~~~~~~~~~~~~~~~~
+So you are getting Varnish for your website and wondering why?
 
-The name Varnish comes from when the instigator of Varnish spent a long
-time staring at an art-poster with the word “Vernisage” and ended up
-checking it in a dictionary, which gives the following three meanings of
-the word:
+Most probably because you need to handle a lot of traffic!
+Caching is one of the best ways to maximize the output of your website!
 
-*r.v. var·nished, var·nish·ing, var·nish·es*
+The main idea behind making your website flying is to reduce the workload of your
+webserver and it's network. Your frontend shouldn't have to make requests to the
+backend too often for the same dynamic content every time a client requests it.
 
-    #. *To cover with varnish.*
-    #. To give a smooth and glossy finish to.
-    #. **To give a deceptively attractive appearance to; gloss over.**
+To save your resources placing a reverse-proxy, caching software like Varnish Cache
+right in front of your web application can accelerate the responses to allmost all
+your HTTP requests and thus reducing server workload.
 
-To get in touch with the people operating this website please send an
-email to phk@ or `ruben@varni.sh <mailto:ruben@varni.sh>`_.
+Congratulations! you are making a great choice!
 
-
-Logo
-----
-
-A high resolution version of the Varnish Cache logo can be found
-`here <https://old.varnish-cache.org/sites/default/files/pictures/varnishcache_rgb-gimp2-alpha.png>`_.
-
-About this website
-------------------
-
-This site is statically generated. Powered by Sphinx running on Apache
-httpd on top of FreeBSD. It flies thanks to Varnish Cache. :-) 
-
-
-.. _`Smash Magazine`: https://www.smashingmagazine.com/2016/05/five-simple-steps-test-varnish-cache-deployment-varnishtest/
-.. toctree::
-	:hidden:
-
-	/intro/varnish3
-	/intro/varnish4
+Because Varnish does exactly that! and more!
+Varnish works by managing client requests BEFORE they make it to your web
+application server. Varnish not only reduces your webserver load but also has
+other security services to make your webservers secure.

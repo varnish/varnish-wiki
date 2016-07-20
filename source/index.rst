@@ -3,8 +3,9 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
+*********************************
 Welcome to Varnish Documentation!
-=================================
+*********************************
 
 Here you will find all the resources you need to start using varnish. Lets get you started with development to production!
 
@@ -16,19 +17,15 @@ Varnish is a reverse-proxy HTTP Accelerator designed for heavily consumed API si
 
 Varnish currently provides services to high-profile, high-traffic sites such as Facebook, Wikipedia, Vimeo, Twitter, Tumblr, The Guardian, VG.no and many other websites.
 
-:ref:`What is Varnish? <intro>`
+.. include:: /intro/index.rst
 
-:ref:`Getting Started <start>`
+.. include:: /intro/varnish_versions.rst
 
-:ref:`Questions and Answers <faq>`
-
-:ref:`Magento 2 and Varnish <magento>`
-
+Site MAP
+========
 
 .. toctree::
-    :hidden:
 
-    intro/index
     start/index
     faq/index
     magento/index

@@ -1,7 +1,7 @@
 .. _magento2_varnish_basics:
 
 Basics on Magento 2 and Varnish
--------------------------------
+===============================
 
 This chapter is mainly written for web developers who want to get a clear idea
 about the basics of varnish with magento.
@@ -25,7 +25,7 @@ To learn more about the basics of HTTP visit `HTTP Basics`_ at the `Varnish Soft
 You also need to be clear about what you want varnish to do for your website.
 To read more analyzing and understadning your website, as yourself the following questions:
 
-- What makes the pages on your magento website different from each toher?
+- What makes the pages on your magento website different from each other?
 - Do differences apply to entire pages or just part of them?
 - How shall i inform varnish of the differences?
 
@@ -36,7 +36,7 @@ As you will see, Varnish can help manage your magento website in more then one w
 Varnish can help your webservers with load balancing, firewalls, file compressions,
 cookie management, etc.
 
-A better insite on some of these Varnish characteristics would be to get to know
+A better in-site on some of these Varnish characteristics would be to get to know
 our product Varnish Cache a little better. Varnish cache as the name suggests
 allows caching of resources. This mechanism is enhanced to allow multiple
 identical requests from different clients to have the
@@ -53,15 +53,17 @@ This reduces the load of the origin server further more (apart from varnishes
 load balancing capacities) from managing similar responses multiple times.
 
 So when does Varnish serve the cached objects?
-##############################################
+----------------------------------------------
 
 In simple terms, varnish serves cache contents based on three things:
+
 1. Cache Matching
 2. Allowance
 3. Freshess of Data
 
 
 1. Cache Matching
+.................
 
 The cached object is properly matched. In such a case it is called `cache-hit`.
 A proper example of a cached object on a Magento site would be common product
@@ -70,9 +72,9 @@ A cache-hit object is served without contacting the origin server. However if th
 object requested is not in cache then it's `cache-miss` and in this case varnish
 forwards this request to the origin serer.
 
-.. _allowance:
 
 2. Allowance
+............
 
 As mentioned in the varnish book, Allowance is validating the `cache-hit`.
 Varnish further has an option for a user to choose how long an object should be in
@@ -85,6 +87,7 @@ Read more about the `cache-control header`_ on the varnish book.
 
 
 3.Freshness of Data
+...................
 
 When deciding whether to use a cached object i.e whether to `allow`
 it, checking the freshness of the data and evaluating whether to deliver an
@@ -99,8 +102,11 @@ There are two kinds of objects:
 To read more about how the freshness of an object is determined visit the
 varnish book, `Freshness`_ section.
 
-Now let's move on to understanding the Caching system in
-:ref: `Magento 2 <magento2_ce>`.
+Now let's move on to understanding the Caching system in Magento 2.
+
+.. include:: magento2_ce.rst
+
+
 Remember that varnish has a lot of resources and but if you have any questions
 please feel free to contact us.
 
@@ -110,7 +116,3 @@ please feel free to contact us.
 .. _`Freshness`: http://book.varnish-software.com/4.0/chapters/HTTP.html#freshness
 .. _`cache-control header`: http://book.varnish-software.com/4.0/chapters/HTTP.html#cache-control
 .. _`Content Composition`: http://book.varnish-software.com/4.0/chapters/Content_Composition.html
-
-
-.. toctree::
-  magento2_ce

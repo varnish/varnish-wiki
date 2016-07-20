@@ -1,10 +1,10 @@
-.. _faq_find:
+
 
 Finding things
---------------
+==============
 
 Install on FreeBSD
-~~~~~~~~~~~~~~~~~~
+##################
 
 This should work::
 
@@ -16,7 +16,7 @@ or::
   make all install clean
 
 Where is the bug I opened in 2012?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##################################
 
 We saved a snapshot of the old tickets from 'Trac',
 if you remember the number,

@@ -1,7 +1,7 @@
-.. _magento2_varnish:
 
-How to place Magento 2 behind Varnish
-=====================================
+
+3. How to place Magento 2 behind Varnish
+========================================
 
 Here we discuss how to configure your Magento2 behind Varnish.
 
@@ -10,13 +10,18 @@ The Magento2 Admin states that built-in Application cache is not recommended for
 We assume that you have Magento2 installed and running on your backend servers and that your server is a Debian based Linux Server.
 
 Configuring Magento
--------------------
+...................
 
 1. Visit the Magento 2 Admin page and go to:
+
  	-> Stores
+
 	-> Advanced
+
 	-> System
+
 	-> Full Page Cache
+
 	here switch caching application to **Varnish**
 
 2. Configuring for Varnish
@@ -60,8 +65,3 @@ His installation used niginx with varnish and magento.You can also read more abo
 .. _marko_magento2github: https://github.com/Marko-M/magento2-vagrant-nux
 
 .. _marko_magento2post: http://www.techytalk.info/magento-2-behind-varnish-reverse-proxy/
-
-.. toctree::
-	 :hidden:
-
-	 install_varnish

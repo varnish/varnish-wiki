@@ -1,33 +1,35 @@
-.. _step_by_step:
+.. _step-by-step:
 
-
+***************************************************
 STEP BY STEP GUIDE TO MAKING YOUR MAGENTO SITE FLY
---------------------------------------------------
+***************************************************
 
 Ofcourse you want to get started with increasing the performance of your website!
 So Lets get Started!
 
-1. Do you already have Magento? If you don't have Magento yet, follow the guide over at the `Magento-Site`_
+1. Installing Magento from the `Magento-Site`_
+==============================================
 
-2. In the link below you will find how to install and configure varnish for Magento 2.
+.. include:: install_varnish.rst
 
-:ref:`Installing Varnish with Magento <install_varnish>`
+.. include:: magento2_varnish_configure.rst
 
-3. After installing varnish, you need to configure magento behind varnish.
-In order to do that, follow this link:
-
-:ref: `Magento2 behind varnish <magento2_varnish>`
-
-4. After completing both installations, make sure to restart both varnish and apache2.
+4. Restart services after making changes
+========================================
 
 .. literalinclude:: files/snippet2_restart
   :language: c
 
-5. Removing cookies
+5. Basic Caching
+================
 
 Varnish doesnot cache cookies or its headers. But some cookies are marked as safe
-by the magento site and to remove or ignore these cookies, you can add the following
-code by updating your default.vcl
+by the magento site. Therefore it is recommended to remove or ignore these cookies
+so that varnish can cache anything.
+
+An example like the following will help to unset/remove unwanted cookies.
+
+Update your `default.vcl` with this code or a similar code of your choice.
 
 Under the `vcl_recv` add the following code.
 
@@ -37,6 +39,7 @@ warning: Make sure to add the code below the default code given for `vcl_recv`
   :language: c
 
 6. Excluding certain URLs
+=========================
 
 Not all URLs should be cached. Especially not in sites that deal with personal
 information such as credit card information.
@@ -44,7 +47,8 @@ information such as credit card information.
 .. literalinclude:: files/snippet4_exclude_url
   :language: c
 
-7.  Extend Caching
+7. Extended Caching
+===================
 
 There is a subroutine called *vcl_fetch* which is by default set to 120 seconds as can be seen.
 You can extend this caching value
@@ -55,20 +59,26 @@ You can extend this caching value
 
 ``}``
 
-This sets the ttl to 5 seconds, thus varnish picks up WordPress changes every 5sec.
+This sets the ttl to 5 seconds, thus varnish picks up changes every 5sec.
 Add this subroutine right below the *backend default*.
 
 However, it is known that the most effective way of increasing a websites hit ratio is to increase the time-to-live (ttl) of the objects. But today we are moving fast and large amount of changes are continuosly made to websites. Therefore the caching process is much more complex.
 
+8. Specific TTL Based Caching
+=============================
 
+
+
+9. CAche Flush (BAN All)
+========================
+
+
+
+
+
+10. Per Object Cache Invalidation
+=================================
 
 
 
 .. _Magento-Site: http://devdocs.magento.com/guides/v2.1/install-gde/bk-install-guide.html
-
-
-.. toctree::
-  :hidden:
-
-  install_varnish
-  magento2_varnish
