@@ -21,11 +21,18 @@ Varnish currently provides services to high-profile, high-traffic sites such as 
 
 .. include:: /intro/varnish_versions.rst
 
+
+**For the IMPATIENT** :ref:`GET STARTED HERE <start>`
+=====================================================
+
+*We do recommend you read our wiki for guidance all the way...*
+
+
 Site MAP
 ========
 
 .. toctree::
 
-    start/index
-    faq/index
-    magento/index
+    /start/index
+    /faq/index
+    /magento/index

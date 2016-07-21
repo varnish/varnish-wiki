@@ -1,8 +1,6 @@
-What is Varnish?
-================
 
-The basics
-----------
+What Varnish can give you?
+==========================
 
 Varnish Cache is a web application accelerator also known as a caching
 HTTP reverse proxy. You install it in front of any server that speaks
@@ -24,7 +22,6 @@ should be altered. And, you can `extend Varnish with modules
 (VMODs) <https://www.varnish-cache.org/vmods>`_. You can read more
 about this in our
 `tutorial <https://www.varnish-cache.org/docs/trunk/tutorial/>`_.
-
 
 
 When to Use Varnish?
@@ -52,3 +49,25 @@ Because Varnish does exactly that! and more!
 Varnish works by managing client requests BEFORE they make it to your web
 application server. Varnish not only reduces your webserver load but also has
 other security services to make your webservers secure.
+
+Do you want to VCL?
+===================
+
+If you are using varnish, you will definitely want to know more about our varnish
+configuration language (VCL). We have a lot of resources to help you get started
+with VCL-ing.
+
+TO read more about :ref:`VCL on our wiki <vcl>`
+
+:ref:`Varnish Resources <varnish_resources>`
+
+:ref:`Managing Multiple Varnishes <multiple_varnishes>`
+
+To try VCL `Tour de VCL`
+
+.. toctree::
+  :hidden:
+
+  /vcl/index
+  varnish_resources
+  multiple_varnishes

@@ -7,7 +7,7 @@ This chapter is mainly written for web developers who want to get a clear idea
 about the basics of varnish with magento.
 
 Varnish as you may already know is designed for HTTP semantics and will soon be
-available for HTTP/2.0. The new version of HTTP/2 has been released under RFC 7540.
+available for HTTP/2.0. The new version of HTTP/2 has been released under `RFC 7540`_.
 However one must know that HTTP/2.0 is an alternative to HTTP/1.1 and doesnot
 outmode HTTP/1.0.
 
@@ -116,3 +116,4 @@ please feel free to contact us.
 .. _`Freshness`: http://book.varnish-software.com/4.0/chapters/HTTP.html#freshness
 .. _`cache-control header`: http://book.varnish-software.com/4.0/chapters/HTTP.html#cache-control
 .. _`Content Composition`: http://book.varnish-software.com/4.0/chapters/Content_Composition.html
+.. _`RFC 7540`: https://www.rfc-editor.org/rfc/rfc7540.txt

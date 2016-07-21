@@ -5,9 +5,10 @@ WORDPRESS with VARNISH
 **********************
 
 
-`Wordpress Resources <wp_resources>`
 
-`Wordpress Install with Varnish <wp_install>`
+:ref:`Wordpress Resources <wp_resources>`
+
+:ref:`Wordpress Install with Varnish <wp_install>`
 
 
 .. toctree::
