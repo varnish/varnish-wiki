@@ -4,14 +4,25 @@
 Varnish with Magento 1.9 and older
 ==================================
 
-**Coming Soon**
-	- step-by-step how-to/tutorial
-	- recommend some Magento modules					
+
+Magento versions 1.9 and earlier didnot have support for varnish out of the box.
+
+Uptil version 1.9.x Magento provides an extension named `Turpentine`_ which improves
+Magento's compatibility with Varnish. Turpentine is a Magento extension that provides
+pre-configured Varnish Configuration (VCL) files which can significantly improve
+the cache hit rate.
+
+There is a `Github Repo for Magento Turpentine` developed by `Nexcess.net`.
+
+Quoting from the Magento Commerce site,
+
+"Note that while this extension is now considered stable, it is strongly
+recommended that it be tested on a development/staging site before deploying on
+a production site due to the potential need to add custom ESI policies for
+blocks added by other extensions."
+
+.. _`Turpentine`: https://www.magentocommerce.com/magento-connect/turpentine-varnish-cache.html
+.. _`Github Repo for Magento Turpentine`: https://github.com/nexcess/magento-turpentine
 
 
-Also read:
-----------										
-	https://www.section.io/docs/magento/					
-	https://alankent.me/2016/04/26/fastly-and-magento/					
-	https://www.fastly.com/blog/introducing-fastlys-magento-1-extension	
-
+.. include:: m1x_resources.rst

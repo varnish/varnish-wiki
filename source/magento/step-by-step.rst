@@ -47,6 +47,7 @@ information such as credit card information.
 .. literalinclude:: files/snippet4_exclude_url
   :language: c
 
+
 7. Extended Caching
 ===================
 
@@ -62,23 +63,27 @@ You can extend this caching value
 This sets the ttl to 5 seconds, thus varnish picks up changes every 5sec.
 Add this subroutine right below the *backend default*.
 
-However, it is known that the most effective way of increasing a websites hit ratio is to increase the time-to-live (ttl) of the objects. But today we are moving fast and large amount of changes are continuosly made to websites. Therefore the caching process is much more complex.
+However, there is a downside to short TTL values that is they increase the load
+not only in the backend servers but also the front end servers. Of course this
+gives you a better control over your cache, but it also increases overheads such
+as network traffic, response times becomes slower thus diminishing the whole
+purpose of varnish.
+
+So decreasing TTL values is not a good solution for high traffic based servers.
+Varnish has a better solution for that.
+
+Read more about caching at :ref:`Caching with Magento 2 <magento2_ce>`
+
 
 8. Specific TTL Based Caching
 =============================
+Varnish creates a TTL value for every object in the cache. A most effective way
+of increasing a websites hit ratio is to increase the time-to-live (ttl) of the
+objects.
 
 
+.. _`Magento-Site`: http://devdocs.magento.com/guides/v2.1/install-gde/bk-install-guide.html
 
-9. CAche Flush (BAN All)
-========================
+.. toctree::
 
-
-
-
-
-10. Per Object Cache Invalidation
-=================================
-
-
-
-.. _Magento-Site: http://devdocs.magento.com/guides/v2.1/install-gde/bk-install-guide.html
+  magento2_ce

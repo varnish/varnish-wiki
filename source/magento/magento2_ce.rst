@@ -1,3 +1,5 @@
+.. _magento2_ce:
+
 
 Caching in Magento 2
 --------------------
@@ -121,7 +123,7 @@ HTTP Purging is very straight forward. With the use of Varnish VCL subroutine
 A restart would immediately update the purged object.
 
 2. Banning
-..........
+...........
 
 Bans can be implemented for objects that are known to frequently change.
 In such a case, certain contents are banned to be retrieved from the cache based
@@ -152,9 +154,12 @@ a recommended read is the article by `Per Buer on Cache Invalidation at Smash Ma
 
 There is also a great comparison table in The Varnish Book - `Cache Invalidation`_
 
+More about `Advanced Cache Invalidation Techniques`_
+
 
 .. _`Cache Invalidation`: http://book.varnish-software.com/4.0/chapters/Cache_Invalidation.html
 .. _`Per Buer on Cache Invalidation at Smash Magazine`: https://www.smashingmagazine.com/2014/04/cache-invalidation-strategies-with-varnish-cache/
 .. _`libvmod-cookie`: https://download.varnish-software.com/varnish-modules/varnish4.0/libvmod-cookie-20151013.git7e453b4.tar.gz
 .. _`github`: https://github.com/varnish/varnish-modules
 .. _`varnish website`:  https://download.varnish-software.com/varnish-modules/
+.. _`Advanced Cache Invalidation Techniques`: https://info.varnish-software.com/blog/advanced-cache-invalidation-strategies
