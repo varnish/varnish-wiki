@@ -29,6 +29,12 @@ There is also a great comparison table in The Varnish Book - `Cache Invalidation
 
 More about `Advanced Cache Invalidation Techniques`_
 
+To know about `Memcache <varnish_memcache>`
+
 .. _`Cache Invalidation`: http://book.varnish-software.com/4.0/chapters/Cache_Invalidation.html
 .. _`Per Buer on Cache Invalidation at Smash Magazine`: https://www.smashingmagazine.com/2014/04/cache-invalidation-strategies-with-varnish-cache/
 .. _`Advanced Cache Invalidation Techniques`: https://info.varnish-software.com/blog/advanced-cache-invalidation-strategies
+
+.. toctree::
+
+  varnish_memcache

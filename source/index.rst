@@ -9,7 +9,7 @@ Welcome to Varnish Documentation!
 
 Here you will find all the resources you need to start using varnish. Lets get you started with development to production!
 
-.. _Introdcution:
+.. _Introduction:
 
 Introduction
 ============
@@ -20,7 +20,7 @@ Varnish currently provides services to high-profile, high-traffic sites such as 
 
 .. include:: /intro/index.rst
 
-.. include:: /intro/varnish_versions.rst
+To See :ref:`Varnish Releases and Versions <varnish_versions>`
 
 
 .. _Impatient:
@@ -38,4 +38,7 @@ Site MAP
 
     /start/index
     /faq/index
-    /magento/index
+    /magento2/index
+    /wordpress/index
+    /vcl/index
+    /intro/varnish_versions

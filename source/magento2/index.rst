@@ -1,4 +1,4 @@
-.. _magento:
+.. _magento2:
 
 ********************
 Varnish with Magento
@@ -43,7 +43,7 @@ To read more on the basics of how varnish works with magento2 go to
 
 If you are ready and just want to get started with the installation go to:
 
-:ref:`Step by step Installation guide to make your website fly! <step-by-step>`
+:ref:`Step by step Installation guide to make your website fly! <m2_step_by_step>`
 
 Please note that Magento 2 supports;
 
@@ -61,12 +61,16 @@ VCL Migrator, which can help you upgrade from Varnish 3 to Varnish 4.
 
 .. _`Magento 2` : http://devdocs.magento.com/guides/v2.1/install-gde/bk-install-guide.html
 
+Need Magento 1? `follow here <magento1x>`
+
+Our most Recommended `Magento Plugins <top5_magento_plugins>` for Varnish
 
 Site MAP
 ========
 
 .. toctree::
 
-	 step-by-step
-	 magento2_varnish_basics
-	 top5_magento_plugins
+  magento2_varnish_basics
+  m2_step_by_step
+  /magento1x/index
+  /magento2/top5_magento_plugins

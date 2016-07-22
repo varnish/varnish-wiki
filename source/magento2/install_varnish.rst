@@ -76,7 +76,7 @@ It also tells varnish where to find the web content.
 
 	Alternative 2:
 
-.. literalinclude:: files/snippet1_defaultvcl
+.. literalinclude:: /snippets/snippet1_defaultvcl
   :language: c
 
 Description:

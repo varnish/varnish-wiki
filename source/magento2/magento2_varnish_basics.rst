@@ -102,9 +102,8 @@ There are two kinds of objects:
 To read more about how the freshness of an object is determined visit the
 varnish book, `Freshness`_ section.
 
-Now let's move on to understanding the Caching system in Magento 2.
+Now let's move on to understanding the `Caching system in Magento 2 <magento2_ce>`.
 
-.. include:: magento2_ce.rst
 
 
 Remember that varnish has a lot of resources and but if you have any questions
@@ -117,3 +116,8 @@ please feel free to contact us.
 .. _`cache-control header`: http://book.varnish-software.com/4.0/chapters/HTTP.html#cache-control
 .. _`Content Composition`: http://book.varnish-software.com/4.0/chapters/Content_Composition.html
 .. _`RFC 7540`: https://www.rfc-editor.org/rfc/rfc7540.txt
+
+
+.. toctree::
+
+    magento2_ce

@@ -1,4 +1,4 @@
-.. _oldmagento:
+.. _magento1x:
 
 
 Varnish with Magento 1.9 and older

@@ -1,4 +1,4 @@
-.. _step-by-step:
+.. _m2_step_by_step:
 
 ***************************************************
 STEP BY STEP GUIDE TO MAKING YOUR MAGENTO SITE FLY
@@ -17,7 +17,7 @@ So Lets get Started!
 4. Restart services after making changes
 ========================================
 
-.. literalinclude:: files/snippet2_restart
+.. literalinclude:: /snippets/snippet2_restart
   :language: c
 
 5. Basic Caching
@@ -35,7 +35,7 @@ Under the `vcl_recv` add the following code.
 
 warning: Make sure to add the code below the default code given for `vcl_recv`
 
-.. literalinclude:: files/snippet3_remove_cookies
+.. literalinclude:: /snippets/snippet3_remove_cookies
   :language: c
 
 6. Excluding certain URLs
@@ -44,7 +44,7 @@ warning: Make sure to add the code below the default code given for `vcl_recv`
 Not all URLs should be cached. Especially not in sites that deal with personal
 information such as credit card information.
 
-.. literalinclude:: files/snippet4_exclude_url
+.. literalinclude:: /snippets/snippet4_exclude_url
   :language: c
 
 

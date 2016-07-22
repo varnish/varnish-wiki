@@ -73,3 +73,4 @@ To try VCL `Tour de VCL`
   /vcl/index
   /intro/varnish_resources
   /intro/multiple_varnishes
+  /intro/basic_caching
