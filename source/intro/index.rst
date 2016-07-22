@@ -1,4 +1,4 @@
-
+.. _intro:
 
 What Varnish can give you?
 ==========================
@@ -11,8 +11,7 @@ really fast. It typically speeds up delivery with a factor of 300 -
 Varnish does can be seen in `this video <https://www.youtube.com/watch?v=fGD14ChpcL4>`_.
 
 
-Flexibility
------------
+We provide Flexibility !
 
 One of the key features of Varnish Cache, in addition to its
 performance, is the flexibility of its configuration language, VCL.
@@ -21,9 +20,10 @@ handled. In such a policy you can decide what content you want to serve,
 from where you want to get the content and how the request or response
 should be altered. And, you can `extend Varnish with modules
 (VMODs) <https://www.varnish-cache.org/vmods>`_. You can read more
-about this in our
-`tutorial <https://www.varnish-cache.org/docs/trunk/tutorial/>`_.
+about this in our `tutorial at varnish-cache.org`_.
 
+`The Design Principle of Varnish`_
+-----------------------------------
 
 When to Use Varnish?
 ====================
@@ -62,10 +62,19 @@ with VCL-ing.
 TO read more about :ref:`VCL on our wiki <vcl>`
 
 :ref:`Varnish Resources <varnish_resources>`
+--------------------------------------------
+
+Read on about :ref:`Understand your Website <website_arch>`
+-----------------------------------------------------------
 
 :ref:`Managing Multiple Varnishes <multiple_varnishes>`
+-------------------------------------------------------
 
 To try VCL `Tour de VCL`
+------------------------
+
+.. _`The Design principle of Varnish`: http://book.varnish-software.com/4.0/chapters/Design_Principles.html
+.. _`Tutorial at varnish-cache.org`: https://www.varnish-cache.org/docs/trunk/tutorial/
 
 .. toctree::
   :hidden:
@@ -73,4 +82,4 @@ To try VCL `Tour de VCL`
   /vcl/index
   /intro/varnish_resources
   /intro/multiple_varnishes
-  /intro/basic_caching
+  /intro/website_arch

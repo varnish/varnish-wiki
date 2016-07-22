@@ -5,8 +5,8 @@ Installing and Configuring Varnish
 
 
 
-2. Installing VARNISH with
-==================================
+2. Installing VARNISH
+=====================
 
 The following text discusses how to configure your webserver and Magneto to use Varnish.
 
@@ -163,9 +163,31 @@ It is always required to restart all services one changes are made in configurat
 
 	``sudo service apache2 restart``
 
+Step 5: Testing
+---------------
+
+Run `http -p Hh localhost`
+
+
+Step 6: Troubleshooting
+-----------------------
 
 If Varnish fails to start, try running it from the command line as follows:
 
 	``varnishd ~d ~f /etc/varnish/default.vcl``
 
 This should display the error messages.
+
+Step 7: The Management Interface
+--------------------------------
+
+Varnish has a command line interface (CLI) to control any varnish instance.
+- It can be used to reload VCL without restarting.
+- Start, stop cache process
+- Change configuration parameters withour restarting.
+- view upto date documentation for parameters etc.
+- it can implement a list of management commands in the `varnishadm`
+- `varnishadm` establishes a connection to the varnish deamon `varnishd`
+
+
+`varnishadm` utility

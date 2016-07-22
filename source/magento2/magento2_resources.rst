@@ -1,4 +1,4 @@
-.. magento_links:
+.. _magento2_resources:
 
 Magento 2 Resources
 ===================

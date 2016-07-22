@@ -1,4 +1,4 @@
-.. _m1_step_by_step:
+.. _m1x_step_by_step:
 
 Magento 1.x Step by Step Guide
 ==============================

@@ -1,8 +1,8 @@
 .. _magento2:
 
-********************
-Varnish with Magento
-********************
+*********************
+Varnish with Magento2
+*********************
 
 Magento is a powerful e-commerce platform  for marketing, catalog management
 and search engine optimization. Magento provides online merchants with a flexible
@@ -57,7 +57,7 @@ To make your life easier, there is a Script:
 
 VCL Migrator, which can help you upgrade from Varnish 3 to Varnish 4.
 
-.. include:: magento_resources.rst
+:Ref: `Visit Magento 2 Resources <magento2_resources>`
 
 .. _`Magento 2` : http://devdocs.magento.com/guides/v2.1/install-gde/bk-install-guide.html
 
@@ -74,3 +74,4 @@ Site MAP
   m2_step_by_step
   /magento1x/index
   /magento2/top5_magento_plugins
+  magento2_resources

@@ -23,11 +23,13 @@ Installing and Configuring Varnish
 Step by Step Configuring for Web Applications
 ---------------------------------------------
 
-:ref:`Magento 2 Installation <m2_step_by_step>`
+:ref:`Magento 2 with Varnish <m2_step_by_step>`
 
-:ref:`Magento 1x Installation <m1_step_by_step>`
+:ref:`Magento 1x with Varnish <m1x_step_by_step>`
 
-:ref:`Wordpress Installation <wp_step_by_Step>`
+:ref:`Wordpress with Varnish <wp_step_by_step>`
+
+:ref:`Drupal with Varnish <drupal_step_by_step>`
 
 
 Our Guide to your Projects
@@ -39,6 +41,22 @@ Our Guide to your Projects
 
 :ref:`Drupal Tutorial <tut_drupal>`
 
+
+Recipes for Cache Invalidation
+==============================
+
+:ref:`See cache invalidation with examples <cache_ex>`
+
+:ref:`Magento 1x Cache Invalidation <m1x_cache_invalidation>`
+
+:ref:`Magento 2 Cache Invalidation <m2_cache_invalidation>`
+
+:ref:`Wordpress Cache Invalidation <wp_cache_invalidation>`
+
+:ref:`Drupal Cache Invalidation <drupal_cache_invalidation>`
+
+
+
 .. toctree::
 	:hidden:
 
@@ -47,6 +65,11 @@ Our Guide to your Projects
 	tut_drupal
 	tut_magento2
 	/magento2/m2_step_by_step
-	/magento1x/m1_step_by_step
+	/magento1x/m1x_step_by_step
 	/wordpress/wp_step_by_step
-	/vcl/index
+	/magento2/m2_cache_invalidation
+	/magento1x/m1x_cache_invalidation
+	/wordpress/wp_cache_invalidation
+	/drupal/drupal_cache_invalidation
+	/drupal/drupal_step_by_step
+	/intro/cache_ex

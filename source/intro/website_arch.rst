@@ -1,7 +1,31 @@
-.. _basic_caching:
+.. _website_arch:
 
-Basic Caching
-=============
+Understanding a Typical Website Architecture
+============================================
+
+Regardsless of the Web applicaiton you use to manage your wesbite, most websites
+follow a similar pattern.
+
+Each website has a few distinguishable sections:
+
+- A front page
+- Articles or sub pages
+- A login-box
+- Static Elements like CSS, Javascript, graphics, etc
+
+
+Easy Advice on Caching your website?
+....................................
+
+- For static websites, Cache contents for user not logged in.
+- For dynamic websites,
+    * First you have to be able to isolate each component.
+    * Then choose which component to cache.
+    * Decide for how long to cache.
+
+That is where varnish can really help you. Varnish assigns every single object a
+TTL value. Here we discuss how each of the component can be managed separately yet
+displayed together on a webpage.
 
 Cookies
 .......
@@ -51,6 +75,7 @@ in the VCL code in the `vcl_recv` subroutine.
 
 .. literalinclude:: /snippets/snippet6_masq
   :language: c
+
 
 Read about :ref:`Cache Invalidation <cache_invalidation>`
 

@@ -15,6 +15,20 @@ They have two editions:
 Get Started on Varnish
 ======================
 
-- links to step by step installation
 
-- Ready made Recipe here
+
+
+
+
+Recipes for Cache Invalidation
+==============================
+
+:ref:`Magento 1x Cache Invalidation <m1x_cache_invalidation>`
+:ref:`Magento 2 Cache Invalidation <m2_cache_invalidation>`
+
+
+
+.. toctree:
+
+  /magento2/m2_cache_invalidation
+  /magento1x/m1x_cache_invalidation

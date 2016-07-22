@@ -20,7 +20,7 @@ return more fresh contents such as the code below::
 
 ``}``
 
-This sets the ttl to 5seconds, thus varnish picks up Magento changes every 5sec.
+This sets the ttl to 5seconds, thus varnish picks up website changes every 5sec.
 
 However, it is known that the most effective way of increasing a websites hit
 ratio is to increase the time-to-live (ttl) of the objects. Therefore there is
@@ -49,6 +49,7 @@ on the meta data. The ban is quite a reliable method, as it only works for
 objects in the cache but doesnot interfere with new content being cached or
 served.
 
+
 3. Forcing a Cache Miss
 .......................
 
@@ -67,4 +68,30 @@ one. But the old object does remain in the cache until its ttl expires.
 The hashtwo or xkey is for websites requiring large scale caching.
 
 
-.. include:: /intro/more_caching.rst
+DIFFERENCE BETWEEN THE BANS, PURGES, HIT-for-pass, Expiring
+------------------------------------------------------------
+
+
+
+More Caching Resources
+......................
+
+To get a better and more in-depth overview of our cache invalidation process,
+a recommended read is the article by `Per Buer on Cache Invalidation at Smash Magazine`_
+
+There is also a great comparison table in The Varnish Book - `Cache Invalidation`_
+
+More about `Advanced Cache Invalidation Techniques`_
+
+To know about :ref:`Memcache <varnish_memcache>`
+
+.. _`Cache Invalidation`: http://book.varnish-software.com/4.0/chapters/Cache_Invalidation.html
+.. _`Per Buer on Cache Invalidation at Smash Magazine`: https://www.smashingmagazine.com/2014/04/cache-invalidation-strategies-with-varnish-cache/
+.. _`Advanced Cache Invalidation Techniques`: https://info.varnish-software.com/blog/advanced-cache-invalidation-strategies
+
+Cache Invalidation examples for Supported Wep Applications are included in the examples.
+
+
+.. toctree::
+
+  varnish_memcache
