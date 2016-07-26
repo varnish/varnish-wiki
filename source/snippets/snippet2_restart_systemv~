@@ -1,0 +1,2 @@
+service varnish restart
+service apache2 restart

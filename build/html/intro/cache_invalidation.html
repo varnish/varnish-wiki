@@ -1,0 +1,197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Cache Invalidation &mdash; Varnish Documentation 0.0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Varnish Documentation 0.0.1 documentation" href="../index.html" />
+    <link rel="up" title="Understanding a Typical Website Architecture" href="website_arch.html" />
+    <link rel="next" title="Varnish and Memcache" href="varnish_memcache.html" />
+    <link rel="prev" title="Understanding a Typical Website Architecture" href="website_arch.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="varnish_memcache.html" title="Varnish and Memcache"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="website_arch.html" title="Understanding a Typical Website Architecture"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Varnish Documentation 0.0.1 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >What Varnish can give you?</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="website_arch.html" accesskey="U">Understanding a Typical Website Architecture</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="cache-invalidation">
+<span id="id1"></span><h1>Cache Invalidation<a class="headerlink" href="#cache-invalidation" title="Permalink to this headline">¶</a></h1>
+<p>Firstly to cache or not to cache. But once you decide to cache, cache invalidation
+becomes an important part of your cache policy. the good news is Varnish automatically
+invalidates expired objects for you. But you also have the advantage of taking charge
+of invalidating your websites cached objects.</p>
+<p>The easiest but not recommended way to invalidate cache is to assign small TTL
+values to cached objects. This would simply expire cached contents quickly.</p>
+<p>Just changing the ttl value in the <cite>vcl_fetch</cite> would speed up invalidation and
+return more fresh contents such as the code below:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>``sub vcl_fetch {``
+</pre></div>
+</div>
+<blockquote>
+<div><code class="docutils literal"><span class="pre">set</span> <span class="pre">beresp.ttl</span> <span class="pre">=</span> <span class="pre">5s;</span></code></div></blockquote>
+<p><code class="docutils literal"><span class="pre">}</span></code></p>
+<p>This sets the ttl to 5seconds, thus varnish picks up website changes every 5sec.</p>
+<p>However, it is known that the most effective way of increasing a websites hit
+ratio is to increase the time-to-live (ttl) of the objects. Therefore there is
+more to the caching process then just the ttl value.</p>
+<p>Another alternative could be to validate cached contents per request.</p>
+<p>These alternatives can cause issues, as this creates higher load on the application
+server.</p>
+<p>However with Varnish, there are four mechanisms to invalidate caches.</p>
+<div class="section" id="http-purge">
+<h2>1. HTTP Purge<a class="headerlink" href="#http-purge" title="Permalink to this headline">¶</a></h2>
+<p>HTTP Purging is very straight forward. With the use of Varnish VCL subroutine
+<cite>vcl_purge</cite>, Varnish will discard the object from the cache and free up memory.
+A restart would immediately update the purged object.</p>
+</div>
+<div class="section" id="banning">
+<h2>2. Banning<a class="headerlink" href="#banning" title="Permalink to this headline">¶</a></h2>
+<p>Bans can be implemented for objects that are known to frequently change.
+In such a case, certain contents are banned to be retrieved from the cache based
+on the meta data. The ban is quite a reliable method, as it only works for
+objects in the cache but doesnot interfere with new content being cached or
+served.</p>
+</div>
+<div class="section" id="forcing-a-cache-miss">
+<h2>3. Forcing a Cache Miss<a class="headerlink" href="#forcing-a-cache-miss" title="Permalink to this headline">¶</a></h2>
+<p>This mechanism is similar to flusing the entire cache,
+as in it follows the procedure that when an object is not found in the cache
+it is served from the backend. But it also very much like Bans.</p>
+<p>However <em>cache miss</em> is more reliable as it this is forced and very much like
+refreshing a page. This method refreshes an object by forcing a cache miss for a
+request. Thus enabling a force fetch from the backend and overriding the current
+one. But the old object does remain in the cache until its ttl expires.</p>
+</div>
+<div class="section" id="hashtwo-xkey">
+<h2>4. Hashtwo / Xkey<a class="headerlink" href="#hashtwo-xkey" title="Permalink to this headline">¶</a></h2>
+<p>The hashtwo or xkey is for websites requiring large scale caching.</p>
+</div>
+</div>
+<div class="section" id="difference-between-the-bans-purges-hit-for-pass-expiring">
+<h1>DIFFERENCE BETWEEN THE BANS, PURGES, HIT-for-pass, Expiring<a class="headerlink" href="#difference-between-the-bans-purges-hit-for-pass-expiring" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="more-caching-resources">
+<h2>More Caching Resources<a class="headerlink" href="#more-caching-resources" title="Permalink to this headline">¶</a></h2>
+<p>To get a better and more in-depth overview of our cache invalidation process,
+a recommended read is the article by <a class="reference external" href="https://www.smashingmagazine.com/2014/04/cache-invalidation-strategies-with-varnish-cache/">Per Buer on Cache Invalidation at Smash Magazine</a></p>
+<p>There is also a great comparison table in The Varnish Book - <a class="reference external" href="http://book.varnish-software.com/4.0/chapters/Cache_Invalidation.html">Cache Invalidation</a></p>
+<p>More about <a class="reference external" href="https://info.varnish-software.com/blog/advanced-cache-invalidation-strategies">Advanced Cache Invalidation Techniques</a></p>
+<p>To know about <a class="reference internal" href="varnish_memcache.html#varnish-memcache"><span class="std std-ref">Memcache</span></a></p>
+<p>Cache Invalidation examples for Supported Wep Applications are included in the examples.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="varnish_memcache.html">Varnish and Memcache</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Cache Invalidation</a><ul>
+<li><a class="reference internal" href="#http-purge">1. HTTP Purge</a></li>
+<li><a class="reference internal" href="#banning">2. Banning</a></li>
+<li><a class="reference internal" href="#forcing-a-cache-miss">3. Forcing a Cache Miss</a></li>
+<li><a class="reference internal" href="#hashtwo-xkey">4. Hashtwo / Xkey</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#difference-between-the-bans-purges-hit-for-pass-expiring">DIFFERENCE BETWEEN THE BANS, PURGES, HIT-for-pass, Expiring</a><ul>
+<li><a class="reference internal" href="#more-caching-resources">More Caching Resources</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="website_arch.html"
+                        title="previous chapter">Understanding a Typical Website Architecture</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="varnish_memcache.html"
+                        title="next chapter">Varnish and Memcache</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/intro/cache_invalidation.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="varnish_memcache.html" title="Varnish and Memcache"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="website_arch.html" title="Understanding a Typical Website Architecture"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Varnish Documentation 0.0.1 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >What Varnish can give you?</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="website_arch.html" >Understanding a Typical Website Architecture</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2016, Taiyeba.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.5.
+    </div>
+  </body>
+</html>

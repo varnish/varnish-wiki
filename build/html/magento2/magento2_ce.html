@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Caching in Magento 2 &mdash; Varnish Documentation 0.0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Varnish Documentation 0.0.1 documentation" href="../index.html" />
+    <link rel="up" title="STEP BY STEP GUIDE TO MAKING YOUR MAGENTO SITE FLY" href="m2_step_by_step.html" />
+    <link rel="next" title="Magento 1.x Step by Step Guide" href="../magento1x/m1x_step_by_step.html" />
+    <link rel="prev" title="STEP BY STEP GUIDE TO MAKING YOUR MAGENTO SITE FLY" href="m2_step_by_step.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../magento1x/m1x_step_by_step.html" title="Magento 1.x Step by Step Guide"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="m2_step_by_step.html" title="STEP BY STEP GUIDE TO MAKING YOUR MAGENTO SITE FLY"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Varnish Documentation 0.0.1 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../start/index.html" >Getting Started</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="m2_step_by_step.html" accesskey="U">STEP BY STEP GUIDE TO MAKING YOUR MAGENTO SITE FLY</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="caching-in-magento-2">
+<span id="magento2-ce"></span><h1>Caching in Magento 2<a class="headerlink" href="#caching-in-magento-2" title="Permalink to this headline">¶</a></h1>
+<p>Magento 2 with its great abilities is the next generation open source digital
+commerce platform. A large number of websites use magento and with magento 2
+the server performance has boosted to a new level.</p>
+<div class="section" id="so-why-does-magento-2-require-varnish-caching">
+<h2>So why does Magento 2 require varnish caching?<a class="headerlink" href="#so-why-does-magento-2-require-varnish-caching" title="Permalink to this headline">¶</a></h2>
+<p>Magento websites are expected to have large amount of traffic. For the website
+to fly varnish cache provides a caching mechanism that not only helps with
+caching but also provides other services that enables magento webservers to
+provide excellent services to clients.</p>
+</div>
+</div>
+<div class="section" id="cache-extensions">
+<h1>Cache Extensions<a class="headerlink" href="#cache-extensions" title="Permalink to this headline">¶</a></h1>
+<p>Magento has two Cache extensions;</p>
+<ul class="simple">
+<li>The internal cache (filesystem)</li>
+<li>The external cache (varnish!)</li>
+</ul>
+<p>Here we will mainly talk about Varnish, the external cache.</p>
+<p>As you may already know Magento 2 supports varnish out of the box.
+The varnish cache is installed as an independent component. It serves as an
+intermediate between the webservers running magento and the backened memory.</p>
+<p>Varnish cache on a magento 2 site caches all/if any static pages and also parts
+of dynamic pages.</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Caching in Magento 2</a><ul>
+<li><a class="reference internal" href="#so-why-does-magento-2-require-varnish-caching">So why does Magento 2 require varnish caching?</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#cache-extensions">Cache Extensions</a></li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="m2_step_by_step.html"
+                        title="previous chapter">STEP BY STEP GUIDE TO MAKING YOUR MAGENTO SITE FLY</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../magento1x/m1x_step_by_step.html"
+                        title="next chapter">Magento 1.x Step by Step Guide</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/magento2/magento2_ce.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../magento1x/m1x_step_by_step.html" title="Magento 1.x Step by Step Guide"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="m2_step_by_step.html" title="STEP BY STEP GUIDE TO MAKING YOUR MAGENTO SITE FLY"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Varnish Documentation 0.0.1 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../start/index.html" >Getting Started</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="m2_step_by_step.html" >STEP BY STEP GUIDE TO MAKING YOUR MAGENTO SITE FLY</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2016, Taiyeba.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.5.
+    </div>
+  </body>
+</html>
