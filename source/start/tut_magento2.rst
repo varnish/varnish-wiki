@@ -15,7 +15,7 @@ They have two editions:
 Get Started on Varnish
 ======================
 
-
+:ref:`Read About Magento with Varnish <magento2>`
 
 
 
@@ -39,3 +39,4 @@ please look at `here <http://devdocs.magento.com/guides/v2.0/config~guide/varnis
 
   /magento2/m2_cache_invalidation
   /magento1x/m1x_cache_invalidation
+  /magento2/index

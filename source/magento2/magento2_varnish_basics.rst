@@ -104,8 +104,6 @@ varnish book, `Freshness`_ section.
 
 Now let's move on to understanding the `Caching system in Magento 2 <magento2_ce>`.
 
-
-
 Remember that varnish has a lot of resources and but if you have any questions
 please feel free to contact us.
 

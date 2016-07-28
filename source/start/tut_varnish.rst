@@ -147,9 +147,13 @@ Step 3: Configure Apache2 to work with Varnish
 ----------------------------------------------
 
 Configure your web server to listen on a port other than the default port 80 because
-Varnish responds directly to incoming HTTP requests, not the web server.
+Varnish responds directly to incoming HTTP requests from the client on this port.
+
+Varnish will communicate on a different port with your backend webservers.
 
 In the sections that follow, we use port 8080 as an example as shown above.
+If you have more then one backend you can put them on another port such as port
+8081, 8082 etc.
 
 To change the Apache listen port:
 
@@ -161,10 +165,23 @@ To change the Apache listen port:
 	~ Change the VirtualHost port to 8080:
 	`<VirtualHost 127.0.0.1:8080>`
 
+Setting up Multiple Backends (Skip this section if you have one Backend)
+------------------------------------------------------------------------
+
+If you have more then one backened server, you need to add all those backends in
+the default.vcl file as backends and also define how and when each of these backends
+should be accessed.
+
+Here is a simple example:
+
+.. literalinclude:: /vcl/vclex_multiple_backend.vcl
+	:language: c
+
+
 Step 4: Restart
 ---------------
 
-It is always required to restart all services one changes are made in configuration files.
+It is always required to restart all services once changes are made in configuration files.
 
 .. literalinclude:: /snippets/snippet2_restart_systemv
 	:language: c
@@ -190,7 +207,7 @@ Step 7: The Management Interface
 Varnish has a command line interface (CLI) to control any varnish instance.
 - It can be used to reload VCL without restarting.
 - Start, stop cache process
-- Change configuration parameters withour restarting.
+- Change configuration parameters without restarting.
 - view upto date documentation for parameters etc.
 - it can implement a list of management commands in the `varnishadm`
 - `varnishadm` establishes a connection to the varnish deamon `varnishd`

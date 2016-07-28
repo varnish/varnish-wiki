@@ -10,6 +10,7 @@ really fast. It typically speeds up delivery with a factor of 300 -
 1000x, depending on your architecture. A high level overview of what
 Varnish does can be seen in `this video <https://www.youtube.com/watch?v=fGD14ChpcL4>`_.
 
+Here is `THE BIG VARNISH PICTURE`_ if you want Word by Word details! :)
 
 We provide Flexibility !
 
@@ -75,7 +76,7 @@ To try VCL `Tour de VCL`
 
 .. _`The Design principle of Varnish`: http://book.varnish-software.com/4.0/chapters/Design_Principles.html
 .. _`Tutorial at varnish-cache.org`: https://www.varnish-cache.org/docs/trunk/tutorial/
-
+-- _`THE BIG VARNISH PICTURE`: https://www.varnish-cache.org/docs/4.1/users-guide/intro.html#users-intro
 .. toctree::
   :hidden:
 

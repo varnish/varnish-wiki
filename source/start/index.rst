@@ -3,21 +3,30 @@
 Getting Started
 ===============
 
-First of if you want to read more about Varnish, below are a few resources:
+Lets get started with Varnishing your website!
 
-1. The Varnish Book
-2. The Varnish Documentation
-3. The Varnish Reference Book
-4. `Relevant Resources <general_resources>`
+Below is a list of resources which can help you understand and manange our software better!
+
+1. `The Varnish Book`_ - The book is one of our best Training Manual with lots of details and exercises.
+2. `The Varnish Tutorial`_ - The Tutorial explains the basics and gets you started with Varnish.
+3. `The Varnish Users Guide`_ - The User Guide explains how Varnish works and how you can use it to improve your website.
+4. `The Varnish Reference Manual`_ - contains hard facts and is useful for looking up specific questions.
+5. :ref:`Relevant Resources <general_resources>` - contains links to resourceful information beyond our website.
+
+**Last but not the least this little wiki will give you a `hands-on guide` to making your website fly!**
+
+
+:ref:`What do you want to Achieve for your site? <your_varnish_goals>`
+======================================================================
 
 Installing and Configuring Varnish
 ----------------------------------
 
 :ref:`Installing Varnish <tut_varnish>`
+.......................................
 
 :ref:`How to VCL? <vcl>`
-
-`What to Avoid?`
+........................
 
 
 Step by Step Configuring for Web Applications
@@ -41,6 +50,9 @@ Our Guide to your Projects
 
 :ref:`Drupal Tutorial <tut_drupal>`
 
+RUN VARNISH <run_varnish>
+==========================
+
 
 Recipes for Cache Invalidation
 ==============================
@@ -57,8 +69,21 @@ Recipes for Cache Invalidation
 
 :ref:`Drupal Cache Invalidation <drupal_cache_invalidation>`
 
-`The WORLD of VMODS <vmods>`
-============================
+
+:ref:`The WORLD of VMODS <vmods>`
+---------------------------------
+
+
+
+
+
+
+
+
+.. _`The Varnish Book`: http://book.varnish-software.com/4.0/
+.. _`The Varnish Tutorial`: https://www.varnish-cache.org/docs/4.1/tutorial/index.html#tutorial-index
+.. _`The Varnish Users Guide`: https://www.varnish-cache.org/docs/4.1/users-guide/index.html#users-guide-index
+.. _`The Varnish Reference Manual`: https://www.varnish-cache.org/docs/4.1/reference/index.html#reference-index
 
 .. toctree::
 	:hidden:
@@ -78,5 +103,8 @@ Recipes for Cache Invalidation
 	/intro/cache_ex
 	/start/general_resources
 	/vmods/index
-	
+	your_varnish_goals
+	troubleshooting_varnish
+  /start/run_varnish
+
 .. _`Our Webinar on Cache Invalidation Strategies`: https://info.varnish-software.com/webinars_fm/cache-invalidation-strategies

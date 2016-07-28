@@ -23,3 +23,4 @@ Explain the usage of Varnish and at the same time HTTP protocol
 .. toctree:
 
   /drupal/drupal_cache_invalidation
+  /drupal/index

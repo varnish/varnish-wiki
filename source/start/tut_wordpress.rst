@@ -21,3 +21,4 @@ Recipes for Cache Invalidation
 .. toctree:
 
   /wordpress/wp_cache_invalidation
+  /wordpress/index
