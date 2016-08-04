@@ -26,3 +26,7 @@ blocks added by other extensions."
 
 
 .. include:: m1x_resources.rst
+
+.. toctree::
+
+  m1x_step_by_step

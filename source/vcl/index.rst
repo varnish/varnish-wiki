@@ -28,6 +28,10 @@ How to VCL?
 What is Built in VCL?
 ---------------------
 
+Built in subroutines: https://www.varnish-cache.org/docs/trunk/users-guide/vcl-built-in-subs.html
+
+Variables and other things in VCL: https://www.varnish-cache.org/docs/4.0/reference/vcl.html
+
 VCL Subroutines
 ---------------
 

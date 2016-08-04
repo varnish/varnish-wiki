@@ -93,5 +93,5 @@ Cache Invalidation examples for Supported Wep Applications are included in the e
 
 
 .. toctree::
-
-  varnish_memcache
+	cache_ex
+	varnish_memcache

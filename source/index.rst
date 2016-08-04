@@ -39,6 +39,12 @@ websites.
 ************************
 
 
+`Is Your Varnish Working?`_
+===========================
+This website is hosted by `Acquia`_
+
+.. _`Acquia`: https://dev.acquia.com/blog/explaining-varnish-beginners
+.. _`Is Your Varnish Working?`: http://www.isvarnishworking.com/
 .. _`VarnishWiki on Github`: https://github.com/staiyeba/wiki_varnish
 
 

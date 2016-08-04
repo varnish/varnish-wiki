@@ -76,7 +76,8 @@ To try VCL `Tour de VCL`
 
 .. _`The Design principle of Varnish`: http://book.varnish-software.com/4.0/chapters/Design_Principles.html
 .. _`Tutorial at varnish-cache.org`: https://www.varnish-cache.org/docs/trunk/tutorial/
--- _`THE BIG VARNISH PICTURE`: https://www.varnish-cache.org/docs/4.1/users-guide/intro.html#users-intro
+.. _`THE BIG VARNISH PICTURE`: https://www.varnish-cache.org/docs/4.1/users-guide/intro.html#users-intro
+
 .. toctree::
   :hidden:
 

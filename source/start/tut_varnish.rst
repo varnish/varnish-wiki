@@ -108,8 +108,8 @@ This is all the configuration changes in this file.
 
 3. Now Modify **default.vcl** file
 
-	This file contains configuration that points to the content. This is by default set to 8080
-	and points to host as localhost as shown below.
+	This file contains configuration that points to the content. This is by default
+	set to serve at 8080 and points to host as localhost as shown below.
 
 	To minimally configure Varnish:
 
@@ -135,13 +135,15 @@ The value of .port should re replaced with webservers listening port, for exampl
 .. literalinclude:: /snippets/default_vcl_2
 	:language: bash
 
-It is recommended that if changes are made to these files, it should be copied and remaned name,
-because when varnish updates, it will replace any changes made with it’s new default.vcl and varnish file.
+It is recommended that if changes are made to these files, it should be copied
+and remaned name, because when varnish updates, it will replace any changes made
+with it’s new default.vcl and varnish file.
 
-VCL TEMPLATEs
-.............
+Now varnish is serving the client at port 80 and listening to the backend at
+port 8080.
 
-~ install
+This is when you can add ready made VCL Templates or recommended plugins for
+your web Application (Wordpress, Drupal, Magento2)
 
 Step 3: Configure Apache2 to work with Varnish
 ----------------------------------------------
@@ -149,7 +151,8 @@ Step 3: Configure Apache2 to work with Varnish
 Configure your web server to listen on a port other than the default port 80 because
 Varnish responds directly to incoming HTTP requests from the client on this port.
 
-Varnish will communicate on a different port with your backend webservers.
+Varnish will communicate on a different port with your backend webservers as in
+the example above it is port 8080.
 
 In the sections that follow, we use port 8080 as an example as shown above.
 If you have more then one backend you can put them on another port such as port
@@ -164,6 +167,7 @@ To change the Apache listen port:
 	~ Also edit /etc/apache2/sites-available/000-default.conf
 	~ Change the VirtualHost port to 8080:
 	`<VirtualHost 127.0.0.1:8080>`
+
 
 Setting up Multiple Backends (Skip this section if you have one Backend)
 ------------------------------------------------------------------------
@@ -186,6 +190,7 @@ It is always required to restart all services once changes are made in configura
 .. literalinclude:: /snippets/snippet2_restart_systemv
 	:language: c
 
+
 Step 5: Testing
 ---------------
 
@@ -200,6 +205,7 @@ If Varnish fails to start, try running it from the command line as follows:
 	``varnishd ~d ~f /etc/varnish/default.vcl``
 
 This should display the error messages.
+
 
 Step 7: The Management Interface
 --------------------------------

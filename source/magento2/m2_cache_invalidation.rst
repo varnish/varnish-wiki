@@ -1,7 +1,7 @@
-.. _m1x_cache_invalidation:
+.. _m2_cache_invalidation:
 
-Magento 1x Cache Invalidation
-=============================
+Magento 2 Cache Invalidation
+============================
 
 
 Use Cache "Flush" and Cache "Flushing"
@@ -16,13 +16,16 @@ Connect to varnishadm
 
 
 
+
 Purge call
-..........
+...........
+
 
 
 
 Purge call to X-headers
-.......................
+........................
+
 
 
 

@@ -22,7 +22,6 @@ Get Started on Varnish
 Recipes for Cache Invalidation
 ==============================
 
-:ref:`Magento 1x Cache Invalidation <m1x_cache_invalidation>`
 :ref:`Magento 2 Cache Invalidation <m2_cache_invalidation>`
 
 
@@ -38,5 +37,4 @@ please look at `here <http://devdocs.magento.com/guides/v2.0/config~guide/varnis
 .. toctree:
 
   /magento2/m2_cache_invalidation
-  /magento1x/m1x_cache_invalidation
   /magento2/index

@@ -45,16 +45,16 @@ warning: Make sure to add the code below the default code given for `vcl_recv`
 Not all URLs should be cached. Especially not in sites that deal with personal
 information such as credit card information.
 
-.. literalinclude:: /snippets/snippet4_exclude_url
+.. literalinclude:: /snippets/m2_exclude_url.vcl
   :language: c
 
 7. Extended Caching
 ===================
 
-There is a subroutine called *vcl_fetch* which is by default set to 120 seconds as can be seen.
-You can extend this caching value by
+There is a subroutine called *vcl_fetch* which is by default set to 120 seconds
+as can be seen. You can extend this caching value by
 
-.. literalinclude:: /snippets/vcl_fetch
+.. literalinclude:: /snippets/vcl_fetch.vcl
   :language: c
 
 This sets the ttl to 5 seconds, thus varnish picks up changes every 5sec.
@@ -73,6 +73,7 @@ Read more about caching at :ref:`Caching with Magento 2 <magento2_ce>`
 
 8. Specific TTL Based Caching
 =============================
+
 Varnish creates a TTL value for every object in the cache. A most effective way
 of increasing a websites hit ratio is to increase the time-to-live (ttl) of the
 objects.

@@ -32,25 +32,26 @@ Try to start Varnish in debug mode!
 
 For systemv users:
 
-.. literalinclude:: /vcl/vclex_varnishstart_debugmode.vcl
+.. literalinclude:: /vcl/vclex_startvarnish_debugmode.vcl
   :language: c
 
 For systemd users:
 
-.. literalinclude:: /vcl/vclex_varnishstart_debugmode.vcl
+.. literalinclude:: /vcl/vclex_startvarnish_debugmode.vcl
   :language: c
-
 
 Varnish is crashing?
 ====================
 
+IF your varnish is crashing it might be due to a number of reasons.
+Here are a few thigns you can try.
+
 panics
-------
 
 
 
 segfaults
----------
+
 
 
 Varnish gives me Guru Meditation
@@ -65,7 +66,4 @@ If your varnish is not caching you can follow our simple steps to receive high h
 follow the detailed `User Guide`_
 
 .. _`User Guide`: https://www.varnish-cache.org/docs/4.1/users-guide/increasing-your-hitrate.html#users-guide-increasing-your-hitrate
-
-
-
 .. _`Troubleshooting Varnish Section`: https://www.varnish-cache.org/docs/4.1/users-guide/troubleshooting.html#users-trouble

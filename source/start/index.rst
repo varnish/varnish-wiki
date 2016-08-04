@@ -5,7 +5,7 @@ Getting Started
 
 Lets get started with Varnishing your website!
 
-Below is a list of resources which can help you understand and manange our software better!
+Below is a list of resources which can help you understand and manage our software better!
 
 1. `The Varnish Book`_ - The book is one of our best Training Manual with lots of details and exercises.
 2. `The Varnish Tutorial`_ - The Tutorial explains the basics and gets you started with Varnish.
@@ -14,7 +14,6 @@ Below is a list of resources which can help you understand and manange our softw
 5. :ref:`Relevant Resources <general_resources>` - contains links to resourceful information beyond our website.
 
 **Last but not the least this little wiki will give you a `hands-on guide` to making your website fly!**
-
 
 :ref:`What do you want to Achieve for your site? <your_varnish_goals>`
 ======================================================================
@@ -44,11 +43,14 @@ Step by Step Configuring for Web Applications
 Our Guide to your Projects
 ---------------------------
 
-:ref:`Magento Tutorial <tut_magento2>`
+Below are links to configuring your choice of web applications with varnish.
 
-:ref:`Wordpress Tutorial <tut_wordpress>`
+:ref:`Magento Tutorial<tut_magento2>`
 
-:ref:`Drupal Tutorial <tut_drupal>`
+:ref:`Wordpress Tutorial<tut_wordpress>`
+
+:ref:`Drupal Tutorial<tut_drupal>`
+
 
 RUN VARNISH <run_varnish>
 ==========================
@@ -61,8 +63,6 @@ Recipes for Cache Invalidation
 
 :ref:`See cache invalidation with examples <cache_ex>`
 
-:ref:`Magento 1x Cache Invalidation <m1x_cache_invalidation>`
-
 :ref:`Magento 2 Cache Invalidation <m2_cache_invalidation>`
 
 :ref:`Wordpress Cache Invalidation <wp_cache_invalidation>`
@@ -70,41 +70,36 @@ Recipes for Cache Invalidation
 :ref:`Drupal Cache Invalidation <drupal_cache_invalidation>`
 
 
-:ref:`The WORLD of VMODS <vmods>`
----------------------------------
-
-
-
-
-
-
-
-
 .. _`The Varnish Book`: http://book.varnish-software.com/4.0/
 .. _`The Varnish Tutorial`: https://www.varnish-cache.org/docs/4.1/tutorial/index.html#tutorial-index
 .. _`The Varnish Users Guide`: https://www.varnish-cache.org/docs/4.1/users-guide/index.html#users-guide-index
 .. _`The Varnish Reference Manual`: https://www.varnish-cache.org/docs/4.1/reference/index.html#reference-index
+.. _`Our Webinar on Cache Invalidation Strategies`: https://info.varnish-software.com/webinars_fm/cache-invalidation-strategies
+
+
+:ref:`The WORLD of VMODS <vmods>`
+---------------------------------
+*coming later*
+
+
 
 .. toctree::
-	:hidden:
+    :hidden:
 
-	tut_varnish
-	tut_wordpress
-	tut_drupal
-	tut_magento2
-	/magento2/m2_step_by_step
-	/magento1x/m1x_step_by_step
-	/wordpress/wp_step_by_step
-	/magento2/m2_cache_invalidation
-	/magento1x/m1x_cache_invalidation
-	/wordpress/wp_cache_invalidation
-	/drupal/drupal_cache_invalidation
-	/drupal/drupal_step_by_step
-	/intro/cache_ex
-	/start/general_resources
-	/vmods/index
-	your_varnish_goals
-	troubleshooting_varnish
-  /start/run_varnish
-
-.. _`Our Webinar on Cache Invalidation Strategies`: https://info.varnish-software.com/webinars_fm/cache-invalidation-strategies
+    /magento2/m2_step_by_step
+    /magento1x/m1x_step_by_step
+    /wordpress/wp_step_by_step
+    /magento2/m2_cache_invalidation
+    /wordpress/wp_cache_invalidation
+    /drupal/drupal_cache_invalidation
+    /drupal/drupal_step_by_step
+    /intro/cache_ex
+    general_resources
+    /vmods/index
+    your_varnish_goals
+    troubleshooting_varnish
+    run_varnish
+  	tut_varnish
+  	tut_wordpress
+  	tut_drupal
+  	tut_magento2
