@@ -67,7 +67,7 @@ To see running processes type:
 
     varnishlog -g raw
 
-It shows Varnish master process checkign up on the caching process.
+It shows Varnish master process checking up on the caching process.
 
 HTTP Request
 ............
@@ -266,7 +266,7 @@ The following VCL code shows how to normalize the Accept-Encoding headers:
 
 Another example to normalize `Accept-Language` header:
 
-.. literalincldeu:: /vcl/vclex_normalize_AcceptLanguage.vcl
+.. literalinclude:: /vcl/vclex_normalize_AcceptLanguage.vcl
   :language: c
 
 One of the best ways to take advantage of vary would be to build the response
@@ -277,6 +277,7 @@ Note: Some application servers send vary with User-Agent. This as you can tell,
 orders varnish to cache a separate copy for every variant client/user-Agent there
 is. This could be a disaster depending on the number of variation of cients you
 serve on a reqular basis.
+
 
 Compression!
 ------------
@@ -296,20 +297,117 @@ And beresp.do_gzip and beresp.do_gunzip are NOT used in VCL.
 `req-http-Encoding` that is say, the `req.http.Accept-Encoding` is set to "gzip"
 that means this client supports compressed content.
 
+*Also note* that if `http_gzip_support` parameter is set to `off`, Varnish will
+not alter any headers and if there is a `Vary: Accept-Encoding` set it will deal
+with it normally just as explained under HTTP_Vary.
+
+Compressing Contents if backends Don't
+......................................
+
+If the backend is not compressing contents, you can tell Varnish to compress the
+content before storing it in cache by appending `beresp.do_gzip = true` in the
+`vcl_backend_response` as shown below.
+
+.. literalinclude:: vcl/vclex_compressContent.vcl
+  :language: c
+
+This code will make the following changes to the object header before inserting
+in cache;
+
+- set `object.http.Content-Encoding` to `gzip`
+- add `Accept-Encoding` to `obj.http.Vary`
+- Weaken `Etag`
+
+Note: Don't try to compress contents that are uncompressable.
+
+
+Uncompressing Content before sending to Cache
+.............................................
+
+To uncompress contents before entering cache, you can tell Varnish to uncompress
+the content before sending it into cache by appending `beresp.do_gunzip = true`
+in the `vcl_backend_response` as shown below.
+
+.. literalinclude:: vcl/vclex_unCompressContent.vcl
+  :language: c
+
+This makes the following changes to the object header before inserting in cache;
+
+- removes `obj.http.Content-Encoding`
+- weaken any Etag (by prepending "W/")
+
+GZIP and ESI
+............
+
+If you intend to or are using Edge Side Includes (ESI) you must be aware that ESI
+and GZIP work together very well. Varnish will do the decompression of content
+for you and recompress it for efficient storage and delivery.
+
+You can read more about `GZIP+ESI`_ with Varnish on the varnish-cache site.
 
 A FAQ on Compression: https://varnish-cache.org/docs/2.1/faq/http.html
-
-
-
-
 
 
 Purging and Banning!
 --------------------
 
+One of the most widely used methods of increasing hit-ratio (which is metioned
+many times on this website) is by increasing the time-to-live (ttl) of the object.
+
+But as you know, in this era surving outdated content aka stale data is like
+serving rotten food that no one will eat.
+
+The solution to this problem is by having a mechanism that will notify varnish
+whenever there is fresh-content. There are three mechanisms to achieve this;
+
+- HTTP Purging
+- BANS
+- Forcing a cache-miss
+
+HTTP Purging
+............
+
+A HTTP Purge is very much like a HTTP request except it does something dfferent.
+
+Purging is when an object is requested from cache and then it is discarded. that
+means everytime there is fresh data for an object, that object is requested and
+`purged`. The simplest way to achieve this is by using the code given below:
+
+.. literalincude:: /vcl/vclex_httpPurge.vcl
+  :language: c
 
 
+Bans
+....
 
+Bans can be implemented for objects that are known to frequently change.
+In such a case, certain contents are banned to be retrieved from the cache based
+on the meta data. The ban is quite a reliable method, as it only works for objects
+in the cache but doesnot interfere with new content being cached or served.
+
+Support for bans is builtin to varnish and it is available from the CLI.
+
+For example to ban every jpeg and png object from baching, you can try the
+following example;
+
+.. literalinclude:: /vcl/vclex_banningImages.vcl
+
+Another example of a BAN:
+
+.. literalinclude:: /vcl/vclex_banningURL.vcl
+
+
+Forcing a Cache Miss
+....................
+
+This mechanism is similar to flushing the entire cache, as in it follows the
+procedure that when an object is not found in the cache it is served from the
+backened. But it also very much like Bans. However cache miss is more reliable as
+it this is forced and very much like refreshing a page. This method refreshes an
+object by forcing a cache miss for a request. Thus enabling a force fetch from the
+backend and overriding the current one. But the old object does remain in the cache
+until its ttl expires. The above mentioned methods have their subroutines pre-written
+in the ``/etc/varnish/default.vcl`` and can be configured and used as required.
 
 Basic Caching
 -------------
@@ -320,9 +418,18 @@ Per Object Cache Invalidation
 -----------------------------
 
 
+Flusing the Entire Cache
+-------------------------
 
-Cache Flush
-------------
+One of the ways mayne people prefer to do cache invalidation is by flusing the
+entire cache thus forcing varnish to fetch from the backend. Which helps in re-filling
+the cache with fresh contents. This could be scripted to take place several times
+an hour based on the amount of changes made on the website. Keeping that in mind,
+if a huge amount of change is made in a short time, this mechanism could slow down
+the response rate as varnish will be visiting the backend more often.
+
+This is obviously not a recommended method for everyday use. But flushing the whole
+cache sometimes wouldn't hurt.
 
 
 
@@ -337,3 +444,4 @@ https://ffwagency.com/blog/varnish-tips-and-tricks
 .. _`varnishlog`: https://www.varnish-cache.org/docs/4.1/reference/varnishlog.html#varnishlog-1
 .. _`Varnish Book`: https://book.varnish-software.com
 .. _`Header Field Definitions, section 14.44 to understand Vary`: https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html
+.. _`GZIP+ESI`: https://www.varnish-cache.org/docs/trunk/phk/gzip.html#phk-gzip
