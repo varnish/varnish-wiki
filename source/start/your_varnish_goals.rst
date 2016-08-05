@@ -9,11 +9,12 @@ invalidations and load balancing. There are a lot of other services that varnish
 provides to enhance this experience for the clients and the service providers.
 
 This section of our wiki is all about;
+
 - The performance of your Varnish server,
 - Fine tuning the performance of your website using Varnish
 - Compressing your web content
 
-You can read more in details about them on the :ref:`varnish-cache.org`_ site.
+You can read more in details about them on the `varnish-cache.org`_ site.
 
 .. _achieve_high_hitrate:
 
@@ -35,13 +36,15 @@ To see the top requests sent to the backend use:
 
   varnishtop -i BereqURL
 
+
 To see which URLs the client is requesting:
 
 .. code-block:: c
 
   varnishtop -i ReqURL
 
-  To see the most popular Accept-encoding header the client is sending:
+
+To see the most popular Accept-encoding header the client is sending:
 
 .. code-block:: c
 
@@ -61,6 +64,7 @@ your data might get over written.
 This has its advantage as it saves memory and only saves logs that you require.
 
 Using the command, `varnishlog` gives raw logs.
+
 To see running processes type:
 
 .. code-block:: c
@@ -152,7 +156,7 @@ collecting the Age header from the request header as shown below:
 
 .. code-block:: c
 
-  varnishlog .I ReqHEader:^Age
+  varnishlog -I ReqHrader:^Age
 
 Pragma
 ......
@@ -163,7 +167,7 @@ then varnish will ignore this header. To support this header, a vcl snippet like
 the one below could be added  to the vcl_backend_response o add support for that
 header in the th VCL:
 
-.. code-block:: c
+.. code-block:: python
 
   if (beresp.http.Pragma ~ "nocache") {
       set beresp.uncacheable = true;
@@ -199,7 +203,7 @@ backened problems.
 A simple example would be to directly set the beresp.ttl in vcl_backend_response
 to a sensible value.
 
-.. code-block:: c
+.. code-block:: bash
 
   sub vcl_backend_response {
             set beresp.ttl = 7 d; # 7 days
@@ -225,7 +229,7 @@ The HTTP Vary header is the most insane and not understood header on the interne
 But this header, HTTP vary is used for caching, so in order to cache it is advised
 to understand this. It is also capable of doing many other wonderful things.
 
-Warning::
+**Warning**
 
 Varnish does not necessarily understand the semantics of a header, or
 what part triggers different variants of a response. In other words, an
@@ -308,7 +312,7 @@ If the backend is not compressing contents, you can tell Varnish to compress the
 content before storing it in cache by appending `beresp.do_gzip = true` in the
 `vcl_backend_response` as shown below.
 
-.. literalinclude:: vcl/vclex_compressContent.vcl
+.. literalinclude:: /vcl/vclex_compressContent.vcl
   :language: c
 
 This code will make the following changes to the object header before inserting
@@ -328,7 +332,7 @@ To uncompress contents before entering cache, you can tell Varnish to uncompress
 the content before sending it into cache by appending `beresp.do_gunzip = true`
 in the `vcl_backend_response` as shown below.
 
-.. literalinclude:: vcl/vclex_unCompressContent.vcl
+.. literalinclude:: /vcl/vclex_unCompressContent.vcl
   :language: c
 
 This makes the following changes to the object header before inserting in cache;
@@ -373,7 +377,7 @@ Purging is when an object is requested from cache and then it is discarded. that
 means everytime there is fresh data for an object, that object is requested and
 `purged`. The simplest way to achieve this is by using the code given below:
 
-.. literalincude:: /vcl/vclex_httpPurge.vcl
+.. literalinclude:: /vcl/vclex_httpPurge.vcl
   :language: c
 
 
@@ -407,21 +411,25 @@ it this is forced and very much like refreshing a page. This method refreshes an
 object by forcing a cache miss for a request. Thus enabling a force fetch from the
 backend and overriding the current one. But the old object does remain in the cache
 until its ttl expires. The above mentioned methods have their subroutines pre-written
-in the ``/etc/varnish/default.vcl`` and can be configured and used as required.
-
-Basic Caching
--------------
-
+in the ``/etc/varnish/default.vcl`` i.e.`req.hash_always_miss` in `vcl_recv` and
+can be configured and used as required.
 
 
 Per Object Cache Invalidation
 -----------------------------
 
+Per object cache invalidation is something you want to use if you want to specify
+individual objects for caching. This requires a great understanding of objects
+and cache invalidation.
 
-Flusing the Entire Cache
+Say for example, If you want to invalidate selected objects but, you can determine
+which objects viewers have requested and invalidate only those objects.
+
+
+Flushing the Entire Cache
 -------------------------
 
-One of the ways mayne people prefer to do cache invalidation is by flusing the
+One of the ways maybe people prefer to do cache invalidation is by flushing the
 entire cache thus forcing varnish to fetch from the backend. Which helps in re-filling
 the cache with fresh contents. This could be scripted to take place several times
 an hour based on the amount of changes made on the website. Keeping that in mind,

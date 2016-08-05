@@ -60,3 +60,4 @@ This website is hosted by `Acquia`_
     /intro/varnish_versions
     /magento1x/index
     /drupal/index
+    tips

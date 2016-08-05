@@ -52,8 +52,8 @@ Below are links to configuring your choice of web applications with varnish.
 :ref:`Drupal Tutorial<tut_drupal>`
 
 
-RUN VARNISH <run_varnish>
-==========================
+:ref:`RUN VARNISH <run_varnish>`
+================================
 
 
 Recipes for Cache Invalidation
