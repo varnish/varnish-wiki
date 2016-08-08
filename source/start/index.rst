@@ -27,6 +27,8 @@ Installing and Configuring Varnish
 :ref:`How to VCL? <vcl>`
 ........................
 
+:ref:`Test your varnish with VarnishTest <varnish_test>`
+
 
 Step by Step Configuring for Web Applications
 ---------------------------------------------
@@ -103,3 +105,4 @@ Recipes for Cache Invalidation
   	tut_wordpress
   	tut_drupal
   	tut_magento2
+    varnish_test

@@ -73,6 +73,10 @@ To see running processes type:
 
 It shows Varnish master process checking up on the caching process.
 
+Go here to understand `Varnishlog in Human Language`_ .
+Here is the source code for `vsltrans`_
+
+
 HTTP Request
 ............
 
@@ -289,6 +293,7 @@ Compression!
 Does varnish Compress objects? As of varnish 4.0 the default is set to compression
 "ON". You can always turn it off. Have a look at the `Reference Guide`_
 
+
 The Default Compression Behaviour
 .................................
 
@@ -304,6 +309,7 @@ that means this client supports compressed content.
 *Also note* that if `http_gzip_support` parameter is set to `off`, Varnish will
 not alter any headers and if there is a `Vary: Accept-Encoding` set it will deal
 with it normally just as explained under HTTP_Vary.
+
 
 Compressing Contents if backends Don't
 ......................................
@@ -389,7 +395,7 @@ In such a case, certain contents are banned to be retrieved from the cache based
 on the meta data. The ban is quite a reliable method, as it only works for objects
 in the cache but doesnot interfere with new content being cached or served.
 
-Support for bans is builtin to varnish and it is available from the CLI.
+Support for bans is built-in to varnish and it is available from the CLI.
 
 For example to ban every jpeg and png object from baching, you can try the
 following example;
@@ -439,13 +445,20 @@ the response rate as varnish will be visiting the backend more often.
 This is obviously not a recommended method for everyday use. But flushing the whole
 cache sometimes wouldn't hurt.
 
+Varnishtest
+...........
 
+Last but not the least, use :ref:`varnishtest <varnish_test>` to test your policies
+before running them in production. Use the `vtctrans`_ if you need help reading the
+verbose output.
 
 Useful links on this topic
 --------------------------
 
-https://ffwagency.com/blog/varnish-tips-and-tricks
-
+`Varnish Tips and Tricks`_
+.. _`Varnishlog in Human Language`: http://vsltrans.varnish.jp/
+.. _`vsltrans`: https://github.com/xcir/vsltrans
+.. _`Varnish Tips and Tricks`: https://ffwagency.com/blog/varnish-tips-and-tricks
 .. _`Reference Guide`: https://www.varnish-cache.org/docs/4.1/reference/varnishd.html#varnishd-1
 .. _`varnish-cache.org`: https://www.varnish-cache.org/docs/4.1/users-guide/performance.html#users-performance
 .. _`varnishtop`: https://www.varnish-cache.org/docs/4.1/reference/varnishtop.html#varnishtop-1
@@ -453,3 +466,8 @@ https://ffwagency.com/blog/varnish-tips-and-tricks
 .. _`Varnish Book`: https://book.varnish-software.com
 .. _`Header Field Definitions, section 14.44 to understand Vary`: https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html
 .. _`GZIP+ESI`: https://www.varnish-cache.org/docs/trunk/phk/gzip.html#phk-gzip
+.. _`vtctrans`: https://github.com/xcir/vtctrans
+
+.. :toctree::
+
+  varnish_test
