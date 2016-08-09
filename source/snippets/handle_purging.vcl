@@ -1,16 +1,19 @@
 #handling purge requsets
 
-if (req.method == "PURGE") {
+sub vcl_recv{
+  ...
+  if (req.method == "PURGE") {
 
-  if (req.http.X-Purge-Method == "regex") {
+    if (req.http.X-Purge-Method == "regex") {
 
-    ban("req.url ~ " + req.url + " &amp;&amp; req.http.host ~ " + req.http.host);
+      ban("req.url ~ " + req.url + " &amp;&amp; req.http.host ~ " + req.http.host);
 
-  return (synth(200, "Banned."));
+    return (synth(200, "Banned."));
 
-} else {
+  } else {
 
-  return (purge);
+    return (purge);
 
-}
+  }
+  }
 }

@@ -6,5 +6,5 @@ sub vcl_backend_response {
 
     set beresp.ttl = 1h;
 
-}
+  }
 }

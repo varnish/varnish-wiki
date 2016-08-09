@@ -196,6 +196,13 @@ Step 5: Testing
 
 Run `http -p Hh localhost`
 
+You can also use varnishtest to test your backend as shown below.
+
+.. literalinclude:: /vtc/vtc_apacheBackend.vtc
+	:language: c
+
+replace your backend ip-address and port number.
+
 
 Step 6: Troubleshooting
 -----------------------

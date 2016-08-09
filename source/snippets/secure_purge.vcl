@@ -7,8 +7,7 @@ acl purge {
 
 if (req.method == "PURGE") {
 
-if (client.ip !~ purge) {
-
-return (synth(405));
+  if (client.ip !~ purge) {
+    return (synth(405));
 
 }

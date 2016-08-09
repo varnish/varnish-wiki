@@ -22,7 +22,6 @@ Facebook, Wikipedia, Vimeo, Twitter, Tumblr, The Guardian, VG.no and many other
 websites.
 
 
-
 :ref:`GET TO KNOW VARNISH <intro>`
 **********************************
 
