@@ -55,8 +55,9 @@ You can view your `built-in vcl` in this location if you are a debian user:
   cat /usr/share/doc/varnish/builtin.vcl
 
 
-**WARNING:** Donot edit this vcl file at any cost. Any vcl you want to add goes
-in the /etc/varnish/default.vcl
+**Note:** This ``builtin.vcl`` file is just for a varnish user to see what is
+present in the builtin file. Edit this vcl doesn't affect anything.
+Any vcl you want to add goes in the /etc/varnish/default.vcl
 
 If you want to re-create your own vcl, we recommend you make changes in the
 `example.vcl`. You will find that file in this location if you are a debian user:
@@ -70,7 +71,20 @@ Built-in Subroutines
 --------------------
 
 VCL Builtin subroutines are the ones which are pre-defined using the syntax
-`vcl_`.
+`vcl_` in the `buildin.vcl` and `default.vcl` (the subroutines here are empty
+by default.)
+
+
+Here is a simplified version of how the VCL works frontend to backend.
+Click on the image to see it large and clear.
+
+.. image:: /image/simplified_fsm.svg
+  :alt: Sphinx Neo-Hittite
+  :align: center
+  :width: 400px
+
+(Collected from the Varnish BOOK)
+
 
 Client Side
 ...........
@@ -145,7 +159,7 @@ Client Side
 - terminates only with return(lookup):
     - lookup (looks up the object in cache. passes to whichever subroutine called it)
 
-**vcl_purge:
+**vcl_purge:**
 
 - called after the purge has been executed and all its variants have been evited.
 - terminates with `return(action)`

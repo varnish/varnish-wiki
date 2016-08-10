@@ -1,7 +1,8 @@
-.. _tut_varnish:
+.. _varnish:
 
+**********************************
 Installing and Configuring Varnish
-==================================
+**********************************
 
 Installing VARNISH
 ==================
@@ -136,7 +137,7 @@ The value of .port should re replaced with webservers listening port, for exampl
 	:language: bash
 
 It is recommended that if changes are made to these files, it should be copied
-and remaned name, because when varnish updates, it will replace any changes made
+and renamed name, because when varnish updates, it will replace any changes made
 with it’s new default.vcl and varnish file.
 
 Now varnish is serving the client at port 80 and listening to the backend at
@@ -144,6 +145,8 @@ port 8080.
 
 This is when you can add ready made VCL Templates or recommended plugins for
 your web Application (Wordpress, Drupal, Magento2)
+
+But before you add any new code you must understand :ref:`VCL <vcl>`
 
 Step 3: Configure Apache2 to work with Varnish
 ----------------------------------------------
@@ -194,7 +197,11 @@ It is always required to restart all services once changes are made in configura
 Step 5: Testing
 ---------------
 
-Run `http -p Hh localhost`
+Run
+
+.. code-block:: bash
+
+	http -p Hh localhost
 
 You can also use varnishtest to test your backend as shown below.
 
@@ -227,3 +234,9 @@ Varnish has a command line interface (CLI) to control any varnish instance.
 
 
 .. _`builtin\.vcl`: https://github.com/varnishcache/varnish-cache/blob/master/bin/varnishd/builtin.vcl
+
+
+.. toctree::
+	:hidden:
+
+	/vcl/index.rst

@@ -4,13 +4,21 @@
 STEP BY STEP GUIDE TO MAKING YOUR MAGENTO SITE FLY
 ***************************************************
 
-Ofcourse you want to get started with increasing the performance of your website!
+Magento2 is a PHP-based e-commerce platform.
+They have two editions:
+
+- Community Edition (CE)
+
+- Enterprise Edition (EE)
+
+Whichever the case, Ofcourse you want to get started with increasing the performance
+of your website!
 So Lets get Started!
 
 1. Installing Magento from the `Magento-Site`_
 ==============================================
 
-2. :ref:`Installing Varnish <tut_varnish>`
+2. :ref:`Installing Varnish <varnish>`
 ==========================================
 
 .. include:: magento2_varnish_configure.rst
@@ -79,9 +87,18 @@ of increasing a websites hit ratio is to increase the time-to-live (ttl) of the
 objects.
 
 
+Visit the Mangento Docs
+=======================
+You can always refer to the `Configure and Use Varnish <http://devdocs.magento.com/guides/v2.0/config~guide/varnish/config~varnish.html>`_
+at the Magento site.
+
+To see the guide on installing and configuring Magento with Varnish on webserver,
+please look at `here <http://devdocs.magento.com/guides/v2.0/config~guide/varnish/config~varnish~configure.html>`_.
+
+
 .. _`Magento-Site`: http://devdocs.magento.com/guides/v2.1/install-gde/bk-install-guide.html
 
 .. toctree::
 
   magento2_ce
-  /start/tut_varnish
+  /start/varnish

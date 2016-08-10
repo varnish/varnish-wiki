@@ -1,0 +1,26 @@
+digraph varnishtest {
+    center=1
+    rankdir="LR"
+    client->varnish [ color=red ]
+    varnish->client [ color=purple ]
+    varnish->server [ color=purple ]
+    server->varnish [ color=blue ]
+
+    server [
+      shape=box
+      color=blue
+      label="Server s1"
+    ]
+
+    varnish [
+      shape=box
+      color=purple
+      label="Varnishtest v1"
+    ]
+
+    client [
+      shape=box
+      color=red
+      label="Client c1"
+    ]
+ }

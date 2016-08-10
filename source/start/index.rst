@@ -21,13 +21,14 @@ Below is a list of resources which can help you understand and manage our softwa
 Installing and Configuring Varnish
 ----------------------------------
 
-:ref:`Installing Varnish <tut_varnish>`
+:ref:`Installing Varnish <varnish>`
 .......................................
 
 :ref:`How to VCL? <vcl>`
 ........................
 
 :ref:`Test your varnish with VarnishTest <varnish_test>`
+........................................................
 
 
 Step by Step Configuring for Web Applications
@@ -45,13 +46,11 @@ Step by Step Configuring for Web Applications
 Our Guide to your Projects
 ---------------------------
 
-Below are links to configuring your choice of web applications with varnish.
+Below are links to extra configuring your choice of web applications with varnish.
 
-:ref:`Magento Tutorial<tut_magento2>`
+**Coming Soon**
 
-:ref:`Wordpress Tutorial<tut_wordpress>`
-
-:ref:`Drupal Tutorial<tut_drupal>`
+Once the vcl section is complete.
 
 
 :ref:`RUN VARNISH <run_varnish>`
@@ -101,8 +100,5 @@ Recipes for Cache Invalidation
     your_varnish_goals
     troubleshooting_varnish
     run_varnish
-  	tut_varnish
-  	tut_wordpress
-  	tut_drupal
-  	tut_magento2
+  	varnish
     varnish_test

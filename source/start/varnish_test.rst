@@ -21,10 +21,9 @@ Here is a list of contexts where you can use `varnishtest`:
 
 - Testing your varnish and backend installation
 - Configuring your varnish cache Installation
-- When writing complex caching policies in VCL
-  Such as:
-    ~ test a cache invalidation method
-    ~ reproduce bugs when filing a report
+- When writing complex caching policies in VCL such as:
+      - test a cache invalidation method
+      - reproduce bugs when filing a report
 - When tuning varnish cache
 - To define and test modules for varnish cache extensions (VMOD)
 - Writing applications that integrate well with Varnish Cache and utilizes all its
@@ -58,7 +57,8 @@ Varnishtest requires that you name the test.
 Here is an example below:
 
 .. code-block:: python
-  Varnishtest "This is a VarnishTest for Testing"
+
+  varnishtest "This is a VarnishTest for Testing"
 
 
 Defining the Components
@@ -69,6 +69,11 @@ Varnishtest requires 3 components to run the test:
 - A Server (orgin server)
 - A Varnish Cache Instance
 - A Client
+
+.. image:: /image/varnishtest_anatomy.svg
+  :alt: Sphinx Neo-Hittite
+  :align: center
+  :scale: 100%
 
 Declaring the Server
 ....................
@@ -130,24 +135,47 @@ Running the Test
 **Note:** If you are writing your own test, make sure that you point to the
 directory of where the test is stored.
 
-If you feel the need toinspect/understand the test better, you can always try the
-verbose mode with a `-v` as snown below:
+This is the positive output to expect:
+
+.. code-block:: c
+
+  #     top  TEST example.vtc passed (1.709)
+
+If you feel the need to inspect/understand the test better, you can always try the
+verbose mode with a `-v` as shown below:
 
 .. code-block:: c
 
   varnishtest -v example.vtc
 
+This is what a verbose output looks like for the ``example.vtc``:
 
-Some Resources to look at for `varnishtest`_ :
+.. literalinclude:: /vtc/example_voutput.vtc
+
+Some Resources to look at for `varnishtest`_
+---------------------------------------------
+
+If you want to try out the testcases already available with varnishtest,
+`Clone`_ the `varnish-cache repository from github`_ and visit the folder:
+
+.. code-block:: bash
+
+  cd varnish-cache/bin/varnishtest/tests
+
+All the tests are here. Run them with ``varnishtest``
+
 
 `Naming Scheme for Varnish Test`_
 
-Another great post on `Smashing Magazine about Varnishtest`_
+Another great post on `Smashing Magazine about Varnishtest`_ written by our
+filed engineer Arianna Aondio
 
 `Understanding VTC`_
 
 `Varnishtest for Humans`_
 
+.. _`Clone`: https://github.com/varnishcache/varnish-cache.git
+.. _`varnish-cache repository from github`: https://github.com/varnishcache/varnish-cache
 .. _`Varnishtest for Humans`: https://github.com/xcir/vtctrans
 .. _`varnishtest`: https://www.varnish-cache.org/docs/trunk/reference/varnishtest.html
 .. _`Understanding VTC`: https://www.varnish-cache.org/docs/trunk/reference/vtc.html?highlight=varnishtest
