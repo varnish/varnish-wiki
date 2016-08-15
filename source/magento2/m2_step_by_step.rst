@@ -16,21 +16,21 @@ of your website!
 So Lets get Started!
 
 1. Installing Magento from the `Magento-Site`_
-==============================================
+----------------------------------------------
 
 2. :ref:`Installing Varnish <varnish>`
-==========================================
+------------------------------------------
 
 .. include:: magento2_varnish_configure.rst
 
 4. Restart services after making changes
-========================================
+----------------------------------------
 
 .. literalinclude:: /snippets/snippet2_restart_systemd
   :language: c
 
 5. Basic Caching
-================
+----------------
 
 Varnish doesnot cache cookies or its headers. But some cookies are marked as safe
 by the magento site. Therefore it is recommended to remove or ignore these cookies
@@ -48,7 +48,7 @@ warning: Make sure to add the code below the default code given for `vcl_recv`
   :language: c
 
 6. Excluding certain URLs
-=========================
+-------------------------
 
 Not all URLs should be cached. Especially not in sites that deal with personal
 information such as credit card information.
@@ -57,7 +57,7 @@ information such as credit card information.
   :language: c
 
 7. Extended Caching
-===================
+-------------------
 
 There is a subroutine called *vcl_fetch* which is by default set to 120 seconds
 as can be seen. You can extend this caching value by
@@ -80,15 +80,16 @@ Varnish has a better solution for that.
 Read more about caching at :ref:`Caching with Magento 2 <magento2_ce>`
 
 8. Specific TTL Based Caching
-=============================
+-----------------------------
 
 Varnish creates a TTL value for every object in the cache. A most effective way
 of increasing a websites hit ratio is to increase the time-to-live (ttl) of the
 objects.
 
 
-Visit the Mangento Docs
-=======================
+Visit the Magento Docs
+----------------------
+
 You can always refer to the `Configure and Use Varnish <http://devdocs.magento.com/guides/v2.0/config~guide/varnish/config~varnish.html>`_
 at the Magento site.
 
@@ -99,6 +100,7 @@ please look at `here <http://devdocs.magento.com/guides/v2.0/config~guide/varnis
 .. _`Magento-Site`: http://devdocs.magento.com/guides/v2.1/install-gde/bk-install-guide.html
 
 .. toctree::
+  :hidden:
 
   magento2_ce
   /start/varnish

@@ -38,7 +38,7 @@ Varnish is easy to set up and use. Since we have an open source project you are
 always welcome to try our community edition and contribute your fare share
 of new libraries, plug-ins and features.
 
-So where is Drupal will you be using Varnish?
+So where in Drupal will you be using Varnish?
 
 Drupal being a Content Management System,
 - Stores its contents in a database (mostly a separate independent database with its own mind)
@@ -76,5 +76,4 @@ Our most Recommended `Drupal Apps` for Varnish
 .. toctree::
 
   drupal_resources
-  drupal_cache_invalidation
   drupal_step_by_step

@@ -1,0 +1,30 @@
+# more then one backend
+
+server s1 {
+  rxreq
+  txresp
+
+  rxreq
+  txresp
+ } -start
+
+# expecting a request with a given url
+
+server s1 {
+  rxreq
+  expect req.url == "/"
+  txresp
+} -start
+
+#Expecting an url with specified text in the body
+
+server s1 {
+    rxreq
+    expect req.url == "info.varnish-software.com/blog/"
+    txresp  -body "varnish"
+
+    rxreq
+    expect req.url == "info.varnish-software.com/blog/"
+    txresp  -body "cache"
+
+}

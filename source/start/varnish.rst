@@ -4,9 +4,6 @@
 Installing and Configuring Varnish
 **********************************
 
-Installing VARNISH
-==================
-
 The following text discusses how to configure your webserver to use Varnish.
 Note that the installation is different for *systemv* and *systemd*.
 The following guide is for systemd as many linux distributions are now adopting to

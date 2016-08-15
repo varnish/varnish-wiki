@@ -236,7 +236,6 @@ vcl.load/vcl.discard
 - terminates with return(action)
     - ok (Normal return, VCL will be discarded.)
 
-
 More details `subroutines here`_
 :ref:`Refer to VCL Examples <vcl_resources>`
 

@@ -3,6 +3,8 @@
 
 # this is an example of Varnish 3, needs to be tested for varnish 4
 
+sub vcl_recv {
+
 if (req.http.Cookie) {
     # removing these styling and photo cookes from here will allow it to be cached
     if (req.url ~ "(?i)\.(css|js|jpg|jpeg|gif|png|ico)(\?.*)?$") {
@@ -26,7 +28,7 @@ if (req.http.Cookie) {
       # cache the page. Pass it on to Apache directly.
       return (pass);
     }
-
+}
 
 # removing cookies for static files
 

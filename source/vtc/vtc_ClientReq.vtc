@@ -1,0 +1,33 @@
+# running one client multiple times to mock up a stream of client requests
+
+client c1 {
+	txreq
+	rxresp
+}
+
+client c1 -run
+client c1 -run
+client c1 -run
+
+
+# client sending multiple requests
+
+clent c1 {
+	txreq -url "/info.varnish-software.com/blog/"
+	rxresp
+  expect resp.status == 200
+
+	txreq -url "/info.varnish-software.com/blog/"
+	rxresp
+  expect resp.status == 200
+} -run
+
+delay 0.5
+
+#client expecting particular response
+
+client c1 {
+	txreq -url "/"
+	rxresp
+	expect resp.http.hello == "Hello Varnish!"
+} -run

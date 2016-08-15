@@ -43,6 +43,12 @@ Step by Step Configuring for Web Applications
 :ref:`Drupal with Varnish <drupal_step_by_step>`
 
 
+Configuring for Enterprise Products
+-----------------------------------
+
+:ref:`Adobe Extension Manager (AEM) <aem>`
+
+
 Our Guide to your Projects
 ---------------------------
 
@@ -52,6 +58,7 @@ Below are links to extra configuring your choice of web applications with varnis
 
 Once the vcl section is complete.
 
+ref:`Common vcl configuration <sample_vcl>`
 
 :ref:`RUN VARNISH <run_varnish>`
 ================================
@@ -63,12 +70,6 @@ Recipes for Cache Invalidation
 `Our Webinar on Cache Invalidation Strategies`_
 
 :ref:`See cache invalidation with examples <cache_ex>`
-
-:ref:`Magento 2 Cache Invalidation <m2_cache_invalidation>`
-
-:ref:`Wordpress Cache Invalidation <wp_cache_invalidation>`
-
-:ref:`Drupal Cache Invalidation <drupal_cache_invalidation>`
 
 
 .. _`The Varnish Book`: http://book.varnish-software.com/4.0/
@@ -87,12 +88,10 @@ Recipes for Cache Invalidation
 .. toctree::
     :hidden:
 
+    varnish
     /magento2/m2_step_by_step
     /magento1x/m1x_step_by_step
     /wordpress/wp_step_by_step
-    /magento2/m2_cache_invalidation
-    /wordpress/wp_cache_invalidation
-    /drupal/drupal_cache_invalidation
     /drupal/drupal_step_by_step
     /intro/cache_ex
     general_resources
@@ -100,5 +99,6 @@ Recipes for Cache Invalidation
     your_varnish_goals
     troubleshooting_varnish
     run_varnish
-  	varnish
     varnish_test
+    aem
+    sample_vcl

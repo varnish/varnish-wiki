@@ -215,7 +215,7 @@ to a sensible value.
 
 
 The example below shows the beresp-ttl value set to 5days, that means the url
-will be stored in cache for 7days and varnish will nto cache it for 7 days.
+will be stored in cache for 7days and varnish will not cache it for 7 days.
 
 .. code-block:: c
 
@@ -383,7 +383,7 @@ Purging is when an object is requested from cache and then it is discarded. that
 means everytime there is fresh data for an object, that object is requested and
 `purged`. The simplest way to achieve this is by using the code given below:
 
-.. literalinclude:: /vcl/vclex_httpPurge.vcl
+.. literalinclude:: /vcl/vcl_purgeFromBackend.vcl
   :language: c
 
 

@@ -152,6 +152,53 @@ This is what a verbose output looks like for the ``example.vtc``:
 
 .. literalinclude:: /vtc/example_voutput.vtc
 
+
+Taking your varnishtest to the next level
+------------------------------------------
+
+Connecting real Backend
+-----------------------
+
+.. literalinclude:: /vtc/vtc_addRunningBackend.vtc
+  :language: c
+
+Server - Answering more then one request
+.........................................
+
+.. literalinclude:: /vtc/vtc_ServerReq.vtc
+  :language: c
+  :lines: 1-9
+
+Server - Expecting a request with url
+......................................
+
+.. literalinclude:: /vtc/vtc_ServerReq.vtc
+  :language: c
+  :lines: 11-17
+
+
+Server - Expecting particular text in body
+...........................................
+
+.. literalinclude:: /vtc/vtc_ServerReq.vtc
+  :language: c
+  :lines: 19-31
+
+Client - Expecting Response
+...........................
+
+.. literalinclude:: /vtc/vtc_ClientReq.vtc
+  :language: c
+
+Setting varnish to Expect
+.........................
+
+.. literalinclude:: /vtc/vtc_varnishExpect.vtc
+  :language: c
+
+
+You may have noticed that varnishtest preparing, executing
+
 Some Resources to look at for `varnishtest`_
 ---------------------------------------------
 
@@ -174,6 +221,9 @@ filed engineer Arianna Aondio
 
 `Varnishtest for Humans`_
 
+`Getting started with Varnish test`_
+
+.. _`Getting started with Varnish test`: http://www.clock.co.uk/blog/getting-started-with-varnishtest
 .. _`Clone`: https://github.com/varnishcache/varnish-cache.git
 .. _`varnish-cache repository from github`: https://github.com/varnishcache/varnish-cache
 .. _`Varnishtest for Humans`: https://github.com/xcir/vtctrans

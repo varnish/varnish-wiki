@@ -4,8 +4,6 @@
 STEP BY STEP GUIDE TO MAKING YOUR wordpress SITE FLY
 *****************************************************
 
-STEP-BY-STEP: SPEED UP WORDPRESS WITH VARNISH SOFTWARE
-======================================================
 
 This article was originally written by Web Designer Magazine - http://www.webdesignermag.co.uk/
 
@@ -14,21 +12,8 @@ Also Published on www.varnish-software.com by Federico G. Schwindt
 **Important Note**
 
 The installation included in the original article was for systemv.
-Now that ssytemd is everywhere, we replaced the installation section with a link
-to systemd varnish installations.
-
-Increase the performance of Wordpress using Varnish, and optimize your
-content-heavy sites Nobody like to wait ages for a page to load. If your site is
-slow, people will go somewhere else before they can read that great article you
-wrote. Page speed is still an issue for many sites and recent studies show that
-40 percent of users will abandon your site if it takes more than three seconds
-to load. this is where Varnish comes in. Varnish is an HTTP accelerator or caching
-HTTP HTTP reverse proxy. It receives requests from clients and tries to answer
-them from the cache. If it cannot answer from the cache it will forward it to the
-origin server, fetch the response, store it in cache and deliver it to the client.
-When Varnish has a cached response ready, it is typically delivered in a matter
-of microseconds: two orders of magnitude faster than the average origin server,
-so make sure that Varnish answers as much as possible from the cache.
+Now that ssytemd is everywhere, we have written this tutorial mainly directed
+with the examples from the article.
 
 In this tutorial, we will go through some of the common steps required to install
 and configure Varnish and integrate it with WordPress to take your site to the
@@ -67,14 +52,23 @@ To finalize, open a command prompt and run the following as root.
 
 Before we configure Varnish to handle all the web traffic to our WordPress site,
 we will need to move Apache to a different port. Let’s then change all occurrences
-of port 80 with a text editor in /etc/apache2/ports.conf and any files under
-/etc/apache2/sites-enabled/ to 8080.
+of **port 80 to 8080** using a text editor as show below.
+
+.. code-block:: bash
+
+  /etc/apache2/ports.conf
+
+  and any files under
+
+.. code-block:: bash
+
+  /etc/apache2/sites-enabled/
 
 
 5. Serve from Varnish
 ---------------------
 
-**new changes included** in the `Varnish Tutorial <varnish>`
+**new changes included** in the :ref:`Varnish Tutorial <varnish>`
 
 6. Set the backend
 ------------------

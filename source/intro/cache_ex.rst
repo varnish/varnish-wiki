@@ -15,6 +15,12 @@ Connect to Varnishadm
 HTTP Purge
 ----------
 
+PURGE an article from the Backend
+.................................
+
+.. literalinclude:: /vcl/vcl_purgeFromBackend.vcl
+  :language: c
+
 
 Purge call
 ...........
@@ -44,6 +50,8 @@ HASHTWO
 -------
 
 
+GRACE
+-----
 
 
 

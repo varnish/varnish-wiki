@@ -1,20 +1,20 @@
 .. _drupal_step_by_step:
 
-*****************************************************
+**************************************************
 STEP BY STEP GUIDE TO MAKING YOUR drupal SITE FLY
-*****************************************************
+**************************************************
 
 go through some of the common steps required to install and configure Varnish
 and integrate it with drupal to take your site to the next level.
 
 1. Installing Drupal 8 from the `Drupal-Site`_
-===============================================
+-----------------------------------------------
 
 2. :ref:`Installing Varnish <varnish>`
-==========================================
+------------------------------------------
 
 3. How to place Drupal 8 behind Varnish
-=======================================
+---------------------------------------
 
 So now that you have setup Varnish in-front of your Drupal 8 installation, and
 have apache2 configured, you need to know how to configure Drupal to purge cached
@@ -39,7 +39,7 @@ you have so good luck making that coice!
 - Then move on to more advanced stuff; personalized caching is a recommendation.
 
 4. Caching
-==========
+----------
 
 Varnish caches everything, so you need to write a rule to exclude what you do not
 want to cache.
@@ -102,7 +102,7 @@ This bit of code is to allow which IP addresses can access the config files.
 
 
 4. Restart services after making changes
-========================================
+----------------------------------------
 
 Don't forget to restart after making changes:
 

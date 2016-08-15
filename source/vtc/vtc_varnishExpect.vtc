@@ -1,0 +1,16 @@
+# setting varnish to expect
+
+varnish v1 -expect cache_miss == 0
+varnish v1 -expect cache_hit == 0
+
+client c1 -run
+
+varnish v1 -expect cache_miss == 2
+varnish v1 -expect cache_hit == 0
+
+client c1 -run
+client c1 -run
+client c1 -run
+
+varnish v1 -expect cache_miss == 2
+varnish v1 -expect cache_hit == 6

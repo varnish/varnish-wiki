@@ -71,6 +71,10 @@ The hashtwo or xkey is for websites requiring large scale caching.
 DIFFERENCE BETWEEN THE BANS, PURGES, HIT-for-pass, Expiring
 ------------------------------------------------------------
 
+The best comparison between the different cache invalidation techniques is the
+one in the book, simple and easy to understand.
+
+http://book.varnish-software.com/4.0/chapters/Cache_Invalidation.html
 
 
 More Caching Resources
