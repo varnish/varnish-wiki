@@ -50,15 +50,19 @@ HASHTWO
 -------
 
 
-GRACE
------
+A complete GRACE example
+------------------------
 
+Source: https://info.varnish-software.com/blog/grace-varnish-4-stale-while-revalidate-semantics-varnish
 
+https://gist.github.com/perbu/93803707dbcdbc345da0
 
 
 **ref to examples in vcl**
 
+IDEA: https://info.varnish-software.com/blog/10-varnish-cache-mistakes-and-how-avoid-them
 
+Collect vcl for this post!!!
 
 .. toctree::
   :hidden:
