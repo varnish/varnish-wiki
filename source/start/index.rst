@@ -49,16 +49,21 @@ Configuring for Enterprise Products
 :ref:`Adobe Extension Manager (AEM) <aem>`
 
 
-Our Guide to your Projects
----------------------------
+Configuring VCL Beyond the default
+----------------------------------
 
-Below are links to extra configuring your choice of web applications with varnish.
+Below are links to examples of vcl configuring in/with varnish.
 
-**Coming Soon**
+:ref:`What's in the Builtin VCL? <builtin_vcl>`
 
-Once the vcl section is complete.
+:ref:`Common vcl configuration <sample_vcl>`
 
-ref:`Common vcl configuration <sample_vcl>`
+:ref:`Wordpress and vcl <wp_vcl>`
+
+:ref:`Drupal and vcl <drupal_vcl>`
+
+:ref:`Magento2 and vcl <magento2_vcl>`
+
 
 :ref:`RUN VARNISH <run_varnish>`
 ================================
@@ -102,3 +107,7 @@ Recipes for Cache Invalidation
     varnish_test
     aem
     sample_vcl
+    wp_vcl
+    drupal_vcl
+    builtin_vcl
+    magento2_vcl

@@ -206,4 +206,87 @@ Passing Real IP to backend
 
 Handling Request from backend
 =============================
- ** in prgoress**
+
+How varnish handles the HTTP request coming from our backends relys on the VCL
+we write in our backend sub routines.
+
+The vcl_backend_response sub routine is called after the response headers are
+successfully retrieved from the backend.
+
+Pausing ESI request
+...................
+
+.. literalinclude:: /vcl/vcl_defaultSample_mattias.vcl
+  :language: c
+  :lines: 298,301-305,348-349
+
+
+Enabling Cache for Static files
+...............................
+
+.. literalinclude:: /vcl/vcl_defaultSample_mattias.vcl
+  :language: c
+  :lines: 298,310-312,349,348-349
+
+Streaming
+.........
+
+.. literalinclude:: /vcl/vcl_defaultSample_mattias.vcl
+  :language: c
+  :lines: 298,316-320,348-349
+
+Redirecting
+...........
+
+Sometimes, a 301 or 302 redirect formed via Apache's mod_rewrite can mess with the HTTP port that is being passed along.
+This often happens with simple rewrite rules in a scenario where Varnish runs on :80 and Apache on :8080 on the same box.
+A redirect can then often redirect the end-user to a URL on :8080, where it should be :80.
+This may need finetuning on your setup.
+
+.. literalinclude:: /vcl/vcl_defaultSample_mattias.vcl
+  :language: c
+  :lines: 298,327-330,348-349
+
+Setting cache for static files if Unset
+.......................................
+
+.. literalinclude:: /vcl/vcl_defaultSample_mattias.vcl
+  :language: c
+  :lines: 298,332-337,348-349
+
+Example of excluding from cache
+...............................
+
+.. literalinclude:: /vcl/vcl_defaultSample_mattias.vcl
+  :language: c
+  :lines: 298,339-342,348-349
+
+Setting Grace mode
+..................
+
+.. literalinclude:: /vcl/vcl_defaultSample_mattias.vcl
+  :language: c
+  :lines: 298,344-346,349
+
+
+Adding Debug headers
+....................
+
+.. literalinclude:: /vcl/vcl_defaultSample_mattias.vcl
+  :language: c
+  :lines: 353,356-360,378-379
+
+Handling HTTP purge
+...................
+
+.. literalinclude:: /vcl/vcl_defaultSample_mattias.vcl
+  :language: c
+  :lines: 381-388
+
+
+vcl_synth
+.........
+
+.. literalinclude:: /vcl/vcl_defaultSample_mattias.vcl
+  :language: c
+  :lines: 390-406
