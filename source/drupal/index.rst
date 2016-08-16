@@ -71,9 +71,16 @@ VCL Migrator, which can help you upgrade from Varnish 3 to Varnish 4.
 
 Our most Recommended `Drupal Apps` for Varnish
 
-:ref:`drupal Resources <drupal_resources>`
+Drupal Resources
+----------------
+
+Varnish for beginners: https://dev.acquia.com/blog/explaining-varnish-beginners
+
+Managing Project with Varnish: https://www.drupal.org/project/varnish
+
+Configuring Varnish 3 for Drupal 7: https://fourkitchens.atlassian.net/wiki/display/TECH/Configure+Varnish+3+for+Drupal+7
 
 .. toctree::
-
-  drupal_resources
+  :hidden:
+  
   drupal_step_by_step

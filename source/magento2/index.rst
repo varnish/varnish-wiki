@@ -65,13 +65,12 @@ Need Magento 1? `follow here <magento1x>`
 
 Our most Recommended `Magento Plugins <top5_magento_plugins>` for Varnish
 
-Site MAP
-========
 
 .. toctree::
+  :hidden:
 
   magento2_varnish_basics
   m2_step_by_step
-  /magento1x/index
-  /magento2/top5_magento_plugins
+  magento1x
+  top5_magento_plugins
   magento2_resources

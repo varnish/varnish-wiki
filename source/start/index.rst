@@ -13,7 +13,7 @@ Below is a list of resources which can help you understand and manage our softwa
 4. `The Varnish Reference Manual`_ - contains hard facts and is useful for looking up specific questions.
 5. :ref:`Relevant Resources <general_resources>` - contains links to resourceful information beyond our website.
 
-**Last but not the least this little wiki will give you a `hands-on guide` to making your website fly!**
+**Last but not the least this little wiki will give you a Hands-On Guide to making your website fly!**
 
 :ref:`What do you want to Achieve for your site? <your_varnish_goals>`
 ======================================================================
@@ -36,8 +36,6 @@ Step by Step Configuring for Web Applications
 
 :ref:`Magento 2 with Varnish <m2_step_by_step>`
 
-:ref:`Magento 1x with Varnish <m1x_step_by_step>`
-
 :ref:`Wordpress with Varnish <wp_step_by_step>`
 
 :ref:`Drupal with Varnish <drupal_step_by_step>`
@@ -47,6 +45,8 @@ Configuring for Enterprise Products
 -----------------------------------
 
 :ref:`Adobe Extension Manager (AEM) <aem>`
+
+:ref:`Expression Engine (EE) <expressionEngine>`
 
 
 Configuring VCL Beyond the default
@@ -66,11 +66,11 @@ Below are links to examples of vcl configuring in/with varnish.
 
 
 :ref:`RUN VARNISH <run_varnish>`
-================================
+--------------------------------
 
 
 Recipes for Cache Invalidation
-==============================
+------------------------------
 
 `Our Webinar on Cache Invalidation Strategies`_
 
@@ -86,6 +86,7 @@ Recipes for Cache Invalidation
 
 :ref:`The WORLD of VMODS <vmods>`
 ---------------------------------
+
 *coming later*
 
 
@@ -95,7 +96,6 @@ Recipes for Cache Invalidation
 
     varnish
     /magento2/m2_step_by_step
-    /magento1x/m1x_step_by_step
     /wordpress/wp_step_by_step
     /drupal/drupal_step_by_step
     /intro/cache_ex
@@ -111,3 +111,4 @@ Recipes for Cache Invalidation
     drupal_vcl
     builtin_vcl
     magento2_vcl
+    expressionEngine

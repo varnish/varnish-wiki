@@ -3,9 +3,6 @@
 Some Sample VCL for Drupal 7 and 8
 ==================================
 
-Varnish Frontend Config
------------------------
-
 Backend Definition
 ..................
 
@@ -94,6 +91,10 @@ Grace
   :language: c
   :lines: 124,291-298,414
 
+.. literalinclude:: /vcl/vcl_defaultDrupal_niteman.vcl
+  :language: c
+  :lines: 714,748-750,860
+
 Compression
 ...........
 
@@ -120,14 +121,14 @@ Stripping Trailing `?` if they exist
 
 .. literalinclude:: /vcl/vcl_defaultDrupal_niteman.vcl
   :language: c
-  :lines: 124,330-,414
+  :lines: 124,330-332,414
 
 Normalizing Query String arguments
 ..................................
 
 .. literalinclude:: /vcl/vcl_defaultDrupal_niteman.vcl
   :language: c
-  :lines: 124,333,334,414
+  :lines: 124,334,335,414
 
 Removing cookies
 ................
@@ -206,7 +207,7 @@ Ban Lurker Friendly-ban support
 
 .. literalinclude:: /vcl/vcl_defaultDrupal_niteman.vcl
   :language: c
-  :lines: 541,543-545
+  :lines: 541,543-545,621
 
 Purge Head Cleanup
 ..................
@@ -268,6 +269,10 @@ Restarting Request:
   :language: c
   :lines: 633,639-645,699
 
+.. literalinclude:: /vcl/vcl_defaultDrupal_niteman.vcl
+  :language: c
+  :lines: 864,868-871,903
+
 Load synthetic responses from disk:
 
 .. literalinclude:: /vcl/vcl_defaultDrupal_niteman.vcl
@@ -281,9 +286,6 @@ Redirection:
   :lines: 633,674-676,699
 
 
-Varnish Backend fetch
----------------------
-
 Lurker-Friendly Support
 .......................
 
@@ -291,24 +293,58 @@ Lurker-Friendly Support
   :language: c
   :lines: 714,715-718,860
 
-**Incomplete**
+
+Caching Exceptions
+..................
+
+.. literalinclude:: /vcl/vcl_defaultDrupal_niteman.vcl
+  :language: c
+  :lines: 714,721-737,860
+
+Retrieving Request
+..................
+
+.. literalinclude:: /vcl/vcl_defaultDrupal_niteman.vcl
+  :language: c
+  :lines: 714,740-745,860
+
+Stripping Cookies from Static file types
+........................................
+
+.. literalinclude:: /vcl/vcl_defaultDrupal_niteman.vcl
+  :language: c
+  :lines: 714,754-757,860
+
+Processing ESI response
+.......................
+
+.. literalinclude:: /vcl/vcl_defaultDrupal_niteman.vcl
+  :language: c
+  :lines: 714,765-770,860
 
 
+GZIP response
+.............
 
+.. literalinclude:: /vcl/vcl_defaultDrupal_niteman.vcl
+  :language: c
+  :lines: 714,774-786,860
 
+Drupal 8's Pipe Support
+.......................
 
+.. literalinclude:: /vcl/vcl_defaultDrupal_niteman.vcl
+  :language: c
+  :lines: 714,788-794,860
 
+Debugging header
+................
 
-
-
-
-
-
-
-
-
-
+.. literalinclude:: /vcl/vcl_defaultDrupal_niteman.vcl
+  :language: c
+  :lines: 714,797-830,834-841,860,864,874-879,903
 
 
 Source: https://github.com/NITEMAN/varnish-bites/blob/master/varnish4/drupal-base.vcl
+
 Collected: 16th August 2016

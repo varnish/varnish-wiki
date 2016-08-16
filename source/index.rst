@@ -40,7 +40,7 @@ websites.
 
 `Is Your Varnish Working?`_
 ===========================
-This website is hosted by `Acquia`_
+This varnish checking website is hosted by `Acquia`_
 
 .. _`Acquia`: https://dev.acquia.com/blog/explaining-varnish-beginners
 .. _`Is Your Varnish Working?`: http://www.isvarnishworking.com/
@@ -57,6 +57,5 @@ This website is hosted by `Acquia`_
     /wordpress/index
     /vcl/index
     /intro/varnish_versions
-    /magento1x/index
     /drupal/index
     tips

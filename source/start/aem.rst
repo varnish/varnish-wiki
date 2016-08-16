@@ -1,8 +1,8 @@
 .. _aem:
 
-************************
-Adobe Experience Manager
-************************
+************************************
+Adobe Experience Manager and Varnish
+************************************
 
 Adobe Experience Manager (AEM) is an enterprised web content management system
 that facilitates organizing, managing, and delivering creative assets. It has

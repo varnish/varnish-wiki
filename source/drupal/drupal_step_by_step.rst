@@ -110,7 +110,6 @@ Don't forget to restart after making changes:
   :language: c
 
 
-
 .. _`Drupal-Site`: https://www.drupal.org/8
 
 .. toctree::

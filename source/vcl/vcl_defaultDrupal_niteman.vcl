@@ -877,7 +877,7 @@ sub vcl_backend_error {
   if ( bereq.retries > 0 ) {
     set beresp.http.X-Varnish-Retries = bereq.retries;
   }
-
+  # these are built-in vcl
   set beresp.http.Content-Type = "text/html; charset=utf-8";
   set beresp.http.Retry-After = "5";
   synthetic( {"<!DOCTYPE html>
