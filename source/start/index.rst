@@ -21,8 +21,8 @@ Below is a list of resources which can help you understand and manage our softwa
 Installing and Configuring Varnish
 ----------------------------------
 
-:ref:`Installing Varnish <varnish>`
-.......................................
+:ref:`Installing Varnish <varnish_ubuntu>`
+.................................................
 
 :ref:`How to VCL? <vcl>`
 ........................
@@ -56,7 +56,7 @@ Below are links to examples of vcl configuring in/with varnish.
 
 :ref:`What's in the Builtin VCL? <builtin_vcl>`
 
-:ref:`Common vcl configuration <sample_vcl>`
+:ref:`Common vcl configuration <sample_vclTemplate>`
 
 :ref:`Wordpress and vcl <wp_vcl>`
 
@@ -84,31 +84,28 @@ Recipes for Cache Invalidation
 .. _`Our Webinar on Cache Invalidation Strategies`: https://info.varnish-software.com/webinars_fm/cache-invalidation-strategies
 
 
-:ref:`The WORLD of VMODS <vmods>`
----------------------------------
 
 *coming later*
 
 
-
 .. toctree::
     :hidden:
+    :maxdepth: 2
 
-    varnish
-    /magento2/m2_step_by_step
-    /wordpress/wp_step_by_step
-    /drupal/drupal_step_by_step
-    /intro/cache_ex
+    /content/tutorials/varnish/varnish_ubuntu
+    /content/tutorials/magento2/m2_step_by_step
+    /content/tutorials/wordpress/wp_step_by_step
+    /content/tutorials/drupal/drupal_step_by_step
     general_resources
-    /vmods/index
     your_varnish_goals
-    troubleshooting_varnish
-    run_varnish
-    varnish_test
-    aem
-    sample_vcl
-    wp_vcl
-    drupal_vcl
-    builtin_vcl
-    magento2_vcl
-    expressionEngine
+    website_arch
+    /content/tutorials/varnish/troubleshooting_varnish
+    /content/tutorials/varnish/run_varnish
+    /content/tutorials/varnish/varnish_test
+    /content/tutorials/aem
+    /content/tutorials/varnish/sample_vclTemplate
+    /content/tutorials/wordpress/wp_vcl
+    /content/tutorials/drupal/drupal_vcl
+    /content/tutorials/varnish/builtin_vcl
+    /content/tutorials/magento2/magento2_vcl
+    /content/tutorials/expressionEngine

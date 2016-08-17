@@ -118,7 +118,7 @@ Cookies from the Client
 
 A piece of code like the one following will dis-regard cookies from login pages:
 
-.. literalinclude:: /vcl/vclex_excludeclient_cookies.vcl
+.. literalinclude:: /content/examples/vclex_excludeclient_cookies.vcl
   :language: c
 
 -  Disregarding graphical files
@@ -126,12 +126,12 @@ A piece of code like the one following will dis-regard cookies from login pages:
 This code is an example of how to disregard all cookies related to css files such
 stylesheets and graphics.
 
-.. literalinclude:: /vcl/vclex_excludecss.vcl
+.. literalinclude:: /content/examples/vclex_excludecss.vcl
   :language: c
 
 Another great example of using Regualar expressions to check your cookies:
 
-.. literalinclude:: /vcl/vclex_somecookies.vcl
+.. literalinclude:: /content/examples/vclex_somecookies.vcl
 
 Cookies from the Backend
 ........................
@@ -269,12 +269,12 @@ as possible.
 
 The following VCL code shows how to normalize the Accept-Encoding headers:
 
-.. literalinclude:: /vcl/vclex_normalize_AcceptEncoding.vcl
+.. literalinclude:: /content/examples/vclex_normalize_AcceptEncoding.vcl
   :language: c
 
 Another example to normalize `Accept-Language` header:
 
-.. literalinclude:: /vcl/vclex_normalize_AcceptLanguage.vcl
+.. literalinclude:: /content/examples/vclex_normalize_AcceptLanguage.vcl
   :language: c
 
 One of the best ways to take advantage of vary would be to build the response
@@ -318,7 +318,7 @@ If the backend is not compressing contents, you can tell Varnish to compress the
 content before storing it in cache by appending `beresp.do_gzip = true` in the
 `vcl_backend_response` as shown below.
 
-.. literalinclude:: /vcl/vclex_compressContent.vcl
+.. literalinclude:: /content/examples/vclex_compressContent.vcl
   :language: c
 
 This code will make the following changes to the object header before inserting
@@ -338,7 +338,7 @@ To uncompress contents before entering cache, you can tell Varnish to uncompress
 the content before sending it into cache by appending `beresp.do_gunzip = true`
 in the `vcl_backend_response` as shown below.
 
-.. literalinclude:: /vcl/vclex_unCompressContent.vcl
+.. literalinclude:: /content/examples/vclex_unCompressContent.vcl
   :language: c
 
 This makes the following changes to the object header before inserting in cache;
@@ -383,7 +383,7 @@ Purging is when an object is requested from cache and then it is discarded. that
 means everytime there is fresh data for an object, that object is requested and
 `purged`. The simplest way to achieve this is by using the code given below:
 
-.. literalinclude:: /vcl/vcl_purgeFromBackend.vcl
+.. literalinclude:: /content/examples/vcl_purgeFromBackend.vcl
   :language: c
 
 
@@ -400,11 +400,11 @@ Support for bans is built-in to varnish and it is available from the CLI.
 For example to ban every jpeg and png object from baching, you can try the
 following example;
 
-.. literalinclude:: /vcl/vclex_banningImages.vcl
+.. literalinclude:: /content/examples/vclex_banningImages.vcl
 
 Another example of a BAN:
 
-.. literalinclude:: /vcl/vclex_banningURL.vcl
+.. literalinclude:: /content/examples/vclex_banningURL.vcl
 
 
 Forcing a Cache Miss
@@ -448,7 +448,7 @@ cache sometimes wouldn't hurt.
 Varnishtest
 ...........
 
-Last but not the least, use :ref:`varnishtest <varnish_test>` to test your policies
+Last but not the least, use varnishtest to test your policies
 before running them in production. Use the `vtctrans`_ if you need help reading the
 verbose output.
 
@@ -467,7 +467,3 @@ Useful links on this topic
 .. _`Header Field Definitions, section 14.44 to understand Vary`: https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html
 .. _`GZIP+ESI`: https://www.varnish-cache.org/docs/trunk/phk/gzip.html#phk-gzip
 .. _`vtctrans`: https://github.com/xcir/vtctrans
-
-.. :toctree::
-
-  varnish_test

@@ -22,14 +22,6 @@ Facebook, Wikipedia, Vimeo, Twitter, Tumblr, The Guardian, VG.no and many other
 websites.
 
 
-:ref:`GET TO KNOW VARNISH <intro>`
-**********************************
-
-
-:ref:`Choosing your Varnish Versions <varnish_versions>`
-********************************************************
-
-
 :ref:`GETTING STARTED HERE <start>`
 ***********************************
 
@@ -38,24 +30,21 @@ websites.
 ************************
 
 
-`Is Your Varnish Working?`_
-===========================
-This varnish checking website is hosted by `Acquia`_
 
-.. _`Acquia`: https://dev.acquia.com/blog/explaining-varnish-beginners
 .. _`Is Your Varnish Working?`: http://www.isvarnishworking.com/
 .. _`VarnishWiki on Github`: https://github.com/staiyeba/wiki_varnish
 
 
 .. toctree::
     :hidden:
+    :maxdepth: 2
 
     /start/index
-    /intro/index
     /faq/index
-    /magento2/index
-    /wordpress/index
-    /vcl/index
-    /intro/varnish_versions
-    /drupal/index
-    tips
+    /content/tutorials/magento2/index
+    /content/tutorials/wordpress/index
+    /content/tutorials/drupal/index
+    /content/tutorials/varnish/index
+    /content/tutorials/aem
+    /content/tutorials/expressionEngine
+    /content/tutorials/sitecoreCMS

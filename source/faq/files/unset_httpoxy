@@ -1,5 +1,0 @@
-sub vcl_recv {
-    [...]
-    unset req.http.proxy;
-    [...]
-}
