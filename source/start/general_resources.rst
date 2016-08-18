@@ -6,6 +6,8 @@ Resources
 Varnish
 -------
 
+Architect notes: https://www.varnish-cache.org/docs/trunk/phk/notes.html
+
 Do you VCL?
 -----------
 
@@ -15,6 +17,11 @@ VCL Trans on Canvas
 --------------------
 
 http://vsltrans.varnish.jp/ on github https://github.com/xcir/vsltrans
+
+`Xcir presentation on Varnish`_
+
+.. _`Xcir presentation on Varnish`: http://www.slideshare.net/xcir/varnish-user-group-meeting-7final-ver
+
 
 Migrating Varnish 3to4
 ----------------------
@@ -26,8 +33,8 @@ Varnish 4.0 Configuration Templates
 
 https://github.com/mattiasgeniar/varnish-4.0-configuration-templates
 
-Tool to parse varnishlog
-------------------------
+Tools to parse varnishlog
+-------------------------
 
 https://github.com/cosimo/vlogdump
 
