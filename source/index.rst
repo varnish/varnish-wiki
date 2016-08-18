@@ -50,8 +50,7 @@ Tutorials
 
 
 .. toctree::
-    :hidden:
-    :maxdepth: 2
+    :maxdepth: 1
 
     /start/index
     /faq/index
