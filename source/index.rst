@@ -51,9 +51,9 @@ Tutorials
 
 .. toctree::
     :maxdepth: 1
+    :hidden:
 
     /start/index
-    /faq/index
     /content/tutorials/magento2/index
     /content/tutorials/wordpress/index
     /content/tutorials/drupal/index
