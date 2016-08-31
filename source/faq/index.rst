@@ -112,6 +112,10 @@ This varnish checking website is hosted by `Acquia`_
 
 .. _`Acquia`: https://dev.acquia.com/blog/explaining-varnish-beginners
 
+If you want to help fix our bugs or want to know about bugs in the project:
+
+  https://scan.coverity.com/projects/varnish
+
 :ref:`Managing Multiple Varnishes <multiple_varnishes>`
 -------------------------------------------------------
 

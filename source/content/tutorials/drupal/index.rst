@@ -1,7 +1,7 @@
 .. _drupal:
 
 ********************
-Drupal with VARNISH
+Drupal with Varnish
 ********************
 
 Drupal is an open source Content Managenment System (CMS) written in PHP.
@@ -81,5 +81,6 @@ Configuring Varnish 3 for Drupal 7: https://fourkitchens.atlassian.net/wiki/disp
 
 .. toctree::
   :hidden:
+  :maxdepth: 1
 
   drupal_step_by_step

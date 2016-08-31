@@ -1,7 +1,7 @@
 .. _wordpress:
 
 **********************
-WORDPRESS with VARNISH
+WORDPRESS with Varnish
 **********************
 
 if you have a wordpress site and want to implement a caching solution.
@@ -111,6 +111,8 @@ http://code.tutsplus.com/tutorials/optimizing-wordpress-with-varnish-and-w3-tota
 .. _`WPBase Cache`: https://wordpress.org/plugins/wpbase-cache/
 
 .. toctree::
+  :hidden:
+  :maxdepth: 1
 
   wp_step_by_step
   wp_vcl

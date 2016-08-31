@@ -1,18 +1,25 @@
 .. _varnish:
 
-Installing Varnish
-==================
+Get Varnish
+===========
 
 You have two choices:
+
 - Install Binary Packages
 - Compile It yourself from source code
 
- We have packages for a bunch of operating systems and we have the open source
- project available on github.
+We have packages for a bunch of operating systems and we have the open source
+project available on github.
+
+Installing Varnish with Binary Packages
+***************************************
+
+If you just want to get started with installation on your machine.
 
 Requirements
 ------------
- Your choice of Operationg System.
+
+Your choice of Operating System.
 
 Choosing OS
 -----------
@@ -60,7 +67,7 @@ If you need a later version of Varnish, please follow the online installation
 instructions for Debian or Ubuntu.
 
 Compiling Varnish from source
-=============================
+*****************************
 
 If there are no binary packages available for your system,
 or if you want to compile Varnish from source for other reasons, follow these steps:
@@ -129,12 +136,13 @@ Optionally, to pull from a repository:
   pkgin in git
 
 
-Compiling Varnish
-=================
+Building Varnish
+----------------
 
 The configuration will need the dependencies above satisfied. Once that is taken care of:
 
 .. code-block: c
+
   cd varnish-cache
   sh autogen.sh
   sh configure
@@ -152,7 +160,7 @@ Before you install, you may want to run the test suite, make a cup of tea while 
 Don't worry if one or two tests fail, some of the tests are a bit too timing sensitive (Please tell us which so we can fix them.) but if a lot of them fails, and in particular if the b00000.vtc test fails, something is horribly wrong, and you will get nowhere without figuring out what.
 
 Installing
-----------
+..........
 
 And finally, the true test of a brave heart:
 
@@ -169,14 +177,11 @@ libraries are found, run
 
   sudo ldconfig
 
-
 Using Source: https://www.varnish-cache.org/docs/trunk/installation/install.html#compiling-varnish-from-source
-
-
 
 .. toctree::
   :hidden:
-  :maxdepth: 2
+  :maxdepth: 1
 
   builtin_vcl
   multiple_varnishes

@@ -1,7 +1,7 @@
 .. _magento2:
 
 *********************
-Varnish with Magento2
+Magento2 with Varnish
 *********************
 
 Magento is a powerful e-commerce platform  for marketing, catalog management
@@ -65,6 +65,7 @@ Need Magento 1? ref:`follow here <magento1x>`
 
 .. toctree::
   :hidden:
+  :maxdepth: 1
 
   magento2_varnish_basics
   m2_step_by_step

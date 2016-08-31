@@ -54,10 +54,10 @@ Tutorials
     :hidden:
 
     /start/index
+    /content/tutorials/varnish/index
     /content/tutorials/magento2/index
     /content/tutorials/wordpress/index
     /content/tutorials/drupal/index
-    /content/tutorials/varnish/index
     /content/tutorials/aem
     /content/tutorials/expressionEngine
     /content/tutorials/sitecoreCMS
