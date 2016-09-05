@@ -26,13 +26,13 @@ So where in wordpress will you be integrating Varnish?
 Installation
 ------------
 
- If you are ready and just want to get started with the installation go to:
+If you are ready and just want to get started with the installation go to:
 
 :ref:`Step by step Installation guide to make your website fly! <wp_step_by_step>`
 
-Please note that Drupal 8 supports;
+Please note that Wordpress supports;
 
-`varnish 3` and `varnish 4` out-of-the-box.
+`varnish 3` and `varnish 4`.
 
 Each new upgrade includes a section about the changes that have been made.
 
@@ -102,9 +102,6 @@ WORDPRESS RESOURCES
 http://www.dimitri.eu/how-to-purge-varnish-cache/
 
 http://code.tutsplus.com/tutorials/optimizing-wordpress-with-varnish-and-w3-total-cache--cms-21136
-
-
-:ref:`Wordpress Resources <wp_resources>`
 
 .. _`W3 Total Cache`: https://wordpress.org/plugins/w3-total-cache/
 .. _`Varnish HTTP Purge`: https://wordpress.org/plugins/varnish-http-purge/

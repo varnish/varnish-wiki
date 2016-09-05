@@ -58,7 +58,7 @@ If you are ready and just want to get started with the installation go to:
 
 Please note that Drupal 8 supports;
 
-`varnish 3` and `varnish 4` out-of-the-box.
+`varnish 3` and `varnish 4`.
 
 Each new upgrade includes a section about the changes that have been made.
 

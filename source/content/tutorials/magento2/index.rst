@@ -29,7 +29,7 @@ help the site fly with significant advantages!
 To read more about installing `Magento 2`_
 
 Implementing Magento 2 with Varnish
-===================================
+-----------------------------------
 
 Magento by itself had a caching mechanism, but it does not cache pages.
 But Magento 2 supports varnish cache out of the shelf.

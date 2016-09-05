@@ -61,3 +61,4 @@ Tutorials
     /content/tutorials/aem
     /content/tutorials/expressionEngine
     /content/tutorials/sitecoreCMS
+    /faq/index
