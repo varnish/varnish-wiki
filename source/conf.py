@@ -46,13 +46,13 @@ sys.setrecursionlimit(2000)
 extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.doctest',
-    'sphinx.ext.intersphinx',
-    'sphinx.ext.todo',
+#    'sphinx.ext.intersphinx',
+#    'sphinx.ext.todo',
     'sphinx.ext.coverage',
-    'sphinx.ext.mathjax',
-    'sphinx.ext.ifconfig',
-    'sphinx.ext.viewcode',
-    'sphinx.ext.githubpages',
+#    'sphinx.ext.mathjax',
+#    'sphinx.ext.ifconfig',
+#    'sphinx.ext.viewcode',
+#    'sphinx.ext.githubpages',
     'edit_on_github'
 #    'sphinxcontrib.fulltoc',
 ]
