@@ -99,7 +99,6 @@ Our recommneded Plugins for Magento 2
 
 
 .. toctree::
-  :maxdepth: 1
   :hidden:
 
   magento2_varnish_basics
