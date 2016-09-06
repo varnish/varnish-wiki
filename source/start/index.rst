@@ -5,68 +5,55 @@ Getting Started
 
 Lets get started with Varnishing your website!
 
-:ref:`What do you want to Achieve for your site? <your_varnish_goals>`
-----------------------------------------------------------------------
-
 Installing and Configuring Varnish
 ----------------------------------
 
-:ref:`Installing Varnish <varnish_ubuntu>`
-..........................................
+:doc:`Installing Varnish </content/tutorials/varnish/varnish_ubuntu>`
 
-:ref:`How to VCL? <vcl>`
-........................
+:doc:`How to VCL? </content/tutorials/varnish/vcl>`
 
-:ref:`Test your varnish with VarnishTest <varnish_test>`
-........................................................
+:doc:`Test your varnish with VarnishTest </content/tutorials/varnish/varnish_test>`
 
-:ref:`Easy Piece of Advice <website_arch>`
-..........................................
+
+:doc:`Easy Piece of Advice </start/website_arch>`
+
+:doc:`What do you want to Achieve for your site? </start/your_varnish_goals>`
 
 
 Step by Step Configuring for Web Applications
 ---------------------------------------------
 
-:ref:`Magento 2 with Varnish <m2_step_by_step>`
-...............................................
+:doc:`Magento 2 with Varnish </content/tutorials/magento2/m2_step_by_step>`
 
-:ref:`Wordpress with Varnish <wp_step_by_step>`
-...............................................
+:doc:`Wordpress with Varnish </content/tutorials/wordpress/wp_step_by_step>`
 
-:ref:`Drupal with Varnish <drupal_step_by_step>`
-................................................
+:doc:`Drupal with Varnish </content/tutorials/drupal/drupal_step_by_step>`
+
 
 Configuring for Enterprise Products
 -----------------------------------
 
-:ref:`Adobe Extension Manager (AEM) <aem>`
-..........................................
+:doc:`Adobe Extension Manager (AEM) </content/tutorials/aem>`
 
-:ref:`Expression Engine (EE) <expressionEngine>`
-................................................
+:doc:`Expression Engine (EE) </content/tutorials/expressionEngine>`
+
 
 Configuring VCL Beyond the default
 ----------------------------------
 
 Below are links to examples of vcl configuring in/with varnish.
 
-:ref:`What's in the Builtin VCL? <builtin_vcl>`
------------------------------------------------
+:doc:`What's in the Builtin VCL? </content/tutorials/varnish/builtin_vcl>`
 
-:ref:`Common vcl configuration <sample_vclTemplate>`
-....................................................
+:doc:`Common vcl configuration </content/tutorials/varnish/sample_vclTemplate>`
 
-:ref:`Wordpress and vcl <wp_vcl>`
-.................................
+:doc:`Wordpress and vcl </content/tutorials/wordpress/wp_vcl>`
 
-:ref:`Drupal and vcl <drupal_vcl>`
-..................................
+:doc:`Drupal and vcl</content/tutorials/drupal/drupal_vcl>`
 
-:ref:`Magento2 and vcl <magento2_vcl>`
-......................................
+:doc:`Magento2 and vcl </content/tutorials/magento2/magento2_vcl>`
 
-:ref:`RUN VARNISH <run_varnish>`
---------------------------------
+:doc:`RUN VARNISH </content/tutorials/varnish/run_varnish>`
 
 
 Recipes for Cache Invalidation
@@ -74,7 +61,7 @@ Recipes for Cache Invalidation
 
 `Our Webinar on Cache Invalidation Strategies`_
 
-:ref:`Cache Invalidation Bundle <cache_ex>`
+:doc:`Cache Invalidation Bundle </content/tutorials/varnish/vcl_examples>`
 
 
 Below is a list of resources which can help you understand and manage our software better!
@@ -83,7 +70,7 @@ Below is a list of resources which can help you understand and manage our softwa
 2. `The Varnish Tutorial`_ - The Tutorial explains the basics and gets you started with Varnish.
 3. `The Varnish Users Guide`_ - The User Guide explains how Varnish works and how you can use it to improve your website.
 4. `The Varnish Reference Manual`_ - contains hard facts and is useful for looking up specific questions.
-5. :ref:`Relevant Resources <general_resources>` - contains links to resourceful information beyond our website.
+5. :doc:`Relevant Resources <general_resources>` - contains links to resourceful information beyond our website.
 
 **Last but not the least this little wiki will give you a Hands-On Guide to making your website fly!**
 
@@ -96,7 +83,6 @@ Below is a list of resources which can help you understand and manage our softwa
 
 .. toctree::
     :hidden:
-    :maxdepth: 2
 
     /content/tutorials/varnish/varnish_ubuntu
     /content/tutorials/magento2/m2_step_by_step

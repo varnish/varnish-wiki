@@ -1,11 +1,10 @@
 .. _faq:
 
-*****************
 FAQ for Beginners
-*****************
+=================
 
 What is Varnish?
-================
+----------------
 
 Varnish Cache is a web application accelerator also known as a caching
 HTTP reverse proxy. You install it in front of any server that speaks
@@ -16,7 +15,10 @@ Varnish does can be seen in `this video <https://www.youtube.com/watch?v=fGD14Ch
 
 Here is `THE BIG VARNISH PICTURE`_ if you want Word by Word details! :)
 
-We provide Flexibility !
+What is Varnish's superpower?
+-----------------------------
+
+Flexibility !
 
 One of the key features of Varnish Cache, in addition to its
 performance, is the flexibility of its configuration language, VCL.
@@ -30,13 +32,12 @@ about this in our `tutorial at varnish-cache.org`_.
 `The Design Principle of Varnish`_
 -----------------------------------
 
-When to Use Varnish?
-====================
+Should I use Varnish for my site?
+---------------------------------
 
 If you are wondering why you are on our website reading about our product,
 you are in the right section!
-
-So you are getting Varnish for your website and wondering why?
+So you want to get Varnish for your website and wondering why?
 
 Most probably because you need to handle a lot of traffic!
 Caching is one of the best ways to maximize the output of your website!
@@ -46,7 +47,7 @@ webserver and it's network. Your frontend shouldn't have to make requests to the
 backend too often for the same dynamic content every time a client requests it.
 
 To save your resources placing a reverse-proxy, caching software like Varnish Cache
-right in front of your web application can accelerate the responses to allmost all
+right in front of your web application can accelerate the responses to almost all
 your HTTP requests and thus reducing server workload.
 
 Congratulations! you are making a great choice!
@@ -62,14 +63,8 @@ Wikipedia <http://en.wikipedia.org/wiki/Varnish_(software)>`_.
 
 .. _varnish_memcache:
 
-
-Varnish and Memcache
-====================
-
-Author: Per Buer
-Written date: May 22 2014
-
-found `here`_
+How is Varnish related to Memcache?
+-----------------------------------
 
 Memcache is a more or less a database. It's a database that doesn't persist data
 and only stores it in memory. It also doesn't really care if it throws data out.
@@ -97,7 +92,11 @@ content over a TCP connection. In addition, you'll have the overhead costs of th
 interpreter. It's not that Varnish is better, it's just that Varnish has a much
 easier job to do and it is faster because of it.
 
+Author: Per Buer
+Written date: May 22 2014
+
 There are no good reason not to use both.
+found `here`_
 
 .. _`here`: https://www.quora.com/What-is-the-difference-between-using-varnish-and-caching-HTML-pages-in-memcached
 
@@ -105,8 +104,8 @@ There are no good reason not to use both.
 Read on about :ref:`Understand your Website <website_arch>`
 -----------------------------------------------------------
 
-`Is Your Varnish Working?`_
-===========================
+`Is My Varnish Working?`_
+--------------------------
 
 This varnish checking website is hosted by `Acquia`_
 
@@ -115,12 +114,6 @@ This varnish checking website is hosted by `Acquia`_
 If you want to help fix our bugs or want to know about bugs in the project:
 
   https://scan.coverity.com/projects/varnish
-
-:ref:`Managing Multiple Varnishes <multiple_varnishes>`
--------------------------------------------------------
-
-To try VCL `Tour de VCL`
-------------------------
 
 .. _`The Design principle of Varnish`: http://book.varnish-software.com/4.0/chapters/Design_Principles.html
 .. _`Tutorial at varnish-cache.org`: https://www.varnish-cache.org/docs/trunk/tutorial/

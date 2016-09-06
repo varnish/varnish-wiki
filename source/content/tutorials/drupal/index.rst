@@ -1,8 +1,8 @@
 .. _drupal:
 
-********************
+
 Drupal with Varnish
-********************
+===================
 
 Drupal is an open source Content Managenment System (CMS) written in PHP.
 

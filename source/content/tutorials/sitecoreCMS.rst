@@ -1,8 +1,9 @@
 .. _sitecoreCMS:
 
-************************
+
 Sitecore CMS and Varnish
-************************
+========================
+
 Sitecore is an enterprise-level content management system (CMS) built on ASP.NET.
 It is been used worldwide for personal websites, blogging, e-commerce, etc.
 

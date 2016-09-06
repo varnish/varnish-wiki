@@ -1,8 +1,8 @@
 .. _expressionEngine:
 
-*****************************
+
 Expression Engine and Varnish
-*****************************
+=============================
 
 Expression Engine is another powerful Digital Content Delivery Platform from the
 creator of CodeIgniter (agile, open-source framework).
@@ -21,14 +21,10 @@ Controlling the cache Using ESI: https://www.smashingmagazine.com/2015/02/using-
 Server Security Issues: https://ellislab.com/blog/entry/http-host-and-server-name-security-issues
 
 
-
-
 A sample default VCL for Expression Engine
 ..........................................
 
 .. literalinclude:: /content/templates/vcl_defaultEE_andrew.vcl
-  :language: c
-
 
 
 

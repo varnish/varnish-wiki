@@ -1,21 +1,18 @@
 .. _varnish_ubuntu:
 
-**********************************
 Installing and Configuring Varnish
-**********************************
+==================================
 
 The following text discusses how to configure your webserver to use Varnish.
 Note that the installation is different for *systemv* and *systemd*.
 The following guide is for systemd as many linux distributions are now adopting to
 the systemd init system.
 
-
 Audience:
 .........
 
 This reference has been prepared for web developers to get them started with
 Varnish installation and configuration.
-
 
 Step 1 : Installing Varnish on Ubuntu/UNIX:
 -------------------------------------------

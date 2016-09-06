@@ -1,5 +1,4 @@
-.. _cache_ex:
-
+.. _vcl_examples:
 
 Cache Invalidation with Examples
 ================================

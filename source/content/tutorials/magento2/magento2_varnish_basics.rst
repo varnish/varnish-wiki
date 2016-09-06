@@ -1,7 +1,7 @@
 .. _magento2_varnish_basics:
 
-Basics on Magento 2 and Varnish
-===============================
+Understanding Magento 2 and Varnish
+===================================
 
 This chapter is mainly written for web developers who want to get a clear idea
 about the basics of varnish with magento.
@@ -13,17 +13,17 @@ outmode HTTP/1.0.
 
 What this protocol allows for any given website is to sent multiple requests in
 serial mode over a single connection so that when a single client wants to fetch
-several resources in paralell, it can just open several connections to fetch from
+several resources in  parallel, it can just open several connections to fetch from
 a single webserver.
 
-Now imagine multiple customers trying to order several products in paralell from
+Now imagine multiple customers trying to order several products in  parallel from
 a single magento webserver. The overhead this may cause is quite vast.
 Which is why varnish is here to save the day!
 
 To learn more about the basics of HTTP visit `HTTP Basics`_ at the `Varnish Software website`.
 
 You also need to be clear about what you want varnish to do for your website.
-To read more analyzing and understadning your website, as yourself the following questions:
+To read more analyzing and understanding your website, as yourself the following questions:
 
 - What makes the pages on your magento website different from each other?
 - Do differences apply to entire pages or just part of them?
@@ -40,7 +40,7 @@ A better in-site on some of these Varnish characteristics would be to get to kno
 our product Varnish Cache a little better. Varnish cache as the name suggests
 allows caching of resources. This mechanism is enhanced to allow multiple
 identical requests from different clients to have the
-same effect on a single request called the idempotency.But do not worry!
+same effect on a single request called the idempotency. But do not worry!
 
 Varnish cache if configured properly doesnot cache `everything`! Infact you can
 decide what to cache, how to cache when to cache. To be able to better manage
@@ -59,7 +59,7 @@ In simple terms, varnish serves cache contents based on three things:
 
 1. Cache Matching
 2. Allowance
-3. Freshess of Data
+3. Freshness of Data
 
 
 1. Cache Matching
@@ -104,9 +104,43 @@ varnish book, `Freshness`_ section.
 
 Now let's move on to understanding the `Caching system in Magento 2 <magento2_ce>`.
 
+.. _magento2_ce:
+
+Caching in Magento 2
+--------------------
+
+Magento 2 with its great abilities is the next generation open source digital
+commerce platform. A large number of websites use magento and with magento 2
+the server performance has boosted to a new level.
+
+So why does Magento 2 require varnish caching?
+..............................................
+
+Magento websites are expected to have large amount of traffic. For the website
+to fly varnish cache provides a caching mechanism that not only helps with
+caching but also provides other services that enables magento webservers to
+provide excellent services to clients.
+
+Cache Extensions
+----------------
+
+Magento has two Cache extensions;
+
+- The internal cache (filesystem)
+
+- The external cache (varnish!)
+
+Here we will mainly talk about Varnish, the external cache.
+
+As you may already know Magento 2 supports varnish out of the box.
+The varnish cache is installed as an independent component. It serves as an
+intermediate between the webservers running magento and the backened memory.
+
+Varnish cache on a Magento 2 site caches all/if any static pages and also parts
+of dynamic pages.
+
 Remember that varnish has a lot of resources and but if you have any questions
 please feel free to contact us.
-
 
 .. _`HTTP Basics`: http://book.varnish-software.com/4.0/chapters/HTTP.html#resources-and-representations
 .. _`cache related header fields of HTTP`: http://book.varnish-software.com/4.0/chapters/HTTP.html#cache-related-headers-fields
@@ -114,8 +148,3 @@ please feel free to contact us.
 .. _`cache-control header`: http://book.varnish-software.com/4.0/chapters/HTTP.html#cache-control
 .. _`Content Composition`: http://book.varnish-software.com/4.0/chapters/Content_Composition.html
 .. _`RFC 7540`: https://www.rfc-editor.org/rfc/rfc7540.txt
-
-
-.. toctree::
-
-    magento2_ce

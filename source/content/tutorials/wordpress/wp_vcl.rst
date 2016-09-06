@@ -1,7 +1,6 @@
 .. _wp_vcl:
 
-
-Some Sample VCL for Wordpress
+Some Sample VCL for WordPress
 =============================
 
 Ignoring AJAX requests

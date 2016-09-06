@@ -1,9 +1,7 @@
 .. _wp_step_by_step:
 
-*****************************************************
-STEP BY STEP GUIDE TO MAKING YOUR wordpress SITE FLY
-*****************************************************
-
+Step by Step guide to making your WordPress Website Fly
+=======================================================
 
 This article was originally written by Web Designer Magazine - http://www.webdesignermag.co.uk/
 

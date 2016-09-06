@@ -50,7 +50,7 @@ extensions = [
 #    'sphinx.ext.todo',
     'sphinx.ext.coverage',
 #    'sphinx.ext.mathjax',
-#    'sphinx.ext.ifconfig',
+    'sphinx.ext.ifconfig',
 #    'sphinx.ext.viewcode',
 #    'sphinx.ext.githubpages',
     'edit_on_github'
@@ -266,7 +266,7 @@ html_static_path = ['_static']
 
 # Custom sidebar templates, maps document names to template names.
 #
-html_sidebars = { '**': ['globaltoc.html','localtoc.html','searchbox.html'] }
+html_sidebars = { '**': ['globaltoc.html','sidebar.html','searchbox.html'] }
 
 # Additional templates that should be rendered to pages, maps page names to
 # template names.

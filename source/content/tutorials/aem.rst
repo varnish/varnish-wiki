@@ -1,8 +1,7 @@
 .. _aem:
 
-************************************
 Adobe Experience Manager and Varnish
-************************************
+====================================
 
 Adobe Experience Manager (AEM) is an enterprised web content management system
 that facilitates organizing, managing, and delivering creative assets. It has
@@ -82,13 +81,11 @@ Your setup Preference:
 An example of Excluding backend responses from cache-control
 
 .. literalinclude:: /content/examples/vcl_excludeFromCache.vcl
-  :language: c
 
 
 Example of sending all traffic to vdir directory
 
 .. literalinclude:: /content/templates/vcl_defaultSample_mattias.vcl
-  :language: c
   :lines: 64
 
 

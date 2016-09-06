@@ -1,10 +1,10 @@
 .. _drupal_step_by_step:
 
-**************************************************
-STEP BY STEP GUIDE TO MAKING YOUR drupal SITE FLY
-**************************************************
 
-go through some of the common steps required to install and configure Varnish
+Step by Step Guide to Making your Drupal Website Fly
+====================================================
+
+Lets go through some of the common steps required to install and configure Varnish
 and integrate it with drupal to take your site to the next level.
 
 1. Installing Drupal 8 from the `Drupal-Site`_

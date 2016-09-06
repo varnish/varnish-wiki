@@ -11,8 +11,8 @@ You have two choices:
 We have packages for a bunch of operating systems and we have the open source
 project available on github.
 
-Installing Varnish with Binary Packages
-***************************************
+**Installing Varnish with Binary Packages**
+-------------------------------------------
 
 If you just want to get started with installation on your machine.
 
@@ -66,8 +66,8 @@ Please note that this might not be the latest version of Varnish.
 If you need a later version of Varnish, please follow the online installation
 instructions for Debian or Ubuntu.
 
-Compiling Varnish from source
-*****************************
+**Compiling Varnish from source**
+---------------------------------
 
 If there are no binary packages available for your system,
 or if you want to compile Varnish from source for other reasons, follow these steps:
@@ -83,8 +83,10 @@ Alternatively, if you want to hack on Varnish, you should clone our git reposito
 Requirements
 ------------
 
+A UNIX Machine or a MAC
+
 Build dependencies on Debian / Ubuntu
--------------------------------------
+......................................
 
 In order to build Varnish from source you need a number of packages installed. On a Debian or Ubuntu system these are:
 
@@ -101,7 +103,7 @@ python-sphinx
 graphviz
 
 Build dependencies on Red Hat / CentOS
----------------------------------------
+......................................
 
 To build Varnish on a Red Hat or CentOS system you need the following packages installed:
 
@@ -119,7 +121,7 @@ graphviz
 
 
 Build dependencies on a SmartOS Zone
-------------------------------------
+....................................
 
 As of SmartOS pkgsrc 2015Q4, install the following packages:
 
@@ -134,7 +136,6 @@ Optionally, to pull from a repository:
 .. code-block: c
 
   pkgin in git
-
 
 Building Varnish
 ----------------
@@ -181,7 +182,6 @@ Using Source: https://www.varnish-cache.org/docs/trunk/installation/install.html
 
 
 .. toctree::
-  :hidden:
   :maxdepth: 1
 
   builtin_vcl
@@ -193,4 +193,4 @@ Using Source: https://www.varnish-cache.org/docs/trunk/installation/install.html
   varnish_test
   varnishCacheVersions
   vcl
-  vclex_cacheEx
+  vcl_examples
