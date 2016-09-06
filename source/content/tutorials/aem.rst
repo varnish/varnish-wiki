@@ -32,7 +32,7 @@ This is where **VARNISH CACHE PLUS** can help in managing the complex rules
 needed for your sites cache invalidation.
 
 
-VARNISH CACHE PLUS
+Varnish Cache Plus
 ------------------
 
 - Cache HTTP headers (requests and responses)
@@ -95,10 +95,3 @@ AEM Resources
 .. _`AEM - Cache Invalidation Part 1`: https://info.varnish-software.com/blog/advanced-cache-invalidation-applied-replacing-adobe-aem-cq5-dispatcher-with-varnish-plus-part-1
 
 .. _`AEM - Cache Invalidation Part 2`: https://info.varnish-software.com/blog/advanced-cache-invalidation-part2
-
-
-.. toctree::
-  :hidden:
-  :maxdepth: 2
-
-  /content/tutorials/varnish/index

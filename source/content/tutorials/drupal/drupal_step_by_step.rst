@@ -10,8 +10,8 @@ and integrate it with drupal to take your site to the next level.
 1. Installing Drupal 8 from the `Drupal-Site`_
 -----------------------------------------------
 
-2. :ref:`Installing Varnish <varnish_ubuntu>`
----------------------------------------------
+2. :doc:`Installing Varnish </content/tutorials/varnish/varnish_ubuntu>`
+------------------------------------------------------------------------
 
 3. How to place Drupal 8 behind Varnish
 ---------------------------------------
@@ -111,8 +111,3 @@ Don't forget to restart after making changes:
 
 
 .. _`Drupal-Site`: https://www.drupal.org/8
-
-.. toctree::
-  :hidden:
-
-  /content/tutorials/varnish/varnish_ubuntu

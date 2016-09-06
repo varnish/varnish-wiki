@@ -18,8 +18,8 @@ and configure Varnish and integrate it with WordPress to take your site to the
 next level. Let’s get started.
 
 
-1. :ref:`Install Varnish <varnish_ubuntu>`
-------------------------------------------
+1. :doc:`Install Varnish </content/tutorials/varnish/varnish_ubuntu>`
+---------------------------------------------------------------------
 
 2. Add the plugin
 -----------------
@@ -202,8 +202,3 @@ Check out the links below to take Varnish even further.
 
 .. _`varnish cache website`: https://varnish-cache.org
 .. _`Varnish HTTP Purge Plugin`: https://wordpress.org/plugins/varnish-http-purge/
-
-.. toctree::
-  :hidden:
-
-  /content/tutorials/varnish/varnish_ubuntu

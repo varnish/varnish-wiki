@@ -6,7 +6,7 @@ Getting Started
 Lets get started with Varnishing your website!
 
 Installing and Configuring Varnish
-----------------------------------
+..................................
 
 :doc:`Installing Varnish </content/tutorials/varnish/varnish_ubuntu>`
 
@@ -14,14 +14,13 @@ Installing and Configuring Varnish
 
 :doc:`Test your varnish with VarnishTest </content/tutorials/varnish/varnish_test>`
 
-
 :doc:`Easy Piece of Advice </start/website_arch>`
 
 :doc:`What do you want to Achieve for your site? </start/your_varnish_goals>`
 
 
 Step by Step Configuring for Web Applications
----------------------------------------------
+.............................................
 
 :doc:`Magento 2 with Varnish </content/tutorials/magento2/m2_step_by_step>`
 
@@ -31,7 +30,7 @@ Step by Step Configuring for Web Applications
 
 
 Configuring for Enterprise Products
------------------------------------
+...................................
 
 :doc:`Adobe Extension Manager (AEM) </content/tutorials/aem>`
 
@@ -39,7 +38,7 @@ Configuring for Enterprise Products
 
 
 Configuring VCL Beyond the default
-----------------------------------
+..................................
 
 Below are links to examples of vcl configuring in/with varnish.
 
@@ -57,7 +56,7 @@ Below are links to examples of vcl configuring in/with varnish.
 
 
 Recipes for Cache Invalidation
-------------------------------
+..............................
 
 `Our Webinar on Cache Invalidation Strategies`_
 
@@ -83,21 +82,22 @@ Below is a list of resources which can help you understand and manage our softwa
 
 .. toctree::
     :hidden:
+    :maxdepth: 1
 
     /content/tutorials/varnish/varnish_ubuntu
-    /content/tutorials/magento2/m2_step_by_step
-    /content/tutorials/wordpress/wp_step_by_step
-    /content/tutorials/drupal/drupal_step_by_step
-    general_resources
+    /content/tutorials/magento2/index
+    /content/tutorials/wordpress/index
+    /content/tutorials/drupal/index
+    /content/tutorials/aem
+    /content/tutorials/expressionEngine
     your_varnish_goals
     website_arch
     /content/tutorials/varnish/troubleshooting_varnish
     /content/tutorials/varnish/run_varnish
     /content/tutorials/varnish/varnish_test
-    /content/tutorials/aem
     /content/tutorials/varnish/sample_vclTemplate
     /content/tutorials/wordpress/wp_vcl
     /content/tutorials/drupal/drupal_vcl
     /content/tutorials/varnish/builtin_vcl
     /content/tutorials/magento2/magento2_vcl
-    /content/tutorials/expressionEngine
+    general_resources

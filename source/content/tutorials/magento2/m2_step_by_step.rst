@@ -17,8 +17,8 @@ So Lets get Started!
 1. Installing Magento from the `Magento-Site`_
 ----------------------------------------------
 
-2. :ref:`Installing Varnish <varnish_ubuntu>`
----------------------------------------------
+2. :doc:`Installing Varnish </content/tutorials/varnish/varnish_ubuntu>`
+------------------------------------------------------------------------
 
 3. How to place Magento 2 behind Varnish
 -----------------------------------------
@@ -98,11 +98,6 @@ about that at Marko's blogpost about Placing Magento2 behind Varnish `marko_mage
 
 .. _`Magento Site`: http://devdocs.magento.com/guides/v2.0/config-guide/varnish/config-varnish-magento.html
 
-.. toctree::
-  :hidden:
-
-  /content/tutorials/varnish/varnish_ubuntu
-
 
 4. Restart services after making changes
 -----------------------------------------
@@ -158,8 +153,6 @@ purpose of varnish.
 So decreasing TTL values is not a good solution for high traffic based servers.
 Varnish has a better solution for that.
 
-Read more about caching at :ref:`Caching with Magento 2 <magento2_ce>`
-
 8. Specific TTL Based Caching
 -----------------------------
 
@@ -179,8 +172,3 @@ please look at `here <http://devdocs.magento.com/guides/v2.0/config~guide/varnis
 
 
 .. _`Magento-Site`: http://devdocs.magento.com/guides/v2.1/install-gde/bk-install-guide.html
-
-.. toctree::
-  :hidden:
-
-  /content/tutorials/varnish/varnish_ubuntu

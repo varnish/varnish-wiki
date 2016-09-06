@@ -3,7 +3,7 @@
 WordPress with Varnish
 ======================
 
-if you have a WordPress site and want to implement a caching solution.
+If you have a WordPress site and want to implement a caching solution.
 Depending on the amount if traffic on your and the complexity of your
 WordPress theme, performance maybe lagging. Varnish Cache is your recommended
 solution.

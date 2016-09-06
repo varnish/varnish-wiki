@@ -38,7 +38,7 @@ Restart Varnish
 **Still NOT working???**
 
 Try to start Varnish in debug mode!
-===================================
+-----------------------------------
 
 For systemv users:
 
@@ -51,7 +51,7 @@ For systemd users:
   :language: c
 
 Varnish is crashing?
-====================
+--------------------
 
 IF your varnish is crashing it might be due to a number of reasons.
 Here are a few thigns you can try.
@@ -78,7 +78,7 @@ you fix it.
 
 
 Varnish gives me Guru Meditation
-================================
+--------------------------------
 
 To solve a issue like this, checkout varnishhlog.
 
@@ -98,7 +98,7 @@ memory log just add the '-d' parameter:
 
 
 Varnish is not Caching
-======================
+----------------------
 
 If your varnish is not caching you can follow our simple steps to receive high hit-rate or
 follow the detailed `User Guide`_

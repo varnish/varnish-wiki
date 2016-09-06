@@ -17,9 +17,9 @@ project available on github.
 If you just want to get started with installation on your machine.
 
 Requirements
-------------
+............
 
-Your choice of Operating System.
+Your choice of Operating System, preferably UNIX.
 
 Choosing OS
 -----------
@@ -40,7 +40,7 @@ From source:
   cd /usr/ports/varnish && make install clean
 
 Red Hat / CentOS
-----------------
+................
 
 Latest version available as prebuilt RPMs (el5 and el6) on repo.varnish-cache.org.
 
@@ -52,7 +52,7 @@ changes in newer versions of Varnish, only older versions are available.
 We therefore recommend that you install the latest version directly from our repository, as described above.
 
 Debian/Ubuntu
--------------
+.............
 
 Varnish is distributed with both Debian and Ubuntu.
 
@@ -81,7 +81,7 @@ Alternatively, if you want to hack on Varnish, you should clone our git reposito
   git clone https://github.com/varnishcache/varnish-cache
 
 Requirements
-------------
+............
 
 A UNIX Machine or a MAC
 
@@ -183,6 +183,7 @@ Using Source: https://www.varnish-cache.org/docs/trunk/installation/install.html
 
 .. toctree::
   :maxdepth: 1
+  :hidden:
 
   builtin_vcl
   multiple_varnishes

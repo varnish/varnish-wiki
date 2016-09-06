@@ -3,9 +3,8 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-************************
 Welcome to Varnish Wiki!
-************************
+========================
 
 Here you will find all the resources you need to start using varnish.
 Lets get you started with development to production!
@@ -41,7 +40,6 @@ Tutorials
 
 
 .. toctree::
-    :maxdepth: 1
     :hidden:
 
     /start/index

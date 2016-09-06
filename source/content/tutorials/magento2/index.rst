@@ -59,7 +59,7 @@ VCL Migrator, which can help you upgrade from Varnish 3 to Varnish 4.
 .. _magento2_resources:
 
 Magento 2 Resources
-===================
+-------------------
 
 `Magento Installation`_
 
@@ -99,8 +99,8 @@ Our recommneded Plugins for Magento 2
 
 
 .. toctree::
-  :hidden:
   :maxdepth: 1
+  :hidden:
 
   magento2_varnish_basics
   m2_step_by_step

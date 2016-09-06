@@ -3,7 +3,6 @@
 Varnish with Magento 1.9 and older
 ==================================
 
-
 Magento versions 1.9 and earlier didnot have support for varnish out of the box.
 
 Uptil version 1.9.x Magento provides an extension named `Turpentine`_ which improves
@@ -24,7 +23,7 @@ blocks added by other extensions."
 .. _`Github Repo for Magento Turpentine`: https://github.com/nexcess/magento-turpentine
 
 Magento 1.x Step by Step Guide
-==============================
+------------------------------
 
 Please Note that Magento 2 at this time is the latest version.
 If you choose to upgrade 2 magento 2 that is a humble choice.
@@ -34,7 +33,7 @@ have to admit that magento 1.x with varnish is not supported out of the box but
 there is are plugins that can help your varnish configurations with Magento 1.x.
 
 Magento 1.9 and older Resources
-===============================
+-------------------------------
 
 `Magento1.9 Official Docs`_
 
