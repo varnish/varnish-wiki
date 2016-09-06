@@ -31,7 +31,7 @@ your Drupal site can fly!
 Get Varnish!
 
 Implementing Drupal 8 with Varnish
-==================================
+----------------------------------
 
 Varnish is easy to set up and use. Since we have an open source project you are
 always welcome to try our community edition and contribute your fare share

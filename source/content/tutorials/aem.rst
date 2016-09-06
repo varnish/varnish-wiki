@@ -33,7 +33,7 @@ needed for your sites cache invalidation.
 
 
 VARNISH CACHE PLUS
-==================
+------------------
 
 - Cache HTTP headers (requests and responses)
 - Configurable to cache any kind of HTTP request using queries.
@@ -54,7 +54,7 @@ With Varnish Cache Plus, enhanced Cache Invalidation techniques you can get,
 
 
 Replacing Adobe Dispatcher with Varnish Cache Plus
-==================================================
+--------------------------------------------------
 
 Know that this requires a user to have great understanding of Varnish and its
 language (VCL), AEM and HTTP. As challengin as it may be it is also rewarding
