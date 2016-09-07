@@ -12,6 +12,7 @@ Python 2.7
 
 Github
 
+Pygments 2.2 [include VCL Lexer Support]
 
 **Author:**
 
