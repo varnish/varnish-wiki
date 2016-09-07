@@ -30,6 +30,12 @@ your Drupal site can fly!
 
 Get Varnish!
 
+.. toctree::
+  :hidden:
+
+  drupal_step_by_step
+  drupal_vcl
+
 Implementing Drupal 8 with Varnish
 ----------------------------------
 
@@ -78,9 +84,3 @@ Varnish for beginners: https://dev.acquia.com/blog/explaining-varnish-beginners
 Managing Project with Varnish: https://www.drupal.org/project/varnish
 
 Configuring Varnish 3 for Drupal 7: https://fourkitchens.atlassian.net/wiki/display/TECH/Configure+Varnish+3+for+Drupal+7
-
-.. toctree::
-  :hidden:
-  :maxdepth: 1
-
-  drupal_step_by_step

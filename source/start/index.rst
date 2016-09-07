@@ -3,6 +3,20 @@
 Getting Started
 ===============
 
+.. toctree::
+    :hidden:
+
+    your_varnish_goals
+    website_arch
+    /content/tutorials/varnish/troubleshooting_varnish
+    /content/tutorials/varnish/run_varnish
+    /content/tutorials/varnish/varnish_test
+    general_resources
+    /content/tutorials/magento2/index
+    /content/tutorials/wordpress/index
+    /content/tutorials/drupal/index
+
+
 Lets get started with Varnishing your website!
 
 Installing and Configuring Varnish
@@ -22,11 +36,11 @@ Installing and Configuring Varnish
 Step by Step Configuring for Web Applications
 .............................................
 
-:doc:`Magento 2 with Varnish </content/tutorials/magento2/m2_step_by_step>`
+:doc:`Magento 2 guide to Varnish </content/tutorials/magento2/m2_step_by_step>`
 
-:doc:`Wordpress with Varnish </content/tutorials/wordpress/wp_step_by_step>`
+:doc:`Wordpress guide to  Varnish </content/tutorials/wordpress/wp_step_by_step>`
 
-:doc:`Drupal with Varnish </content/tutorials/drupal/drupal_step_by_step>`
+:doc:`Drupal guide to Varnish </content/tutorials/drupal/drupal_step_by_step>`
 
 
 Configuring for Enterprise Products
@@ -48,11 +62,9 @@ Below are links to examples of vcl configuring in/with varnish.
 
 :doc:`Wordpress and vcl </content/tutorials/wordpress/wp_vcl>`
 
-:doc:`Drupal and vcl</content/tutorials/drupal/drupal_vcl>`
+:doc:`Drupal and vcl </content/tutorials/drupal/drupal_vcl>`
 
 :doc:`Magento2 and vcl </content/tutorials/magento2/magento2_vcl>`
-
-:doc:`RUN VARNISH </content/tutorials/varnish/run_varnish>`
 
 
 Recipes for Cache Invalidation
@@ -78,26 +90,3 @@ Below is a list of resources which can help you understand and manage our softwa
 .. _`The Varnish Users Guide`: https://www.varnish-cache.org/docs/4.1/users-guide/index.html#users-guide-index
 .. _`The Varnish Reference Manual`: https://www.varnish-cache.org/docs/4.1/reference/index.html#reference-index
 .. _`Our Webinar on Cache Invalidation Strategies`: https://info.varnish-software.com/webinars_fm/cache-invalidation-strategies
-
-
-.. toctree::
-    :hidden:
-    :maxdepth: 1
-
-    /content/tutorials/varnish/varnish_ubuntu
-    /content/tutorials/magento2/index
-    /content/tutorials/wordpress/index
-    /content/tutorials/drupal/index
-    /content/tutorials/aem
-    /content/tutorials/expressionEngine
-    your_varnish_goals
-    website_arch
-    /content/tutorials/varnish/troubleshooting_varnish
-    /content/tutorials/varnish/run_varnish
-    /content/tutorials/varnish/varnish_test
-    /content/tutorials/varnish/sample_vclTemplate
-    /content/tutorials/wordpress/wp_vcl
-    /content/tutorials/drupal/drupal_vcl
-    /content/tutorials/varnish/builtin_vcl
-    /content/tutorials/magento2/magento2_vcl
-    general_resources

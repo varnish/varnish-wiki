@@ -3,6 +3,13 @@
 WordPress with Varnish
 ======================
 
+.. toctree::
+  :hidden:
+
+  wp_step_by_step
+  wp_vcl
+
+
 If you have a WordPress site and want to implement a caching solution.
 Depending on the amount if traffic on your and the complexity of your
 WordPress theme, performance maybe lagging. Varnish Cache is your recommended
@@ -92,7 +99,7 @@ with given default.vcl. Read more on the plugins page.
 
 .. _wp_resources:
 
-WordPress RESOURCES
+WordPress Resources
 -------------------
 
 http://www.dimitri.eu/how-to-purge-varnish-cache/
@@ -102,10 +109,3 @@ http://code.tutsplus.com/tutorials/optimizing-WordPress-with-varnish-and-w3-tota
 .. _`W3 Total Cache`: https://WordPress.org/plugins/w3-total-cache/
 .. _`Varnish HTTP Purge`: https://WordPress.org/plugins/varnish-http-purge/
 .. _`WPBase Cache`: https://WordPress.org/plugins/wpbase-cache/
-
-.. toctree::
-  :hidden:
-  :maxdepth: 1
-
-  wp_step_by_step
-  wp_vcl

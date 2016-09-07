@@ -183,7 +183,7 @@ html_theme_options = {
 
     # Global TOC depth for "site" navbar tab. (Default: 1)
     # Switching to -1 shows all levels.
-    'globaltoc_depth': 2,
+    'globaltoc_depth': 1,
 
     # Include hidden TOCs in Site navbar?
     #
@@ -204,7 +204,7 @@ html_theme_options = {
 
     # Location of link to source.
     # Options are "nav" (default), "footer" or anything else to exclude.
-    'source_link_position': "footer",
+    'source_link_position': "sidebar",
 
     # Bootswatch (http://bootswatch.com/) theme.
     #
@@ -265,7 +265,7 @@ html_static_path = ['_static']
 
 # Custom sidebar templates, maps document names to template names.
 #
-html_sidebars = { '**': ['globaltoc.html','sidebar.html','searchbox.html'] }
+html_sidebars = { '**': ['sidebar.html','searchbox.html','sourcelink.html'] }
 
 # Additional templates that should be rendered to pages, maps page names to
 # template names.
@@ -350,7 +350,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'VarnishDocumentation.tex', u'Varnish Documentation Documentation',
+    (master_doc, 'VarnishDocumentation.tex', u'Varnish Documentation',
      u'Taiyeba', 'manual'),
 ]
 
@@ -386,7 +386,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'varnishdocumentation', u'Varnish Documentation Documentation',
+    (master_doc, 'varnishdocumentation', u'Varnish Documentation',
      [author], 1)
 ]
 
@@ -401,8 +401,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'VarnishDocumentation', u'Varnish Documentation Documentation',
-     author, 'VarnishDocumentation', 'One line description of project.',
+    (master_doc, 'VarnishDocumentation', u'Varnish Documentation',
+     author, 'Varnish Software Group', 'Fly',
      'Miscellaneous'),
 ]
 

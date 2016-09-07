@@ -21,7 +21,7 @@ Facebook, Wikipedia, Vimeo, Twitter, Tumblr, The Guardian, VG.no and many other
 websites.
 
 
-:ref:`GETTING STARTED HERE <start>`
+:ref:`Getting Started Here! <start>`
 
 
 :ref:`FAQ <faq>`

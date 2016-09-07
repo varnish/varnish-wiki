@@ -3,6 +3,20 @@
 Get Varnish
 ===========
 
+.. toctree::
+  :hidden:
+
+  builtin_vcl
+  multiple_varnishes
+  run_varnish
+  sample_vclTemplate
+  troubleshooting_varnish
+  varnish_ubuntu
+  varnish_test
+  varnishCacheVersions
+  vcl
+  vcl_examples
+
 You have two choices:
 
 - Install Binary Packages
@@ -179,19 +193,3 @@ libraries are found, run
   sudo ldconfig
 
 Using Source: https://www.varnish-cache.org/docs/trunk/installation/install.html#compiling-varnish-from-source
-
-
-.. toctree::
-  :maxdepth: 1
-  :hidden:
-
-  builtin_vcl
-  multiple_varnishes
-  run_varnish
-  sample_vclTemplate
-  troubleshooting_varnish
-  varnish_ubuntu
-  varnish_test
-  varnishCacheVersions
-  vcl
-  vcl_examples

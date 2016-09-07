@@ -3,6 +3,15 @@
 Magento2 with Varnish
 =====================
 
+.. toctree::
+  :hidden:
+
+  magento2_varnish_basics
+  m2_step_by_step
+  magento1x
+  magento2_vcl
+
+
 Magento is a powerful e-commerce platform  for marketing, catalog management
 and search engine optimization. Magento provides online merchants with a flexible
 shopping cart system, a control over a user friendly WUI with contents and various
@@ -96,11 +105,3 @@ Our recommneded Plugins for Magento 2
 1. Fastly-Magento
 
   https://github.com/fastly/fastly-magento2
-
-
-.. toctree::
-  :hidden:
-
-  magento2_varnish_basics
-  m2_step_by_step
-  magento1x
