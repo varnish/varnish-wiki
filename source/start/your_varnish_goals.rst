@@ -32,21 +32,21 @@ clients, URLs, user agents etc whatever requests are hitting the backend the mos
 
 To see the top requests sent to the backend use:
 
-.. code-block:: c
+.. code-block:: VCL
 
   varnishtop -i BereqURL
 
 
 To see which URLs the client is requesting:
 
-.. code-block:: c
+.. code-block:: VCL
 
   varnishtop -i ReqURL
 
 
 To see the most popular Accept-encoding header the client is sending:
 
-.. code-block:: c
+.. code-block:: VCL
 
   varnishtop -I ReqHeader:Accept-Encoding
 
@@ -67,7 +67,7 @@ Using the command, `varnishlog` gives raw logs.
 
 To see running processes type:
 
-.. code-block:: c
+.. code-block:: VCL
 
     varnishlog -g raw
 
@@ -143,7 +143,7 @@ will create object, a `hit-for-pass` object.
 In such a case if the backend server ends up caching un-necessary cookies, just
 unset the Set-Cookie header as shown in example below.
 
-.. code-block:: c
+.. code-block:: VCL
 
   vcl_recv {
     ...
@@ -158,7 +158,7 @@ To understand how long an object can be kept in varnish-cache, there is an Age
 header which is set through the default.vcl file and the value can be viewed by
 collecting the Age header from the request header as shown below:
 
-.. code-block:: c
+.. code-block:: VCL
 
   varnishlog -I ReqHrader:^Age
 
@@ -207,7 +207,7 @@ backened problems.
 A simple example would be to directly set the beresp.ttl in vcl_backend_response
 to a sensible value.
 
-.. code-block:: bash
+.. code-block:: VCL
 
   sub vcl_backend_response {
             set beresp.ttl = 7 d; # 7 days
@@ -217,7 +217,7 @@ to a sensible value.
 The example below shows the beresp-ttl value set to 5days, that means the url
 will be stored in cache for 7days and varnish will not cache it for 7 days.
 
-.. code-block:: c
+.. code-block:: VCL
 
   sub vcl_backend_response {
         if (bereq.url ~ "^/legacy_broken_cms/") {
@@ -270,12 +270,12 @@ as possible.
 The following VCL code shows how to normalize the Accept-Encoding headers:
 
 .. literalinclude:: /content/examples/vclex_normalize_AcceptEncoding.vcl
-  :language: c
+  :language: VCL
 
 Another example to normalize `Accept-Language` header:
 
 .. literalinclude:: /content/examples/vclex_normalize_AcceptLanguage.vcl
-  :language: c
+  :language: VCL
 
 One of the best ways to take advantage of vary would be to build the response
 header based on cached and non-cached objects. This brings us to the next topic,
@@ -319,7 +319,7 @@ content before storing it in cache by appending `beresp.do_gzip = true` in the
 `vcl_backend_response` as shown below.
 
 .. literalinclude:: /content/examples/vclex_compressContent.vcl
-  :language: c
+  :language: VCL
 
 This code will make the following changes to the object header before inserting
 in cache;
@@ -339,7 +339,7 @@ the content before sending it into cache by appending `beresp.do_gunzip = true`
 in the `vcl_backend_response` as shown below.
 
 .. literalinclude:: /content/examples/vclex_unCompressContent.vcl
-  :language: c
+  :language: VCL
 
 This makes the following changes to the object header before inserting in cache;
 
@@ -384,7 +384,7 @@ means everytime there is fresh data for an object, that object is requested and
 `purged`. The simplest way to achieve this is by using the code given below:
 
 .. literalinclude:: /content/examples/vcl_purgeFromBackend.vcl
-  :language: c
+  :language: VCL
 
 
 Bans

@@ -25,6 +25,7 @@ A sample default VCL for Expression Engine
 ..........................................
 
 .. literalinclude:: /content/templates/vcl_defaultEE_andrew.vcl
+  :language: VCL
 
 
 

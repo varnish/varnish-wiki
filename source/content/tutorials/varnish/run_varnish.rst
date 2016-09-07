@@ -38,7 +38,7 @@ Are you the only person running your varnish?
 If you are the only one or all those who have access to varnish are trusted to
 the same degree, you don't have to worry about security.
 
-Otherwise, if you have different administration elvels, you might want to know
+Otherwise, if you have different administration levels, you might want to know
 about what services varnish provides for that.
 
 Well varnish provides four level of security:
@@ -106,14 +106,14 @@ only!) these users to read it.
 
 A good way to create the secret file is:
 
-.. code-block:: c
+.. code-block:: bash
 
   dd if=/dev/random of=/etc/varnish_secret count=1
 
 
 When starting varnishd or varnishadm use `-S` to provide the filename.
 
-Read mroe about `Authenticating -S`_
+Read more about `Authenticating -S`_
 
 
 Parameters

@@ -50,7 +50,7 @@ loaded into the server process.
 
 You can view your `built-in vcl` in this location if you are a debian user:
 
-.. code-block:: c
+.. code-block:: bash
 
   cat /usr/share/doc/varnish/builtin.vcl
 
@@ -62,7 +62,7 @@ Any vcl you want to add goes in the /etc/varnish/default.vcl
 If you want to re-create your own vcl, we recommend you make changes in the
 `example.vcl`. You will find that file in this location if you are a debian user:
 
-.. code-block:: c
+.. code-block:: bash
 
   cat /usr/share/doc/varnish/example.vcl
 

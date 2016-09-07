@@ -63,8 +63,8 @@ in this default.vcl.
 	- Open ``/etc/default/varnish`` in a text editor.
 	- You will see a code like the one below.
 
-.. literalinclude:: /content/examples/default_varnish_1
-	:language: c
+.. literalinclude:: /content/examples/default_varnish_1.vcl
+	:language: VCL
 
 Description:
 
@@ -83,8 +83,8 @@ Description:
 	- Now set the Varnish listen port to 80.
 	- Now replace the ``-f`` line with ``-b 95.85.10.242:8080`` as shown below.
 
-.. literalinclude:: /content/examples/default_varnish_2
-	:language: c
+.. literalinclude:: /content/examples/default_varnish_2.vcl
+	:language: VCL
 
 This is all the configuration changes in this file.
 
@@ -116,8 +116,8 @@ This is all the configuration changes in this file.
 
 	- Locate the following piece of code
 
-.. literalinclude:: /content/examples/default_vcl
-	:language: bash
+.. literalinclude:: /content/examples/default_vcl.vcl
+	:language: VCL
 
 The value of .host by default is the localhost. It should replaces with the fully
 qualified host name or IP address (typically, a webserver) and listen port of the
@@ -127,8 +127,8 @@ Varnish will accelerate.
 The value of .port should re replaced with webservers listening port, for example
 8080 as shown below
 
-.. literalinclude:: /content/examples/default_vcl_2
-	:language: bash
+.. literalinclude:: /content/examples/default_vcl_2.vcl
+	:language: VCL
 
 It is recommended that if changes are made to these files, it should be copied
 and renamed name, because when varnish updates, it will replace any changes made
@@ -176,7 +176,7 @@ should be accessed.
 Here is a simple example:
 
 .. literalinclude:: /content/examples/vclex_multiple_backend.vcl
-	:language: c
+	:language: VCL
 
 
 Step 4: Restart
@@ -185,7 +185,7 @@ Step 4: Restart
 It is always required to restart all services once changes are made in configuration files.
 
 .. literalinclude:: /content/examples/snippet2_restart_systemv
-	:language: c
+	:language: VCL
 
 
 Step 5: Testing
@@ -200,7 +200,7 @@ Run
 You can also use varnishtest to test your backend as shown below.
 
 .. literalinclude:: /content/examples/vtc/vtc_apacheBackend.vtc
-	:language: c
+	:language: VCL
 
 replace your backend ip-address and port number.
 

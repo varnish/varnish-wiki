@@ -66,7 +66,7 @@ Our recommended Plugins for WordPress
 
 If you search in the WordPress.org for plugins like this:
 
-.. code-block:: c
+.. code-block:: bash
 
   https://WordPress.org/plugins/search.php?q=varnish+plugins
 

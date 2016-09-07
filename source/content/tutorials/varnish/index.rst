@@ -43,13 +43,13 @@ FreeBSD
 
 Binary package:
 
-.. code-block: c
+.. code-block: bash
 
   pkg_add -r varnish
 
 From source:
 
-.. code-block: c
+.. code-block: bash
 
   cd /usr/ports/varnish && make install clean
 
@@ -72,7 +72,7 @@ Varnish is distributed with both Debian and Ubuntu.
 
 Try
 
-.. code-block: c
+.. code-block: bash
 
   sudo apt-get install varnish
 
@@ -90,7 +90,7 @@ Download the appropriate release tarball, which you can find on http://repo.varn
 
 Alternatively, if you want to hack on Varnish, you should clone our git repository by doing:
 
-.. code-block: c
+.. code-block: bash
 
   git clone https://github.com/varnishcache/varnish-cache
 
@@ -104,34 +104,38 @@ Build dependencies on Debian / Ubuntu
 
 In order to build Varnish from source you need a number of packages installed. On a Debian or Ubuntu system these are:
 
-automake
-autotools-dev
-libedit-dev
-libjemalloc-dev
-libncurses-dev
-libpcre3-dev
-libtool
-pkg-config
-python-docutils
-python-sphinx
-graphviz
+.. code-block: bash
+
+  automake
+  autotools-dev
+  libedit-dev
+  libjemalloc-dev
+  libncurses-dev
+  libpcre3-dev
+  libtool
+  pkg-config
+  python-docutils
+  python-sphinx
+  graphviz
 
 Build dependencies on Red Hat / CentOS
 ......................................
 
 To build Varnish on a Red Hat or CentOS system you need the following packages installed:
 
-autoconf
-automake
-jemalloc-devel
-libedit-devel
-libtool
-ncurses-devel
-pcre-devel
-pkgconfig
-python-docutils
-python-sphinx
-graphviz
+.. code-block: bash
+
+  autoconf
+  automake
+  jemalloc-devel
+  libedit-devel
+  libtool
+  ncurses-devel
+  pcre-devel
+  pkgconfig
+  python-docutils
+  python-sphinx
+  graphviz
 
 
 Build dependencies on a SmartOS Zone
@@ -139,7 +143,7 @@ Build dependencies on a SmartOS Zone
 
 As of SmartOS pkgsrc 2015Q4, install the following packages:
 
-.. code-block: c
+.. code-block: bash
 
         pkgin in autoconf automake libedit libtool ncurses \
         pcre graphviz py27-sphinx python27 gmake gcc49 \
@@ -147,7 +151,7 @@ As of SmartOS pkgsrc 2015Q4, install the following packages:
 
 Optionally, to pull from a repository:
 
-.. code-block: c
+.. code-block: bash
 
   pkgin in git
 
@@ -156,7 +160,7 @@ Building Varnish
 
 The configuration will need the dependencies above satisfied. Once that is taken care of:
 
-.. code-block: c
+.. code-block: bash
 
   cd varnish-cache
   sh autogen.sh
@@ -168,7 +172,7 @@ forget about that for now, almost everything in Varnish can be tweaked with run 
 
 Before you install, you may want to run the test suite, make a cup of tea while it runs, it usually takes a couple of minutes:
 
-.. code-block: c
+.. code-block: bash
 
   make check
 
@@ -179,7 +183,7 @@ Installing
 
 And finally, the true test of a brave heart:
 
-.. code-block: c
+.. code-block: bash
 
   sudo make install
 
@@ -188,7 +192,7 @@ The varnishd binary is in /usr/local/sbin/varnishd.
 To make sure that the necessary links and caches of the most recent shared
 libraries are found, run
 
-.. code-block: c
+.. code-block: bash
 
   sudo ldconfig
 

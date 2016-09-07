@@ -8,13 +8,7 @@ Getting Started
 
     your_varnish_goals
     website_arch
-    /content/tutorials/varnish/troubleshooting_varnish
-    /content/tutorials/varnish/run_varnish
-    /content/tutorials/varnish/varnish_test
     general_resources
-    /content/tutorials/magento2/index
-    /content/tutorials/wordpress/index
-    /content/tutorials/drupal/index
 
 
 Lets get started with Varnishing your website!
