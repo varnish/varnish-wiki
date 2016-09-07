@@ -6,40 +6,46 @@ Sample VCLs
 Configuring Varnish
 -------------------
 
-Backend Definition
-..................
-
-.. literalinclude:: /content/templates/vcl_defaultSample_mattias.vcl
-  :lines: 7-30
-
 ACL Purge
 .........
 
 .. literalinclude:: /content/templates/vcl_defaultSample_mattias.vcl
+  :language: VCL
   :lines: 32-37
+
+Backend Definition
+..................
+
+.. literalinclude:: /content/templates/vcl_defaultSample_mattias.vcl
+  :language: VCL
+  :lines: 7-30
 
 Normalizing header
 ..................
 
 .. literalinclude:: /content/templates/vcl_defaultSample_mattias.vcl
+  :language: VCL
   :lines: 58,66-67,193
 
 Removing Proxy header
 .....................
 
 .. literalinclude:: /content/templates/vcl_defaultSample_mattias.vcl
+  :language: VCL
   :lines: 58,69-70,193
 
 Normalizing query arguments
 ...........................
 
 .. literalinclude:: /content/templates/vcl_defaultSample_mattias.vcl
+  :language: VCL
   :lines: 58,72-73,193
 
 Allowing Purging
 ................
 
 .. literalinclude:: /content/templates/vcl_defaultSample_mattias.vcl
+  :language: VCL
   :lines: 58,75-83,193
 
 Dealing with Selective Header Types
@@ -167,7 +173,7 @@ Serving Queued Requests with Grace
 Passing Real IP to backend
 --------------------------
 
-.. code-block:: c
+.. code-block:: VCL
 
   sub vcl_recv {
       if (req.restarts == 0) {

@@ -41,7 +41,7 @@ dashboard click on Settings Permalinks and select ‘Custom Structure’.
 Then type /%year%/%monthnum%/%post_id% and click on ‘Save Changes’.
 To finalize, open a command prompt and run the following as root.
 
-.. code-block:: c
+.. code-block:: bash
 
   a2enmod rewrite
 
@@ -76,8 +76,8 @@ retrieve the content from if it’s not persistent in its cache. In this case we
 be using the Apache location that we defined in Step 4.
 Edit /etc/varnish/default.vcl with a text editor and ensure the following is present.
 
-.. literalinclude:: /content/examples/default_vcl
-  :language: bash
+.. literalinclude:: /content/examples/default_vcl.vcl
+  :language: VCL
 
 7. Make it effective
 --------------------
@@ -88,7 +88,7 @@ through Varnish before it hits the Apache server. Open the command prompt again
 and run the following as root.
 
 .. literalinclude:: /content/examples/snippet2_restart_systemd
-  :language: c
+  :language: bash
 
 8. Ignore cookies
 -----------------
@@ -99,7 +99,7 @@ that are safe to ignore during normal browsing so let’s update /etc/varnish/de
 and add the following inside vcl_recv to remove them.
 
 .. literalinclude:: /content/examples/wordpress_cookies.vcl
-  :language: c
+  :language: VCL
 
 9. Exclude URLs
 ---------------
@@ -110,7 +110,7 @@ related pages from hitting the cache. Once again open /etc/varnish/default.vcl
 and add the following before we remove the cookies from the previous step.
 
 .. literalinclude:: /content/examples/wp_exclude_url.vcl
-  :language: c
+  :language: VCL
 
 10. Extend caching
 ------------------
@@ -121,7 +121,7 @@ Varnish will use 120 seconds by default if this value is missing or is equal to
 zero. To extend this period to one hour we could update /etc/varnish/default.vcl.
 
 .. literalinclude:: /content/examples/extend_caching.vcl
-  :language: c
+  :language: VCL
 
 11. Handling purge requests
 ---------------------------
@@ -135,12 +135,12 @@ vcl_recv in /etc/varnish/default.vcl.
 The first bit of code is to allow which IP addresses can access the config files.
 
 .. literalinclude:: /content/examples/allow_purging.vcl
-  :language: c
+  :language: VCL
 
 This next one is for when purge requests are handled and how to handle them:
 
 .. literalinclude:: /content/examples/handle_purging.vcl
-  :language: c
+  :language: VCL
 
 12. Secure purge
 ----------------
@@ -151,7 +151,7 @@ Edit /etc/varnish/default.vcl and after the backend add the acl below using your
 server IP address or hostname. Then modify the code in the previous step to use it.
 
 .. literalinclude:: /content/examples/secure_purge.vcl
-  :language: c
+  :language: VCL
 
 13. Reload the configuration
 ----------------------------

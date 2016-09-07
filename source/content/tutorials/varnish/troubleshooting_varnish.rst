@@ -43,12 +43,12 @@ Try to start Varnish in debug mode!
 For systemv users:
 
 .. literalinclude:: /content/examples/vclex_startvarnish_debugmode.vcl
-  :language: c
+  :language: VCL
 
 For systemd users:
 
 .. literalinclude:: /content/examples/vclex_startvarnish_debugmode.vcl
-  :language: c
+  :language: VCL
 
 Varnish is crashing?
 --------------------

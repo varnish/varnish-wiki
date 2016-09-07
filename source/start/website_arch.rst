@@ -3,7 +3,7 @@
 Understanding a Typical Website Architecture
 ============================================
 
-Regardsless of the Web applicaiton you use to manage your wesbite, most websites
+Regardless of the Web applicaiton you use to manage your wesbite, most websites
 follow a similar pattern.
 
 Each website has a few distinguishable sections:
@@ -74,7 +74,7 @@ to do that you will need to add a  regular expression to masquerade the request 
 in the VCL code in the `vcl_recv` subroutine.
 
 .. literalinclude:: /content/examples/snippet6_masq
-  :language: c
+  :language: VCL
 
 
 

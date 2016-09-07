@@ -131,7 +131,8 @@ matter of hours. Very powerful stuff.
 Author: Per Buer
 Updated: Jan 28, 2013
 
-**More Reading ...**
+More Reading ...
+................
 
 Read on about :ref:`Understand your Website <website_arch>`
 
@@ -143,7 +144,7 @@ This varnish checking website is hosted by `Acquia`_
 
 If you want to help fix our bugs or want to know about bugs in the project:
 
-  https://scan.coverity.com/projects/varnish
+https://scan.coverity.com/projects/varnish
 
 .. _`Is My Varnish Working?`: http://www.ismyvarnishworking.com
 .. _`The Design principle of Varnish`: http://book.varnish-software.com/4.0/chapters/Design_Principles.html

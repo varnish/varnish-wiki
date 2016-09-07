@@ -103,7 +103,7 @@ about that at Marko's blogpost about Placing Magento2 behind Varnish `marko_mage
 -----------------------------------------
 
 .. literalinclude:: /content/examples/snippet2_restart_systemd
-  :language: c
+  :language: VCL
 
 5. Basic Caching
 ----------------
@@ -121,7 +121,7 @@ Under the `vcl_recv` add the following code.
 warning: Make sure to add the code below the default code given for `vcl_recv`
 
 .. literalinclude:: /content/examples/snippet3_remove_cookies
-  :language: c
+  :language: VCL
 
 6. Excluding certain URLs
 -------------------------
@@ -130,7 +130,7 @@ Not all URLs should be cached. Especially not in sites that deal with personal
 information such as credit card information.
 
 .. literalinclude:: /content/examples/m2_exclude_url.vcl
-  :language: c
+  :language: VCL
 
 7. Extended Caching
 -------------------
@@ -139,7 +139,7 @@ There is a subroutine called *vcl_fetch* which is by default set to 120 seconds
 as can be seen. You can extend this caching value by
 
 .. literalinclude:: /content/examples/vcl_fetch.vcl
-  :language: c
+  :language: VCL
 
 This sets the ttl to 5 seconds, thus varnish picks up changes every 5sec.
 Add this subroutine right below the *backend default*.

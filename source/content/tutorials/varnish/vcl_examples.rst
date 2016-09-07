@@ -10,14 +10,14 @@ HTTP Purge
 ----------
 
 .. literalinclude:: /content/examples/vcl_purgeFromBackend.vcl
-  :language: c
+  :language: VCL
 
 
 PURGE an article from the Backend
 .................................
 
 .. literalinclude:: /content/examples/vcl_purgeFromBackend.vcl
-  :language: c
+  :language: VCL
 
 Purge with Restart
 ..................
@@ -25,7 +25,7 @@ Purge with Restart
 This allows Varnish to re-run the VCL state machine with different variables.
 
 .. literalinclude:: /content/examples/vcl_purgeWithRestart.vcl
-  :language: c
+  :language: VCL
 
 Source: http://book.varnish-software.com/4.0/chapters/Cache_Invalidation.html?highlight=vcl_recv
 
@@ -39,7 +39,7 @@ Softpurge
 
 
 .. literalinclude:: /content/examples/vclex_softPurge.vcl
-  :language: c
+  :language: VCL
 
 source: https://github.com/varnish/varnish-modules/blob/master/docs/vmod_softpurge.rst
 

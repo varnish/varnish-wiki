@@ -56,7 +56,7 @@ Name the Test
 Varnishtest requires that you name the test.
 Here is an example below:
 
-.. code-block:: python
+.. code-block:: VCL
 
   varnishtest "This is a VarnishTest for Testing"
 
@@ -86,6 +86,7 @@ Declaring the Server
 Below is an example of declaring a server:
 
 .. literalinclude:: /content/examples/vtc/example.vtc
+  :language: VCL
   :lines: 4-7
 
 
@@ -100,6 +101,7 @@ Declaring The Varnish Cache Instance
 Below is an example of declaring a Varnish Cache Instance:
 
 .. literalinclude:: /content/examples/vtc/example.vtc
+  :language: VCL
   :lines: 9
 
 Declaring a Client
@@ -111,6 +113,7 @@ Declaring a Client
 Below is an example of declaring a Varnish Cache Instance:
 
 .. literalinclude:: /content/examples/vtc/example.vtc
+  :language: VCL
   :lines: 11-16
 
 In this example, c1 transmits one request and receives one response.
@@ -128,7 +131,7 @@ Running the Test
 
 - To run the test issue the command as shown below:
 
-.. code-block:: c
+.. code-block:: bash
 
   varnishtest example.vtc
 
@@ -137,21 +140,21 @@ directory of where the test is stored.
 
 This is the positive output to expect:
 
-.. code-block:: c
+.. code-block:: VCL
 
   #     top  TEST example.vtc passed (1.709)
 
 If you feel the need to inspect/understand the test better, you can always try the
 verbose mode with a `-v` as shown below:
 
-.. code-block:: c
+.. code-block:: VCL
 
   varnishtest -v example.vtc
 
 This is what a verbose output looks like for the ``example.vtc``:
 
 .. literalinclude:: /content/examples/vtc/example_voutput.vtc
-
+  :language: bash
 
 Taking your varnishtest to the next level
 ------------------------------------------
@@ -160,20 +163,20 @@ Connecting real Backend
 -----------------------
 
 .. literalinclude:: /content/examples/vtc/vtc_addRunningBackend.vtc
-  :language: c
+  :language: VCL
 
 Server - Answering more then one request
 .........................................
 
 .. literalinclude:: /content/examples/vtc/vtc_ServerReq.vtc
-  :language: c
+  :language: VCL
   :lines: 1-9
 
 Server - Expecting a request with url
 ......................................
 
 .. literalinclude:: /content/examples/vtc/vtc_ServerReq.vtc
-  :language: c
+  :language: VCL
   :lines: 11-17
 
 
@@ -181,20 +184,20 @@ Server - Expecting particular text in body
 ...........................................
 
 .. literalinclude:: /content/examples/vtc/vtc_ServerReq.vtc
-  :language: c
+  :language: VCL
   :lines: 19-31
 
 Client - Expecting Response
 ...........................
 
 .. literalinclude:: /content/examples/vtc/vtc_ClientReq.vtc
-  :language: c
+  :language: VCL
 
 Setting varnish to Expect
 .........................
 
 .. literalinclude:: /content/examples/vtc/vtc_varnishExpect.vtc
-  :language: c
+  :language: VCL
 
 
 You may have noticed that varnishtest preparing, executing

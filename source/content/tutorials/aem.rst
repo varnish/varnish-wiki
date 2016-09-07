@@ -81,11 +81,13 @@ Your setup Preference:
 An example of Excluding backend responses from cache-control
 
 .. literalinclude:: /content/examples/vcl_excludeFromCache.vcl
+  :language: VCL
 
 
 Example of sending all traffic to vdir directory
 
 .. literalinclude:: /content/templates/vcl_defaultSample_mattias.vcl
+  :language: VCL
   :lines: 64
 
 

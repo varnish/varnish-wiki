@@ -57,6 +57,7 @@ cached. So for your application specific mechanisms, you need to add a rule like
 the following to ensure that login pages aren't cached.
 
 .. literalinclude:: /content/examples/drupal_exclude_url.vcl
+  :language: VCL
 
 if we did end up caching login pages, we could end up serving the same content
 to all the users. That takes us to our next topic, Cookies!
@@ -79,7 +80,7 @@ On the other hand, cookies related to page designs and other static contents nee
 to be allowed to cache. Below is an example of caching cookies for your drupal site:
 
 .. literalinclude:: /content/examples/vclex_drupal_cachecookies.vcl
-
+  :language: VCL
 
 Drupal Caching Headers
 ----------------------
@@ -91,6 +92,7 @@ your web application. So you need add some configurations to your vcl code that
 will cache your drupal header responses but not cache other headers.
 
 .. literalinclude:: /content/examples/drupal_cacheheaders.vcl
+  :language: VCL
 
 Purging
 -------
@@ -98,8 +100,7 @@ Purging
 This bit of code is to allow which IP addresses can access the config files.
 
 .. literalinclude:: /content/examples/allow_purging.vcl
-  :language: c
-
+  :language: VCL
 
 4. Restart services after making changes
 ----------------------------------------
@@ -107,7 +108,7 @@ This bit of code is to allow which IP addresses can access the config files.
 Don't forget to restart after making changes:
 
 .. literalinclude:: /content/examples/snippet2_restart_systemd
-  :language: c
+  :language: VCL
 
 
 .. _`Drupal-Site`: https://www.drupal.org/8
