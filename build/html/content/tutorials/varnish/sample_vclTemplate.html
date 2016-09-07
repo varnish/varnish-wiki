@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Sample VCLs &mdash; Varnish Documentation  documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootswatch-3.3.6/cosmo/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Varnish Documentation  documentation" href="../../../index.html" />
+    <link rel="up" title="How to Varnish" href="index.html" />
+    <link rel="next" title="Troubleshooting Varnish" href="troubleshooting_varnish.html" />
+    <link rel="prev" title="Lets Run Varnish!" href="run_varnish.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html">
+          Varnish Wiki</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="https://varnish-software.com">Varnish Website</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../index.html">Menu <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../start/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../faq/index.html">Varnish Web Developer&#8217;s FAQ</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">How to Varnish</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../wordpress/index.html">WordPress with Varnish</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../magento2/index.html">Magento2 with Varnish</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../drupal/index.html">Drupal with Varnish</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aem.html">Adobe Experience Manager and Varnish</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../expressionEngine.html">Expression Engine and Varnish</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sitecoreCMS.html">Sitecore CMS and Varnish</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="run_varnish.html" title="Previous Chapter: Lets Run Varnish!"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Lets Run Varn...</span>
+    </a>
+  </li>
+  <li>
+    <a href="troubleshooting_varnish.html" title="Next Chapter: Troubleshooting Varnish"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Troubleshooti... &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><div class="container">
+    <div class="row">
+      <div class="col-md-3" width="18%">
+<!---        <div class="sidebar">
+</div>
+          <div calss="container">  --->
+<div class="sidebar-block">
+  <div class="sidebar-wrapper">
+    <h3>Contents</h3>
+    <div class="sidebar-localtoc">
+      <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../start/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../faq/index.html">Varnish Web Developer&#8217;s FAQ</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">How to Varnish</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="builtin_vcl.html">What&#8217;s in the Builtin VCL?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="multiple_varnishes.html">Dealing with Multiple Varnishes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="run_varnish.html">Lets Run Varnish!</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Sample VCLs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#configuring-varnish">Configuring Varnish</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#acl-purge">ACL Purge</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#backend-definition">Backend Definition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#normalizing-header">Normalizing header</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#removing-proxy-header">Removing Proxy header</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#normalizing-query-arguments">Normalizing query arguments</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#allowing-purging">Allowing Purging</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dealing-with-selective-header-types">Dealing with Selective Header Types</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#implementing-web-socket-support-example">Implementing Web Socket Support Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sending-traffic-to-vdir">Sending traffic to vdir</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#url-manipulation">URL Manipulation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#making-sure-the-post-requests-are-always-passed">Making sure the POST Requests are always Passed</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#removing-google-analytics-added-parameters">Removing Google Analytics added parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#example-of-stripping-from-url">Example of Stripping from URL</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#cookie-manipulation">Cookie Manipulation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#removing-google-analytic-cookies">Removing Google Analytic cookies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#removing-doubleclick-offensive-cookies">Removing DoubleClick Offensive Cookies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#removing-quant-capital-cookies">Removing Quant Capital cookies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#removing-addthis-cookies">Removing ADDThis cookies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#removing-prefix-from-cookies">Removing &#8216;;&#8217; prefix from cookies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#checking-for-empty-or-spaced-cookies">Checking for empty or spaced cookies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#turn-on-varnish-support-for-streaming">Turn On Varnish Support for Streaming</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#removing-cookies-for-static-files">Removing Cookies for Static Files</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#esi-support">ESI Support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hashing-cookies">Hashing cookies</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#serving-queued-requests-with-grace">Serving Queued Requests with Grace</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#passing-real-ip-to-backend">Passing Real IP to backend</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#handling-request-from-backend">Handling Request from backend</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#pausing-esi-request">Pausing ESI request</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#enabling-cache-for-static-files">Enabling Cache for Static files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#streaming">Streaming</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#redirecting">Redirecting</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#setting-cache-for-static-files-if-unset">Setting cache for static files if Unset</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#example-of-excluding-from-cache">Example of excluding from cache</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#setting-grace-mode">Setting Grace mode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#adding-debug-headers">Adding Debug headers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#handling-http-purge">Handling HTTP purge</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#vcl-synth">vcl_synth</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting_varnish.html">Troubleshooting Varnish</a></li>
+<li class="toctree-l2"><a class="reference internal" href="varnish_ubuntu.html">Installing and Configuring Varnish</a></li>
+<li class="toctree-l2"><a class="reference internal" href="varnish_test.html">Testing with VarnishTest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="varnishCacheVersions.html">Which version of Varnish to use?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vcl.html">Varnish Configuration Language (VCL)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vcl_examples.html">Cache Invalidation with Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#installing-varnish-with-binary-packages"><strong>Installing Varnish with Binary Packages</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#choosing-os">Choosing OS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#compiling-varnish-from-source"><strong>Compiling Varnish from source</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#building-varnish">Building Varnish</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../wordpress/index.html">WordPress with Varnish</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../magento2/index.html">Magento2 with Varnish</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../drupal/index.html">Drupal with Varnish</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aem.html">Adobe Experience Manager and Varnish</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../expressionEngine.html">Expression Engine and Varnish</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sitecoreCMS.html">Sitecore CMS and Varnish</a></li>
+</ul>
+
+    </div>
+  </div>
+</div>
+<!---          </div>
+        </div> --->
+      </div>
+    </div>
+</div>
+<div class="sidebar-block">
+  <div class="sidebar-wrapper">
+    <div id="main-search">
+      <form class="form-inline" action="../../../search.html" method="GET" role="form">
+        <div class="input-group">
+          <input name="q" type="text" class="form-control" placeholder="Search...">
+        </div>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div>
+  <div class="sidebar-block">
+    <div class="sidebar-wrapper">
+      <h4>&nbsp;&nbsp;Contribute</h4>
+      <ul class="this-page-menu">
+        <li><a href="../../../_sources/content/tutorials/varnish/sample_vclTemplate.txt"
+               rel="nofollow">Show Source</a></li>
+        <li><a href="https://github.com/staiyeba/wiki_varnish/blob/master/source/content/tutorials/varnish/sample_vclTemplate.rst"
+               rel="nofollow">Show on GitHub</a></li>
+        <li><a href="https://github.com/staiyeba/wiki_varnish/edit/master/source/content/tutorials/varnish/sample_vclTemplate.rst"
+               rel="nofollow">Edit on GitHub</a></li>
+      </ul>
+    </div>
+  </div>
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="sample-vcls">
+<span id="sample-vcltemplate"></span><h1>Sample VCLs<a class="headerlink" href="#sample-vcls" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="configuring-varnish">
+<h2>Configuring Varnish<a class="headerlink" href="#configuring-varnish" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="acl-purge">
+<h3>ACL Purge<a class="headerlink" href="#acl-purge" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-VCL"><div class="highlight"><pre><span></span>  <span class="k">acl </span><span class="vg">purge </span><span class="p">{</span>
+    <span class="c"># ACL we&#39;ll use later to allow purges</span>
+    <span class="s">&quot;localhost&quot;</span><span class="p">;</span>
+    <span class="s">&quot;127.0.0.1&quot;</span><span class="p">;</span>
+    <span class="s">&quot;::1&quot;</span><span class="p">;</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="backend-definition">
+<h3>Backend Definition<a class="headerlink" href="#backend-definition" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-VCL"><div class="highlight"><pre><span></span>  backend server1 { # Define one backend
+    .host = &quot;127.0.0.1&quot;;    # IP or Hostname of backend
+    .port = &quot;80&quot;;           # Port Apache or whatever is listening
+    .max_connections = 300; # That&#39;s it
+
+    .probe = {
+      #.url = &quot;/&quot;; # short easy way (GET /)
+      # We prefer to only do a HEAD /
+      .request =
+        &quot;HEAD / HTTP/1.1&quot;
+        &quot;Host: localhost&quot;
+        &quot;Connection: close&quot;
+        &quot;User-Agent: Varnish Health Probe&quot;;
+
+      .interval  = 5s; # check the health of each backend every 5 seconds
+      .timeout   = 1s; # timing out after 1 second.
+      .window    = 5;  # If 3 out of the last 5 polls succeeded the backend is considered healthy, otherwise it will be marked as sick
+      .threshold = 3;
+    }
+
+    .first_byte_timeout     = 300s;   # How long to wait before we receive a first byte from our backend?
+    .connect_timeout        = 5s;     # How long to wait for a backend connection?
+    .between_bytes_timeout  = 2s;     # How long to wait between bytes received from our backend?
+  }
+</pre></div>
+</div>
+</div>
+<div class="section" id="normalizing-header">
+<h3>Normalizing header<a class="headerlink" href="#normalizing-header" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-VCL"><div class="highlight"><pre><span></span>  <span class="k">sub </span><span class="nf">vcl_recv</span><span class="p"> {</span>
+    <span class="c"># Normalize the header, remove the port (in case you&#39;re testing this on various TCP ports)</span>
+    <span class="k">set</span> <span class="nv">req.http.Host</span> <span class="o">=</span> <span class="k">regsub</span><span class="p">(</span><span class="nv">req.http.Host</span><span class="o">,</span> <span class="s">&quot;:[0-9]+&quot;</span><span class="o">,</span> <span class="s">&quot;&quot;</span><span class="p">);</span>
+  <span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="removing-proxy-header">
+<h3>Removing Proxy header<a class="headerlink" href="#removing-proxy-header" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-VCL"><div class="highlight"><pre><span></span>  <span class="k">sub </span><span class="nf">vcl_recv</span><span class="p"> {</span>
+    <span class="c"># Remove the proxy header (see https://httpoxy.org/#mitigate-varnish)</span>
+    <span class="k">unset</span> <span class="nv">req.http.proxy</span><span class="p">;</span>
+  <span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="normalizing-query-arguments">
+<h3>Normalizing query arguments<a class="headerlink" href="#normalizing-query-arguments" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-VCL"><div class="highlight"><pre><span></span>  <span class="k">sub </span><span class="nf">vcl_recv</span><span class="p"> {</span>
+    <span class="c"># Normalize the query arguments</span>
+    <span class="k">set</span> <span class="nv">req.url</span> <span class="o">=</span> <span class="nf">std</span><span class="p">.</span><span class="nf">querysort</span><span class="p">(</span><span class="nv">req.url</span><span class="p">);</span>
+  <span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="allowing-purging">
+<h3>Allowing Purging<a class="headerlink" href="#allowing-purging" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-VCL"><div class="highlight"><pre><span></span>  <span class="k">sub </span><span class="nf">vcl_recv</span><span class="p"> {</span>
+    <span class="c"># Allow purging</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nv">req.method</span> <span class="o">==</span> <span class="s">&quot;PURGE&quot;</span><span class="p">)</span> <span class="o">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">client.ip</span> <span class="o">~</span> <span class="no">purge</span><span class="p">)</span> <span class="o">{</span> <span class="c"># purge is the ACL defined at the begining</span>
+        <span class="c"># Not from an allowed IP? Then die with an error.</span>
+        <span class="k">return</span> <span class="p">(</span><span class="no">synth</span><span class="p">(</span><span class="m">405</span><span class="o">,</span> <span class="s">&quot;This IP is not allowed to send PURGE requests.&quot;</span><span class="p">));</span>
+      <span class="o">}</span>
+      <span class="c"># If you got this stage (and didn&#39;t error out above), purge the cached result</span>
+      <span class="k">return</span> <span class="p">(</span><span class="no">purge</span><span class="p">);</span>
+    <span class="o">}</span>
+  <span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="dealing-with-selective-header-types">
+<h3>Dealing with Selective Header Types<a class="headerlink" href="#dealing-with-selective-header-types" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default"><div class="highlight"><pre><span></span>  <span class="n">sub</span> <span class="n">vcl_recv</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">method</span> <span class="o">!=</span> <span class="s2">&quot;GET&quot;</span> <span class="o">&amp;&amp;</span>
+        <span class="n">req</span><span class="o">.</span><span class="n">method</span> <span class="o">!=</span> <span class="s2">&quot;HEAD&quot;</span> <span class="o">&amp;&amp;</span>
+        <span class="n">req</span><span class="o">.</span><span class="n">method</span> <span class="o">!=</span> <span class="s2">&quot;PUT&quot;</span> <span class="o">&amp;&amp;</span>
+        <span class="n">req</span><span class="o">.</span><span class="n">method</span> <span class="o">!=</span> <span class="s2">&quot;POST&quot;</span> <span class="o">&amp;&amp;</span>
+        <span class="n">req</span><span class="o">.</span><span class="n">method</span> <span class="o">!=</span> <span class="s2">&quot;TRACE&quot;</span> <span class="o">&amp;&amp;</span>
+        <span class="n">req</span><span class="o">.</span><span class="n">method</span> <span class="o">!=</span> <span class="s2">&quot;OPTIONS&quot;</span> <span class="o">&amp;&amp;</span>
+        <span class="n">req</span><span class="o">.</span><span class="n">method</span> <span class="o">!=</span> <span class="s2">&quot;PATCH&quot;</span> <span class="o">&amp;&amp;</span>
+        <span class="n">req</span><span class="o">.</span><span class="n">method</span> <span class="o">!=</span> <span class="s2">&quot;DELETE&quot;</span><span class="p">)</span> <span class="p">{</span>
+      <span class="o">/*</span> <span class="n">Non</span><span class="o">-</span><span class="n">RFC2616</span> <span class="ow">or</span> <span class="n">CONNECT</span> <span class="n">which</span> <span class="ow">is</span> <span class="n">weird</span><span class="o">.</span> <span class="o">*/</span>
+      <span class="k">return</span> <span class="p">(</span><span class="n">pipe</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="implementing-web-socket-support-example">
+<h3>Implementing Web Socket Support Example<a class="headerlink" href="#implementing-web-socket-support-example" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default"><div class="highlight"><pre><span></span>  <span class="n">sub</span> <span class="n">vcl_recv</span> <span class="p">{</span>
+    <span class="c1"># Implementing websocket support (https://www.varnish-cache.org/docs/4.0/users-guide/vcl-example-websockets.html)</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">Upgrade</span> <span class="o">~</span> <span class="s2">&quot;(?i)websocket&quot;</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="p">(</span><span class="n">pipe</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="n">sub</span> <span class="n">vcl_pipe</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">upgrade</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nb">set</span> <span class="n">bereq</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">upgrade</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">upgrade</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="p">(</span><span class="n">pipe</span><span class="p">);</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="sending-traffic-to-vdir">
+<h3>Sending traffic to vdir<a class="headerlink" href="#sending-traffic-to-vdir" title="Permalink to this headline">¶</a></h3>
+<p>When using external VMODs you need this.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>  <span class="n">sub</span> <span class="n">vcl_recv</span> <span class="p">{</span>
+    <span class="nb">set</span> <span class="n">req</span><span class="o">.</span><span class="n">backend_hint</span> <span class="o">=</span> <span class="n">vdir</span><span class="o">.</span><span class="n">backend</span><span class="p">();</span> <span class="c1"># send all traffic to the vdir director</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="url-manipulation">
+<h2>URL Manipulation<a class="headerlink" href="#url-manipulation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="making-sure-the-post-requests-are-always-passed">
+<h3>Making sure the POST Requests are always Passed<a class="headerlink" href="#making-sure-the-post-requests-are-always-passed" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default"><div class="highlight"><pre><span></span>  <span class="n">sub</span> <span class="n">vcl_recv</span> <span class="p">{</span>
+    <span class="c1"># Only cache GET or HEAD requests. This makes sure the POST requests are always passed.</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">method</span> <span class="o">!=</span> <span class="s2">&quot;GET&quot;</span> <span class="o">&amp;&amp;</span> <span class="n">req</span><span class="o">.</span><span class="n">method</span> <span class="o">!=</span> <span class="s2">&quot;HEAD&quot;</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="p">(</span><span class="k">pass</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="removing-google-analytics-added-parameters">
+<h3>Removing Google Analytics added parameters<a class="headerlink" href="#removing-google-analytics-added-parameters" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default"><div class="highlight"><pre><span></span>  <span class="n">sub</span> <span class="n">vcl_recv</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">url</span> <span class="o">~</span> <span class="s2">&quot;(\?|&amp;)(utm_source|utm_medium|utm_campaign|utm_content|gclid|cx|ie|cof|siteurl)=&quot;</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nb">set</span> <span class="n">req</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="n">regsuball</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="s2">&quot;&amp;(utm_source|utm_medium|utm_campaign|utm_content|gclid|cx|ie|cof|siteurl)=([A-z0-9_\-\.%25]+)&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">);</span>
+      <span class="nb">set</span> <span class="n">req</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="n">regsuball</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="s2">&quot;\?(utm_source|utm_medium|utm_campaign|utm_content|gclid|cx|ie|cof|siteurl)=([A-z0-9_\-\.%25]+)&quot;</span><span class="p">,</span> <span class="s2">&quot;?&quot;</span><span class="p">);</span>
+      <span class="nb">set</span> <span class="n">req</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="n">regsub</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="s2">&quot;\?&amp;&quot;</span><span class="p">,</span> <span class="s2">&quot;?&quot;</span><span class="p">);</span>
+      <span class="nb">set</span> <span class="n">req</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="n">regsub</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="s2">&quot;\?$&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-of-stripping-from-url">
+<h3>Example of Stripping from URL<a class="headerlink" href="#example-of-stripping-from-url" title="Permalink to this headline">¶</a></h3>
+<p>The example below strips <code class="docutils literal"><span class="pre">#</span></code> from URL, because server has no use for it.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>  <span class="n">sub</span> <span class="n">vcl_recv</span> <span class="p">{</span>
+    <span class="c1"># Strip hash, server doesn&#39;t need it.</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">url</span> <span class="o">~</span> <span class="s2">&quot;\#&quot;</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nb">set</span> <span class="n">req</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="n">regsub</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="s2">&quot;\#.*$&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+<p>The example below strips trailing <code class="docutils literal"><span class="pre">?</span></code> from URL.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>  <span class="n">sub</span> <span class="n">vcl_recv</span> <span class="p">{</span>
+    <span class="c1"># Strip a trailing ? if it exists</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">url</span> <span class="o">~</span> <span class="s2">&quot;\?$&quot;</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nb">set</span> <span class="n">req</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="n">regsub</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="s2">&quot;\?$&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="cookie-manipulation">
+<h2>Cookie Manipulation<a class="headerlink" href="#cookie-manipulation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="removing-google-analytic-cookies">
+<h3>Removing Google Analytic cookies<a class="headerlink" href="#removing-google-analytic-cookies" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default"><div class="highlight"><pre><span></span>  <span class="n">sub</span> <span class="n">vcl_recv</span> <span class="p">{</span>
+    <span class="c1"># Remove any Google Analytics based cookies</span>
+    <span class="nb">set</span> <span class="n">req</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">Cookie</span> <span class="o">=</span> <span class="n">regsuball</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">Cookie</span><span class="p">,</span> <span class="s2">&quot;__utm.=[^;]+(; )?&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">);</span>
+    <span class="nb">set</span> <span class="n">req</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">Cookie</span> <span class="o">=</span> <span class="n">regsuball</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">Cookie</span><span class="p">,</span> <span class="s2">&quot;_ga=[^;]+(; )?&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">);</span>
+    <span class="nb">set</span> <span class="n">req</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">Cookie</span> <span class="o">=</span> <span class="n">regsuball</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">Cookie</span><span class="p">,</span> <span class="s2">&quot;_gat=[^;]+(; )?&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">);</span>
+    <span class="nb">set</span> <span class="n">req</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">Cookie</span> <span class="o">=</span> <span class="n">regsuball</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">Cookie</span><span class="p">,</span> <span class="s2">&quot;utmctr=[^;]+(; )?&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">);</span>
+    <span class="nb">set</span> <span class="n">req</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">Cookie</span> <span class="o">=</span> <span class="n">regsuball</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">Cookie</span><span class="p">,</span> <span class="s2">&quot;utmcmd.=[^;]+(; )?&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">);</span>
+    <span class="nb">set</span> <span class="n">req</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">Cookie</span> <span class="o">=</span> <span class="n">regsuball</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">Cookie</span><span class="p">,</span> <span class="s2">&quot;utmccn.=[^;]+(; )?&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">);</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="removing-doubleclick-offensive-cookies">
+<h3>Removing DoubleClick Offensive Cookies<a class="headerlink" href="#removing-doubleclick-offensive-cookies" title="Permalink to this headline">¶</a></h3>
+<p>These cookies are used to improve advertising. Basically doubleClick avoids a
+user from seeing the same advertise twice. It sends a cookie when a user clicks
+on a ad. These cookies are not relevant for caching.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>  <span class="n">sub</span> <span class="n">vcl_recv</span> <span class="p">{</span>
+    <span class="c1"># Remove DoubleClick offensive cookies</span>
+    <span class="nb">set</span> <span class="n">req</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">Cookie</span> <span class="o">=</span> <span class="n">regsuball</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">Cookie</span><span class="p">,</span> <span class="s2">&quot;__gads=[^;]+(; )?&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">);</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="removing-quant-capital-cookies">
+<h3>Removing Quant Capital cookies<a class="headerlink" href="#removing-quant-capital-cookies" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default"><div class="highlight"><pre><span></span>  <span class="n">sub</span> <span class="n">vcl_recv</span> <span class="p">{</span>
+    <span class="c1"># Remove the Quant Capital cookies (added by some plugin, all __qca)</span>
+    <span class="nb">set</span> <span class="n">req</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">Cookie</span> <span class="o">=</span> <span class="n">regsuball</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">Cookie</span><span class="p">,</span> <span class="s2">&quot;__qc.=[^;]+(; )?&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">);</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="removing-addthis-cookies">
+<h3>Removing ADDThis cookies<a class="headerlink" href="#removing-addthis-cookies" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default"><div class="highlight"><pre><span></span>  <span class="n">sub</span> <span class="n">vcl_recv</span> <span class="p">{</span>
+    <span class="c1"># Remove the AddThis cookies</span>
+    <span class="nb">set</span> <span class="n">req</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">Cookie</span> <span class="o">=</span> <span class="n">regsuball</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">Cookie</span><span class="p">,</span> <span class="s2">&quot;__atuv.=[^;]+(; )?&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">);</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="removing-prefix-from-cookies">
+<h3>Removing &#8216;;&#8217; prefix from cookies<a class="headerlink" href="#removing-prefix-from-cookies" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default"><div class="highlight"><pre><span></span>  <span class="n">sub</span> <span class="n">vcl_recv</span> <span class="p">{</span>
+    <span class="c1"># Remove a &quot;;&quot; prefix in the cookie if present</span>
+    <span class="nb">set</span> <span class="n">req</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">Cookie</span> <span class="o">=</span> <span class="n">regsuball</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">Cookie</span><span class="p">,</span> <span class="s2">&quot;^;\s*&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">);</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="checking-for-empty-or-spaced-cookies">
+<h3>Checking for empty or spaced cookies<a class="headerlink" href="#checking-for-empty-or-spaced-cookies" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default"><div class="highlight"><pre><span></span>  sub vcl_recv {
+    # Are there cookies left with only spaces or that are empty?
+    if (req.http.cookie ~ &quot;^\s*$&quot;) {
+      unset req.http.cookie;
+    }
+
+    if (req.http.Cache-Control ~ &quot;(?i)no-cache&quot;) {
+    #if (req.http.Cache-Control ~ &quot;(?i)no-cache&quot; &amp;&amp; client.ip ~ editors) { # create the acl editors if you want to restrict the Ctrl-F5
+    # http://varnish.projects.linpro.no/wiki/VCLExampleEnableForceRefresh
+    # Ignore requests via proxy caches and badly behaved crawlers
+    # like msnbot that send no-cache with every request.
+      if (! (req.http.Via || req.http.User-Agent ~ &quot;(?i)bot&quot; || req.http.X-Purge)) {
+        #set req.hash_always_miss = true; # Doesn&#39;t seems to refresh the object in the cache
+        return(purge); # Couple this with restart in vcl_purge and X-Purge header to avoid loops
+      }
+    }
+  }
+</pre></div>
+</div>
+</div>
+<div class="section" id="turn-on-varnish-support-for-streaming">
+<h3>Turn On Varnish Support for Streaming<a class="headerlink" href="#turn-on-varnish-support-for-streaming" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default"><div class="highlight"><pre><span></span>  <span class="n">sub</span> <span class="n">vcl_recv</span> <span class="p">{</span>
+    <span class="c1"># Large static files are delivered directly to the end-user without</span>
+    <span class="c1"># waiting for Varnish to fully read the file first.</span>
+    <span class="c1"># Varnish 4 fully supports Streaming, so set do_stream in vcl_backend_response()</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">url</span> <span class="o">~</span> <span class="s2">&quot;^[^?]*\.(7z|avi|bz2|flac|flv|gz|mka|mkv|mov|mp3|mp4|mpeg|mpg|ogg|ogm|opus|rar|tar|tgz|tbz|txz|wav|webm|xz|zip)(\?.*)?$&quot;</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">unset</span> <span class="n">req</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">Cookie</span><span class="p">;</span>
+      <span class="k">return</span> <span class="p">(</span><span class="nb">hash</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="removing-cookies-for-static-files">
+<h3>Removing Cookies for Static Files<a class="headerlink" href="#removing-cookies-for-static-files" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default"><div class="highlight"><pre><span></span>  <span class="n">sub</span> <span class="n">vcl_recv</span> <span class="p">{</span>
+    <span class="c1"># Remove all cookies for static files</span>
+    <span class="c1"># A valid discussion could be held on this line: do you really need to cache static files that don&#39;t cause load? Only if you have memory left.</span>
+    <span class="c1"># Sure, there&#39;s disk I/O, but chances are your OS will already have these files in their buffers (thus memory).</span>
+    <span class="c1"># Before you blindly enable this, have a read here: https://ma.ttias.be/stop-caching-static-files/</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">url</span> <span class="o">~</span> <span class="s2">&quot;^[^?]*\.(7z|avi|bmp|bz2|css|csv|doc|docx|eot|flac|flv|gif|gz|ico|jpeg|jpg|js|less|mka|mkv|mov|mp3|mp4|mpeg|mpg|odt|otf|ogg|ogm|opus|pdf|png|ppt|pptx|rar|rtf|svg|svgz|swf|tar|tbz|tgz|ttf|txt|txz|wav|webm|webp|woff|woff2|xls|xlsx|xml|xz|zip)(\?.*)?$&quot;</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">unset</span> <span class="n">req</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">Cookie</span><span class="p">;</span>
+      <span class="k">return</span> <span class="p">(</span><span class="nb">hash</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="esi-support">
+<h2>ESI Support<a class="headerlink" href="#esi-support" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default"><div class="highlight"><pre><span></span>  <span class="n">sub</span> <span class="n">vcl_recv</span> <span class="p">{</span>
+    <span class="c1"># Send Surrogate-Capability headers to announce ESI support to backend</span>
+    <span class="nb">set</span> <span class="n">req</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">Surrogate</span><span class="o">-</span><span class="n">Capability</span> <span class="o">=</span> <span class="s2">&quot;key=ESI/1.0&quot;</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">Authorization</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1"># Not cacheable by default</span>
+      <span class="k">return</span> <span class="p">(</span><span class="k">pass</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="hashing-cookies">
+<h2>Hashing cookies<a class="headerlink" href="#hashing-cookies" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default"><div class="highlight"><pre><span></span>  <span class="n">sub</span> <span class="n">vcl_hash</span> <span class="p">{</span>
+    <span class="c1"># hash cookies for requests that have them</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">Cookie</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">hash_data</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">Cookie</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+<div class="section" id="serving-queued-requests-with-grace">
+<h3>Serving Queued Requests with Grace<a class="headerlink" href="#serving-queued-requests-with-grace" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default"><div class="highlight"><pre><span></span>  <span class="n">sub</span> <span class="n">vcl_hit</span> <span class="p">{</span>
+    <span class="c1"># https://www.varnish-cache.org/docs/trunk/users-guide/vcl-grace.html</span>
+    <span class="c1"># When several clients are requesting the same page Varnish will send one request to the backend and place the others on hold while fetching one copy from the backend. In some products this is called request coalescing and Varnish does this automatically.</span>
+    <span class="c1"># If you are serving thousands of hits per second the queue of waiting requests can get huge. There are two potential problems - one is a thundering herd problem - suddenly releasing a thousand threads to serve content might send the load sky high. Secondly - nobody likes to wait. To deal with this we can instruct Varnish to keep the objects in cache beyond their TTL and to serve the waiting requests somewhat stale content.</span>
+    <span class="c1"># We have no fresh fish. Lets look at the stale ones.</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">std</span><span class="o">.</span><span class="n">healthy</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">backend_hint</span><span class="p">))</span> <span class="p">{</span>
+      <span class="c1"># Backend is healthy. Limit age to 10s.</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">ttl</span> <span class="o">+</span> <span class="mi">10</span><span class="n">s</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="n">s</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">#set req.http.grace = &quot;normal(limited)&quot;;</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">deliver</span><span class="p">);</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="c1"># No candidate for grace. Fetch a fresh object.</span>
+        <span class="k">return</span><span class="p">(</span><span class="n">fetch</span><span class="p">);</span>
+      <span class="p">}</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="c1"># backend is sick - use full grace</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">ttl</span> <span class="o">+</span> <span class="n">obj</span><span class="o">.</span><span class="n">grace</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="n">s</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">#set req.http.grace = &quot;full&quot;;</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">deliver</span><span class="p">);</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="c1"># no graced object.</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">fetch</span><span class="p">);</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="c1"># fetch &amp; deliver once we get the result</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">fetch</span><span class="p">);</span> <span class="c1"># Dead code, keep as a safeguard</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="passing-real-ip-to-backend">
+<h2>Passing Real IP to backend<a class="headerlink" href="#passing-real-ip-to-backend" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-VCL"><div class="highlight"><pre><span></span><span class="k">sub </span><span class="nf">vcl_recv</span><span class="p"> {</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nv">req.restarts</span> <span class="o">==</span> <span class="m">0</span><span class="p">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nv">req.http.X-Forwarded-For</span><span class="p">)</span> <span class="o">{</span>
+           <span class="k">set</span> <span class="nv">req.http.X-Forwarded-For</span> <span class="o">=</span> <span class="nv">req.http.X-Forwarded-For</span> <span class="o">+</span> <span class="s">&quot;, &quot;</span> <span class="o">+</span> <span class="nv">client.ip</span><span class="p">;</span>
+       <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+        <span class="k">set</span> <span class="nv">req.http.X-Forwarded-For</span> <span class="o">=</span> <span class="nv">client.ip</span><span class="p">;</span>
+       <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="handling-request-from-backend">
+<h2>Handling Request from backend<a class="headerlink" href="#handling-request-from-backend" title="Permalink to this headline">¶</a></h2>
+<p>How varnish handles the HTTP request coming from our backends relys on the VCL
+we write in our backend sub routines.</p>
+<p>The vcl_backend_response sub routine is called after the response headers are
+successfully retrieved from the backend.</p>
+<div class="section" id="pausing-esi-request">
+<h3>Pausing ESI request<a class="headerlink" href="#pausing-esi-request" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default"><div class="highlight"><pre><span></span>  <span class="n">sub</span> <span class="n">vcl_backend_response</span> <span class="p">{</span>
+    <span class="c1"># Pause ESI request and remove Surrogate-Control header</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">beresp</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">Surrogate</span><span class="o">-</span><span class="n">Control</span> <span class="o">~</span> <span class="s2">&quot;ESI/1.0&quot;</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">unset</span> <span class="n">beresp</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">Surrogate</span><span class="o">-</span><span class="n">Control</span><span class="p">;</span>
+      <span class="nb">set</span> <span class="n">beresp</span><span class="o">.</span><span class="n">do_esi</span> <span class="o">=</span> <span class="n">true</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">deliver</span><span class="p">);</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="enabling-cache-for-static-files">
+<h3>Enabling Cache for Static files<a class="headerlink" href="#enabling-cache-for-static-files" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default"><div class="highlight"><pre><span></span>  <span class="n">sub</span> <span class="n">vcl_backend_response</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">bereq</span><span class="o">.</span><span class="n">url</span> <span class="o">~</span> <span class="s2">&quot;^[^?]*\.(7z|avi|bmp|bz2|css|csv|doc|docx|eot|flac|flv|gif|gz|ico|jpeg|jpg|js|less|mka|mkv|mov|mp3|mp4|mpeg|mpg|odt|otf|ogg|ogm|opus|pdf|png|ppt|pptx|rar|rtf|svg|svgz|swf|tar|tbz|tgz|ttf|txt|txz|wav|webm|webp|woff|woff2|xls|xlsx|xml|xz|zip)(\?.*)?$&quot;</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">unset</span> <span class="n">beresp</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">set</span><span class="o">-</span><span class="n">cookie</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">deliver</span><span class="p">);</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="streaming">
+<h3>Streaming<a class="headerlink" href="#streaming" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default"><div class="highlight"><pre><span></span>  <span class="n">sub</span> <span class="n">vcl_backend_response</span> <span class="p">{</span>
+    <span class="c1"># Varnish 4 fully supports Streaming, so use streaming here to avoid locking.</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">bereq</span><span class="o">.</span><span class="n">url</span> <span class="o">~</span> <span class="s2">&quot;^[^?]*\.(7z|avi|bz2|flac|flv|gz|mka|mkv|mov|mp3|mp4|mpeg|mpg|ogg|ogm|opus|rar|tar|tgz|tbz|txz|wav|webm|xz|zip)(\?.*)?$&quot;</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">unset</span> <span class="n">beresp</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">set</span><span class="o">-</span><span class="n">cookie</span><span class="p">;</span>
+      <span class="nb">set</span> <span class="n">beresp</span><span class="o">.</span><span class="n">do_stream</span> <span class="o">=</span> <span class="n">true</span><span class="p">;</span>  <span class="c1"># Check memory usage it&#39;ll grow in fetch_chunksize blocks (128k by default) if the backend doesn&#39;t send a Content-Length header, so only enable it for big objects</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">deliver</span><span class="p">);</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="redirecting">
+<h3>Redirecting<a class="headerlink" href="#redirecting" title="Permalink to this headline">¶</a></h3>
+<p>Sometimes, a 301 or 302 redirect formed via Apache&#8217;s mod_rewrite can mess with the HTTP port that is being passed along.
+This often happens with simple rewrite rules in a scenario where Varnish runs on :80 and Apache on :8080 on the same box.
+A redirect can then often redirect the end-user to a URL on :8080, where it should be :80.
+This may need finetuning on your setup.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>  <span class="n">sub</span> <span class="n">vcl_backend_response</span> <span class="p">{</span>
+    <span class="c1"># To prevent accidental replace, we only filter the 301/302 redirects for now.</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">beresp</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="mi">301</span> <span class="o">||</span> <span class="n">beresp</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="mi">302</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nb">set</span> <span class="n">beresp</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">Location</span> <span class="o">=</span> <span class="n">regsub</span><span class="p">(</span><span class="n">beresp</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">Location</span><span class="p">,</span> <span class="s2">&quot;:[0-9]+&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">deliver</span><span class="p">);</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="setting-cache-for-static-files-if-unset">
+<h3>Setting cache for static files if Unset<a class="headerlink" href="#setting-cache-for-static-files-if-unset" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default"><div class="highlight"><pre><span></span>  <span class="n">sub</span> <span class="n">vcl_backend_response</span> <span class="p">{</span>
+    <span class="c1"># Set 2min cache if unset for static files</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">beresp</span><span class="o">.</span><span class="n">ttl</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="n">s</span> <span class="o">||</span> <span class="n">beresp</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">Set</span><span class="o">-</span><span class="n">Cookie</span> <span class="o">||</span> <span class="n">beresp</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">Vary</span> <span class="o">==</span> <span class="s2">&quot;*&quot;</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nb">set</span> <span class="n">beresp</span><span class="o">.</span><span class="n">ttl</span> <span class="o">=</span> <span class="mi">120</span><span class="n">s</span><span class="p">;</span> <span class="c1"># Important, you shouldn&#39;t rely on this, SET YOUR HEADERS in the backend</span>
+      <span class="nb">set</span> <span class="n">beresp</span><span class="o">.</span><span class="n">uncacheable</span> <span class="o">=</span> <span class="n">true</span><span class="p">;</span>
+      <span class="k">return</span> <span class="p">(</span><span class="n">deliver</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">deliver</span><span class="p">);</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-of-excluding-from-cache">
+<h3>Example of excluding from cache<a class="headerlink" href="#example-of-excluding-from-cache" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default"><div class="highlight"><pre><span></span>  <span class="n">sub</span> <span class="n">vcl_backend_response</span> <span class="p">{</span>
+    <span class="c1"># Don&#39;t cache 50x responses</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">beresp</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="mi">500</span> <span class="o">||</span> <span class="n">beresp</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="mi">502</span> <span class="o">||</span> <span class="n">beresp</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="mi">503</span> <span class="o">||</span> <span class="n">beresp</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="mi">504</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="p">(</span><span class="n">abandon</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">deliver</span><span class="p">);</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="setting-grace-mode">
+<h3>Setting Grace mode<a class="headerlink" href="#setting-grace-mode" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default"><div class="highlight"><pre><span></span>  <span class="n">sub</span> <span class="n">vcl_backend_response</span> <span class="p">{</span>
+    <span class="c1"># Allow stale content, in case the backend goes down.</span>
+    <span class="c1"># make Varnish keep all objects for 6 hours beyond their TTL</span>
+    <span class="nb">set</span> <span class="n">beresp</span><span class="o">.</span><span class="n">grace</span> <span class="o">=</span> <span class="mi">6</span><span class="n">h</span><span class="p">;</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="adding-debug-headers">
+<h3>Adding Debug headers<a class="headerlink" href="#adding-debug-headers" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default"><div class="highlight"><pre><span></span>  <span class="n">sub</span> <span class="n">vcl_deliver</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">hits</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span> <span class="c1"># Add debug header to see if it&#39;s a HIT/MISS and the number of hits, disable when not needed</span>
+      <span class="nb">set</span> <span class="n">resp</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">X</span><span class="o">-</span><span class="n">Cache</span> <span class="o">=</span> <span class="s2">&quot;HIT&quot;</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nb">set</span> <span class="n">resp</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">X</span><span class="o">-</span><span class="n">Cache</span> <span class="o">=</span> <span class="s2">&quot;MISS&quot;</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">deliver</span><span class="p">);</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="handling-http-purge">
+<h3>Handling HTTP purge<a class="headerlink" href="#handling-http-purge" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default"><div class="highlight"><pre><span></span>  <span class="n">sub</span> <span class="n">vcl_purge</span> <span class="p">{</span>
+    <span class="c1"># Only handle actual PURGE HTTP methods, everything else is discarded</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">method</span> <span class="o">!=</span> <span class="s2">&quot;PURGE&quot;</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1"># restart request</span>
+      <span class="nb">set</span> <span class="n">req</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">X</span><span class="o">-</span><span class="n">Purge</span> <span class="o">=</span> <span class="s2">&quot;Yes&quot;</span><span class="p">;</span>
+      <span class="k">return</span><span class="p">(</span><span class="n">restart</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="vcl-synth">
+<h3>vcl_synth<a class="headerlink" href="#vcl-synth" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default"><div class="highlight"><pre><span></span>  <span class="n">sub</span> <span class="n">vcl_synth</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">resp</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="mi">720</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1"># We use this special error status 720 to force redirects with 301 (permanent) redirects</span>
+      <span class="c1"># To use this, call the following from anywhere in vcl_recv: return (synth(720, &quot;http://host/new.html&quot;));</span>
+      <span class="nb">set</span> <span class="n">resp</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">Location</span> <span class="o">=</span> <span class="n">resp</span><span class="o">.</span><span class="n">reason</span><span class="p">;</span>
+      <span class="nb">set</span> <span class="n">resp</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="mi">301</span><span class="p">;</span>
+      <span class="k">return</span> <span class="p">(</span><span class="n">deliver</span><span class="p">);</span>
+    <span class="p">}</span> <span class="n">elseif</span> <span class="p">(</span><span class="n">resp</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="mi">721</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1"># And we use error status 721 to force redirects with a 302 (temporary) redirect</span>
+      <span class="c1"># To use this, call the following from anywhere in vcl_recv: return (synth(720, &quot;http://host/new.html&quot;));</span>
+      <span class="nb">set</span> <span class="n">resp</span><span class="o">.</span><span class="n">http</span><span class="o">.</span><span class="n">Location</span> <span class="o">=</span> <span class="n">resp</span><span class="o">.</span><span class="n">reason</span><span class="p">;</span>
+      <span class="nb">set</span> <span class="n">resp</span><span class="o">.</span><span class="n">status</span> <span class="o">=</span> <span class="mi">302</span><span class="p">;</span>
+      <span class="k">return</span> <span class="p">(</span><span class="n">deliver</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="p">(</span><span class="n">deliver</span><span class="p">);</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2016, Varnish Software Group.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.5.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

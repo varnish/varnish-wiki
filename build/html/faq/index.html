@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Varnish Web Developer’s FAQ &mdash; Varnish Documentation  documentation</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootswatch-3.3.6/cosmo/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Varnish Documentation  documentation" href="../index.html" />
+    <link rel="next" title="How to Varnish" href="../content/tutorials/varnish/index.html" />
+    <link rel="prev" title="Resources" href="../start/general_resources.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          Varnish Wiki</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="https://varnish-software.com">Varnish Website</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Menu <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../start/index.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Varnish Web Developer&#8217;s FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/tutorials/varnish/index.html">How to Varnish</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/tutorials/wordpress/index.html">WordPress with Varnish</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/tutorials/magento2/index.html">Magento2 with Varnish</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/tutorials/drupal/index.html">Drupal with Varnish</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/tutorials/aem.html">Adobe Experience Manager and Varnish</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/tutorials/expressionEngine.html">Expression Engine and Varnish</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/tutorials/sitecoreCMS.html">Sitecore CMS and Varnish</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="../start/general_resources.html" title="Previous Chapter: Resources"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Resources</span>
+    </a>
+  </li>
+  <li>
+    <a href="../content/tutorials/varnish/index.html" title="Next Chapter: How to Varnish"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">How to Varnish &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><div class="container">
+    <div class="row">
+      <div class="col-md-3" width="18%">
+<!---        <div class="sidebar">
+</div>
+          <div calss="container">  --->
+<div class="sidebar-block">
+  <div class="sidebar-wrapper">
+    <h3>Contents</h3>
+    <div class="sidebar-localtoc">
+      <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../start/index.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Varnish Web Developer&#8217;s FAQ</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#more-reading">More Reading ...</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../content/tutorials/varnish/index.html">How to Varnish</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/tutorials/wordpress/index.html">WordPress with Varnish</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/tutorials/magento2/index.html">Magento2 with Varnish</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/tutorials/drupal/index.html">Drupal with Varnish</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/tutorials/aem.html">Adobe Experience Manager and Varnish</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/tutorials/expressionEngine.html">Expression Engine and Varnish</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/tutorials/sitecoreCMS.html">Sitecore CMS and Varnish</a></li>
+</ul>
+
+    </div>
+  </div>
+</div>
+<!---          </div>
+        </div> --->
+      </div>
+    </div>
+</div>
+<div class="sidebar-block">
+  <div class="sidebar-wrapper">
+    <div id="main-search">
+      <form class="form-inline" action="../search.html" method="GET" role="form">
+        <div class="input-group">
+          <input name="q" type="text" class="form-control" placeholder="Search...">
+        </div>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div>
+  <div class="sidebar-block">
+    <div class="sidebar-wrapper">
+      <h4>&nbsp;&nbsp;Contribute</h4>
+      <ul class="this-page-menu">
+        <li><a href="../_sources/faq/index.txt"
+               rel="nofollow">Show Source</a></li>
+        <li><a href="https://github.com/staiyeba/wiki_varnish/blob/master/source/faq/index.rst"
+               rel="nofollow">Show on GitHub</a></li>
+        <li><a href="https://github.com/staiyeba/wiki_varnish/edit/master/source/faq/index.rst"
+               rel="nofollow">Edit on GitHub</a></li>
+      </ul>
+    </div>
+  </div>
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="varnish-web-developer-s-faq">
+<span id="faq"></span><h1>Varnish Web Developer&#8217;s FAQ<a class="headerlink" href="#varnish-web-developer-s-faq" title="Permalink to this headline">¶</a></h1>
+<p><strong>What is Varnish?</strong></p>
+<p>Varnish Cache is a web application accelerator also known as a caching
+HTTP reverse proxy. You install it in front of any server that speaks
+HTTP and configure it to cache the contents. Varnish Cache is really,
+really fast. It typically speeds up delivery with a factor of 300 -
+1000x, depending on your architecture. A high level overview of what
+Varnish does can be seen in <a class="reference external" href="https://www.youtube.com/watch?v=fGD14ChpcL4">this video</a>.</p>
+<p>Here is <a class="reference external" href="https://www.varnish-cache.org/docs/4.1/users-guide/intro.html#users-intro">THE BIG VARNISH PICTURE</a> if you want Word by Word details! :)</p>
+<p><strong>What is Varnish&#8217;s superpower?</strong></p>
+<p>Highly Flexible !!</p>
+<p>One of the key features of Varnish Cache, in addition to its
+performance, is the flexibility of its configuration language, VCL.
+VCL enables you to write policies on how incoming requests should be
+handled. In such a policy you can decide what content you want to serve,
+from where you want to get the content and how the request or response
+should be altered. And, you can <a class="reference external" href="https://www.varnish-cache.org/vmods">extend Varnish with modules
+(VMODs)</a>. You can read more
+about this in our <a class="reference external" href="https://www.varnish-cache.org/docs/trunk/tutorial/">tutorial at varnish-cache.org</a>.</p>
+<p><a class="reference external" href="http://book.varnish-software.com/4.0/chapters/Design_Principles.html">The Design Principle of Varnish</a></p>
+<p><strong>Should I use Varnish for my site?</strong></p>
+<p>If you are wondering why you are on our website reading about our product,
+you are in the right section!
+So you want to get Varnish for your website and wondering why?</p>
+<p>Most probably because you need to handle a lot of traffic!
+Caching is one of the best ways to maximize the output of your website!</p>
+<p>The main idea behind making your website flying is to reduce the workload of your
+webserver and it&#8217;s network. Your frontend shouldn&#8217;t have to make requests to the
+backend too often for the same dynamic content every time a client requests it.</p>
+<p>To save your resources placing a reverse-proxy, caching software like Varnish Cache
+right in front of your web application can accelerate the responses to almost all
+your HTTP requests and thus reducing server workload.</p>
+<p>Congratulations! you are making a great choice!</p>
+<p>Because Varnish does exactly that! and more!
+Varnish works by managing client requests BEFORE they make it to your web
+application server. Varnish not only reduces your webserver load but also has
+other security services to make your webservers secure.</p>
+<p>There is a good article describing <a class="reference external" href="http://en.wikipedia.org/wiki/Varnish_(software)">Varnish Cache on
+Wikipedia</a>.</p>
+<p id="varnish-memcache"><strong>What is the relation between Varnish and Memcache?</strong></p>
+<p>Memcache is a more or less a database. It&#8217;s a database that doesn&#8217;t persist data
+and only stores it in memory. It also doesn&#8217;t really care if it throws data out.
+The natural use for Memcache is to cache things internally in your application.
+Memcache uses its own specific protocol to store and fetch content.</p>
+<p>Varnish on the other hand stores rendered pages. It talks HTTP so it will
+typically talk directly to a HTTP client and deliver pages from it&#8217;s cache
+whenever there is a cache hit. When there is a cache miss it will go and fetch
+the content from the web server, store it and deliver a copy to the user.</p>
+<p>These are two pretty different pieces of software. The end goal of both pieces
+of software is the same, though and most sites would use both technologies in
+order to speed up delivery. They will deploy Varnish do speed up delivery of it&#8217;s
+cache hits, and when you have a cache miss the application server might have access
+to some data in Memcache will be available to the application faster than what the
+database is capable of.</p>
+<p>The performance characteristics are pretty different. Varnish will start
+delivering a cache hit in a matter of microseconds whereas a PHP page that gets
+rendered content from Memcache will likely spend somewhere around 15-30 milliseconds
+doing so. The reason Varnish can do it faster is that Varnish has it&#8217;s content in
+local memory whereas the PHP script needs to get on the network and fetch the
+content over a TCP connection. In addition, you&#8217;ll have the overhead costs of the
+interpreter. It&#8217;s not that Varnish is better, it&#8217;s just that Varnish has a much
+easier job to do and it is faster because of it.</p>
+<p>There are no good reason not to use both.</p>
+<p>Author: Per Buer
+Written date: May 22, 2014
+found <a class="reference external" href="https://www.quora.com/What-is-the-difference-between-using-varnish-and-caching-HTML-pages-in-memcached">here</a></p>
+<p><strong>What is the difference in caching architecture between Varnish and Squid?</strong></p>
+<p>The most fundamental difference between Squid and Varnish is that Squid is forward
+proxy that can be a configured as a reverse proxy whereas Varnish is built from
+the ground up to be a reverse proxy.</p>
+<p>So, in principle Varnish is better suited than Squid to do reverse proxy HTTP.
+However, Squid is a very mature product and has had time to accumulate a lot of
+features that still are not available in Varnish. Both projects are used by huge
+websites and both of them can do almost anything.</p>
+<p>The main advantages of Squid over Varnish, as I see them, are:</p>
+<p>Built in SSL support. Varnish needs stud, nginx or stunnel to do SSL.
+Better support for Range and streaming delivery of objects.
+Support for antivirus-plugins</p>
+<p>On the other hand, Varnish has:
+An absolutely amazing configuration system. VCL gives unmatched flexiblity to
+run policies. Want to rewrite URLs coming from a certain user-agent requesting a
+specific URL coming from a specific network? Easy. With Squid, that configuration
+will be quite complex (if at all possible).
+Better performance and scalability. Squid is a single process running on only one
+CPU core, whereas Varnish is threaded. Artur Bergman reported having a Varnish server
+serving 60K req/sec on real life traffic. That&#8217;s more than most of us ever see and
+I doubt that you&#8217;ll be able to see Squid push those kind of numbers.
+Better and more flexible invalidation support. With Varnish you can invalidate
+content from cache based on more or less everything. I can elaborate on this.</p>
+<p>Also, worth a mention is the module support in Varnish which makes it fairly easy
+to extend Varnish and add new features. I&#8217;ve seen people writing modules in a
+matter of hours. Very powerful stuff.</p>
+<p>Author: Per Buer
+Updated: Jan 28, 2013</p>
+<div class="section" id="more-reading">
+<h2>More Reading ...<a class="headerlink" href="#more-reading" title="Permalink to this headline">¶</a></h2>
+<p>Read on about <a class="reference internal" href="../start/website_arch.html#website-arch"><span class="std std-ref">Understand your Website</span></a></p>
+<p><a class="reference external" href="http://www.ismyvarnishworking.com">Is My Varnish Working?</a></p>
+<p>This varnish checking website is hosted by <a class="reference external" href="https://dev.acquia.com/blog/explaining-varnish-beginners">Acquia</a></p>
+<p>If you want to help fix our bugs or want to know about bugs in the project:</p>
+<p><a class="reference external" href="https://scan.coverity.com/projects/varnish">https://scan.coverity.com/projects/varnish</a></p>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2016, Varnish Software Group.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.5.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

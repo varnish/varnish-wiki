@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Some Sample VCL for Magento2 &mdash; Varnish Documentation  documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootswatch-3.3.6/cosmo/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Varnish Documentation  documentation" href="../../../index.html" />
+    <link rel="up" title="Magento2 with Varnish" href="index.html" />
+    <link rel="next" title="Drupal with Varnish" href="../drupal/index.html" />
+    <link rel="prev" title="Varnish with Magento 1.9 and older" href="magento1x.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html">
+          Varnish Wiki</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="https://varnish-software.com">Varnish Website</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../index.html">Menu <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../start/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../faq/index.html">Varnish Web Developer&#8217;s FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../varnish/index.html">How to Varnish</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../wordpress/index.html">WordPress with Varnish</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Magento2 with Varnish</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../drupal/index.html">Drupal with Varnish</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aem.html">Adobe Experience Manager and Varnish</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../expressionEngine.html">Expression Engine and Varnish</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sitecoreCMS.html">Sitecore CMS and Varnish</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="magento1x.html" title="Previous Chapter: Varnish with Magento 1.9 and older"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Varnish with ...</span>
+    </a>
+  </li>
+  <li>
+    <a href="../drupal/index.html" title="Next Chapter: Drupal with Varnish"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Drupal with V... &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><div class="container">
+    <div class="row">
+      <div class="col-md-3" width="18%">
+<!---        <div class="sidebar">
+</div>
+          <div calss="container">  --->
+<div class="sidebar-block">
+  <div class="sidebar-wrapper">
+    <h3>Contents</h3>
+    <div class="sidebar-localtoc">
+      <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../start/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../faq/index.html">Varnish Web Developer&#8217;s FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../varnish/index.html">How to Varnish</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../wordpress/index.html">WordPress with Varnish</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Magento2 with Varnish</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="magento2_varnish_basics.html">Understanding Magento 2 and Varnish</a></li>
+<li class="toctree-l2"><a class="reference internal" href="m2_step_by_step.html">Step by Step guide to making your Magento 2 Website Fly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="magento1x.html">Varnish with Magento 1.9 and older</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Some Sample VCL for Magento2</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#purging-magento2-pages">Purging Magento2 Pages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dealing-with-magento-vary-header">Dealing with Magento-Vary header</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#managing-hit-and-miss">Managing HIT and MISS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#esi">ESI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gzip">GZIP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cache-only-successful-responses">Cache only Successful Responses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#setting-debug-mode-for-cache-cache-control">Setting Debug Mode for Cache Cache-Control</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#remove-un-used-cookies">Remove un-used Cookies</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#implementing-magento-2-with-varnish">Implementing Magento 2 with Varnish</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#magento-2-resources">Magento 2 Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#our-recommneded-plugins-for-magento-2">Our recommneded Plugins for Magento 2</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../drupal/index.html">Drupal with Varnish</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aem.html">Adobe Experience Manager and Varnish</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../expressionEngine.html">Expression Engine and Varnish</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sitecoreCMS.html">Sitecore CMS and Varnish</a></li>
+</ul>
+
+    </div>
+  </div>
+</div>
+<!---          </div>
+        </div> --->
+      </div>
+    </div>
+</div>
+<div class="sidebar-block">
+  <div class="sidebar-wrapper">
+    <div id="main-search">
+      <form class="form-inline" action="../../../search.html" method="GET" role="form">
+        <div class="input-group">
+          <input name="q" type="text" class="form-control" placeholder="Search...">
+        </div>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div>
+  <div class="sidebar-block">
+    <div class="sidebar-wrapper">
+      <h4>&nbsp;&nbsp;Contribute</h4>
+      <ul class="this-page-menu">
+        <li><a href="../../../_sources/content/tutorials/magento2/magento2_vcl.txt"
+               rel="nofollow">Show Source</a></li>
+        <li><a href="https://github.com/staiyeba/wiki_varnish/blob/master/source/content/tutorials/magento2/magento2_vcl.rst"
+               rel="nofollow">Show on GitHub</a></li>
+        <li><a href="https://github.com/staiyeba/wiki_varnish/edit/master/source/content/tutorials/magento2/magento2_vcl.rst"
+               rel="nofollow">Edit on GitHub</a></li>
+      </ul>
+    </div>
+  </div>
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="some-sample-vcl-for-magento2">
+<span id="magento2-vcl"></span><h1>Some Sample VCL for Magento2<a class="headerlink" href="#some-sample-vcl-for-magento2" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="purging-magento2-pages">
+<h2>Purging Magento2 Pages<a class="headerlink" href="#purging-magento2-pages" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-VCL"><div class="highlight"><pre><span></span><span class="k">sub </span><span class="nf">vcl_recv</span><span class="p"> {</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nv">req.method</span> <span class="o">==</span> <span class="s">&quot;PURGE&quot;</span><span class="p">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nv">client.ip</span> <span class="o">!~</span> <span class="no">purge</span><span class="p">)</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="p">(</span><span class="no">synth</span><span class="p">(</span><span class="m">405</span><span class="o">,</span> <span class="s">&quot;Method not allowed&quot;</span><span class="p">));</span>
+        <span class="o">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">req.http.X-Magento-Tags-Pattern</span><span class="p">)</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="p">(</span><span class="no">synth</span><span class="p">(</span><span class="m">400</span><span class="o">,</span> <span class="s">&quot;X-Magento-Tags-Pattern header required&quot;</span><span class="p">));</span>
+        <span class="o">}</span>
+        <span class="k">ban</span><span class="p">(</span><span class="s">&quot;obj.http.X-Magento-Tags ~ &quot;</span> <span class="o">+</span> <span class="nv">req.http.X-Magento-Tags-Pattern</span><span class="p">);</span>
+        <span class="k">return</span> <span class="p">(</span><span class="no">synth</span><span class="p">(</span><span class="m">200</span><span class="o">,</span> <span class="s">&quot;Purged&quot;</span><span class="p">));</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="dealing-with-magento-vary-header">
+<h2>Dealing with Magento-Vary header<a class="headerlink" href="#dealing-with-magento-vary-header" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-VCL"><div class="highlight"><pre><span></span><span class="k">sub </span><span class="nf">vcl_hash</span><span class="p"> {</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nv">req.http.cookie</span> <span class="o">~</span> <span class="s">&quot;X-Magento-Vary=&quot;</span><span class="p">)</span> <span class="o">{</span>
+        <span class="k">hash_data</span><span class="p">(</span><span class="k">regsub</span><span class="p">(</span><span class="nv">req.http.cookie</span><span class="o">,</span> <span class="s">&quot;^.*?X-Magento-Vary=([^;]+);*.*$&quot;</span><span class="o">,</span> <span class="s">&quot;\1&quot;</span><span class="p">));</span>
+    <span class="o">}</span>
+    <span class="o">{{</span> <span class="n">design_exceptions_code</span> <span class="o">}}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="managing-hit-and-miss">
+<h2>Managing HIT and MISS<a class="headerlink" href="#managing-hit-and-miss" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-VCL"><div class="highlight"><pre><span></span><span class="k">sub </span><span class="nf">vcl_deliver</span><span class="p"> {</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nv">resp.http.X-Magento-Debug</span><span class="p">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nv">obj.hits</span> <span class="o">&gt;</span> <span class="m">0</span><span class="p">)</span> <span class="o">{</span>
+            <span class="k">set</span> <span class="nv">resp.http.X-Magento-Cache-Debug</span> <span class="o">=</span> <span class="s">&quot;HIT&quot;</span><span class="p">;</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+            <span class="k">set</span> <span class="nv">resp.http.X-Magento-Cache-Debug</span> <span class="o">=</span> <span class="s">&quot;MISS&quot;</span><span class="p">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+        <span class="k">unset</span> <span class="nv">resp.http.Age</span><span class="p">;</span>
+    <span class="o">}</span>
+
+    <span class="k">unset</span> <span class="nv">resp.http.X-Magento-Debug</span><span class="p">;</span>
+    <span class="k">unset</span> <span class="nv">resp.http.X-Magento-Tags</span><span class="p">;</span>
+    <span class="k">unset</span> <span class="nv">resp.http.X-Powered-By</span><span class="p">;</span>
+    <span class="k">unset</span> <span class="nv">resp.http.Server</span><span class="p">;</span>
+    <span class="k">unset</span> <span class="nv">resp.http.X-Varnish</span><span class="p">;</span>
+    <span class="k">unset</span> <span class="nv">resp.http.Via</span><span class="p">;</span>
+    <span class="k">unset</span> <span class="nv">resp.http.Link</span><span class="p">;</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="esi">
+<h2>ESI<a class="headerlink" href="#esi" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-VCL"><div class="highlight"><pre><span></span><span class="k">sub </span><span class="nf">vcl_backend_response</span><span class="p"> {</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nv">beresp.http.content-type</span> <span class="o">~</span> <span class="s">&quot;text&quot;</span><span class="p">)</span> <span class="o">{</span>
+        <span class="k">set</span> <span class="nv">beresp.do_esi</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="gzip">
+<h2>GZIP<a class="headerlink" href="#gzip" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-VCL"><div class="highlight"><pre><span></span><span class="k">sub </span><span class="nf">vcl_recv</span><span class="p"> {</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nv">bereq.url</span> <span class="o">~</span> <span class="s">&quot;\.js$&quot;</span> <span class="o">||</span> <span class="nv">beresp.http.content-type</span> <span class="o">~</span> <span class="s">&quot;text&quot;</span><span class="p">)</span> <span class="o">{</span>
+        <span class="k">set</span> <span class="nv">beresp.do_gzip</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="cache-only-successful-responses">
+<h2>Cache only Successful Responses<a class="headerlink" href="#cache-only-successful-responses" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-VCL"><div class="highlight"><pre><span></span><span class="k">sub </span><span class="nf">vcl_recv</span><span class="p"> {</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nv">beresp.status</span> <span class="o">!=</span> <span class="m">200</span><span class="p">)</span> <span class="o">{</span>
+        <span class="k">set</span> <span class="nv">beresp.ttl</span> <span class="o">=</span> <span class="ld">0s</span><span class="p">;</span>
+        <span class="k">set</span> <span class="nv">beresp.uncacheable</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+        <span class="k">return</span> <span class="p">(</span><span class="no">deliver</span><span class="p">);</span>
+    <span class="o">}</span> <span class="k">elsif</span> <span class="p">(</span><span class="nv">beresp.http.Cache-Control</span> <span class="o">~</span> <span class="s">&quot;private&quot;</span><span class="p">)</span> <span class="o">{</span>
+        <span class="k">set</span> <span class="nv">beresp.uncacheable</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+        <span class="k">set</span> <span class="nv">beresp.ttl</span> <span class="o">=</span> <span class="ld">120s</span><span class="p">;</span>
+        <span class="k">return</span> <span class="p">(</span><span class="no">deliver</span><span class="p">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="setting-debug-mode-for-cache-cache-control">
+<h2>Setting Debug Mode for Cache Cache-Control<a class="headerlink" href="#setting-debug-mode-for-cache-cache-control" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-VCL"><div class="highlight"><pre><span></span><span class="k">sub </span><span class="nf">vcl_recv</span><span class="p"> {</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nv">beresp.http.X-Magento-Debug</span><span class="p">)</span> <span class="o">{</span>
+        <span class="k">set</span> <span class="nv">beresp.http.X-Magento-Cache-Control</span> <span class="o">=</span> <span class="nv">beresp.http.Cache-Control</span><span class="p">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="remove-un-used-cookies">
+<h2>Remove un-used Cookies<a class="headerlink" href="#remove-un-used-cookies" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-VCL"><div class="highlight"><pre><span></span><span class="k">sub </span><span class="nf">vcl_recv</span><span class="p"> {</span>
+    <span class="c"># validate if we need to cache it and prevent from setting cookie</span>
+    <span class="c"># images, css and js are cacheable by default so we have to remove cookie also</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nv">beresp.ttl</span> <span class="o">&gt;</span> <span class="ld">0s</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nv">bereq.method</span> <span class="o">==</span> <span class="s">&quot;GET&quot;</span> <span class="o">||</span> <span class="nv">bereq.method</span> <span class="o">==</span> <span class="s">&quot;HEAD&quot;</span><span class="p">))</span> <span class="o">{</span>
+        <span class="k">unset</span> <span class="nv">beresp.http.set-cookie</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nv">bereq.url</span> <span class="o">!~</span> <span class="s">&quot;\.(css|js|jpg|png|gif|tiff|bmp|gz|tgz|bz2|tbz|mp3|ogg|svg|swf|woff)(\?|$)&quot;</span><span class="p">)</span> <span class="o">{</span>
+            <span class="k">set</span> <span class="nv">beresp.http.Pragma</span> <span class="o">=</span> <span class="s">&quot;no-cache&quot;</span><span class="p">;</span>
+            <span class="k">set</span> <span class="nv">beresp.http.Expires</span> <span class="o">=</span> <span class="s">&quot;-1&quot;</span><span class="p">;</span>
+            <span class="k">set</span> <span class="nv">beresp.http.Cache-Control</span> <span class="o">=</span> <span class="s">&quot;no-store, no-cache, must-revalidate, max-age=0&quot;</span><span class="p">;</span>
+            <span class="k">set</span> <span class="nv">beresp.grace</span> <span class="o">=</span> <span class="ld">1m</span><span class="p">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2016, Varnish Software Group.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.5.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

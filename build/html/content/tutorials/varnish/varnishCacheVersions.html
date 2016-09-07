@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Which version of Varnish to use? &mdash; Varnish Documentation  documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootswatch-3.3.6/cosmo/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Varnish Documentation  documentation" href="../../../index.html" />
+    <link rel="up" title="How to Varnish" href="index.html" />
+    <link rel="next" title="Varnish Configuration Language (VCL)" href="vcl.html" />
+    <link rel="prev" title="Testing with VarnishTest" href="varnish_test.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html">
+          Varnish Wiki</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="https://varnish-software.com">Varnish Website</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../index.html">Menu <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../start/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../faq/index.html">Varnish Web Developer&#8217;s FAQ</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">How to Varnish</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../wordpress/index.html">WordPress with Varnish</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../magento2/index.html">Magento2 with Varnish</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../drupal/index.html">Drupal with Varnish</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aem.html">Adobe Experience Manager and Varnish</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../expressionEngine.html">Expression Engine and Varnish</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sitecoreCMS.html">Sitecore CMS and Varnish</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="varnish_test.html" title="Previous Chapter: Testing with VarnishTest"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Testing with ...</span>
+    </a>
+  </li>
+  <li>
+    <a href="vcl.html" title="Next Chapter: Varnish Configuration Language (VCL)"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Varnish Confi... &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><div class="container">
+    <div class="row">
+      <div class="col-md-3" width="18%">
+<!---        <div class="sidebar">
+</div>
+          <div calss="container">  --->
+<div class="sidebar-block">
+  <div class="sidebar-wrapper">
+    <h3>Contents</h3>
+    <div class="sidebar-localtoc">
+      <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../start/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../faq/index.html">Varnish Web Developer&#8217;s FAQ</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">How to Varnish</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="builtin_vcl.html">What&#8217;s in the Builtin VCL?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="multiple_varnishes.html">Dealing with Multiple Varnishes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="run_varnish.html">Lets Run Varnish!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sample_vclTemplate.html">Sample VCLs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting_varnish.html">Troubleshooting Varnish</a></li>
+<li class="toctree-l2"><a class="reference internal" href="varnish_ubuntu.html">Installing and Configuring Varnish</a></li>
+<li class="toctree-l2"><a class="reference internal" href="varnish_test.html">Testing with VarnishTest</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Which version of Varnish to use?</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#varnish-3">Varnish 3</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#what-is-new-in-varnish-4">What is new in Varnish 4?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#upgrading-to-varnish-4">Upgrading to Varnish 4</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#migrating-to-varnish-4">Migrating to Varnish 4?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#vcl-migrator">VCL Migrator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#varnish-5-coming-soon"><strong>Varnish 5 Coming Soon!</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="vcl.html">Varnish Configuration Language (VCL)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vcl_examples.html">Cache Invalidation with Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#installing-varnish-with-binary-packages"><strong>Installing Varnish with Binary Packages</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#choosing-os">Choosing OS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#compiling-varnish-from-source"><strong>Compiling Varnish from source</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#building-varnish">Building Varnish</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../wordpress/index.html">WordPress with Varnish</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../magento2/index.html">Magento2 with Varnish</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../drupal/index.html">Drupal with Varnish</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aem.html">Adobe Experience Manager and Varnish</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../expressionEngine.html">Expression Engine and Varnish</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sitecoreCMS.html">Sitecore CMS and Varnish</a></li>
+</ul>
+
+    </div>
+  </div>
+</div>
+<!---          </div>
+        </div> --->
+      </div>
+    </div>
+</div>
+<div class="sidebar-block">
+  <div class="sidebar-wrapper">
+    <div id="main-search">
+      <form class="form-inline" action="../../../search.html" method="GET" role="form">
+        <div class="input-group">
+          <input name="q" type="text" class="form-control" placeholder="Search...">
+        </div>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div>
+  <div class="sidebar-block">
+    <div class="sidebar-wrapper">
+      <h4>&nbsp;&nbsp;Contribute</h4>
+      <ul class="this-page-menu">
+        <li><a href="../../../_sources/content/tutorials/varnish/varnishCacheVersions.txt"
+               rel="nofollow">Show Source</a></li>
+        <li><a href="https://github.com/staiyeba/wiki_varnish/blob/master/source/content/tutorials/varnish/varnishCacheVersions.rst"
+               rel="nofollow">Show on GitHub</a></li>
+        <li><a href="https://github.com/staiyeba/wiki_varnish/edit/master/source/content/tutorials/varnish/varnishCacheVersions.rst"
+               rel="nofollow">Edit on GitHub</a></li>
+      </ul>
+    </div>
+  </div>
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="which-version-of-varnish-to-use">
+<span id="varnish-versions"></span><h1>Which version of Varnish to use?<a class="headerlink" href="#which-version-of-varnish-to-use" title="Permalink to this headline">¶</a></h1>
+<p>We recommend that you always choose to use the latest stable release.</p>
+<div class="section" id="varnish-3">
+<h2>Varnish 3<a class="headerlink" href="#varnish-3" title="Permalink to this headline">¶</a></h2>
+<p><em>end of life</em></p>
+<hr class="docutils" />
+<div class="section" id="what-is-new-in-varnish-4">
+<h3>What is new in Varnish 4?<a class="headerlink" href="#what-is-new-in-varnish-4" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="http://book.varnish-software.com/4.0/chapters/Introduction.html#what-is-new-in-varnish-4">http://book.varnish-software.com/4.0/chapters/Introduction.html#what-is-new-in-varnish-4</a></p>
+</div>
+<div class="section" id="upgrading-to-varnish-4">
+<h3>Upgrading to Varnish 4<a class="headerlink" href="#upgrading-to-varnish-4" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://www.varnish-cache.org/docs/trunk/whats-new/upgrading.html">https://www.varnish-cache.org/docs/trunk/whats-new/upgrading.html</a></p>
+</div>
+</div>
+<div class="section" id="migrating-to-varnish-4">
+<h2>Migrating to Varnish 4?<a class="headerlink" href="#migrating-to-varnish-4" title="Permalink to this headline">¶</a></h2>
+<p>You recommend you use the VCL Migrator at your own liability.</p>
+</div>
+<div class="section" id="vcl-migrator">
+<h2>VCL Migrator<a class="headerlink" href="#vcl-migrator" title="Permalink to this headline">¶</a></h2>
+<p>The VCL Migrator is a script named varnish3to4 which will help you migrate from varnish 3 to 4.
+There has been quite a lot of syntactical changes in the VCL codes from Varnish 3 to 4.
+It is not quite intensive, but using the script to migrate can help save you time and will also point out to you the new changes.
+This amis to make your future vcl configuring easier.</p>
+<p>You can download the <cite>varnish3to4 script here &lt;https://github.com/fgsch/varnish3to4&gt;_</cite>.</p>
+<p>Finally, all details and updates are included in the link. So you may use it at your own responsibility.</p>
+</div>
+<div class="section" id="varnish-5-coming-soon">
+<h2><strong>Varnish 5 Coming Soon!</strong><a class="headerlink" href="#varnish-5-coming-soon" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2016, Varnish Software Group.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.5.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
