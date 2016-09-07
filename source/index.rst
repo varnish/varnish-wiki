@@ -38,16 +38,15 @@ Tutorials
 
 :ref:`AEM <aem>`
 
-
 .. toctree::
     :hidden:
 
     /start/index
+    /faq/index
     /content/tutorials/varnish/index
-    /content/tutorials/magento2/index
     /content/tutorials/wordpress/index
+    /content/tutorials/magento2/index
     /content/tutorials/drupal/index
     /content/tutorials/aem
     /content/tutorials/expressionEngine
     /content/tutorials/sitecoreCMS
-    /faq/index

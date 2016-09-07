@@ -1,7 +1,7 @@
 .. _faq:
 
-FAQ for Beginners
-=================
+Varnish Web Developer's FAQ
+===========================
 
 **What is Varnish?**
 

@@ -1,7 +1,7 @@
 .. _varnish:
 
-Get Varnish
-===========
+How to Varnish
+==============
 
 .. toctree::
   :hidden:
