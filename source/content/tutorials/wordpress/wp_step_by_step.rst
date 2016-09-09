@@ -3,23 +3,27 @@
 Step by Step guide to making your WordPress Website Fly
 =======================================================
 
-This article was originally written by Web Designer Magazine - http://www.webdesignermag.co.uk/
-
-Also Published on www.varnish-software.com by Federico G. Schwindt
-
 **Important Note**
 
-The installation included in the original article was for systemv.
-Now that systemd is everywhere, we have written this tutorial mainly directed
-with the examples from the article.
+The original article was written for OSes using sysvinit and BSD init. Now that 
+systemd is in most Linux distributions, we have written this tutorial's examples 
+to account for that. Still, it should be generic enough to work for most systems.
 
 In this tutorial, we will go through some of the common steps required to install
 and configure Varnish and integrate it with WordPress to take your site to the
 next level. Let’s get started.
 
+This article assumes that you have a running instance of WordPress and that you 
+have administrator rights for said instance, both at the OS and application level.
+We have tested this using Ubuntu LTS 16.04, Varnish Cache 4.1 and WordPress 4.4.
 
-1. :doc:`Install Varnish </content/tutorials/varnish/varnish_ubuntu>`
----------------------------------------------------------------------
+
+1. Installing Varnish
+---------------------
+
+In case you have not done so yet, you will need to follow the instructional section 
+on how to :doc:`Install Varnish </content/tutorials/varnish/varnish_ubuntu>` before 
+we can continue.
 
 2. Add the plugin
 -----------------
@@ -45,8 +49,8 @@ To finalize, open a command prompt and run the following as root.
 
   a2enmod rewrite
 
-4. Move Apache
----------------
+4. Move Apache's port
+---------------------
 
 Before we configure Varnish to handle all the web traffic to our WordPress site,
 we will need to move Apache to a different port. Let’s then change all occurrences
@@ -56,24 +60,29 @@ of **port 80 to 8080** using a text editor as show below.
 
   /etc/apache2/ports.conf
 
-  and any files under
+and any files under
 
 .. code-block:: bash
 
   /etc/apache2/sites-enabled/
 
+These changes make sure that Apache now uses port 8080 to serve your WordPress 
+site as we will need Varnish to take over the HTTP content serving to all web 
+clients which normally is done from port 80.
 
 5. Serve from Varnish
 ---------------------
 
-**new changes included** in the :ref:`Varnish Tutorial <varnish>`
+In order to get content served from Varnish you will need to make a few changes 
+which are documented throughoutly in the :ref:`Varnish Tutorial <varnish>` in 
+this wiki. Please make sure you have that covered.
 
 6. Set the backend
 ------------------
 
 Varnish uses the concept of backend or origin server to define where it should
 retrieve the content from if it’s not persistent in its cache. In this case we will
-be using the Apache location that we defined in Step 4.
+be using the Apache location that we defined in Step 4 as the backend..
 Edit /etc/varnish/default.vcl with a text editor and ensure the following is present.
 
 .. literalinclude:: /content/examples/default_vcl.vcl
@@ -162,7 +171,7 @@ be instructed to reload the configuration while it keeps serving requests.
 Open the command prompt again and type the following as root.
 
 .. literalinclude:: /content/examples/varnish_reload.sh
-  :language: shell
+  :language: bash
 
 14. Empty the cache
 -------------------
@@ -187,7 +196,7 @@ they are passing through Varnish run the following on a command prompt: `varnish
 Varnish is very powerful but can be daunting at first. Luckily for us there are
 many resources online and has an active community behind ready to help. If you
 are stuck or want to know more you can visit the `varnish cache website`_
-*or search in our wiki for a solution* .
+*or search in this wiki for a solution* .
 
 17. Go further
 --------------
@@ -201,4 +210,4 @@ content maintenance, detect devices used for browsing, and accelerate APIs.
 Check out the links below to take Varnish even further.
 
 .. _`varnish cache website`: https://varnish-cache.org
-.. _`Varnish HTTP Purge Plugin`: https://wordpress.org/plugins/varnish-http-purge/
+.. _`Varnish HTTP Purge Plugin`: https://WordPress.org/plugins/varnish-http-purge/
