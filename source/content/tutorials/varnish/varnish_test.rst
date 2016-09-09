@@ -4,9 +4,9 @@ Testing with VarnishTest
 ========================
 
 You may not be aware of this, but `varnishest` is an awesome tool!
-Varnisttest is a sandbox (testing environment) and it is completely isolated from
+Varnishtest is a sandbox (testing environment) and it is completely isolated from
 the production environment where one can TEST untested code changes and do
-all kinds of out of the world expermientation.
+all kinds of out of the world experimentation.
 
 Using varnishtest protects your "live" servers, reviewed vcl codes,
 other collections of data and/or content from severe changes that could be caused
@@ -32,7 +32,7 @@ Here is a list of contexts where you can use `varnishtest`:
 The Varnish Test Case Language (VTC)
 ------------------------------------
 
-This is the language that varnishest understands. The extension used by Varnish
+This is the language that varnishtest understands. The extension used by Varnish
 Test Cases files is (.vtc).
 
 Normally, a vtc file describes a scenario with different scripted HTTP-talking
@@ -79,7 +79,7 @@ Declaring the Server
 ....................
 
 - A Server declaration must start with **s**
-- `rxreq` : accepts/recieves requests
+- `rxreq` : accepts/receives requests
 - `txresp` : transmits/responds to requests
 - `- start` : boots server
 
