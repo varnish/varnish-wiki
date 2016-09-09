@@ -8,6 +8,7 @@ Getting Started
 
     your_varnish_goals
     website_arch
+    http_caching
     general_resources
 
 
@@ -32,7 +33,7 @@ Step by Step Configuring for Web Applications
 
 :doc:`Magento 2 guide to Varnish </content/tutorials/magento2/m2_step_by_step>`
 
-:doc:`Wordpress guide to  Varnish </content/tutorials/wordpress/wp_step_by_step>`
+:doc:`Wordpress guide to Varnish </content/tutorials/wordpress/wp_step_by_step>`
 
 :doc:`Drupal guide to Varnish </content/tutorials/drupal/drupal_step_by_step>`
 

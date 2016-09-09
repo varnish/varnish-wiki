@@ -1,7 +1,0 @@
-digraph graphname {
-    a->b [ color=blue ]
-    b->c [ color=blue ]
-    d->b
-    d->a
-    b [ shape=box ]
- }

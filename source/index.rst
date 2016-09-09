@@ -9,7 +9,6 @@ Welcome to Varnish Wiki!
 Here you will find all the resources you need to start using varnish.
 Lets get you started with development to production!
 
-
 Varnish is a reverse-proxy HTTP Accelerator designed for heavily consumed
 API sites and also for dynamic heavy-content websites. Varnish also provides
 other services such as caching, load balancer, web application firewall,
@@ -21,11 +20,9 @@ Facebook, Wikipedia, Vimeo, Twitter, Tumblr, The Guardian, VG.no and many other
 websites.
 
 
-:ref:`Getting Started Here! <start>`
-
+:ref:`Getting Started! <start>`
 
 :ref:`FAQ <faq>`
-
 
 Tutorials
 .........

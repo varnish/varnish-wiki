@@ -249,8 +249,8 @@ Refer to `Header Field Definitions, section 14.44 to understand Vary` better.
 As you may already know, the URL can be used as a parameter by varnish for caching
 purposes. Also it is possible to add custom header values to hash in the `vcl_hash`
 subroutine. So in this context if you want your cache to be based on headers, you
-can set the Vary header to various types; cookies, Accept-Encoding, X-Varnish, User-Agent,
-Accept-Language etc.
+can set the Vary header to various types; cookies, Accept-Encoding, X-Varnish,
+User-Agent, Accept-Language etc.
 
 This way, different values of your custom header will have different hash values
 for each cached resource. But remember that, variations containing the vary response
@@ -311,7 +311,7 @@ not alter any headers and if there is a `Vary: Accept-Encoding` set it will deal
 with it normally just as explained under HTTP_Vary.
 
 
-Compressing Contents if backends Don't
+Compressing Contents if backend's Don't
 ......................................
 
 If the backend is not compressing contents, you can tell Varnish to compress the
@@ -456,6 +456,7 @@ Useful links on this topic
 --------------------------
 
 `Varnish Tips and Tricks`_
+
 .. _`Varnishlog in Human Language`: http://vsltrans.varnish.jp/
 .. _`vsltrans`: https://github.com/xcir/vsltrans
 .. _`Varnish Tips and Tricks`: https://ffwagency.com/blog/varnish-tips-and-tricks

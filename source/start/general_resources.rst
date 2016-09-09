@@ -8,10 +8,12 @@ Varnish
 
 Architect notes: https://www.varnish-cache.org/docs/trunk/phk/notes.html
 
+
 Do you VCL?
 -----------
 
 Try VCL: http://www.vclfiddle.net/160719-347454b/0
+
 
 VCL Trans on Canvas
 --------------------
@@ -27,6 +29,7 @@ Migrating Varnish 3to4
 ----------------------
 
 https://github.com/fgsch/varnish3to4/
+
 
 Varnish 4.0 Configuration Templates
 -----------------------------------
