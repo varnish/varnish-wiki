@@ -10,7 +10,7 @@ Also Published on www.varnish-software.com by Federico G. Schwindt
 **Important Note**
 
 The installation included in the original article was for systemv.
-Now that ssytemd is everywhere, we have written this tutorial mainly directed
+Now that systemd is everywhere, we have written this tutorial mainly directed
 with the examples from the article.
 
 In this tutorial, we will go through some of the common steps required to install
