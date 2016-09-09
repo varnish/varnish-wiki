@@ -12,7 +12,7 @@ Lets get you started with development to production!
 Varnish is a reverse-proxy HTTP Accelerator designed for heavily consumed
 API sites and also for dynamic heavy-content websites. Varnish also provides
 other services such as caching, load balancer, web application firewall,
-Authentication and Authroization Mechanism, HTTP routing, Hotlinking protection,
+Authentication and Authorization Mechanism, HTTP routing, Hotlinking protection,
 DDoS Attack Defender etc.
 
 Varnish currently provides services to high-profile, high-traffic sites such as
