@@ -312,7 +312,7 @@ with it normally just as explained under HTTP_Vary.
 
 
 Compressing Contents if backend's Don't
-......................................
+........................................
 
 If the backend is not compressing contents, you can tell Varnish to compress the
 content before storing it in cache by appending `beresp.do_gzip = true` in the

@@ -8,7 +8,8 @@ Getting Started
 
     your_varnish_goals
     website_arch
-    http_caching
+    httpcaching_basics
+    basic_webTerms
     general_resources
 
 
