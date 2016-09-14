@@ -121,11 +121,6 @@ according to test-scripts.
 **varnishtop**
 Program which gives real-time "top-X" list view of transaction log.
 
-**VCL**
-Varnish Configuration Language, a small specialized language for instructing
-Varnish how to behave.
-
-
 **webserver**
 A webserver is a machine that runs a software that uses HTTP (Hypertext Transfer
 Protocol) to serve the files in the form of web pages, in response to their
