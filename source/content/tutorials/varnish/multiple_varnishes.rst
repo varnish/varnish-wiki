@@ -38,15 +38,8 @@ Now lets add a new backend:
 Now we need to tell Varnish where to send the different URL. here is what you
 need in your **vcl_recv** :
 
-.. code-block:: vcl
-
-  sub vcl_recv {
-      if (req.url ~ "^/java/") {
-          set req.backend_hint = java;
-      } else {
-          set req.backend_hint = default;
-      }
-  }
+.. literalinclude:: /content/examples/vcl_backend_hint.vcl
+  :language: VCL
 
 As you can see you can define how to choose backends based on really arbitrary data.
 if you want to send mobile devices to a different backend, a little bit more of
@@ -71,15 +64,8 @@ you just need to inspect req.http.host.
 
 You can have something like this:
 
-.. code-block:: vcl
-
-  sub vcl_recv {
-      if (req.http.host ~ "foo.com") {
-          set req.backend_hint = foo;
-      } elsif (req.http.host ~ "bar.com") {
-          set req.backend_hint = bar;
-      }
-  }
+.. literalinclude:: /content/examples/vcl_backend_virtualhosts.vcl
+  :language: VCL
 
 Note that the first regular expressions will match "foo.com", "www.foo.com",
 "zoop.foo.com" and any other host ending in "foo.com".
@@ -87,13 +73,8 @@ Note that the first regular expressions will match "foo.com", "www.foo.com",
 In this example this is intentional but you might want it to be a bit more tight,
 maybe relying on the == operator in stead, like this:
 
-.. code-block:: vcl
-
-  sub vcl_recv {
-      if (req.http.host == "foo.com" || req.http.host == "www.foo.com") {
-          set req.backend_hint = foo;
-      }
-  }
+.. literalinclude:: /content/examples/vcl_backend_virtualhosts2.vcl
+  :language: VCL
 
 Directors
 ---------
@@ -106,27 +87,9 @@ You can define several backends and group them together in a director.
 This requires you to load a VMOD, a Varnish module, and then to call certain
 actions in vcl_init.:
 
-.. code-block:: vcl
+.. literalinclude:: /content/examples/vcl_vmod_mbackend.vcl
+  :language: VCL
 
-  import directors;    # load the directors
-
-  backend server1 {
-      .host = "192.168.0.10";
-  }
-  backend server2 {
-      .host = "192.168.0.10";
-  }
-
-  sub vcl_init {
-      new bar = directors.round_robin();
-      bar.add_backend(server1);
-      bar.add_backend(server2);
-  }
-
-  sub vcl_recv {
-      # send all traffic to the bar director:
-      set req.backend_hint = bar.backend();
-  }
 
 This director is a round-robin director. This means the director will distribute
 the incoming requests on a round-robin basis. There is also a random director
@@ -143,29 +106,8 @@ Health Checks
 Lets set up a director with two backends and health checks.
 First let us define the backends:
 
-.. code-block:: vcl
-
-  backend server1 {
-      .host = "server1.example.com";
-      .probe = {
-          .url = "/";
-          .timeout = 1s;
-          .interval = 5s;
-          .window = 5;
-          .threshold = 3;
-      }
-  }
-
-  backend server2 {
-      .host = "server2.example.com";
-      .probe = {
-          .url = "/";
-          .timeout = 1s;
-          .interval = 5s;
-          .window = 5;
-          .threshold = 3;
-      }
-  }
+.. literalinclude:: /content/examples/vcl_backend_healthcheck.vcl
+  :language: VCL
 
 What is new here is the probe.
 In this example Varnish will check the health of each backend every 5 seconds,
