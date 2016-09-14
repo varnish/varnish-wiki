@@ -86,8 +86,6 @@ Magento 2 Resources
 
 `Magento Stackexchage`_
 
-Need Magento 1? ref:`follow here <magento1x>`
-
 .. _`Magento 2`: http://devdocs.magento.com/guides/v2.1/install-gde/bk-install-guide.html
 .. _`Magento Installation`: http://devdocs.magento.com/guides/v2.1/install-gde/bk-install-guide.html
 .. _`Configuring and Use Varnish with Magento`: http://devdocs.magento.com/guides/v2.0/config-guide/varnish/config-varnish.html
