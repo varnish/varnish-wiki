@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Installing and Configuring Varnish &mdash; Varnish Wiki  documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootswatch-3.3.6/cosmo/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Varnish Wiki  documentation" href="../../../index.html" />
+    <link rel="up" title="How to Varnish" href="index.html" />
+    <link rel="next" title="Testing with VarnishTest" href="varnish_test.html" />
+    <link rel="prev" title="Troubleshooting Varnish" href="troubleshooting_varnish.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html">
+          Varnish Wiki</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="https://varnish-software.com">Varnish Website</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../index.html">Menu <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../start/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../faq/index.html">Varnish Web Developer&#8217;s FAQ</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">How to Varnish</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../wordpress/index.html">WordPress with Varnish</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../magento2/index.html">Magento2 with Varnish</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../drupal/index.html">Drupal with Varnish</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aem.html">Adobe Experience Manager and Varnish</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../expressionEngine.html">Expression Engine and Varnish</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sitecoreCMS.html">Sitecore CMS and Varnish</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="troubleshooting_varnish.html" title="Previous Chapter: Troubleshooting Varnish"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Troubleshooti...</span>
+    </a>
+  </li>
+  <li>
+    <a href="varnish_test.html" title="Next Chapter: Testing with VarnishTest"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Testing with ... &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><div class="container">
+    <div class="row">
+      <div class="col-md-3" width="18%">
+<!---        <div class="sidebar">
+</div>
+          <div calss="container">  --->
+<div class="sidebar-block">
+  <div class="sidebar-wrapper">
+    <h3>Contents</h3>
+    <div class="sidebar-localtoc">
+      <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../start/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../faq/index.html">Varnish Web Developer&#8217;s FAQ</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">How to Varnish</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="builtin_vcl.html">What&#8217;s in the Builtin VCL?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="multiple_varnishes.html">Dealing with Multiple Varnishes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="run_varnish.html">Lets Run Varnish!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sample_vclTemplate.html">Sample VCLs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting_varnish.html">Troubleshooting Varnish</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Installing and Configuring Varnish</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#audience">Audience:</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#step-1-installing-varnish-on-ubuntu-unix">Step 1 : Installing Varnish on Ubuntu/UNIX:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#step-2-configure-varnish">Step 2: Configure VARNISH</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#step-3-configure-apache2-to-work-with-varnish">Step 3: Configure Apache2 to work with Varnish</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#setting-up-multiple-backends-skip-this-section-if-you-have-one-backend">Setting up Multiple Backends (Skip this section if you have one Backend)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#step-4-restart">Step 4: Restart</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#step-5-testing">Step 5: Testing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#step-6-troubleshooting">Step 6: Troubleshooting</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#step-7-the-management-interface">Step 7: The Management Interface</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="varnish_test.html">Testing with VarnishTest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="varnishCacheVersions.html">Which version of Varnish to use?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vcl.html">Varnish Configuration Language (VCL)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vcl_examples.html">Cache Invalidation with Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#installing-varnish-with-binary-packages"><strong>Installing Varnish with Binary Packages</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#choosing-os">Choosing OS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#compiling-varnish-from-source"><strong>Compiling Varnish from source</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#building-varnish">Building Varnish</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../wordpress/index.html">WordPress with Varnish</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../magento2/index.html">Magento2 with Varnish</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../drupal/index.html">Drupal with Varnish</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aem.html">Adobe Experience Manager and Varnish</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../expressionEngine.html">Expression Engine and Varnish</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sitecoreCMS.html">Sitecore CMS and Varnish</a></li>
+</ul>
+
+    </div>
+  </div>
+</div>
+<!---          </div>
+        </div> --->
+      </div>
+    </div>
+</div>
+<div class="sidebar-block">
+  <div class="sidebar-wrapper">
+    <div id="main-search">
+      <form class="form-inline" action="../../../search.html" method="GET" role="form">
+        <div class="input-group">
+          <input name="q" type="text" class="form-control" placeholder="Search...">
+        </div>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div>
+  <div class="sidebar-block">
+    <div class="sidebar-wrapper">
+      <h4>&nbsp;&nbsp;Contribute</h4>
+      <ul class="this-page-menu">
+        <li><a href="../../../_sources/content/tutorials/varnish/varnish_ubuntu.txt"
+               rel="nofollow">Show Source</a></li>
+        <li><a href="https://github.com/huayra/wiki_varnish/blob/master/source/content/tutorials/varnish/varnish_ubuntu.rst"
+               rel="nofollow">Show on GitHub</a></li>
+        <li><a href="https://github.com/huayra/wiki_varnish/edit/master/source/content/tutorials/varnish/varnish_ubuntu.rst"
+               rel="nofollow">Edit on GitHub</a></li>
+      </ul>
+    </div>
+  </div>
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="installing-and-configuring-varnish">
+<span id="varnish-ubuntu"></span><h1>Installing and Configuring Varnish<a class="headerlink" href="#installing-and-configuring-varnish" title="Permalink to this headline">¶</a></h1>
+<p>The following text discusses how to configure your webserver to use Varnish.
+Note that the installation is different for <em>systemv</em> and <em>systemd</em>.
+The following guide is for systemd as many linux distributions are now adopting to
+the systemd init system.</p>
+<div class="section" id="audience">
+<h2>Audience:<a class="headerlink" href="#audience" title="Permalink to this headline">¶</a></h2>
+<p>This reference has been prepared for web developers to get them started with
+Varnish installation and configuration.</p>
+<div class="section" id="step-1-installing-varnish-on-ubuntu-unix">
+<h3>Step 1 : Installing Varnish on Ubuntu/UNIX:<a class="headerlink" href="#step-1-installing-varnish-on-ubuntu-unix" title="Permalink to this headline">¶</a></h3>
+<p>It is recommended to install the varnish package from its repository.</p>
+<ul class="simple">
+<li>Start by grabbing the repository.</li>
+<li>Add the repository to the source list and save.</li>
+</ul>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo curl http://repo.varnish~cache.org/debian/GPG~key.txt <span class="p">|</span> sudo apt~key add ~
+
+sudo nano /etc/apt/sources.list
+
+deb http://repo.varnish~cache.org/ubuntu/ trusty varnish~4.1
+</pre></div>
+</div>
+<ul class="simple">
+<li>Run Update and Install</li>
+</ul>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo apt~get update
+sudo apt~get install varnish
+</pre></div>
+</div>
+</div>
+<div class="section" id="step-2-configure-varnish">
+<h3>Step 2: Configure VARNISH<a class="headerlink" href="#step-2-configure-varnish" title="Permalink to this headline">¶</a></h3>
+<p>Varnish comes with two configuration files:</p>
+<p><strong>One with the starter parameter:</strong></p>
+<blockquote>
+<div><code class="docutils literal"><span class="pre">/etc/default/varnish</span></code></div></blockquote>
+<p>This file contains all the starter parameters.</p>
+<p><strong>The other is the Default VCL file:</strong></p>
+<p>For systemd the VCL file is directed to in a different manner.
+It will be located in:</p>
+<blockquote>
+<div><code class="docutils literal"><span class="pre">/etc/systemd/system/varnish.service</span></code></div></blockquote>
+<p>which will point to:</p>
+<blockquote>
+<div><code class="docutils literal"><span class="pre">/etc/varnish/default.vcl</span></code></div></blockquote>
+<p>This default.vcl contains the <em>default</em> policies that the <em>user includes</em>.
+It also tells varnish where to find the web content.
+However there is a <a class="reference external" href="https://github.com/varnishcache/varnish-cache/blob/master/bin/varnishd/builtin.vcl">builtin.vcl</a> which is always appended to the VCL you define/specify
+in this default.vcl.</p>
+<ol class="arabic">
+<li><p class="first">Modify <strong>varnish</strong> config file</p>
+<blockquote>
+<div><ul class="simple">
+<li>Open <code class="docutils literal"><span class="pre">/etc/default/varnish</span></code> in a text editor.</li>
+<li>You will see a code like the one below.</li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+<div class="highlight-VCL"><div class="highlight"><pre><span></span>
+DAEMON _OPTS=&quot;-a :80\
+  -T localhost:6082
+  -f /etc/varnish/default.vcl
+  -s malloc,256m&quot;
+  -S /etc/varnish/secret
+</pre></div>
+</div>
+<p>Description:</p>
+<blockquote>
+<div><blockquote>
+<div><p>~T : refers to which port manages this.</p>
+<p>~f : refers to the other configuration file containing all the default policies.
+If you plan to change the name of the default policy file,
+make sure to come here and change the default.vcl to the given name.</p>
+<p>~S : refers to the file containing secrets such as passwords etc.</p>
+<p>~s : refers to the space varnish cache is allocated. 256m”
+is decided based on the current servers RAM of 1GB.</p>
+</div></blockquote>
+<ul class="simple">
+<li>Now set the Varnish listen port to 80.</li>
+<li>Now replace the <code class="docutils literal"><span class="pre">-f</span></code> line with <code class="docutils literal"><span class="pre">-b</span> <span class="pre">95.85.10.242:8080</span></code> as shown below.</li>
+</ul>
+</div></blockquote>
+<div class="highlight-VCL"><div class="highlight"><pre><span></span>DAEMON_OPTS=&quot;-a :80 \
+  -T localhost:6082 \
+  -b 95.85.10.242:8081 \
+  -S /etc/varnish/secret \
+  -s malloc,256m&quot;
+</pre></div>
+</div>
+<p>This is all the configuration changes in this file.</p>
+<ol class="arabic" start="2">
+<li><p class="first">Copy the defaults file named <strong>varnish.service</strong> file</p>
+<blockquote>
+<div><p><code class="docutils literal"><span class="pre">cp</span> <span class="pre">/lib/systemd/system/varnish.service</span> <span class="pre">/etc/systemd/system/</span></code></p>
+<p>Edit /etc/systemd/system/varnish.service</p>
+<p>Locate the line containing the port 80 and change it to 8080.</p>
+<p>ExecStart=/usr/sbin/varnishd -a :80 -T localhost:6082 -f /etc/varnish/default.vcl
+-S /etc/varnish/secret -s malloc,256m</p>
+<p>Notice that this file points to the /etc/varnish/default.vcl file.</p>
+</div></blockquote>
+</li>
+<li><p class="first">Now Modify <strong>default.vcl</strong> file</p>
+<blockquote>
+<div><p>This file contains configuration that points to the content. This is by default
+set to serve at 8080 and points to host as localhost as shown below.</p>
+<p>To minimally configure Varnish:</p>
+<ul>
+<li><p class="first">Back up default.vcl</p>
+<blockquote>
+<div><p><code class="docutils literal"><span class="pre">cp</span> <span class="pre">/etc/varnish/default.vcl</span> <span class="pre">/etc/varnish/default.vcl.bak</span></code></p>
+</div></blockquote>
+</li>
+<li><p class="first">Open <code class="docutils literal"><span class="pre">/etc/varnish/default.vcl</span></code> in a text editor.</p>
+</li>
+<li><p class="first">Locate the following piece of code</p>
+</li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+<div class="highlight-VCL"><div class="highlight"><pre><span></span>backend default {
+       .host = “127.0.0.1”;
+       .port = “80”;
+}
+</pre></div>
+</div>
+<p>The value of .host by default is the localhost. It should replaces with the fully
+qualified host name or IP address (typically, a webserver) and listen port of the
+Varnish backend or origin server; that is, the server providing the content
+Varnish will accelerate.</p>
+<p>The value of .port should re replaced with webservers listening port, for example
+8080 as shown below</p>
+<div class="highlight-VCL"><div class="highlight"><pre><span></span>backend default {
+       .host = “&lt;your_webserver&gt;”;
+       .port = “8080”;
+}
+</pre></div>
+</div>
+<p>It is recommended that if changes are made to these files, it should be copied
+and renamed name, because when varnish updates, it will replace any changes made
+with it’s new default.vcl and varnish file.</p>
+<p>Now varnish is serving the client at port 80 and listening to the backend at
+port 8080.</p>
+<p>This is when you can add ready made VCL Templates or recommended plugins for
+your web Application (Wordpress, Drupal, Magento2)</p>
+<p>But before you add any new code you must understand VCL.</p>
+</div>
+<div class="section" id="step-3-configure-apache2-to-work-with-varnish">
+<h3>Step 3: Configure Apache2 to work with Varnish<a class="headerlink" href="#step-3-configure-apache2-to-work-with-varnish" title="Permalink to this headline">¶</a></h3>
+<p>Configure your web server to listen on a port other than the default port 80 because
+Varnish responds directly to incoming HTTP requests from the client on this port.</p>
+<p>Varnish will communicate on a different port with your backend webservers as in
+the example above it is port 8080.</p>
+<p>In the sections that follow, we use port 8080 as an example as shown above.
+If you have more then one backend you can put them on another port such as port
+8081, 8082 etc.</p>
+<p>To change the Apache listen port:</p>
+<blockquote>
+<div>~ Open /etc/apache2/ports.conf in a text editor.
+~ Locate the Listen directive.
+~ Change the value of the listen port to 8080. (You can use any available listen port.)
+~ Save your changes to ports.conf and exit the text editor.
+~ Also edit /etc/apache2/sites-available/000-default.conf
+~ Change the VirtualHost port to 8080:
+<cite>&lt;VirtualHost 127.0.0.1:8080&gt;</cite></div></blockquote>
+</div>
+<div class="section" id="setting-up-multiple-backends-skip-this-section-if-you-have-one-backend">
+<h3>Setting up Multiple Backends (Skip this section if you have one Backend)<a class="headerlink" href="#setting-up-multiple-backends-skip-this-section-if-you-have-one-backend" title="Permalink to this headline">¶</a></h3>
+<p>If you have more then one backened server, you need to add all those backends in
+the default.vcl file as backends and also define how and when each of these backends
+should be accessed.</p>
+<p>Here is a simple example:</p>
+<div class="highlight-VCL"><div class="highlight"><pre><span></span>backend server1 {
+        .host = server1;
+        .port = &quot;8080&quot;;
+
+        #these are needed if you also want to do load balancing for your servers
+        .max_connections = 250;
+        .connect_timeout = 500s;
+        # there are more parameters you can add here, check out the Reference.
+}
+
+backend server2 {
+        .host = server2;
+        .port = &quot;8081&quot;;
+}
+
+
+sub vcl_rec {
+  if (req.url ~ &quot;^/server1&quot;) {
+          set req.backend_hint = server1;
+      } else {
+          set req.backend_hint = server2;
+      }
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="step-4-restart">
+<h3>Step 4: Restart<a class="headerlink" href="#step-4-restart" title="Permalink to this headline">¶</a></h3>
+<p>It is always required to restart all services once changes are made in configuration files.</p>
+<div class="highlight-VCL"><div class="highlight"><pre><span></span><span class="n">service</span> <span class="n">varnish</span> <span class="no">restart</span>
+<span class="n">service</span> <span class="n">apache2</span> <span class="no">restart</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="step-5-testing">
+<h3>Step 5: Testing<a class="headerlink" href="#step-5-testing" title="Permalink to this headline">¶</a></h3>
+<p>Run</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>http -p Hh localhost
+</pre></div>
+</div>
+<p>You can also use varnishtest to test your backend as shown below.</p>
+<div class="highlight-VCL"><div class="highlight"><pre><span></span><span class="n">varnishtest</span> <span class="s">&quot;Apache as Backend&quot;</span>
+
+<span class="n">varnish</span> <span class="n">v1</span> <span class="o">-</span><span class="n">arg</span> <span class="s">&quot;-b 127.0.0.01:8080&quot;</span> <span class="o">-</span><span class="n">start</span>
+
+<span class="n">client</span> <span class="n">c1</span> <span class="o">{</span>
+  <span class="n">txreq</span>
+  <span class="n">rxresp</span>
+
+  <span class="n">expect</span> <span class="nv">resp.http.server</span> <span class="o">~</span> <span class="s">&quot;Apache&quot;</span>
+  <span class="n">expect</span> <span class="nv">resp.http.via</span> <span class="o">~</span> <span class="s">&quot;varnish&quot;</span>
+<span class="o">}</span> <span class="o">-</span><span class="n">run</span>
+</pre></div>
+</div>
+<p>replace your backend ip-address and port number.</p>
+</div>
+<div class="section" id="step-6-troubleshooting">
+<h3>Step 6: Troubleshooting<a class="headerlink" href="#step-6-troubleshooting" title="Permalink to this headline">¶</a></h3>
+<p>If Varnish fails to start, try running it from the command line as follows:</p>
+<blockquote>
+<div><code class="docutils literal"><span class="pre">varnishd</span> <span class="pre">~d</span> <span class="pre">~f</span> <span class="pre">/etc/varnish/default.vcl</span></code></div></blockquote>
+<p>This should display the error messages.</p>
+</div>
+<div class="section" id="step-7-the-management-interface">
+<h3>Step 7: The Management Interface<a class="headerlink" href="#step-7-the-management-interface" title="Permalink to this headline">¶</a></h3>
+<p>Varnish has a command line interface (CLI) to control any varnish instance.
+- It can be used to reload VCL without restarting.
+- Start, stop cache process
+- Change configuration parameters without restarting.
+- view upto date documentation for parameters etc.
+- it can implement a list of management commands in the <cite>varnishadm</cite>
+- <cite>varnishadm</cite> establishes a connection to the varnish deamon <cite>varnishd</cite></p>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2016, Varnish Software Group.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.5.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>WordPress with Varnish &mdash; Varnish Wiki  documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootswatch-3.3.6/cosmo/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Varnish Wiki  documentation" href="../../../index.html" />
+    <link rel="next" title="Step by Step guide to making your WordPress Website Fly" href="wp_step_by_step.html" />
+    <link rel="prev" title="Cache Invalidation with Examples" href="../varnish/vcl_examples.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html">
+          Varnish Wiki</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="https://varnish-software.com">Varnish Website</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../index.html">Menu <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../start/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../faq/index.html">Varnish Web Developer&#8217;s FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../varnish/index.html">How to Varnish</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">WordPress with Varnish</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../magento2/index.html">Magento2 with Varnish</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../drupal/index.html">Drupal with Varnish</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aem.html">Adobe Experience Manager and Varnish</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../expressionEngine.html">Expression Engine and Varnish</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sitecoreCMS.html">Sitecore CMS and Varnish</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="../varnish/vcl_examples.html" title="Previous Chapter: Cache Invalidation with Examples"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Cache Invalid...</span>
+    </a>
+  </li>
+  <li>
+    <a href="wp_step_by_step.html" title="Next Chapter: Step by Step guide to making your WordPress Website Fly"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Step by Step ... &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><div class="container">
+    <div class="row">
+      <div class="col-md-3" width="18%">
+<!---        <div class="sidebar">
+</div>
+          <div calss="container">  --->
+<div class="sidebar-block">
+  <div class="sidebar-wrapper">
+    <h3>Contents</h3>
+    <div class="sidebar-localtoc">
+      <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../start/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../faq/index.html">Varnish Web Developer&#8217;s FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../varnish/index.html">How to Varnish</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">WordPress with Varnish</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="wp_step_by_step.html">Step by Step guide to making your WordPress Website Fly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wp_vcl.html">Some Sample VCL for WordPress</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#implementing-wordpress-with-varnish">Implementing WordPress with Varnish</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#integration">Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#our-recommended-plugins-for-wordpress">Our recommended Plugins for WordPress</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#wordpress-resources">WordPress Resources</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../magento2/index.html">Magento2 with Varnish</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../drupal/index.html">Drupal with Varnish</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aem.html">Adobe Experience Manager and Varnish</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../expressionEngine.html">Expression Engine and Varnish</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sitecoreCMS.html">Sitecore CMS and Varnish</a></li>
+</ul>
+
+    </div>
+  </div>
+</div>
+<!---          </div>
+        </div> --->
+      </div>
+    </div>
+</div>
+<div class="sidebar-block">
+  <div class="sidebar-wrapper">
+    <div id="main-search">
+      <form class="form-inline" action="../../../search.html" method="GET" role="form">
+        <div class="input-group">
+          <input name="q" type="text" class="form-control" placeholder="Search...">
+        </div>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div>
+  <div class="sidebar-block">
+    <div class="sidebar-wrapper">
+      <h4>&nbsp;&nbsp;Contribute</h4>
+      <ul class="this-page-menu">
+        <li><a href="../../../_sources/content/tutorials/wordpress/index.txt"
+               rel="nofollow">Show Source</a></li>
+        <li><a href="https://github.com/huayra/wiki_varnish/blob/master/source/content/tutorials/wordpress/index.rst"
+               rel="nofollow">Show on GitHub</a></li>
+        <li><a href="https://github.com/huayra/wiki_varnish/edit/master/source/content/tutorials/wordpress/index.rst"
+               rel="nofollow">Edit on GitHub</a></li>
+      </ul>
+    </div>
+  </div>
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="wordpress-with-varnish">
+<span id="wordpress"></span><h1>WordPress with Varnish<a class="headerlink" href="#wordpress-with-varnish" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<p>If you have a WordPress site and want to implement a caching solution.
+Depending on the amount if traffic on your and the complexity of your
+WordPress theme, performance maybe lagging. Varnish Cache is your recommended
+solution.</p>
+<p>More over you are not the firs to want to do this. There are million of WordPress
+websites using varnish and some of the reknown Cache plugins written by other
+varnish-WordPress users.</p>
+<div class="section" id="implementing-wordpress-with-varnish">
+<h2>Implementing WordPress with Varnish<a class="headerlink" href="#implementing-wordpress-with-varnish" title="Permalink to this headline">¶</a></h2>
+<p>Varnish is easy to set up and use. Since we have an open source project you are
+always welcome to try our community edition and contribute your fare share
+of new libraries, plug-ins and features.</p>
+<p>So where in WordPress will you be integrating Varnish?</p>
+</div>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<p>If you are ready and just want to get started with the installation go to:</p>
+<p><a class="reference internal" href="wp_step_by_step.html#wp-step-by-step"><span class="std std-ref">Step by step Installation guide to make your website fly!</span></a></p>
+<p>Please note that WordPress supports;</p>
+<p><cite>varnish 3</cite> and <cite>varnish 4</cite>.</p>
+<p>Each new upgrade includes a section about the changes that have been made.</p>
+<p><strong>We strictly recommend that you upgrade to varnish 4 as we no longer provide support for varnish 3.</strong></p>
+<p>To make your life easier, there is a Script:</p>
+<p>VCL Migrator, which can help you upgrade from Varnish 3 to Varnish 4.</p>
+</div>
+<div class="section" id="integration">
+<h2>Integration<a class="headerlink" href="#integration" title="Permalink to this headline">¶</a></h2>
+<p>Log in to your WordPress administration page at <a class="reference external" href="http://yourdomain.com/wp-admin">http://yourdomain.com/wp-admin</a>
+using the username and password you configured.</p>
+<ul class="simple">
+<li>Select Plugins</li>
+<li>Add New from the left sidebar menu</li>
+<li>Search for Varnish Plugins</li>
+<li>Choose plugin</li>
+<li>Click on Add Plugin</li>
+<li>After the plugin is added, Activate plugin</li>
+</ul>
+</div>
+<div class="section" id="our-recommended-plugins-for-wordpress">
+<h2>Our recommended Plugins for WordPress<a class="headerlink" href="#our-recommended-plugins-for-wordpress" title="Permalink to this headline">¶</a></h2>
+<p>If you search in the WordPress.org for plugins like this:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>https://WordPress.org/plugins/search.php?q<span class="o">=</span>varnish+plugins
+</pre></div>
+</div>
+<p>You will be presented with a lot of plugins containing the tag varnish. But donot
+get lost. We have looked through the plugins and below you will find the most
+popular ones with a little description collected from their page.</p>
+<p>The most recommended ones by us are:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://WordPress.org/plugins/varnish-http-purge/">Varnish HTTP Purge</a></li>
+</ul>
+<p>Varnish HTTP Purge sends a PURGE request to the URL of a page or post every time
+it it modified. This occurs when editing, publishing, commenting or deleting an
+item, and when changing themes. Not all pages are purged every time, depending
+on your Varnish configuration. Read more on the link.</p>
+<ul class="simple">
+<li><a class="reference external" href="https://WordPress.org/plugins/w3-total-cache/">W3 Total Cache</a></li>
+</ul>
+<p>W3 Total Cache improves the user experience of your site by increasing server
+performance, reducing the download times and providing transparent content
+delivery network (CDN) integration. Read more on the plugins page.</p>
+<ul class="simple">
+<li><a class="reference external" href="https://WordPress.org/plugins/wpbase-cache/">WPBase Cache</a></li>
+</ul>
+<p>Plugin is developed to optimize WordPress deployment on
+varnish + nginx + php-fpm + php-apc server stack using three type of caches full
+page cache, db cache and opcode cache. They also support varnish cache management
+with given default.vcl. Read more on the plugins page.</p>
+</div>
+<div class="section" id="wordpress-resources">
+<span id="wp-resources"></span><h2>WordPress Resources<a class="headerlink" href="#wordpress-resources" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="http://www.dimitri.eu/how-to-purge-varnish-cache/">http://www.dimitri.eu/how-to-purge-varnish-cache/</a></p>
+<p><a class="reference external" href="http://code.tutsplus.com/tutorials/optimizing-WordPress-with-varnish-and-w3-total-cache--cms-21136">http://code.tutsplus.com/tutorials/optimizing-WordPress-with-varnish-and-w3-total-cache&#8211;cms-21136</a></p>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2016, Varnish Software Group.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.5.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

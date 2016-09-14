@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Getting Started &mdash; Varnish Wiki  documentation</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootswatch-3.3.6/cosmo/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Varnish Wiki  documentation" href="../index.html" />
+    <link rel="next" title="What do you want to achieve with Varnish?" href="your_varnish_goals.html" />
+    <link rel="prev" title="Welcome to Varnish Wiki!" href="../index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          Varnish Wiki</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="https://varnish-software.com">Varnish Website</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Menu <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/index.html">Varnish Web Developer&#8217;s FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/tutorials/varnish/index.html">How to Varnish</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/tutorials/wordpress/index.html">WordPress with Varnish</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/tutorials/magento2/index.html">Magento2 with Varnish</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/tutorials/drupal/index.html">Drupal with Varnish</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/tutorials/aem.html">Adobe Experience Manager and Varnish</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/tutorials/expressionEngine.html">Expression Engine and Varnish</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/tutorials/sitecoreCMS.html">Sitecore CMS and Varnish</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="../index.html" title="Previous Chapter: Welcome to Varnish Wiki!"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Welcome to Va...</span>
+    </a>
+  </li>
+  <li>
+    <a href="your_varnish_goals.html" title="Next Chapter: What do you want to achieve with Varnish?"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">What do you w... &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><div class="container">
+    <div class="row">
+      <div class="col-md-3" width="18%">
+<!---        <div class="sidebar">
+</div>
+          <div calss="container">  --->
+<div class="sidebar-block">
+  <div class="sidebar-wrapper">
+    <h3>Contents</h3>
+    <div class="sidebar-localtoc">
+      <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="your_varnish_goals.html">What do you want to achieve with Varnish?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="website_arch.html">Understanding a Typical Website Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="httpcaching_basics.html">Basic HTTP Caching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="webTerms.html">Web caching Terminologies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="webTerms.html#varnish-three-letter-acronyms">Varnish Three Letter Acronyms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="general_resources.html">Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installing-and-configuring-varnish">Installing and Configuring Varnish</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-by-step-configuring-for-web-applications">Step by Step Configuring for Web Applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configuring-for-enterprise-products">Configuring for Enterprise Products</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configuring-vcl-beyond-the-default">Configuring VCL Beyond the default</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#recipes-for-cache-invalidation">Recipes for Cache Invalidation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/index.html">Varnish Web Developer&#8217;s FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/tutorials/varnish/index.html">How to Varnish</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/tutorials/wordpress/index.html">WordPress with Varnish</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/tutorials/magento2/index.html">Magento2 with Varnish</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/tutorials/drupal/index.html">Drupal with Varnish</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/tutorials/aem.html">Adobe Experience Manager and Varnish</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/tutorials/expressionEngine.html">Expression Engine and Varnish</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/tutorials/sitecoreCMS.html">Sitecore CMS and Varnish</a></li>
+</ul>
+
+    </div>
+  </div>
+</div>
+<!---          </div>
+        </div> --->
+      </div>
+    </div>
+</div>
+<div class="sidebar-block">
+  <div class="sidebar-wrapper">
+    <div id="main-search">
+      <form class="form-inline" action="../search.html" method="GET" role="form">
+        <div class="input-group">
+          <input name="q" type="text" class="form-control" placeholder="Search...">
+        </div>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div>
+  <div class="sidebar-block">
+    <div class="sidebar-wrapper">
+      <h4>&nbsp;&nbsp;Contribute</h4>
+      <ul class="this-page-menu">
+        <li><a href="../_sources/start/index.txt"
+               rel="nofollow">Show Source</a></li>
+        <li><a href="https://github.com/huayra/wiki_varnish/blob/master/source/start/index.rst"
+               rel="nofollow">Show on GitHub</a></li>
+        <li><a href="https://github.com/huayra/wiki_varnish/edit/master/source/start/index.rst"
+               rel="nofollow">Edit on GitHub</a></li>
+      </ul>
+    </div>
+  </div>
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="getting-started">
+<span id="start"></span><h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<p>Lets get started with Varnishing your website!</p>
+<div class="section" id="installing-and-configuring-varnish">
+<h2>Installing and Configuring Varnish<a class="headerlink" href="#installing-and-configuring-varnish" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="../content/tutorials/varnish/varnish_ubuntu.html"><span class="doc">Installing Varnish</span></a></p>
+<p><a class="reference internal" href="../content/tutorials/varnish/vcl.html"><span class="doc">How to VCL?</span></a></p>
+<p><a class="reference internal" href="../content/tutorials/varnish/varnish_test.html"><span class="doc">Test your varnish with VarnishTest</span></a></p>
+<p><a class="reference internal" href="website_arch.html"><span class="doc">Easy Piece of Advice</span></a></p>
+<p><a class="reference internal" href="your_varnish_goals.html"><span class="doc">What do you want to Achieve for your site?</span></a></p>
+</div>
+<div class="section" id="step-by-step-configuring-for-web-applications">
+<h2>Step by Step Configuring for Web Applications<a class="headerlink" href="#step-by-step-configuring-for-web-applications" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="../content/tutorials/magento2/m2_step_by_step.html"><span class="doc">Magento 2 guide to Varnish</span></a></p>
+<p><a class="reference internal" href="../content/tutorials/wordpress/wp_step_by_step.html"><span class="doc">Wordpress guide to Varnish</span></a></p>
+<p><a class="reference internal" href="../content/tutorials/drupal/drupal_step_by_step.html"><span class="doc">Drupal guide to Varnish</span></a></p>
+</div>
+<div class="section" id="configuring-for-enterprise-products">
+<h2>Configuring for Enterprise Products<a class="headerlink" href="#configuring-for-enterprise-products" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="../content/tutorials/aem.html"><span class="doc">Adobe Extension Manager (AEM)</span></a></p>
+<p><a class="reference internal" href="../content/tutorials/expressionEngine.html"><span class="doc">Expression Engine (EE)</span></a></p>
+</div>
+<div class="section" id="configuring-vcl-beyond-the-default">
+<h2>Configuring VCL Beyond the default<a class="headerlink" href="#configuring-vcl-beyond-the-default" title="Permalink to this headline">¶</a></h2>
+<p>Below are links to examples of vcl configuring in/with varnish.</p>
+<p><a class="reference internal" href="../content/tutorials/varnish/builtin_vcl.html"><span class="doc">What&#8217;s in the Builtin VCL?</span></a></p>
+<p><a class="reference internal" href="../content/tutorials/varnish/sample_vclTemplate.html"><span class="doc">Common vcl configuration</span></a></p>
+<p><a class="reference internal" href="../content/tutorials/wordpress/wp_vcl.html"><span class="doc">Wordpress and vcl</span></a></p>
+<p><a class="reference internal" href="../content/tutorials/drupal/drupal_vcl.html"><span class="doc">Drupal and vcl</span></a></p>
+<p><a class="reference internal" href="../content/tutorials/magento2/magento2_vcl.html"><span class="doc">Magento2 and vcl</span></a></p>
+</div>
+<div class="section" id="recipes-for-cache-invalidation">
+<h2>Recipes for Cache Invalidation<a class="headerlink" href="#recipes-for-cache-invalidation" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://info.varnish-software.com/webinars_fm/cache-invalidation-strategies">Our Webinar on Cache Invalidation Strategies</a></p>
+<p><a class="reference internal" href="../content/tutorials/varnish/vcl_examples.html"><span class="doc">Cache Invalidation Bundle</span></a></p>
+<p>Below is a list of resources which can help you understand and manage our software better!</p>
+<ol class="arabic simple">
+<li><a class="reference external" href="http://book.varnish-software.com/4.0/">The Varnish Book</a> - The book is one of our best Training Manual with lots of details and exercises.</li>
+<li><a class="reference external" href="https://www.varnish-cache.org/docs/4.1/tutorial/index.html#tutorial-index">The Varnish Tutorial</a> - The Tutorial explains the basics and gets you started with Varnish.</li>
+<li><a class="reference external" href="https://www.varnish-cache.org/docs/4.1/users-guide/index.html#users-guide-index">The Varnish Users Guide</a> - The User Guide explains how Varnish works and how you can use it to improve your website.</li>
+<li><a class="reference external" href="https://www.varnish-cache.org/docs/4.1/reference/index.html#reference-index">The Varnish Reference Manual</a> - contains hard facts and is useful for looking up specific questions.</li>
+<li><a class="reference internal" href="general_resources.html"><span class="doc">Relevant Resources</span></a> - contains links to resourceful information beyond our website.</li>
+</ol>
+<p><strong>Last but not the least this little wiki will give you a Hands-On Guide to making your website fly!</strong></p>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2016, Varnish Software Group.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.5.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
