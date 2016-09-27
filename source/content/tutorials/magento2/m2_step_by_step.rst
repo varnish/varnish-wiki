@@ -169,7 +169,7 @@ content maintenance, detect devices used for browsing, and accelerate APIs.
 Check out the links below to take your Varnish-Magento site further.
 
 9. For More Guidance
-------------------
+---------------------
 
 You can always refer to the `Configure and Use Varnish <http://devdocs.magento.com/guides/v2.0/config~guide/varnish/config~varnish.html>`_
 at the Magento site.

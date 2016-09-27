@@ -20,30 +20,98 @@ In case you also donot have Varnish, you will need to follow the instructional
 section on how to :doc:`Install Varnish </content/tutorials/varnish/varnish_ubuntu>`
 before we can continue.
 
+.. _drupal_integration:
+
 2. How to place Drupal 8 behind Varnish
 ---------------------------------------
 
 So now that you have setup Varnish in-front of your Drupal 8 installation, and
 have apache2 configured, you need to know how to configure Drupal to purge cached
-contents. By default the caching mechanism is disabled so all requests pass through
-varnish and goes to the backend.
+contents. By default anonymous page caching is enabled.
 
-To enable caching in Drupal, log in as an administrator on your Drupal site.
+To configure caching in Drupal, log in as an administrator on your Drupal site.
 
 - Go to the Configuration Menu
 - Click on Performance
 - Locate Caching and Check both the boxes
-    x Cache pages for anonymous users
+    x Cache pages for anonymous users (checked by default)
     x Cache blocks
 - Set the Minimum cache lifetime; ~ 60min
 - Set Expiration of cached pages; ~ 60min
 
+For Drupal's Performance settings go to `/admin/config/development/performance`.
+
+Set the value for 'Page cache maximum age' as shown below:
+
+.. image:: /image/1-set-page-cache-max-age.png
+  :alt: Sphinx Neo-Hittite
+  :align: center
+  :width: 500px
+
 Always choose caching time considering in mind a better site performance and yet
-cache is not stale for too long. This value will soley depend on teh type of site
-you have so good luck making that coice!
+cache is not stale for too long. This value will solely depend on the type of site
+you have so good luck making that choice!
+
+Drupal does two things:
+
+a. It sends the Purge-Cache-Tags header with every request,
+    containing a space-separated list of all the page's cache tags.
+b. It also sends a BAN request with the appropriate cache tags whenever content
+    or configuration is updated that should expire pages with the associated
+    cache tags.
+
+Both of these can be achieved quickly and easily by enabling and configuring the
+`Purge` and `Generic HTTP Purger` modules. Read about the suggested plugins on
+on our main page.
+
+Next you need to add a 'purger' that will send the appropriate BAN requests
+using purge_purger_http: visit the Purge configuration page,
+`admin/config/development/performance/purge`,
+
+Then follow the steps below as in the image:
+
+i. Add a new purger
+
+.. image:: /image/2-add-purger.png
+  :alt: Sphinx Neo-Hittite
+  :align: center
+  :width: 500px
+
+
+ii. Choose 'HTTP Purger' and click 'Add':
+
+.. image:: /image/3-http-purger.png
+  :alt: Sphinx Neo-Hittite
+  :align: center
+  :width: 500px
+
+
+iii. Configure the Purger's name ("Varnish Purger"), Type ("Tag"), and Request
+settings (defaults for Drupal VM are hostname 127.0.0.1, port 81, path /,
+method BAN, and scheme http):
+
+.. image:: /image/4-http-purger-request.png
+  :alt: Sphinx Neo-Hittite
+  :align: center
+  :width: 500px
+
+iv. Configure the Purger's headers (add one header Purge-Cache-Tags with the
+value [invalidation:expression]):
+
+.. image:: /image/5-http-purger-header-cache-tags.png
+  :alt: Sphinx Neo-Hittite
+  :align: center
+  :width: 500px
+
+Note from the Original Author: **Don't use the header in the screenshot—use Purge-Cache-Tags!**
+
+Images and textual courtesy: `Jeff Geerling's Post on Drupal 8 and Varnish`
 
 - Lastly Save the configuration and test that varnish is working.
 - Then move on to more advanced stuff; personalized caching is a recommendation.
+
+This is basic configurtation for Varnish and Drupal, to go more in depth, use vcl
+to write your own customized codes. This wiki contains some templates and examples.
 
 3. Caching
 ----------
@@ -59,8 +127,8 @@ to get to the application.
 4. Excluding URLS
 -----------------
 
-Pages protected using HTTP Authorization is never
-cached. So for your application specific mechanisms, you need to add a rule like
+Pages protected using HTTP Authorization is never cached.
+So for your application specific mechanisms, you need to add a rule like
 the following to ensure that login pages aren't cached.
 
 .. literalinclude:: /content/examples/drupal_exclude_url.vcl
@@ -98,9 +166,6 @@ and if you configure your varnish to never cache any response, this could destab
 your web application. So you need add some configurations to your vcl code that
 will cache your drupal header responses but not cache other headers.
 
-.. literalinclude:: /content/examples/drupal_cacheheaders.vcl
-  :language: VCL
-
 7. Purging
 ----------
 
@@ -127,3 +192,5 @@ across all Varnish servers, record relationships between web pages for easy
 content maintenance, detect devices used for browsing, and accelerate APIs.
 
 .. _`Drupal-Site`: https://www.drupal.org/8
+
+.. _`Jeff Geerling's Post on Drupal 8 and Varnish`: http://www.jeffgeerling.com/blog/2016/use-drupal-8-cache-tags-varnish-and-purge

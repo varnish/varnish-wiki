@@ -82,10 +82,16 @@ VCL Migrator, which can help you upgrade from Varnish 3 to Varnish 4.
 Integration
 -----------
 
+Once you have your varnish installed and configured, you will want to integrate
+it with your Drupal 8 installation.
+
 For Drupal's Performance settings go to `/admin/config/development/performance`.
 
 In Drupal 8, anonymous page caching is enabled by default.
-To disable caching, set the "Page cache maximum age" to no caching (see Page Cache Maximum Age below).
+
+To disable caching, set the "Page cache maximum age" to no caching.
+
+See :ref:`How to place Drupal 8 behind Varnish <drupal_integration>`
 
 Drupal 8 removed the "Cache Blocks" and "Minimum Cache Lifetime" settings.
 
@@ -94,16 +100,22 @@ The master listing of blocks is found at /admin/structure/block.
 
 
 Our most Recommended `Drupal Modules` for Varnish
-----------------------------------------------
+-------------------------------------------------
 
-https://www.drupal.org/project/purge_purger_http
+1. `Generic HTTP Purger`_
 
-https://www.drupal.org/project/purge
+
+2. `Purge`_
+
+Purge automatically sets the http.response.debug_cacheability_headers property
+to true via it's purge.services.yml
 
 Drupal Resources
 ----------------
 
 `Whole new Drupal-Varnish Configuration`_
+
+`Jeff Geerling's Post on Drupal 8 and Varnish`_
 
 `Caching Overview from Drupal`_
 
@@ -116,6 +128,9 @@ Drupal Resources
 `Caching with Varnish and Drupal 7`_
 
 `Configuring Varnish 3 for Drupal 7`_
+
+
+.. _`Jeff Geerling's Post on Drupal 8 and Varnish`: http://www.jeffgeerling.com/blog/2016/use-drupal-8-cache-tags-varnish-and-purge
 
 .. _`Caching Overview from Drupal`: https://www.drupal.org/docs/7/managing-site-performance-and-scalability/caching-to-improve-performance/caching-overview
 
@@ -130,3 +145,7 @@ Drupal Resources
 .. _`Configuring Varnish 3 for Drupal 7`: https://fourkitchens.atlassian.net/wiki/display/TECH/Configure+Varnish+3+for+Drupal+7
 
 .. _`Drupal 8 Cache`: https://pantheon.io/docs/drupal-8-cache/
+
+.. _`Purge`: https://www.drupal.org/project/purge
+
+.. _`Generic HTTP Purger`: https://www.drupal.org/project/purge_purger_http
