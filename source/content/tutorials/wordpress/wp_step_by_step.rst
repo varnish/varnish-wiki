@@ -5,15 +5,15 @@ Step by Step guide to making your WordPress Website Fly
 
 **Important Note**
 
-The original article was written for OSes using sysvinit and BSD init. Now that 
-systemd is in most Linux distributions, we have written this tutorial's examples 
+The original article was written for OSes using sysvinit and BSD init. Now that
+systemd is in most Linux distributions, we have written this tutorial's examples
 to account for that. Still, it should be generic enough to work for most systems.
 
 In this tutorial, we will go through some of the common steps required to install
 and configure Varnish and integrate it with WordPress to take your site to the
 next level. Let’s get started.
 
-This article assumes that you have a running instance of WordPress and that you 
+This article assumes that you have a running instance of WordPress and that you
 have administrator rights for said instance, both at the OS and application level.
 We have tested this using Ubuntu LTS 16.04, Varnish Cache 4.1 and WordPress 4.4.
 
@@ -21,8 +21,8 @@ We have tested this using Ubuntu LTS 16.04, Varnish Cache 4.1 and WordPress 4.4.
 1. Installing Varnish
 ---------------------
 
-In case you have not done so yet, you will need to follow the instructional section 
-on how to :doc:`Install Varnish </content/tutorials/varnish/varnish_ubuntu>` before 
+In case you have not done so yet, you will need to follow the instructional section
+on how to :doc:`Install Varnish </content/tutorials/varnish/varnish_ubuntu>` before
 we can continue.
 
 2. Add the plugin
@@ -66,15 +66,15 @@ and any files under
 
   /etc/apache2/sites-enabled/
 
-These changes make sure that Apache now uses port 8080 to serve your WordPress 
-site as we will need Varnish to take over the HTTP content serving to all web 
+These changes make sure that Apache now uses port 8080 to serve your WordPress
+site as we will need Varnish to take over the HTTP content serving to all web
 clients which normally is done from port 80.
 
 5. Serve from Varnish
 ---------------------
 
-In order to get content served from Varnish you will need to make a few changes 
-which are documented throughoutly in the :ref:`Varnish Tutorial <varnish>` in 
+In order to get content served from Varnish you will need to make a few changes
+which are documented throughoutly in the :ref:`Varnish Tutorial <varnish>` in
 this wiki. Please make sure you have that covered.
 
 6. Set the backend
@@ -207,7 +207,8 @@ create a paywall for premium content, simultaneously work on administration
 across all Varnish servers, record relationships between web pages for easy
 content maintenance, detect devices used for browsing, and accelerate APIs.
 
-Check out the links below to take Varnish even further.
+Check out the links on our main WordPress page to take your WordPress-Varnish even further.
+
 
 .. _`varnish cache website`: https://varnish-cache.org
 .. _`Varnish HTTP Purge Plugin`: https://WordPress.org/plugins/varnish-http-purge/

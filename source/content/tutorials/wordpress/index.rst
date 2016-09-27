@@ -10,10 +10,10 @@ WordPress with Varnish
   wp_vcl
 
 
-If you have a WordPress site and want to implement a caching solution.
-Depending on the amount if traffic on your and the complexity of your
-WordPress theme, performance maybe lagging. Varnish Cache is your recommended
-solution.
+Wordpress is a one of the most reknown and open source content management system
+(CMS)today. If you have a WordPress site and want to implement a caching solution.
+Depending on the amount if traffic on your and the complexity of your WordPress
+theme, performance maybe lagging. Varnish Cache is your recommended solution.
 
 More over you are not the firs to want to do this. There are million of WordPress
 websites using varnish and some of the reknown Cache plugins written by other
@@ -102,10 +102,12 @@ with given default.vcl. Read more on the plugins page.
 WordPress Resources
 -------------------
 
-http://www.dimitri.eu/how-to-purge-varnish-cache/
+`How to Purge Varnish`_
 
-http://code.tutsplus.com/tutorials/optimizing-WordPress-with-varnish-and-w3-total-cache--cms-21136
+`Optimizing WordPress with Varnish and W3 Total Cache`_
 
+.. _`How to Purge Varnish`: http://www.dimitri.eu/how-to-purge-varnish-cache/
+.. _`Optimizing WordPress with Varnish and W3 Total Cache`: http://code.tutsplus.com/tutorials/optimizing-WordPress-with-varnish-and-w3-total-cache--cms-21136
 .. _`W3 Total Cache`: https://WordPress.org/plugins/w3-total-cache/
 .. _`Varnish HTTP Purge`: https://WordPress.org/plugins/varnish-http-purge/
 .. _`WPBase Cache`: https://WordPress.org/plugins/wpbase-cache/

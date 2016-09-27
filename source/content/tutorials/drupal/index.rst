@@ -36,6 +36,7 @@ Get Varnish!
   drupal_step_by_step
   drupal_vcl
 
+
 Implementing Drupal 8 with Varnish
 ----------------------------------
 
@@ -58,6 +59,9 @@ It also makes the websites highly scalable!
 To make a highly scalable website more manageable and provide better performance to end users,
 varnish provides a number of services.
 
+Installation
+------------
+
 If you are ready and just want to get started with the installation go to:
 
 :ref:`Step by step Installation guide to make your website fly! <drupal_step_by_step>`
@@ -74,13 +78,55 @@ To make your life easier, there is a Script:
 
 VCL Migrator, which can help you upgrade from Varnish 3 to Varnish 4.
 
-Our most Recommended `Drupal Apps` for Varnish
+
+Integration
+-----------
+
+For Drupal's Performance settings go to `/admin/config/development/performance`.
+
+In Drupal 8, anonymous page caching is enabled by default.
+To disable caching, set the "Page cache maximum age" to no caching (see Page Cache Maximum Age below).
+
+Drupal 8 removed the "Cache Blocks" and "Minimum Cache Lifetime" settings.
+
+Block caching is now set through each individual block's configuration.
+The master listing of blocks is found at /admin/structure/block.
+
+
+Our most Recommended `Drupal Modules` for Varnish
+----------------------------------------------
+
+https://www.drupal.org/project/purge_purger_http
+
+https://www.drupal.org/project/purge
 
 Drupal Resources
 ----------------
 
-Varnish for beginners: https://dev.acquia.com/blog/explaining-varnish-beginners
+`Whole new Drupal-Varnish Configuration`_
 
-Managing Project with Varnish: https://www.drupal.org/project/varnish
+`Caching Overview from Drupal`_
 
-Configuring Varnish 3 for Drupal 7: https://fourkitchens.atlassian.net/wiki/display/TECH/Configure+Varnish+3+for+Drupal+7
+`Drupal 8 Cache`_
+
+`Managing Project with Varnish`_
+
+`Varnish for beginners`_
+
+`Caching with Varnish and Drupal 7`_
+
+`Configuring Varnish 3 for Drupal 7`_
+
+.. _`Caching Overview from Drupal`: https://www.drupal.org/docs/7/managing-site-performance-and-scalability/caching-to-improve-performance/caching-overview
+
+.. _`Caching with Varnish and Drupal 7`: http://www.wunderkraut.com/blog/caching-with-varnish-drupal-7-and-cache-actions/2012-01-31
+
+.. _`Whole new Drupal-Varnish Configuration`: https://www.drupal.org/docs/7/caching-to-improve-performance/varnish-cache
+
+.. _`Varnish for beginners`: https://dev.acquia.com/blog/explaining-varnish-beginners
+
+.. _`Managing Project with Varnish`: https://www.drupal.org/project/varnish
+
+.. _`Configuring Varnish 3 for Drupal 7`: https://fourkitchens.atlassian.net/wiki/display/TECH/Configure+Varnish+3+for+Drupal+7
+
+.. _`Drupal 8 Cache`: https://pantheon.io/docs/drupal-8-cache/

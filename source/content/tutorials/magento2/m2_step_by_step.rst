@@ -12,22 +12,33 @@ They have two editions:
 
 Whichever the case, Ofcourse you want to get started with increasing the performance
 of your website!
+
 So Lets get Started!
 
-1. Installing Magento from the `Magento-Site`_
-----------------------------------------------
+This article assumes that you have a running instance of Magento2 and that you
+have administrator rights for said instance, both at the OS and application level.
+We have tested this using Ubuntu LTS 16.04, Varnish Cache 4.1 and Magento2.
 
-2. :doc:`Installing Varnish </content/tutorials/varnish/varnish_ubuntu>`
-------------------------------------------------------------------------
+If need guidance with the installation of Magento then visit the `Magento-Site`_
 
-3. How to place Magento 2 behind Varnish
+
+1. Installing Varnish
+---------------------
+
+In case you also donot have Varnish, you will need to follow the instructional
+section on how to :doc:`Install Varnish </content/tutorials/varnish/varnish_ubuntu>`
+before we can continue.
+
+2. How to place Magento 2 behind Varnish
 -----------------------------------------
 
-Here we discuss how to configure your Magento2 behind Varnish.
+Here we discuss how to configure your Magento2 behind Varnish. The Magento2 Admin
+states that built-in Application cache is not recommended for production use,
+but that does not mean that varnish is configured. Varnish needs to be installed
+and the configuration file suitably configured and deployed.
 
-The Magento2 Admin states that built-in Application cache is not recommended for production use, but that doesnot mean that varnish is configured. Varnish needs to be installed and the configuration file suitably configured and deployed.
-
-We assume that you have Magento2 installed and running on your backend servers and that your server is a Debian based Linux Server.
+We assume that you have Magento2 installed and running on your backend servers
+and that your server is a Debian based Linux Server.
 
 Configuring Magento
 ...................
@@ -85,27 +96,13 @@ Congratulations! You have your services running on the backend.
 Now we need to check the Magento2 frontend::
 As you may have already noticed above, there is a ``varnishlog`` process running as well.
 
-
-If you are interested in trying out an installation try downloading Marko's
-Vagrant Box `marko_magento2github`_.
-His installation used niginx with varnish and magento.You can also read more
-about that at Marko's blogpost about Placing Magento2 behind Varnish `marko_magento2post`_.
-
-
-.. _marko_magento2github: https://github.com/Marko-M/magento2-vagrant-nux
-
-.. _marko_magento2post: http://www.techytalk.info/magento-2-behind-varnish-reverse-proxy/
-
-.. _`Magento Site`: http://devdocs.magento.com/guides/v2.0/config-guide/varnish/config-varnish-magento.html
-
-
-4. Restart services after making changes
+3. Restart services after making changes
 -----------------------------------------
 
 .. literalinclude:: /content/examples/snippet2_restart_systemd
   :language: VCL
 
-5. Basic Caching
+4. Basic Caching
 ----------------
 
 Varnish doesnot cache cookies or its headers. But some cookies are marked as safe
@@ -123,7 +120,7 @@ warning: Make sure to add the code below the default code given for `vcl_recv`
 .. literalinclude:: /content/examples/snippet3_remove_cookies
   :language: VCL
 
-6. Excluding certain URLs
+5. Excluding certain URLs
 -------------------------
 
 Not all URLs should be cached. Especially not in sites that deal with personal
@@ -132,7 +129,7 @@ information such as credit card information.
 .. literalinclude:: /content/examples/m2_exclude_url.vcl
   :language: VCL
 
-7. Extended Caching
+6. Extended Caching
 -------------------
 
 There is a subroutine called *vcl_fetch* which is by default set to 120 seconds
@@ -153,16 +150,26 @@ purpose of varnish.
 So decreasing TTL values is not a good solution for high traffic based servers.
 Varnish has a better solution for that.
 
-8. Specific TTL Based Caching
+7. Specific TTL Based Caching
 -----------------------------
 
 Varnish creates a TTL value for every object in the cache. A most effective way
 of increasing a websites hit ratio is to increase the time-to-live (ttl) of the
 objects.
 
+8. Go further
+--------------
 
-Visit the Magento Docs
-----------------------
+If you are interested in Varnish, you can always give Varnish Plus a go.
+There’s a free trial available. You can capture real-time traffic statistics,
+create a paywall for premium content, simultaneously work on administration
+across all Varnish servers, record relationships between web pages for easy
+content maintenance, detect devices used for browsing, and accelerate APIs.
+
+Check out the links below to take your Varnish-Magento site further.
+
+9. For More Guidance
+------------------
 
 You can always refer to the `Configure and Use Varnish <http://devdocs.magento.com/guides/v2.0/config~guide/varnish/config~varnish.html>`_
 at the Magento site.
@@ -170,5 +177,16 @@ at the Magento site.
 To see the guide on installing and configuring Magento with Varnish on webserver,
 please look at `here <http://devdocs.magento.com/guides/v2.0/config~guide/varnish/config~varnish~configure.html>`_.
 
+If you are interested in trying out an installation try downloading Marko's
+Vagrant Box `marko_magento2github`_.
+His installation used niginx with varnish and magento.You can also read more
+about that at Marko's blogpost about Placing Magento2 behind Varnish `marko_magento2post`_.
+
+
+.. _marko_magento2github: https://github.com/Marko-M/magento2-vagrant-nux
+
+.. _marko_magento2post: http://www.techytalk.info/magento-2-behind-varnish-reverse-proxy/
+
+.. _`Magento Site`: http://devdocs.magento.com/guides/v2.0/config-guide/varnish/config-varnish-magento.html
 
 .. _`Magento-Site`: http://devdocs.magento.com/guides/v2.1/install-gde/bk-install-guide.html

@@ -7,13 +7,20 @@ Step by Step Guide to Making your Drupal Website Fly
 Lets go through some of the common steps required to install and configure Varnish
 and integrate it with drupal to take your site to the next level.
 
-1. Installing Drupal 8 from the `Drupal-Site`_
------------------------------------------------
+This article assumes that you have a running instance of Magento2 and that you
+have administrator rights for said instance, both at the OS and application level.
+We have tested this using Ubuntu LTS 16.04, Varnish Cache 4.1 and Drupal 8.
 
-2. :doc:`Installing Varnish </content/tutorials/varnish/varnish_ubuntu>`
-------------------------------------------------------------------------
+If you still need help Installing Drupal 8 visit the `Drupal-Site`_
 
-3. How to place Drupal 8 behind Varnish
+1. Installing Varnish
+---------------------
+
+In case you also donot have Varnish, you will need to follow the instructional
+section on how to :doc:`Install Varnish </content/tutorials/varnish/varnish_ubuntu>`
+before we can continue.
+
+2. How to place Drupal 8 behind Varnish
 ---------------------------------------
 
 So now that you have setup Varnish in-front of your Drupal 8 installation, and
@@ -38,7 +45,7 @@ you have so good luck making that coice!
 - Lastly Save the configuration and test that varnish is working.
 - Then move on to more advanced stuff; personalized caching is a recommendation.
 
-4. Caching
+3. Caching
 ----------
 
 Varnish caches everything, so you need to write a rule to exclude what you do not
@@ -49,8 +56,8 @@ Other requests like DELETE, POST and PUT are never cached. That means you donot
 have to worry about requests that make changes to data, because they are allowed
 to get to the application.
 
-Excluding URLS
---------------
+4. Excluding URLS
+-----------------
 
 Pages protected using HTTP Authorization is never
 cached. So for your application specific mechanisms, you need to add a rule like
@@ -62,8 +69,8 @@ the following to ensure that login pages aren't cached.
 if we did end up caching login pages, we could end up serving the same content
 to all the users. That takes us to our next topic, Cookies!
 
-Cookies
--------
+5. Cookies
+----------
 
 Cookies are everywhere these days! And we need some of them.
 But they are also one of the most important things in the caching decision.
@@ -82,8 +89,8 @@ to be allowed to cache. Below is an example of caching cookies for your drupal s
 .. literalinclude:: /content/examples/vclex_drupal_cachecookies.vcl
   :language: VCL
 
-Drupal Caching Headers
-----------------------
+6. Drupal Caching Headers
+-------------------------
 
 Drupal sends its own caching information in response headers just like many other
 web applciations. These headers are obviously important to your web application
@@ -94,15 +101,15 @@ will cache your drupal header responses but not cache other headers.
 .. literalinclude:: /content/examples/drupal_cacheheaders.vcl
   :language: VCL
 
-Purging
--------
+7. Purging
+----------
 
 This bit of code is to allow which IP addresses can access the config files.
 
 .. literalinclude:: /content/examples/allow_purging.vcl
   :language: VCL
 
-4. Restart services after making changes
+8. Restart services after making changes
 ----------------------------------------
 
 Don't forget to restart after making changes:
@@ -110,5 +117,13 @@ Don't forget to restart after making changes:
 .. literalinclude:: /content/examples/snippet2_restart_systemd
   :language: VCL
 
+9. Go further
+-------------
+
+If you are interested in Varnish, you can always give Varnish Plus a go.
+There’s a free trial available. You can capture real-time traffic statistics,
+create a paywall for premium content, simultaneously work on administration
+across all Varnish servers, record relationships between web pages for easy
+content maintenance, detect devices used for browsing, and accelerate APIs.
 
 .. _`Drupal-Site`: https://www.drupal.org/8
