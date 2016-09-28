@@ -137,7 +137,7 @@ with it’s new default.vcl and varnish file.
 Now varnish is serving the client at port 80 and listening to the backend at
 port 8080.
 
-This is when you can add ready made VCL Templates or recommended plugins for
+This is when you can add ready made VCL Templates or recommended plug-ins for
 your web Application (WordPress, Drupal, Magento2)
 
 But before you add any new code you must understand VCL.
