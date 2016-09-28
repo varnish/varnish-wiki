@@ -16,7 +16,7 @@ In-line C, though that is not recommended. Following our guide and learn VCl is 
 way to go!:)
 
 Getting past your fears of coding and learning VCL is considered by us a good choice
-because writing or modifying VCL can help you understand Varnish better. Infact
+because writing or modifying VCL can help you understand Varnish better. In fact
 it will give you the independence to do whatever you want with your varnish (at
 your wok risk ofcourse!) As you already know, many high-profile websites use varnish,
 and if you really take your VCL to the next level, you will be taking a big step

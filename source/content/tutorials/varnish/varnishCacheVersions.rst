@@ -20,7 +20,7 @@ We recommend that you always choose to use the latest stable release.
 
 **Migrating to Varnish 4?**
 
-You recommend you use the VCL Migrator at your own liability.
+You recommend you use the **VCL Migrator** at your own liability.
 
 VCL Migrator
 ............
@@ -36,5 +36,3 @@ You can download the `varnish3to4 script here`_
 .. _`varnish3to4 script here`: https://github.com/fgsch/varnish3to4
 
 All details and updates are included in the link. So you may use it at your own responsibility.
-
-**Varnish 5 Coming Soon!**

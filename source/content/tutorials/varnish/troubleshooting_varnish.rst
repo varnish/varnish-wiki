@@ -4,12 +4,7 @@
 Troubleshooting Varnish
 =======================
 
-For details on troubleshooting varnish,
-look at the user guide `Troubleshooting Varnish Section`_
-
-
 **Have you tried turning your varnish off and on again?**
-
 
 Reload varnish
 ..............
@@ -102,6 +97,10 @@ Varnish is not Caching
 
 If your varnish is not caching you can follow our simple steps to receive high hit-rate or
 follow the detailed `User Guide`_
+
+
+For details on troubleshooting varnish, look at the user guide
+`Troubleshooting Varnish Section`_
 
 .. _`User Guide`: https://www.varnish-cache.org/docs/4.1/users-guide/increasing-your-hitrate.html#users-guide-increasing-your-hitrate
 .. _`Troubleshooting Varnish Section`: https://www.varnish-cache.org/docs/4.1/users-guide/troubleshooting.html#users-trouble

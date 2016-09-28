@@ -5,7 +5,7 @@ Dealing with Multiple Varnishes
 ===============================
 
 If you are considering or already have more than one Varnish cache.
-You definitely have a huge network!
+You definitely have a huge network to **manage!**
 
 Having Multiple backends
 ------------------------
@@ -16,8 +16,8 @@ You want Varnish to map all the URL into one single host. There are lot of optio
 Lets take a PHP Applciation website and you would like to add a Java application
 into it.. Lets say your Java application should handle URL beginning with /java/.
 
-Assuming that you arleady have a backend running at 8080 and serving content to
-user through prot 80. This is your default vcl:
+Assuming that you already have a backend running at 8080 and serving content to
+user through port 80. This is your default vcl:
 
 .. code-block:: vcl
 
@@ -56,10 +56,11 @@ no backend named default, varnish will use the first backend found in the vcl.
 Backends and Virtual Hosts in Varnish
 -------------------------------------
 
-Varnish fully supports virtual hosts.
-They might however work in a somewhat counter-intuitive fashion since they are
-never declared explicitly. You set up the routing of incoming HTTP requests in
-`vcl_recv`. If you want this routing to be done on the basis of virtual hosts
+Varnish fully supports virtual hosts!
+
+They might however work in a somewhat *counter-intuitive fashion* since they are
+never declared explicitly. You have to set up the routing of incoming HTTP requests
+in `vcl_recv`. If you want this routing to be done on the basis of virtual hosts,
 you just need to inspect req.http.host.
 
 You can have something like this:
@@ -71,7 +72,7 @@ Note that the first regular expressions will match "foo.com", "www.foo.com",
 "zoop.foo.com" and any other host ending in "foo.com".
 
 In this example this is intentional but you might want it to be a bit more tight,
-maybe relying on the == operator in stead, like this:
+maybe relying on the **==** operator instead, like this:
 
 .. literalinclude:: /content/examples/vcl_backend_virtualhosts2.vcl
   :language: VCL
@@ -133,8 +134,9 @@ You use this vdir director as a backend_hint for requests, just like you would
 with a simple backend. Varnish will not send traffic to hosts that are marked as
 unhealthy.
 
-Varnish can also serve stale content if all the backends are down. See
-Misbehaving servers for more information on how to enable this.
+Varnish can also serve stale content if all the backends are down.
+See **Misbehaving servers** in the varnish documentation for more information
+on how to enable this.
 
 Please note that Varnish will keep health probes running for all loaded VCLs.
 Varnish will coalesce probes that seem identical - so be careful not to change

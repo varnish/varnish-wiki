@@ -92,11 +92,11 @@ management facility.
 CLI interface authentication
 ............................
 
-By default the CLI interface is protected with a simple, yet powerful "Pre
-Shared Key" authentication method, which do not provide secrecy.
+By default the CLI interface is protected with a simple, yet powerful
+"Pre Shared Key" authentication method, which does not provide secrecy.
 
 To authenticate and use a CLI connection, you need to know the contents of this
-file which was created duing startup and this file contains a random content and
+file which was created doing startup and this file contains a random content and
 is only accessible to the user who started varnishd , in order to answer the
 cryptographic challenge varnishd issues, see Authentication with -S.
 
@@ -114,7 +114,6 @@ A good way to create the secret file is:
 When starting varnishd or varnishadm use `-S` to provide the filename.
 
 Read more about `Authenticating -S`_
-
 
 Parameters
 ..........
