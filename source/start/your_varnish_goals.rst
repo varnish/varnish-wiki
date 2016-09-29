@@ -84,7 +84,7 @@ There are lots of tools out there that can execute HTTP requests and return very
 useful information. Some of the tools are GET, Seige, HTTPie, etc.
 
 Varnish only cares about the headers. A request sent like the following will
-return header information. Remember Varnish that does not yet support HTTPS.
+return header information. 
 
 To see header information of a site, try:
 
@@ -100,6 +100,16 @@ To check whether a site sets cookies for a specific URL try:
 
     GET -Used http://yourvarnishsite.com/ | grep ^Set-Cookie
 
+Note on HTTP/2 and TLS/SSL in Varnish
+.....................................
+
+Although Varnish itself does not yet support HTTPS we recommend you use 
+`Hitch 1.4`_ or later for TLS/SSL Termination. 
+
+As for HTTP/2 support, most browsers support it only with TLS. For this
+you will need `Hitch 1.4`_ and Varnish 5.0 or later. You can read about
+`How to get started with Varnish Cache 5.0 with experimental HTTP/2 support`_ 
+in our blog.
 
 Managing Your Cookies!
 ----------------------
@@ -466,3 +476,5 @@ Useful links on this topic
 .. _`Header Field Definitions, section 14.44 to understand Vary`: https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html
 .. _`GZIP+ESI`: https://www.varnish-cache.org/docs/trunk/phk/gzip.html#phk-gzip
 .. _`vtctrans`: https://github.com/xcir/vtctrans
+.. _`How to get started with Varnish Cache 5.0 with experimental HTTP/2 support`: https://info.varnish-software.com/blog/varnish-cache-5-http2-support
+.. _`Hitch 1.4`: http://hitch-tls.org/
