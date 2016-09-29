@@ -83,6 +83,6 @@ Below is a list of resources that can help you understand and manage our softwar
 
 .. _`The Varnish Book`: http://book.varnish-software.com/4.0/
 .. _`The Varnish Tutorial`: https://www.varnish-cache.org/docs/4.1/tutorial/index.html#tutorial-index
-.. _`The Varnish Users Guide`: https://www.varnish-cache.org/docs/4.1/users-guide/index.html#users-guide-index
+.. _`The Varnish User Guide`: https://www.varnish-cache.org/docs/4.1/users-guide/index.html#users-guide-index
 .. _`The Varnish Reference Manual`: https://www.varnish-cache.org/docs/4.1/reference/index.html#reference-index
 .. _`Our Webinar on Cache Invalidation Strategies`: https://info.varnish-software.com/webinars_fm/cache-invalidation-strategies
