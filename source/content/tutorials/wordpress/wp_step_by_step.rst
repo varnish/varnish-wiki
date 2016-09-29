@@ -5,9 +5,10 @@ Step by Step guide to making your WordPress Website Fly
 
 **Important Note**
 
-Based on the article originally written by Federico G. Schwindt published on Web 
-Designer Magazine - http://www.webdesignermag.co.uk/ as well as in the blog 
-on http://www.varnish-software.com.
+Based on the `Step-by-step: Speed Up Wordpress with Varnish Software`_ article 
+originally written by Federico G. Schwindt and published on Web 
+Designer Magazine - http://www.webdesignermag.co.uk/ as well as on the Varnish
+Software blog.
 
 Said article was written for OSes using sysvinit and BSD init. Now that systemd 
 is in most Linux distributions, we have written this tutorial's examples
@@ -216,3 +217,4 @@ Check out the links on our main WordPress page to take your WordPress-Varnish ev
 
 .. _`varnish cache website`: https://varnish-cache.org
 .. _`Varnish HTTP Purge Plugin`: https://WordPress.org/plugins/varnish-http-purge/
+.. _`Step-by-step: Speed Up Wordpress with Varnish Software`:  https://info.varnish-software.com/blog/step-step-speed-wordpress-varnish-software"
