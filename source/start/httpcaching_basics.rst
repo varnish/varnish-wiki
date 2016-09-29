@@ -134,7 +134,7 @@ The ones that need the most attention are:
    :delim: ,
    :header-rows: 1
    :widths: 40, 30, 30
-   :file: tables/http_headers.csv
+   :file: ../tables/http_headers.csv
 
 **Expires**
 
@@ -174,7 +174,7 @@ header:
    :delim: ,
    :header-rows: 1
    :widths: 40, 30, 30
-   :file: tables/cachecontrol_arg.csv
+   :file: ../tables/cachecontrol_arg.csv
 
 **Etag**
 
