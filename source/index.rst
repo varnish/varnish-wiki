@@ -6,21 +6,21 @@
 Welcome to Varnish Wiki!
 ========================
 
-Here you will find all the resources you need to start using varnish.
-Lets get you started with development to production!
+Here you will find all the resources you need to start using Varnish.
+Let's get you started with development to production!
 
-Varnish is a reverse-proxy HTTP Accelerator designed for heavily consumed
-API endpoints and also for dynamic heavy-content websites. Varnish is very 
-flexible and as such can be used as:
+Varnish is a reverse-proxy HTTP accelerator designed for heavily consumed
+API endpoints and also for dynamic, heavy-content websites. Varnish is very 
+flexible and as such can be used:
 
-- Caching engine
-- Load balancer
-- Web application firewall
-- Edge authentication and authorization mechanism
-- HTTP routing
-- Hotlinking protection
-- DDoS Attack Defender
-- And more..
+- As a caching engine
+- As a load balancer
+- As a web application firewall
+- As an Edge authentication and authorization mechanism
+- For HTTP routing
+- For hotlinking protection
+- As a DDoS Attack Defender
+- and more.
 
 Varnish is currently used by high-profile, high-traffic sites such as Facebook, 
 Wikipedia, Vimeo, Twitter, Tumblr, The Guardian, VG.no and many others. More
