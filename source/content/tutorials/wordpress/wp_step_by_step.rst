@@ -5,8 +5,12 @@ Step by Step guide to making your WordPress Website Fly
 
 **Important Note**
 
-The original article was written for OSes using sysvinit and BSD init. Now that
-systemd is in most Linux distributions, we have written this tutorial's examples
+Based on the article originally written by Federico G. Schwindt published on Web 
+Designer Magazine - http://www.webdesignermag.co.uk/ as well as in the blog 
+on http://www.varnish-software.com.
+
+Said article was written for OSes using sysvinit and BSD init. Now that systemd 
+is in most Linux distributions, we have written this tutorial's examples
 to account for that. Still, it should be generic enough to work for most systems.
 
 In this tutorial, we will go through some of the common steps required to install
