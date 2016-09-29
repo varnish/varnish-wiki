@@ -22,9 +22,9 @@ Installing and Configuring Varnish
 
 :doc:`How to VCL? </content/tutorials/varnish/vcl>`
 
-:doc:`Test your Varnish with VarnishTest </content/tutorials/varnish/varnish_test>`
+:doc:`Test Varnish with VarnishTest </content/tutorials/varnish/varnish_test>`
 
-:doc:`Easy Piece of Advice </start/website_arch>`
+:doc:`Easy piece of advice </start/website_arch>`
 
 :doc:`What do you want to achieve for your site? </start/your_varnish_goals>`
 
@@ -77,7 +77,7 @@ Below is a list of resources that can help you understand and manage our softwar
 2. `The Varnish Tutorial`_ - The tutorial explains Varnish basics and gets you started with Varnish.
 3. `The Varnish User Guide`_ - The user guide explains how Varnish works and how you can use it to improve your website.
 4. `The Varnish Reference Manual`_ - The reference manual contains hard facts and is useful for looking up specific questions.
-5. :doc:`Relevant Resources <general_resources>` - The resources document contains links to information collected from sources outside our website.
+5. :doc:`Relevant Resources <general_resources>` - The resources document contains links to useful information collected from sources outside our website.
 
 **Last but not least this little Wiki will give you a hands-on guide to making your website fly!**
 
