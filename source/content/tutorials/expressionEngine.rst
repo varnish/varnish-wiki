@@ -13,7 +13,7 @@ Resources
 
 Overview on Varnish 4 with Expression Engine: https://rye.agency/blog/using-varnish-with-expressionengine
 
-Making Expression Engine Sites Fly with Varnish: https://ellislab.com/blog/entry/making-sites-fly-with-varnish
+Making ExpressionEngine Sites Fly with Varnish: https://ellislab.com/blog/entry/making-sites-fly-with-varnish
 (This post is for Varnish 3 configuration; other than that, it's a great explanation to move forward.)
 
 Controlling the cache using ESI: https://www.smashingmagazine.com/2015/02/using-edge-side-includes-in-varnish/
