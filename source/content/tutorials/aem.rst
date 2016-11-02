@@ -3,13 +3,13 @@
 Adobe Experience Manager and Varnish
 ====================================
 
-Adobe Experience Manager (AEM) is an enterprised web content management system
+Adobe Experience Manager (AEM) is an enterprise web content management system
 that facilitates organizing, managing, and delivering creative assets. It has
-ready made templates that users can use to create content and store them securely
+ready-made templates that users can use to create content and store them securely
 on the cloud.
 
-Primarily Adode recommends using the **Adobe Dispatcher** for caching pages. But
-as we you may know, it is not flexible enough for cache invalidation techniques
+Primarily, Adode recommends using the **Adobe Dispatcher** for caching pages. But,
+as well you may know, it is not flexible enough for the cache invalidation techniques
 needed today.
 
 The Adobe Dispatcher
@@ -23,30 +23,28 @@ Dispatcher Limitations
 ......................
 
 - Caches documents as delivered in the AEM Instance
-- **Does NOT cache** HTTP Headers (which provide info on handling that content)
+- **Does NOT cache** HTTP headers (which provide info on handling that content)
 
 - Holds onto the document
-- **Does NOT** hold onto the accompanying HTTP Response
+- **Does NOT** hold onto the accompanying HTTP response
 
 This is where **VARNISH CACHE PLUS** can help in managing the complex rules
-needed for your sites cache invalidation.
+needed for your site's cache invalidation.
 
 
 Varnish Cache Plus
 ------------------
 
 - Cache HTTP headers (requests and responses)
-- Configurable to cache any kind of HTTP request using queries.
-- Cache re-directed responses thus reducing load on machine.
-- For heavy content pages, queuing of requests
+- Configurable to cache any kind of HTTP request using queries
+- Cache re-directed responses thus reducing load on the machine
+- Querying of requests for content-heavy pages
 - ESI
-- Customization in flusing
+- Customization in flushing
 
-You need it if you run an online media website such as social medias, news,
-bank, resourceful data and interactive websites etc. Ofcourse not all these
-come in the varnish community version, that is why we have Varnish Cache Plus.
+Vanish Cache is great if you run, for example, a social media, news, banking, or resource data site, among others. Of course, not all the features mentioned above are included in the Varnish community version – that's why we have Varnish Cache Plus.
 
-With Varnish Cache Plus, enhanced Cache Invalidation techniques you can get,
+With Varnish Cache Plus, enhanced Cache Invalidation techniques you might get are:
 - Users to purge content using key-based relationships
 - Scalable cache invalidation (increases cache hit-rate)
 - Exclude certain headers from cache
@@ -56,7 +54,7 @@ With Varnish Cache Plus, enhanced Cache Invalidation techniques you can get,
 Replacing Adobe Dispatcher with Varnish Cache Plus
 --------------------------------------------------
 
-Know that this requires a user to have great understanding of Varnish and its
+Know  this requires a user to have great understanding of Varnish and its
 language (VCL), AEM and HTTP. As challengin as it may be it is also rewarding
 to see your website fly.
 
