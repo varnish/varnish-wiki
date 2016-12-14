@@ -1,7 +1,7 @@
 .. _varnish:
 
-How to Varnish
-==============
+How to get Varnish
+==================
 
 .. toctree::
   :hidden:
@@ -17,28 +17,28 @@ How to Varnish
   vcl
   vcl_examples
 
-Before you get to Varnish, You want to **get varnish**.
+Before you get to Varnish, You want to **get Varnish**.
 You have two choices:
 
-- Install **Binary Packages**
-- Compile It yourself from **source code**
+- Install **binary packages**
+- Compile it yourself from **source code**
 
-We have packages for a bunch of operating systems and we have the open source
-project available on github.
+We have packages for a number of operating systems, and we have the open source
+project available on Github.
 
-If you plan to get Varnish Plus, check out `products at our website`_
+If you plan to subscribe to Varnish Plus, check out `products at our website`_
 
 
-**Installing Varnish with Binary Packages**
+**Installing Varnish with binary packages**
 -------------------------------------------
 
-If you just want to get started with installation on your machine.
+To just get started with installation on your machine:
 
 Requirements
 ............
 
-Your choice of Operating System, preferably UNIX.
-Below we have some helpful commands to get you started for your choice of OS.
+Your choice of operating system, preferably UNIX.
+Below we have some helpful commands to get you started with your choice of OS.
 
 Choosing OS
 -----------
@@ -62,7 +62,7 @@ From source:
 Red Hat / CentOS
 ................
 
-Latest version is available as prebuilt RPMs (el5 and el6) on `repo.varnish-cache.org`_ .
+The latest version is available as prebuilt RPMs (el5 and el6) on `repo.varnish-cache.org`_ .
 
 See the online Red Hat installation instructions for more information.
 
@@ -84,8 +84,8 @@ Try
   sudo apt-get install varnish
 
 Please note that this might not be the latest version of Varnish.
-If you need a later version of Varnish due the OS version you are using.
-Please follow the instructions in the Varnish Book or as shown below.
+If you need a newer version of Varnish for the OS version you are using,
+please follow the instructions in the Varnish Book or as shown below.
 
 .. code-block: bash
 
@@ -101,8 +101,8 @@ the command above. Instructions for Debian and Ubuntu are the same.
 ---------------------------------
 
 If there are no binary packages available for your system,
-or if you want to compile Varnish from source for other reasons such as personal
-interest or anything that counts as reason, follow these steps:
+or if you want to compile Varnish from source for other reasons, such as personal
+interest or anything that counts as a reason, follow these steps:
 
 Download the appropriate release tarball, which you can find on the `repository source`_ .
 
@@ -115,7 +115,7 @@ Alternatively, if you want to hack on Varnish, you should clone our git reposito
 Requirements
 ............
 
-A UNIX Machine or a MAC
+A UNIX machine or a Mac
 
 Build dependencies on Debian / Ubuntu
 ......................................
@@ -178,7 +178,7 @@ Optionally, to pull from a repository:
 Building Varnish
 -----------------
 
-Finally if you have all the above **dependencies satisfied**. You can move on to
+Finally if you have all of the above **dependencies satisfied**. You can move on to
 building your Varnish from *scratch*.
 
 .. code-block: bash
@@ -189,24 +189,24 @@ building your Varnish from *scratch*.
   make
 
 The configure script takes some arguments, but more likely than not you can forget
-about that for now, almost everything in Varnish can be tweaked with run time parameters.
+about that for now, almost everything in Varnish can be tweaked with runtime parameters.
 
-Before you install, you may want to run the test suite, make a cup of tea while
-it runs, it usually takes a couple of minutes:
+Before you install, you may want to run the test suite, and make a cup of tea while
+it runs, as it usually takes a couple of minutes:
 
 .. code-block: bash
 
   make check
 
-*Don't worry if* one or two tests fail, some of the tests are a bit too timing
-sensitive (Please tell us which so we can fix them).
+*Don't worry if* one or two tests fail; some of the tests are a bit too timing
+sensitive. (Please tell us which so we can fix them.)
 
 **BUT**
 
 If a **lot of tests fail** and in particular if the **b00000.vtc test fails**,
 something is horribly wrong, and you will get nowhere without figuring out what is causing all the chaos.
 
-Good Luck!
+Good luck!
 
 Installing
 ..........
@@ -226,7 +226,7 @@ And finally, the true test of a **brave heart!**
 
   sudo ldconfig
 
-Using Source: https://www.varnish-cache.org/docs/trunk/installation/install.html#compiling-varnish-from-source
+Using source: https://www.varnish-cache.org/docs/trunk/installation/install.html#compiling-varnish-from-source
 
 .. _`products at our website`: https://www.varnish-software.com/products/varnish-plus
 .. _`repo.varnish-cache.org`: https://repo.varnish-cache.org
