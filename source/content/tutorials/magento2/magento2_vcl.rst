@@ -1,9 +1,9 @@
 .. _magento2_vcl:
 
-Some Sample VCL for Magento2
+Some sample VCL for Magento2
 ============================
 
-Purging Magento2 Pages
+Purging Magento2 pages
 ......................
 
 .. literalinclude:: /content/templates/vcl_defaultMagento2_hummer.vcl
@@ -39,21 +39,21 @@ GZIP
   :language: VCL
   :lines: 15,58-60,44
 
-Cache only Successful Responses
+Cache only successful responses
 ...............................
 
 .. literalinclude:: /content/templates/vcl_defaultMagento2_hummer.vcl
   :language: VCL
   :lines: 15,63-71,44
 
-Setting Debug Mode for Cache Cache-Control
+Setting debug mode for cache cache-control
 ..........................................
 
 .. literalinclude:: /content/templates/vcl_defaultMagento2_hummer.vcl
   :language: VCL
   :lines: 15,73-75,44
 
-Remove un-used Cookies
+Remove unused cookies
 ......................
 
 .. literalinclude:: /content/templates/vcl_defaultMagento2_hummer.vcl
