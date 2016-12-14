@@ -1,0 +1,120 @@
+
+{# TEMPLATE VAR SETTINGS #}
+{%- set main_site_url = "https://www.varnish-software.com/" %}
+{%- set url_root = pathto('', 1) %}
+{%- if url_root == '#' %}{% set url_root = '' %}{% endif %}
+{%- if not embedded and docstitle %}
+	{%- set titlesuffix = " &mdash; "|safe + docstitle|e %}
+{%- else %}
+	{%- set titlesuffix = "" %}
+{%- endif %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	{{ metatags }}
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	{% block htmltitle %}
+	<title>{{ title|striptags|e }}{{ titlesuffix }}</title>
+	{% endblock %}
+
+	{# FAVICON #}
+	{% if favicon %}
+		<link rel="shortcut icon" href="{{ pathto('_static/' + favicon, 1) }}"/>
+	{% endif %}
+
+	{# CSS #}
+
+	<script type="text/javascript">
+	var DOCUMENTATION_OPTIONS = {
+		URL_ROOT:       './',
+		VERSION:        '1.0',
+		COLLAPSE_INDEX: false,
+		FILE_SUFFIX:    '.html',
+		HAS_SOURCE:     true
+	};
+	</script>
+	<script src="/_static/jquery.js"></script>
+	<script src="/_static/underscore.js"></script>
+	<script src="/_static/doctools.js"></script>
+	<script src="./_static/searchtools.js"></script>
+	<script>
+	jQuery(function() { Search.loadIndex("/searchindex.js"); });
+	</script>
+	
+	{# OPENSEARCH #}
+	{% if not embedded %}
+		{% if use_opensearch %}
+			<link rel="search" type="application/opensearchdescription+xml" title="{% trans docstitle=docstitle|e %}Search within {{ docstitle }}{% endtrans %}" href="{{ pathto('_static/opensearch.xml', 1) }}"/>
+		{% endif %}
+
+	{% endif %}
+
+	<link rel="stylesheet" href="{{ main_site_url }}wp-content/themes/varnish-software/css/style.css" type="text/css" />
+
+	{%- block linktags %}
+		{%- if hasdoc('about') %}
+				<link rel="author" title="{{ _('About these documents') }}"
+							href="{{ pathto('about') }}"/>
+		{%- endif %}
+		{%- if hasdoc('genindex') %}
+				<link rel="index" title="{{ _('Index') }}"
+							href="{{ pathto('genindex') }}"/>
+		{%- endif %}
+		{%- if hasdoc('search') %}
+				<link rel="search" title="{{ _('Search') }}" href="{{ pathto('search') }}"/>
+		{%- endif %}
+		{%- if hasdoc('copyright') %}
+				<link rel="copyright" title="{{ _('Copyright') }}" href="{{ pathto('copyright') }}"/>
+		{%- endif %}
+		<link rel="top" title="{{ docstitle|e }}" href="{{ pathto('index') }}"/>
+		{%- if parents %}
+				<link rel="up" title="{{ parents[-1].title|striptags|e }}" href="{{ parents[-1].link|e }}"/>
+		{%- endif %}
+		{%- if next %}
+				<link rel="next" title="{{ next.title|striptags|e }}" href="{{ next.link|e }}"/>
+		{%- endif %}
+		{%- if prev %}
+				<link rel="prev" title="{{ prev.title|striptags|e }}" href="{{ prev.link|e }}"/>
+		{%- endif %}
+	{%- endblock %}
+	{%- block extrahead %} {% endblock %}
+
+	{# Keep modernizr in head - http://modernizr.com/docs/#installing #}
+	<script src="{{ pathto('_static/js/modernizr.min.js', 1) }}"></script>
+</head>
+<body class="page no-header">
+
+{% include "header.html" %}
+
+{% block menu %}
+
+<div id="wiki-sidebar">
+		<div class="sidebar-block">
+		  <div class="sidebar-wrapper">
+		    <h3>{{ _('Contents') }}</h3>
+		    <div class="sidebar-localtoc">
+		      {{ toctree(includehidden=True, collapse=True) }}
+	    	    </div>
+	  	  </div>
+		</div>
+
+	{% include "searchbox.html" %}
+	{% include "sourcelink.html" %}
+</div>
+{% endblock %}
+
+
+<div id="wiki-content">
+{% block body %}{% endblock %}
+</div>
+
+
+
+{% include "footer.html" %}
+
+<script src="{{ main_site_url }}wp-content/themes/varnish-software/js/rewrite.js"></script>
+
+</body>
+</html>
