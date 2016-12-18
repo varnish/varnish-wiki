@@ -12,21 +12,21 @@ Is VCL worth the learning curve?
 --------------------------------
 
 Looking for motivation? Well VCL is easy and very much like C. In fact, VCL accepts
-In-line C, though it is not recommended. Following our guide and learning VCL is the
-way to go! :)
+inline C, though it is not recommended. Following our guide and learning VCL is the
+way to go!
 
 We consider getting past your fear of coding and learning VCL a good choice
 because writing or modifying VCL can help you understand Varnish better. In fact,
 it will give you the independence to do whatever you want with your Varnish – at
 your own risk, of course! As you already know, many high-profile websites use Varnish,
 and if you are prepared to take your VCL skills to the next level, you will be taking a big step
-in your career.
+in doing big things with Varnish.
 
 How to VCL
 -----------
 
-The Basics
-......
+The basics
+..........
 
 - Domain-specific language
 - VCL as a finite state machine
@@ -34,18 +34,18 @@ The Basics
 - Varnish includes built-in subroutines, starting with `vcl_` (reserved prefix)
 - Varnish has a built-in VCL that is always appended with your custom VCL
   UNLESS you specify otherwise with a `return (hash)`. This terminates the subroutine,
-  and DOES NOT append built-in vcl.
+  and DOES NOT append built-in VCL.
 - Available features: `functions, legal return actions and variables`_
 
 
-What is Built-in VCL?
+What is built-in VCL?
 ---------------------
 
 The built-in VCL file named `builtin.vcl` is the VCL configuration Varnish
 automatically appends to your VCL file during compilation/loading.
 
 Whenever a new configuration is loaded, the varnishd management process
-translates the VCL code to C and compiles it to a shared object which is then
+translates the VCL code to C and compiles it to a shared object, which is then
 loaded into the server process.
 
 You can view your `built-in vcl` in this location if you are a debian user:
@@ -57,7 +57,7 @@ You can view your `built-in vcl` in this location if you are a debian user:
 
 **Note:** This ``builtin.vcl`` file is just for Varnish users to see what is
 present in the built-in file. Editing this VCL doesn't affect anything.
-Any VCL you want to add goes in the /etc/varnish/default.vcl
+Any VCL you want to add goes into /etc/varnish/default.vcl
 
 If you want to recreate your own VCL, we recommend you make changes in the
 `example.vcl`. You will find that file in this location if you are a debian user:
@@ -67,11 +67,11 @@ If you want to recreate your own VCL, we recommend you make changes in the
   cat /usr/share/doc/varnish/example.vcl
 
 
-Built-in Subroutines
+Built-in subroutines
 --------------------
 
 VCL built-in subroutines are the ones that are pre-defined using the syntax
-`vcl_` in the `buildin.vcl` and `default.vcl` (the subroutines here are empty
+`vcl_` in the `builtin.vcl` and `default.vcl` (the subroutines here are empty
 by default).
 
 
@@ -83,10 +83,10 @@ Click on the image to see a larger, clearer version.
   :align: center
   :width: 400px
 
-(Collected from the Varnish book)
+(Taken from the Varnish book)
 
 
-Client Side
+Client side
 ...........
 
 **vcl_recv:**
@@ -129,10 +129,10 @@ Client Side
 
 **vcl_hit:**
 
-- called when a cache look-up is successful
-- object being hit maybe stale if:
+- called when a cache lookup is successful
+- object being hit may be stale if:
     - it can have a zero, or
-    - negative ttl with only grace, or
+    - negative TTL with only grace, or
     - keep time left
 - terminates with `return(action)`
 - action types:
@@ -188,7 +188,7 @@ Client Side
     - synth(status code, reason)
 
 
-Backend Side
+Backend side
 ............
 
 **vcl_backend_fetch:**
@@ -210,8 +210,8 @@ Backend Side
 
 **vcl_backened_error:**
 
-- called if backend fetch has failed or if `max_retries` has exceeded
-- sythetic object is generated in VCL using the `synthetic()` function
+- called if backend fetch has failed or if `max_retries` has been exceeded
+- synthetic object is generated in VCL using the `synthetic()` function
 - may end up in cache
 - terminates with return(action)
     - deliver
@@ -231,7 +231,7 @@ vcl.load/vcl.discard
 
 **vcl_fini:**
 
-- called when VCL is discarded, ONLY after ALL request have exited VCL
+- called when VCL is discarded, ONLY after ALL requests have exited VCL
 - used to clean up VMODs
 - terminates with return(action)
     - ok (normal return, VCL will be discarded)
