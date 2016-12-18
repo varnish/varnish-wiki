@@ -6,14 +6,14 @@ Sample VCLs
 Configuring Varnish
 -------------------
 
-ACL Purge
+ACL purge
 .........
 
 .. literalinclude:: /content/templates/vcl_defaultSample_mattias.vcl
   :language: VCL
   :lines: 32-37
 
-Backend Definition
+Backend definition
 ..................
 
 .. literalinclude:: /content/templates/vcl_defaultSample_mattias.vcl
@@ -27,7 +27,7 @@ Normalizing header
   :language: VCL
   :lines: 58,66-67,193
 
-Removing Proxy header
+Removing proxy header
 .....................
 
 .. literalinclude:: /content/templates/vcl_defaultSample_mattias.vcl
@@ -41,20 +41,20 @@ Normalizing query arguments
   :language: VCL
   :lines: 58,72-73,193
 
-Allowing Purging
+Allowing purging
 ................
 
 .. literalinclude:: /content/templates/vcl_defaultSample_mattias.vcl
   :language: VCL
   :lines: 58,75-83,193
 
-Dealing with Selective Header Types
+Dealing with selective header types
 ...................................
 
 .. literalinclude:: /content/templates/vcl_defaultSample_mattias.vcl
   :lines: 58,86-96,193
 
-Implementing Web Socket Support Example
+Implementing web socket support example
 ........................................
 
 .. literalinclude:: /content/templates/vcl_defaultSample_mattias.vcl
@@ -68,10 +68,10 @@ When using external VMODs you need this.
 .. literalinclude:: /content/templates/vcl_defaultSample_mattias.vcl
   :lines: 58,64,193
 
-URL Manipulation
+URL manipulation
 ----------------
 
-Making sure the POST Requests are always Passed
+Making sure the POST requests are always passed
 ...............................................
 
 .. literalinclude:: /content/templates/vcl_defaultSample_mattias.vcl
@@ -83,7 +83,7 @@ Removing Google Analytics added parameters
 .. literalinclude:: /content/templates/vcl_defaultSample_mattias.vcl
   :lines: 58,110-115,193
 
-Example of Stripping from URL
+Example of stripping from URL
 .............................
 
 The example below strips ``#`` from URL, because server has no use for it.
@@ -96,20 +96,20 @@ The example below strips trailing ``?`` from URL.
 .. literalinclude:: /content/templates/vcl_defaultSample_mattias.vcl
   :lines: 58,122-125,193
 
-Cookie Manipulation
+Cookie manipulation
 -------------------
 
-Removing Google Analytic cookies
-................................
+Removing Google Analytics cookies
+.................................
 
 .. literalinclude:: /content/templates/vcl_defaultSample_mattias.vcl
   :lines: 58,131-137,193
 
-Removing DoubleClick Offensive Cookies
+Removing doubleClick offensive cookies
 ......................................
 
-These cookies are used to improve advertising. Basically doubleClick avoids a
-user from seeing the same advertise twice. It sends a cookie when a user clicks
+These cookies are used to improve advertising. Basically doubleClick ensures that
+users do not see the same advertisement twice. It sends a cookie when a user clicks
 on a ad. These cookies are not relevant for caching.
 
 .. literalinclude:: /content/templates/vcl_defaultSample_mattias.vcl
@@ -140,19 +140,19 @@ Checking for empty or spaced cookies
   :lines: 58,151-165,193
 
 
-Turn On Varnish Support for Streaming
+Turn on Varnish support for streaming
 .....................................
 
 .. literalinclude:: /content/templates/vcl_defaultSample_mattias.vcl
   :lines: 58,167-173,193
 
-Removing Cookies for Static Files
+Removing cookies for static files
 .................................
 
 .. literalinclude:: /content/templates/vcl_defaultSample_mattias.vcl
   :lines: 58,175-182,193
 
-ESI Support
+ESI support
 -----------
 
 .. literalinclude:: /content/templates/vcl_defaultSample_mattias.vcl
@@ -164,13 +164,13 @@ Hashing cookies
 .. literalinclude:: /content/templates/vcl_defaultSample_mattias.vcl
   :lines: 228,240-244
 
-Serving Queued Requests with Grace
+Serving queued requests with Grace
 ..................................
 
 .. literalinclude:: /content/templates/vcl_defaultSample_mattias.vcl
   :lines: 246, 254-256, 264-287
 
-Passing Real IP to backend
+Passing real IP to backend
 --------------------------
 
 .. code-block:: VCL
@@ -186,13 +186,13 @@ Passing Real IP to backend
   }
 
 
-Handling Request from backend
+Handling request from backend
 -----------------------------
 
-How varnish handles the HTTP request coming from our backends relys on the VCL
-we write in our backend sub routines.
+How Varnish handles the HTTP request coming from our backends relies on the VCL
+we write in our backend subroutines.
 
-The vcl_backend_response sub routine is called after the response headers are
+The vcl_backend_response subroutine is called after the response headers are
 successfully retrieved from the backend.
 
 Pausing ESI request
@@ -202,7 +202,7 @@ Pausing ESI request
   :lines: 298,301-305,348-349
 
 
-Enabling Cache for Static files
+Enabling cache for static files
 ...............................
 
 .. literalinclude:: /content/templates/vcl_defaultSample_mattias.vcl
@@ -220,12 +220,12 @@ Redirecting
 Sometimes, a 301 or 302 redirect formed via Apache's mod_rewrite can mess with the HTTP port that is being passed along.
 This often happens with simple rewrite rules in a scenario where Varnish runs on :80 and Apache on :8080 on the same box.
 A redirect can then often redirect the end-user to a URL on :8080, where it should be :80.
-This may need finetuning on your setup.
+This may need fine-tuning on your setup.
 
 .. literalinclude:: /content/templates/vcl_defaultSample_mattias.vcl
   :lines: 298,327-330,348-349
 
-Setting cache for static files if Unset
+Setting cache for static files if unset
 .......................................
 
 .. literalinclude:: /content/templates/vcl_defaultSample_mattias.vcl
@@ -244,7 +244,7 @@ Setting Grace mode
   :lines: 298,344-346,349
 
 
-Adding Debug headers
+Adding debug headers
 ....................
 
 .. literalinclude:: /content/templates/vcl_defaultSample_mattias.vcl
