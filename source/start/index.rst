@@ -1,6 +1,6 @@
 .. _start:
 
-Getting Started
+Getting started
 ===============
 
 .. toctree::
@@ -15,7 +15,7 @@ Getting Started
 
 Let's get started with Varnishing your website!
 
-Installing and Configuring Varnish
+Installing and configuring Varnish
 ..................................
 
 :doc:`Installing Varnish </content/tutorials/varnish/varnish_ubuntu>`
@@ -29,7 +29,7 @@ Installing and Configuring Varnish
 :doc:`What do you want to achieve for your site? </start/your_varnish_goals>`
 
 
-Step-by-Step Configuration for Web Applications
+Step-by-step configuration for web applications
 ...............................................
 
 :doc:`Magento 2 guide to Varnish </content/tutorials/magento2/m2_step_by_step>`
@@ -39,7 +39,7 @@ Step-by-Step Configuration for Web Applications
 :doc:`Drupal guide to Varnish </content/tutorials/drupal/drupal_step_by_step>`
 
 
-Configuration for Enterprise Products
+Configuration for enterprise products
 .....................................
 
 :doc:`Adobe Extension Manager (AEM) </content/tutorials/aem>`
@@ -47,7 +47,7 @@ Configuration for Enterprise Products
 :doc:`Expression Engine (EE) </content/tutorials/expressionEngine>`
 
 
-Configuring VCL Beyond the Default
+Configuring VCL beyond the default
 ..................................
 
 Below are links to examples of VCL configurations in/with Varnish.
@@ -63,7 +63,7 @@ Below are links to examples of VCL configurations in/with Varnish.
 :doc:`Magento2 and VCL </content/tutorials/magento2/magento2_vcl>`
 
 
-Recipes for Cache Invalidation
+Recipes for cache invalidation
 ..............................
 
 `Our Webinar on Cache Invalidation Strategies`_
@@ -71,7 +71,7 @@ Recipes for Cache Invalidation
 :doc:`Cache Invalidation Bundle </content/tutorials/varnish/vcl_examples>`
 
 
-Below is a list of resources that can help you understand and manage our software better!
+Below is a list of resources that can help you understand and manage Varnish better:
 
 1. `The Varnish Book`_ - The book is one of our best training manuals/reference sources, which includes in-depth details and exercises.
 2. `The Varnish Tutorial`_ - The tutorial explains Varnish basics and gets you started with Varnish.
@@ -79,7 +79,7 @@ Below is a list of resources that can help you understand and manage our softwar
 4. `The Varnish Reference Manual`_ - The reference manual contains hard facts and is useful for looking up specific questions.
 5. :doc:`Relevant Resources <general_resources>` - The resources document contains links to useful information collected from sources outside our website.
 
-**Last but not least this little Wiki will give you a hands-on guide to making your website fly!**
+**Last but not least this little wiki will give you a hands-on guide to making your website fly!**
 
 .. _`The Varnish Book`: http://book.varnish-software.com/4.0/
 .. _`The Varnish Tutorial`: https://www.varnish-cache.org/docs/4.1/tutorial/index.html#tutorial-index
