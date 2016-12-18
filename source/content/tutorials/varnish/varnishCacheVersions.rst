@@ -20,19 +20,19 @@ We recommend that you always choose to use the latest stable release.
 
 **Migrating to Varnish 4?**
 
-You recommend you use the **VCL Migrator** at your own liability.
+We advise that you should use the **VCL Migrator** at your risk.
 
 VCL Migrator
 ............
 
-The **VCL Migrator** is a script named varnish3to4 which will help you migrate
-from varnish 3 to 4. There has been quite a lot of syntactical changes in the
+The **VCL Migrator** is a script named varnish3to4, which will help you migrate
+from Varnish 3 to 4. There have been numerous syntactical changes in the
 VCL codes from Varnish 3 to 4. It is not quite intensive, but using the script
-to migrate can help save you time and will also point out to you the new changes.
-This amis to make your future vcl configuring easier.
+to migrate can help save you time and will also make the new changes visible for you.
+This aim is to make your future VCL configuration work easier.
 
 You can download the `varnish3to4 script here`_
 
 .. _`varnish3to4 script here`: https://github.com/fgsch/varnish3to4
 
-All details and updates are included in the link. So you may use it at your own responsibility.
+All details and updates are included in the link. You assume full responsibility for your use.
