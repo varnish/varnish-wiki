@@ -1,18 +1,18 @@
 .. _varnish_ubuntu:
 
-Installing and Configuring Varnish
+Installing and configuring Varnish
 ==================================
 
-The following text discusses how to configure your webserver to use Varnish.
+The following text discusses how to configure your web server to use Varnish.
 Note that the installation is different for *systemv* and *systemd*.
-The following guide is for systemd as many linux distributions are now adopting to
+The following guide is for systemd as many linux distributions are now adapting to
 the systemd init system.
 
 Audience:
 .........
 
 This reference has been prepared for web developers to get them started with
-Varnish installation and configuration.
+their Varnish installation and configuration.
 
 Step 1 : Installing Varnish on Ubuntu/UNIX:
 -------------------------------------------
@@ -26,7 +26,7 @@ It is recommended that you install the Varnish package from its repository.
 .. literalinclude:: /content/examples/varnish_install_repo
 	:language: bash
 
-- Run Update and Install
+- Run update and install
 
 .. literalinclude:: /content/examples/update_install_varnish
 	:language: bash
@@ -42,9 +42,9 @@ Varnish comes with two configuration files:
 
 This file contains all the starter parameters.
 
-**The other is the Default VCL file:**
+**The other is the default VCL file:**
 
-For systemd, the VCL file is directed to in a different manner.
+For systemd, the VCL file is directed in a different manner.
 It will be located in:
 
 	``/etc/systemd/system/varnish.service``
@@ -74,10 +74,10 @@ Description:
 		If you plan to change the name of the default policy file,
 		be sure to come here and change the default.vcl to the correct name.
 
-		~S : refers to the file containing secrets such as passwords, etc.
+		~S : refers to the file containing private information, such as passwords, etc.
 
 		~s : refers to the space Varnish Cache is allocated. 256m”
-		is decided based on the current servers RAM of 1GB.
+		is decided based on the current server's RAM of 1GB.
 
 
 	- Set the Varnish listen port to 80
@@ -86,7 +86,7 @@ Description:
 .. literalinclude:: /content/examples/default_varnish_2.vcl
 	:language: VCL
 
-That is all the configuration changes required in this file.
+These are all the configuration changes required in this file.
 
 2. Copy the default file named **varnish.service**
 
@@ -119,12 +119,12 @@ That is all the configuration changes required in this file.
 .. literalinclude:: /content/examples/default_vcl.vcl
 	:language: VCL
 
-The value of .host by default is localhost. It should be replace with the fully
-qualified host name or IP address (typically a webserver) and listen port of the
+The value of .host is localhost by default. It should be replaced with the fully
+qualified host name or IP address (typically a web server) and listen port of the
 Varnish backend or origin server; that is, the server providing the content
 Varnish will accelerate.
 
-The value of .port should be replaced with the webserver's listening port, for example
+The value of .port should be replaced with the web server's listening port, for example
 8080 as shown below.
 
 .. literalinclude:: /content/examples/default_vcl_2.vcl
@@ -137,7 +137,7 @@ with the new default.vcl and Varnish files.
 Varnish is now serving the client at port 80 and listening to the backend at
 port 8080.
 
-This is when you can add ready-made VCL Templates or recommended plug-ins for
+This is when you can add ready-made VCL templates or recommended plugins for
 your web application (WordPress, Drupal, Magento2)
 
 But before you add any new code you must understand VCL.
@@ -145,20 +145,20 @@ But before you add any new code you must understand VCL.
 Step 3: Configure Apache2 to work with Varnish
 ----------------------------------------------
 
-Configure your webserver to listen on a port other than the default port 80 because
+Configure your web server to listen on a port other than the default port 80 because
 Varnish responds directly to incoming HTTP requests from the client on this port.
 
-Varnish will communicate on a different port with your backend webservers. In
+Varnish will communicate on a different port with your backend web servers. In
 the example above, it is port 8080.
 
 In the sections that follow, we use port 8080 as an example, as shown above.
-If you have more than one backend, you can put them on another port such as port
+If you have more than one backend, you can put them on another port, such as port
 8081, 8082, etc.
 
 To change the Apache listen port:
 
 	~ Open /etc/apache2/ports.conf in a text editor
-	~ Locate the Listen directive
+	~ Locate the listen directive
 	~ Change the value of the listen port to 8080 (you can use any available listen port)
 	~ Save your changes to ports.conf and exit the text editor
 	~ Also edit /etc/apache2/sites-available/000-default.conf
@@ -166,7 +166,7 @@ To change the Apache listen port:
 	`<VirtualHost 127.0.0.1:8080>`
 
 
-Setting up Multiple Backends (Skip this section if you have one backend)
+Setting up multiple backends (skip this section if you have one backend)
 ------------------------------------------------------------------------
 
 If you have more than one backend server, you need to add all these backends into
@@ -215,7 +215,7 @@ If Varnish fails to start, try running it from the command line as follows:
 This should display any error messages.
 
 
-Step 7: The Management Interface
+Step 7: The management interface
 --------------------------------
 
 Varnish has a command line interface (CLI) to control any Varnish instance. It can be used to:
