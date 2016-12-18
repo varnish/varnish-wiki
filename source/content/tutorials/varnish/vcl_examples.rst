@@ -1,25 +1,25 @@
 .. _vcl_examples:
 
-Cache Invalidation with Examples
+Cache invalidation with examples
 ================================
 
-Here we will explain with example how the different components of Cache
-Invalidation works,
+Here we will explain with examples how the different components of cache
+invalidation work.
 
-HTTP Purge
+HTTP purge
 ----------
 
 .. literalinclude:: /content/examples/vcl_purgeFromBackend.vcl
   :language: VCL
 
 
-PURGE an article from the Backend
+PURGE an article from the backend
 .................................
 
 .. literalinclude:: /content/examples/vcl_purgeFromBackend.vcl
   :language: VCL
 
-Purge with Restart
+Purge with restart
 ..................
 
 This allows Varnish to re-run the VCL state machine with different variables.
@@ -29,13 +29,13 @@ This allows Varnish to re-run the VCL state machine with different variables.
 
 Source: http://book.varnish-software.com/4.0/chapters/Cache_Invalidation.html?highlight=vcl_recv
 
-Collected: 17th August 2016
+Accessed: 17th August 2016
 
 Softpurge
 ---------
 
 - Reduces TTL to 0
-- Allows varnish to serve stale objects
+- Allows Varnish to serve stale objects
 
 
 .. literalinclude:: /content/examples/vclex_softPurge.vcl
@@ -43,7 +43,7 @@ Softpurge
 
 source: https://github.com/varnish/varnish-modules/blob/master/docs/vmod_softpurge.rst
 
-Collected: 17th August 2016
+Accessed: 17th August 2016
 
 Purge call
 ...........
@@ -93,10 +93,10 @@ To inspect the current ban-list, issue the ban.list command in the CLI:
   0xb75096d0 1318329475.377475    10      obj.http.x-url ~ test0
   0xb7509610 1318329470.785875    20C     obj.http.x-url ~ test1
 
-Lurker Friendly Bans
+Lurker-friendly bans
 ....................
 
-The following snippet shows an example on how to preserve the context of a client request in the cached object:
+The following snippet shows an example of how to preserve the context of a client request in the cached object:
 
 .. code-block:: VCL
 
@@ -116,10 +116,10 @@ posts that have been cached. For this you can issue a ban such as:
 
   $ varnishadm ban 'obj.http.x-url ~ ^/blog'
 
-Since it uses a lurker-friendly ban expression, the ban inserted in the ban-list
+Since it uses a lurker-friendly ban expression, the ban inserted in the ban list
 will be gradually evaluated against all cached objects until all blog posts are
 invalidated. The snippet below shows how to insert the same expression into the
-ban-list in the vcl_recv subroutine:
+ban list in the vcl_recv subroutine:
 
 .. code-block:: VCL
 
@@ -135,7 +135,7 @@ ban-list in the vcl_recv subroutine:
   }
 
 
-Purge and Ban Together Example
+Purge and ban together example
 ..............................
 
 .. code-block:: VCL
@@ -171,7 +171,7 @@ Purge and Ban Together Example
 
 
 
-Force cache Miss
+Force cache miss
 ----------------
 
 .. code-block:: VCL
@@ -181,17 +181,17 @@ Force cache Miss
   }
 
 Causes Varnish to look the object up in cache, but ignore any copy it finds
-Useful way to do a controlled refresh of a specific object
-If the server is down, the cached object is left untouched
-Depending on the Varnish version, it might leave extra copies in the cache
-Useful to refresh slowly generated content
+This is a useful way to do a controlled refresh of a specific object.
+If the server is down, the cached object is left untouched.
+Depending on the Varnish version, it might leave extra copies in the cache.
+It is useful to refresh slowly generated content.
 
 source: http://book.varnish-software.com/4.0/chapters/Appendix_G__Solutions.html#solution-write-a-vcl-program-using-purge-and-ban
 
-HASHTWO
+Hashtwo
 -------
 
-The idea is that you can use any arbitrary string for cache invalidation.
+The idea behind Hashtwo is that you can use any arbitrary string for cache invalidation.
 You can then key your cached objects on, for example, product ID or article ID.
 In this way, when you update the price of a certain product or a specific article,
 you have a key to evict all those objects from the cache.
@@ -208,7 +208,7 @@ On Red Hat Enterprise Linux:
 
   yum install libvmod-hashtwo
 
-Finally, you can use this VMOD by importing it in your VCL code:
+Finally, you can use this VMOD by importing it into your VCL code:
 
 .. code-block:: VCL
 
@@ -231,7 +231,7 @@ VCL example code for hashtwo:
   }
 
 Normally the backend is responsible for setting these headers.
-If you were to do it in VCL, it will look something like this:
+If you were to do it in VCL, it would look something like this:
 
 .. code-block:: VCL
 
@@ -240,7 +240,7 @@ If you were to do it in VCL, it will look something like this:
   }
 
 source: http://book.varnish-software.com/4.0/chapters/Cache_Invalidation.html
-A complete GRACE example
+A complete Grace example
 ------------------------
 
 .. literalinclude:: /content/examples/grace-v4.vcl
@@ -248,7 +248,7 @@ A complete GRACE example
 
 Source: https://info.varnish-software.com/blog/grace-varnish-4-stale-while-revalidate-semantics-varnish
 
-Collected: 17th August 2016
+Accessed: 17th August 2016
 
 **ref to examples in vcl**
 
