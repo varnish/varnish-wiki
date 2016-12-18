@@ -1,20 +1,20 @@
 .. _varnish_test:
 
-Testing with VarnishTest
+Testing with varnishtest
 ========================
 
 You may not be aware of this, but `VarnishTest` is an awesome tool.
-VarnishTest is a sandbox (testing environment) that is completely isolated from
+varnishtest is a sandbox (testing environment) that is completely isolated from
 the production environment where one can TEST untested code changes and do
 all kinds of out-of-this-world experimentation.
 
-Using VarnishTest protects your "live" servers, reviewed VCL codes and
+varnishtest protects your "live" servers, reviewed VCL codes and
 other collections of data and/or content from severe changes that could be caused
-by experimental code. But we all know that once in a mission-critical system
-phase is quite difficult to revert back.
+by experimental code. We all know that once in a mission-critical system
+phase it is quite difficult to revert back.
 
-Varnish comes with VarnishTest pre-installed and runs personalized tests for
-whatever case you may define. There is also a whole set of pre-defined tests
+Varnish comes with varnishtest pre-installed and runs personalized tests for
+whatever case you define. There is also a whole set of pre-defined tests
 that you can use to help your understanding and testing.
 
 Here is a list of contexts where you can use `VarnishTest`:
@@ -31,39 +31,39 @@ Here is a list of contexts where you can use `VarnishTest`:
 The Varnish Testcase Language (VTC)
 ------------------------------------
 
-This is the language that VarnishTest understands. The extension used by Varnish
+This is the language that varnishtest understands. The extension used by Varnish
 test case files is (.vtc).
 
 Normally, a VTC file describes a scenario with different scripted HTTP-talking
 operations and generally one or more Varnish instances (clients) to test.
 
-Naming Convention
+Naming convention
 .................
 
-VarnishTest has a whole set of pre-defined tests that you can use if you understand what it is doing. It follows a naming convention which will help you to understand which set is what type of example.
+varnishtest has a whole set of pre-defined tests that you can use if you understand what it is doing. It follows a naming convention, which will help you to understand which set is what type of example.
 
 .. literalinclude:: /content/examples/vtc/vtc_syntax.txt
 
 **Note:** You can use any naming convention to write your test, but a defined
-naming convention could help you to avoid re-writing similar tests.
+naming convention could help you to avoid rewriting similar tests.
 
-Name the Test
+Name the test
 .............
 
-VarnishTest requires that you name the test.
+varnishtest requires that you name the test.
 Here is an example:
 
 .. code-block:: VCL
 
-  varnishtest "This is a VarnishTest for Testing"
+  varnishtest "This is a varnishtest for testing"
 
 
-Defining the Components
+Defining the components
 -----------------------
 
-VarnishTest requires three components to run the test:
+varnishtest requires three components to run the test:
 
-- A Server (origin server)
+- A server (origin server)
 - A Varnish Cache instance
 - A client
 
@@ -72,42 +72,42 @@ VarnishTest requires three components to run the test:
   :align: center
   :scale: 100%
 
-Declaring the Server
+Declaring the server
 ....................
 
-- A Server declaration must start with **s**
+- A server declaration must start with **s**
 - `rxreq` : accepts/receives requests
 - `txresp` : transmits/responds to requests
 - `- start` : boots server
 
-Below is an example of declaring a server:
+What follows is an example of declaring a server:
 
 .. literalinclude:: /content/examples/vtc/example.vtc
   :language: VCL
   :lines: 4-7
 
 
-Declaring the Varnish Cache Instance
+Declaring the Varnish Cache instance
 ....................................
 
 - A Varnish Cache instance declaration must start with **v**
-- Instance controlled by the Manager process
-- `- start` : forks a child for this instance from the actual cacher process
+- Instance controlled by the manager process
+- `- start` : forks a child for this instance from the actual cache process
 
 
-Below is an example of declaring a Varnish Cache instance:
+What follows is an example of declaring a Varnish Cache instance:
 
 .. literalinclude:: /content/examples/vtc/example.vtc
   :language: VCL
   :lines: 9
 
-Declaring a Client
+Declaring a client
 ..................
 
 - Stimulated client declaration must start with **c**
 - `- run` : starts the client
 
-Below is an example of declaring a Varnish Cache instance:
+What follows is an example of declaring a Varnish Cache instance:
 
 .. literalinclude:: /content/examples/vtc/example.vtc
   :language: VCL
@@ -123,7 +123,7 @@ via Varnish Cache (Varnish instance in this case).
 - the exact name of the variable here (e.g. resp.http.via) depends on the version
   of Varnish installed.
 
-Running the Test
+Running the test
 ----------------
 
 - To run the test, issue the command as shown below:
@@ -153,11 +153,11 @@ This is what a verbose output looks like for the ``example.vtc``:
 .. literalinclude:: /content/examples/vtc/example_voutput.vtc
   :language: bash
 
-Taking your VarnishTest to the next level
+Taking your varnishtest to the next level
 ------------------------------------------
 
-Connecting Real Backend
------------------------
+Connecting a real backend
+-------------------------
 
 .. literalinclude:: /content/examples/vtc/vtc_addRunningBackend.vtc
   :language: VCL
@@ -169,7 +169,7 @@ Server - Answering more than one request
   :language: VCL
   :lines: 1-9
 
-Server - Expecting a request with url
+Server - Expecting a request with URL
 ......................................
 
 .. literalinclude:: /content/examples/vtc/vtc_ServerReq.vtc
@@ -197,12 +197,12 @@ Setting Varnish to expect
   :language: VCL
 
 
-You may have noticed VarnishTest preparing, executing
+You may have noticed varnishtest preparing, executing
 
 Some resources to look at for `VarnishTest`_
 ---------------------------------------------
 
-If you want to try out the testcases available with VarnishTest,
+If you want to try out the test cases available with varnishtest,
 `clone`_ the `varnish-cache repository from github`_ and visit the folder:
 
 .. code-block:: bash
@@ -214,8 +214,8 @@ All the tests are here. Run them with ``VarnishTest``
 
 `Naming Scheme for VarnishTest`_
 
-Another great post on `Smashing Magazine about VarnishTest`_ written by our
-filed engineer Arianna Aondio
+Another great post at `Smashing Magazine about VarnishTest`_ written by our
+field engineer, Arianna Aondio
 
 `Understanding VTC`_
 
