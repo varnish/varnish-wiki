@@ -1,6 +1,6 @@
 .. _wp_vcl:
 
-Some Sample VCL for WordPress
+Some sample VCL for WordPress
 =============================
 
 Ignoring AJAX requests
@@ -85,5 +85,5 @@ Remove the PHPSESSID in members area cookie
   set req.http.Cookie = regsuball(req.http.Cookie, "PHPSESSID=[^;]+(; )?", "");
 
 
-source: http://www.psynapticmedia.com/varnish-4-example-with-apache-wordpress-woocommerce/
-Collected: 16th August 2016
+Source: http://www.psynapticmedia.com/varnish-4-example-with-apache-wordpress-woocommerce/
+Accessed: 16th August 2016
