@@ -1,8 +1,8 @@
 
 .. _multiple_varnishes:
 
-Dealing with multiple Varnishes
-===============================
+Dealing with multiple Varnish instances
+=======================================
 
 If you are considering or already have more than one Varnish cache,
 you definitely have a huge network to **manage!**
