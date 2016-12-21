@@ -35,22 +35,25 @@
 		HAS_SOURCE:     true
 	};
 	</script>
-	<script src="/_static/jquery.js"></script>
-	<script src="/_static/underscore.js"></script>
-	<script src="/_static/doctools.js"></script>
+	<script src="./_static/jquery.js"></script>
+	<script src="./_static/underscore.js"></script>
+	<script src="./_static/doctools.js"></script>
 	<script src="./_static/searchtools.js"></script>
+	<script type="text/javascript" src="./_static/js/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="./_static/js/jquery-fix.js"></script>
 	<script>
 	jQuery(function() { Search.loadIndex("/searchindex.js"); });
 	</script>
+	<script type="text/javascript" id="searchindexloader"></script>
 	
 	{# OPENSEARCH #}
 	{% if not embedded %}
 		{% if use_opensearch %}
 			<link rel="search" type="application/opensearchdescription+xml" title="{% trans docstitle=docstitle|e %}Search within {{ docstitle }}{% endtrans %}" href="{{ pathto('_static/opensearch.xml', 1) }}"/>
 		{% endif %}
-
 	{% endif %}
-
+	
+	<link rel="search" title="Search" href="#" />
 	<link rel="stylesheet" href="{{ main_site_url }}wp-content/themes/varnish-software/css/style.css" type="text/css" />
 
 	{%- block linktags %}
