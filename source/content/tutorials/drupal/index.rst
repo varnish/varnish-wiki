@@ -4,26 +4,26 @@
 Drupal with Varnish
 ===================
 
-Drupal is an open source Content Managenment System (CMS) written in PHP.
+Drupal is an open source content managenment system (CMS) written in PHP.
 
-Varnish will help provide a smoother user interface for all the potentially million
-users who access the site everyday. VArnish will not only accelerate your websites
-performance but will also protect all your drupal websites against hackers and bots.
+Varnish will help provide a smoother user interface for the potentially millions of
+users who access the site every day. Varnish will not only accelerate your website's
+performance but will also protect all of your Drupal websites against hackers and bots.
 
-The Drupal CMS is by default served simple and plain and is mostly marketed to
-technical developers who use there share of CSS magic to make their website standout.
+The Drupal CMS is by default served simply and plainly and is mostly marketed to
+technical developers who use their share of CSS magic to make their website stand out.
 
-Drupal features aswesome responsive themses, blog themse, e-commerce themes etc.
+Drupal features awesome responsive themes, blog themes, e-commerce themes and more. 
 
-Drupal is also seo friendly and accounts for about 3% of the websites all over
-the internet, of which many are quite high profile clients.
+Drupal is also SEO friendly and accounts for about 3% of all websites on
+the internet, of which many belong to high-profile, well-known clients.
 
-Drupal is used by multi-organizations, e-commerce sites, technological companies,
-scientists, celebrities, musicians, etc
+Drupal is used by multi-organizations, e-commerce sites, technology companies,
+scientists, celebrities, musicians, and everyone in between.
 
-Drupal even has its own caching mechanism and stores data from multiple page
-levels. But yet with all the traffic from potential clients and reckless hackers,
-Varnish can boost your sites performance!
+Although Drupal has its own caching mechanism and stores data from multiple page
+levels, yet with all the traffic from potential clients and reckless hackers,
+Varnish can add an extra boost to your site's performance!
 
 Is your Drupal website slow? We think that with a little help in your configurations,
 your Drupal site can fly!
@@ -41,28 +41,28 @@ Implementing Drupal 8 with Varnish
 ----------------------------------
 
 Varnish is easy to set up and use. Since we have an open source project you are
-always welcome to try our community edition and contribute your fare share
-of new libraries, plug-ins and features.
+always welcome to try our community edition and contribute your fair share
+of new libraries, plugins and features.
 
 So where in Drupal will you be using Varnish?
 
-Drupal being a Content Management System,
+Drupal as a content management system:
 - Stores its contents in a database (mostly a separate independent database with its own mind)
-- All data in a CMS are usually normalized cross databases and servers.
+- All data in a CMS is usually normalized across databases and servers.
 - The design is completely separate from all its contents.
 
-Drupal provides, advanced URL Control, custom content types (e-commerce, blogs, tutorials, newspaper etc),
-revision control (same various version of the same page), user management (community, )
-This makes a content management system usable by non technical and technical users.
-It also makes the websites highly scalable!
+Drupal provides, advanced URL control, custom content types (e-commerce, blogs, tutorials, newspapers, etc.),
+revision control (various versions of the same page) and user management (community).
+This makes a content management system usable for non-technical and technical users alike.
+It also makes the websites highly scalable.
 
 To make a highly scalable website more manageable and provide better performance to end users,
-varnish provides a number of services.
+Varnish provides a number of services.
 
 Installation
 ------------
 
-If you are ready and just want to get started with the installation go to:
+If you are ready and just want to get started with the installation, go to:
 
 :ref:`Step by step Installation guide to make your website fly! <drupal_step_by_step>`
 
@@ -72,9 +72,9 @@ Please note that Drupal 8 supports;
 
 Each new upgrade includes a section about the changes that have been made.
 
-**We strictly recommend that you upgrade to varnish 4 as we no longer provide support for varnish 3.**
+**We strongly recommend that you upgrade to Varnish 4 as we no longer provide support for Varnish 3.**
 
-To make your life easier, there is a Script:
+To make your life easier, there is a script:
 
 VCL Migrator, which can help you upgrade from Varnish 3 to Varnish 4.
 
@@ -82,7 +82,7 @@ VCL Migrator, which can help you upgrade from Varnish 3 to Varnish 4.
 Integration
 -----------
 
-Once you have your varnish installed and configured, you will want to integrate
+Once you have your Varnish installed and configured, you will want to integrate
 it with your Drupal 8 installation.
 
 For Drupal's Performance settings go to `/admin/config/development/performance`.
@@ -99,7 +99,7 @@ Block caching is now set through each individual block's configuration.
 The master listing of blocks is found at /admin/structure/block.
 
 
-Our most Recommended `Drupal Modules` for Varnish
+Our most recommended `Drupal Modules` for Varnish
 -------------------------------------------------
 
 1. `Generic HTTP Purger`_
@@ -110,7 +110,7 @@ Our most Recommended `Drupal Modules` for Varnish
 Purge automatically sets the http.response.debug_cacheability_headers property
 to true via it's purge.services.yml
 
-Drupal Resources
+Drupal resources
 ----------------
 
 `Whole new Drupal-Varnish Configuration`_
