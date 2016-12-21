@@ -12,40 +12,40 @@ Magento2 with Varnish
   magento2_vcl
 
 
-Magento is a powerful e-commerce platform  for marketing, catalog management
+Magento is a powerful e-commerce platform for marketing, catalog management
 and search engine optimization. Magento provides online merchants with a flexible
-shopping cart system, a control over a user friendly WUI with contents and various
+shopping cart system, control over a user-friendly WUI with content and various
 functionality for online users.
 
-Magento sites have been using varnish because it makes the websites super fast.
-Varnish is one of the most cost effective alternatives for web accelaration with
-powerful return on investments. We believe with a proper setup of varnish,
+Magento sites often use Varnish because it adds significant speed to websites.
+Varnish is one of the most cost-effective alternatives for web accelaration, offering
+a powerful return on investment. With a proper setup of Varnish,
 maintenance costs can be reduced by 85%.
 
-Magento 2 with all its excellent features can be very demanding of resources and
-thus is predicted to give poor performance as clients increase. With the latest
-realease of Magento 2, varnish has been included as a requirement as it will
-help the site fly with significant advantages!
+Magento2, with all its useful features, can be very demanding with resources and
+thus will likely deliver poor performance as clients increase. With the latest
+release of Magento2, Varnish has been included as a requirement, as it will
+help the site fly with significant speed advantages!
 
-- Varnish can detect devices and thus provide device friendly services.
+- Varnish can detect devices and thus provide device-specific services.
 
-- It allows modifying of cache control headers
+- It allows modification of cache control headers
 
-- Write caching based on your own caching policies such as stripping cookies,
-  over ride caching time, set which pages to cache and not and much more.
+- Write caching based on your own caching policies, such as stripping cookies,
+  overriding caching time, setting which pages to cache or not, and much more.
 
 To read more about installing `Magento 2`_
 
 Implementing Magento 2 with Varnish
 -----------------------------------
 
-Magento by itself had a caching mechanism, but it does not cache pages.
-But Magento 2 supports varnish cache out of the shelf.
-So in order to run Varnish on your Magento 2 implementation all you need to do
+Magento itself has a caching mechanism, but it does not cache pages.
+But Magento2 supports Varnish Cache out of the box.
+In order to run Varnish on your Magento2 implementation all you need to do
 is install Varnish and deploy the Varnish configuration file (A Varnish VCL file)
-into your Varnish implementation. Then your website can fly!
+in your Varnish implementation. 
 
-To read more on the basics of how varnish works with magento2 go to
+To read more on the basics of how Varnish works with Magento2, go to
 
 :ref:`Magento 2 and Varnish Basics <magento2_varnish_basics>`
 
@@ -53,30 +53,30 @@ If you are ready and just want to get started with the installation go to:
 
 :ref:`Step by step Installation guide to make your website fly! <m2_step_by_step>`
 
-Please note that Magento 2 supports;
+Please note that Magento2 supports:
 
-`varnish 3` and `varnish 4` out-of-the-box.
+`varnish 3` and `varnish 4` out of the box.
 
 Each new upgrade includes a section about the changes that have been made.
 
-**We strictly recommend that you upgrade to varnish 4 as we no longer provide support for varnish 3.**
+**We strongly recommend that you upgrade to Varnish 4 as we no longer provide support for Varnish 3.**
 
-To make your life easier, there is a Script:
+To make your life easier, there is a script:
 
 VCL Migrator, which can help you upgrade from Varnish 3 to Varnish 4.
 
 
-Our recommneded Plugins for Magento 2
---------------------------------------
+Our recommended plugins for Magento2
+-------------------------------------
 
 1. Fastly-Magento
 
-Fastly’s Magento Plugin lets you directly manage the Magento Control panel.
+Fastly’s Magento plugin lets you directly manage the Magento control panel.
 It takes less than 30 minutes to install and configure.
 Features include:
 
-- Instant Purge
-- Soft Purge
+- Instant purge
+- Soft purge
 - ESI (dynamic website acceleration)
 - geoIP / location detection
 
@@ -85,13 +85,13 @@ and more ...
 This plugin provides great performance with the combined power of Fastly's Varnish
 Extension and Magento's e-commerce platform.
 
-The github repository cane be found here:
+The github repository can be found here:
 
   https://github.com/fastly/fastly-magento2
 
 .. _magento2_resources:
 
-Magento 2 Resources
+Magento 2 resources
 -------------------
 
 `Magento Installation`_
