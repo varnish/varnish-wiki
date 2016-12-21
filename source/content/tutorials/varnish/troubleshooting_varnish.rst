@@ -72,10 +72,11 @@ If you need help solving your segfaults issue and can log onto our IRC channel
 you fix it.
 
 
-Varnish gives me guru meditation
+Varnish gives me Guru Meditation
 --------------------------------
 
-To solve a issue like this, checkout varnishhlog.
+This means that your backends might be experiencing some kind of issue. To solve 
+an issue like this, checkout varnishhlog.
 
 You can set varnishlog to log all your 503 errors by issuing the following command:
 
