@@ -6,7 +6,7 @@ What do you want to achieve with Varnish?
 Once Varnish is up and running, you can do quite a lot of different things.
 The three most common features for which Varnish is best known are caching, cache
 invalidation and load balancing. Many other services and features can be provided by Varnish
-to enhance this experience for clients and the service providers.
+to enhance this experience for clients and service providers.
 
 This section of our wiki is all about:
 
@@ -14,11 +14,11 @@ This section of our wiki is all about:
 - Fine tuning the performance of your website using Varnish
 - Compressing your web content
 
-You can read in greater detail on the `varnish-cache.org`_ site.
+You can read more in greater detail on the `varnish-cache.org`_ site.
 
 .. _achieve_high_hitrate:
 
-Achieving a High Hit rate!
+Achieving a high hit rate!
 --------------------------
  To understand your Varnish set-up better and be able to manage it, there are
  quite a few tools that Varnish provides.
@@ -30,7 +30,7 @@ This tool reads the shared memory logs and continuously presents an updated list
 of commonly occurring entries. This can help you identify requested documents,
 clients, URLs, user agents, etc. - essentially whatever requests are hitting the backend the most.
 
-To see the top requests sent to the backend use:
+To see the top requests sent to the backend, use:
 
 .. code-block:: VCL
 
@@ -44,7 +44,7 @@ To see which URLs the client is requesting:
   varnishtop -i ReqURL
 
 
-To see the most popular Accept-encoding header the client is sending:
+To see the most popular Accept-Encoding header the client is sending:
 
 .. code-block:: VCL
 
@@ -54,8 +54,8 @@ To see the most popular Accept-encoding header the client is sending:
 `varnishlog`_
 ..............
 
-This tool can help you get an inside look at the requests. The way the Varnish
-log works is amazing. It is designed to store its logs in a shared memory segment
+This tool can help you get an inside look at the requests. The Varnish
+log is designed to store its logs in a shared memory segment
 called Varnish Shared Log (VSL). This memory segment size is fixed, so that once the
 segment is full, data is overwritten. If you really want certain logs to be
 stored, you need to tell another program to do that for you. If you forget to do that,
@@ -65,25 +65,25 @@ This has its advantage as it saves memory and only saves logs that you require.
 
 Using the command, `varnishlog` provides raw logs.
 
-To see running processes type:
+To see running processes, type:
 
 .. code-block:: VCL
 
     varnishlog -g raw
 
-It shows Varnish master process checking up on the caching process.
+It shows the Varnish master process checking up on the caching process.
 
 Go here to understand `Varnishlog in Human Language`_ .
 Here is the source code for `vsltrans`_
 
 
-HTTP Request
+HTTP request
 ............
 
 There are lots of tools out there that can execute HTTP requests and return very
 useful information. Some of the tools are GET, Seige, HTTPie, etc.
 
-Varnish only cares about the headers. A request sent like the following will
+Varnish only cares about the headers. A request such as the following will
 return header information. 
 
 To see header information of a site, try:
@@ -104,14 +104,14 @@ Note on HTTP/2 and TLS/SSL in Varnish
 .....................................
 
 Although Varnish itself does not yet support HTTPS we recommend you use 
-`Hitch 1.4`_ or later for TLS/SSL Termination. 
+`Hitch 1.4`_ or later for TLS/SSL termination. 
 
 As for HTTP/2 support, most browsers support it only with TLS. For this
 you will need `Hitch 1.4`_ and Varnish 5.0 or later. You can read about
 `How to get started with Varnish Cache 5.0 with experimental HTTP/2 support`_ 
 in our blog.
 
-Managing Your Cookies!
+Managing your cookies!
 ----------------------
 
 As you have already seen above, with each HTTP request there are many cookies,
@@ -119,11 +119,11 @@ i.e. headers carrying metadata. One of the things Varnish has to do is check the
 headers to identify their appropriateness for caching. If you read about the
 `ROLE of HTTP Headers` on the Varnish Cache site, then you probably have read,
 "Please note that when Varnish considers these headers Varnish actually considers
-itself part of the actual webserver."
+itself part of the actual web server."
 
 So the most important cookies that you should have a look at include:
 
-Cookies from the Client
+Cookies from the client
 ........................
 
 A piece of code like the following will disregard cookies from login pages:
@@ -143,7 +143,7 @@ Another great example of using regular expressions to check your cookies:
 
 .. literalinclude:: /content/examples/vclex_somecookies.vcl
 
-Cookies from the Backend
+Cookies from the backend
 ........................
 
 If you have set a cookie using the 'Set-Cookie' header as shown in the previous example,
@@ -161,12 +161,12 @@ unset the Set-Cookie header as shown in the example below.
   }
 
 
-The Age Header
+The age header
 ..............
 
-To understand how long an object can be kept in Varnish Cache, there is an Age
+To understand how long an object can be kept in Varnish Cache, there is an age
 header, which is set through the default.vcl file and the value can be viewed by
-collecting the Age header from the request header as shown below:
+collecting the age header from the request header as shown below:
 
 .. code-block:: VCL
 
@@ -177,7 +177,7 @@ Pragma
 
 Some web applications require request directives on how to process their input.
 An example could be that the server sent a header such as `Pragma: nocache`,
-then varnish will ignore this header. To support this header, a VCL snippet like
+then Varnish will ignore this header. To support this header, a VCL snippet like
 the one below could be added to the vcl_backend_response to add support for that
 header in the VCL:
 
@@ -237,7 +237,7 @@ will be stored in cache for 7 days and Varnish will not cache it for 7 days.
 HTTP Vary
 ---------
 
-The HTTP Vary header is the most insane and not-well-understood header on the internet.
+The HTTP Vary header is the least-well-understood header on the internet.
 But the HTTP Vary header is used for caching, so in order to cache it is advised
 to understand it. It is also capable of doing many other wonderful things.
 
@@ -249,7 +249,7 @@ inappropriate use of Vary might create a very large number of cached objects,
 and reduce the efficiency of your cache server. Therefore, you must be extremely
 cautious when using Vary.
 
-In Varnish the vary response header can be used to store responses that are based
+In Varnish the Vary response header can be used to store responses that are based
 on the value of cookies.
 
 Refer to `Header Field Definitions, section 14.44` to understand Vary better.
@@ -272,7 +272,7 @@ This could lower your server's performance but enhance user experience.
 
 But this could also lead to Varnish caching a whole bunch of different types of
 headers and reducing efficiency and performance as a whole. Normalizing the
-accept-encoding header ensures that this problem is solved by storing the fewest variants
+Accept-Encoding header ensures that this problem is solved by storing the fewest variants
 possible.
 
 The following VCL code shows how to normalize the Accept-Encoding headers:
@@ -302,8 +302,8 @@ Does Varnish compress objects? As of Varnish 4.0 the default is set to compressi
 "ON". You can always turn it off. Have a look at the `Reference Guide`_.
 
 
-The Default Compression Behavior
-.................................
+Default compression behavior
+.............................
 
 Compression is on when you see:
 
@@ -319,7 +319,7 @@ not alter any headers and if there is a `Vary: Accept-Encoding` set it will deal
 with it normally just as explained under HTTP_Vary.
 
 
-Compressing Content If Backends Don't
+Compressing content if backends don't
 ........................................
 
 If the backend is not compressing content, you can tell Varnish to compress the
@@ -339,7 +339,7 @@ in cache:
 Note: Don't try to compress content that is noncompressible.
 
 
-Decompressing Content before Sending to Cache
+Decompressing content before sending to cache
 .............................................
 
 To decompress content before entering cache, you can tell Varnish to decompress
@@ -366,11 +366,11 @@ You can read more about `GZIP+ESI`_ with Varnish on the Varnish Cache site.
 An FAQ on compression: https://varnish-cache.org/docs/2.1/faq/http.html
 
 
-Purging and Banning!
+Purging and banning!
 --------------------
 
-One of the most widely used methods of increasing hit-ratio (which is mentioned
-many times on this website) is by increasing the time-to-live (TTL) of the object.
+One of the most widely used methods of increasing hit ratio (which is mentioned
+many times on this website) is by increasing the time to live (TTL) of the object.
 
 But as you know, in this era serving outdated content/stale data is like
 serving rotten food that no one will eat.
@@ -378,14 +378,14 @@ serving rotten food that no one will eat.
 The solution to this problem is to have a mechanism that will notify Varnish
 whenever there is fresh content. There are three mechanisms to achieve this:
 
-- HTTP Purging
+- HTTP purging
 - Bans
 - Forcing a cache miss
 
-HTTP Purging
+HTTP purging
 ............
 
-An HTTP purge is very much like a HTTP request except it does something different.
+An HTTP purge is very much like an HTTP request except it does something different.
 
 Purging is when an object is requested from cache and is then discarded. This
 means that every time there is fresh data for an object, that object is requested and
@@ -415,7 +415,7 @@ Another example of a ban:
 .. literalinclude:: /content/examples/vclex_banningURL.vcl
 
 
-Forcing a Cache Miss
+Forcing a cache miss
 ....................
 
 This mechanism is similar to flushing the entire cache, in that it follows the
@@ -429,10 +429,10 @@ in the ``/etc/varnish/default.vcl`` i.e.`req.hash_always_miss` in `vcl_recv` and
 can be configured and used as required.
 
 
-Per Object Cache Invalidation
+Per-object cache invalidation
 -----------------------------
 
-Per object cache invalidation is something you want to use if you want to specify
+Per-object cache invalidation is something you want to use if you want to specify
 individual objects for caching. This requires a detailed understanding of objects
 and cache invalidation.
 
@@ -440,11 +440,11 @@ Say for example, if you want to invalidate selected objects but can determine
 which objects viewers have requested and invalidate only those objects.
 
 
-Flushing the Entire Cache
+Flushing the entire cache
 -------------------------
 
 One of the ways some people prefer to do cache invalidation is by flushing the
-entire cache, thus forcing Varnish to fetch from the backend. This helps in re-filling
+entire cache, thus forcing Varnish to fetch from the backend. This helps in refilling
 the cache with fresh content. This could be scripted to take place several times
 an hour based on the number of changes made on the website. It is important to keep in mind
 that if a huge number of changes is made in a short time, this mechanism could slow down
