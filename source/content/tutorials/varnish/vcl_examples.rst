@@ -188,47 +188,57 @@ It is useful to refresh slowly generated content.
 
 source: http://book.varnish-software.com/4.0/chapters/Appendix_G__Solutions.html#solution-write-a-vcl-program-using-purge-and-ban
 
-Hashtwo
--------
+Xkey (formerly known as Hashtwo)
+--------------------------------
 
-The idea behind Hashtwo is that you can use any arbitrary string for cache invalidation.
+The idea behind Xkey is that you can use any arbitrary string for cache invalidation.
 You can then key your cached objects on, for example, product ID or article ID.
 In this way, when you update the price of a certain product or a specific article,
 you have a key to evict all those objects from the cache.
+
+Xkey can be used to support Surrogate Keys in Varnish in a very flexible way.
 
 On Debian or Ubuntu:
 
 .. code-block:: bash
 
-  apt-get install libvmod-hashtwo
+  apt-get install varnish-modules
 
 On Red Hat Enterprise Linux:
 
 .. code-block:: bash
 
-  yum install libvmod-hashtwo
+  yum install varnish-modules
 
 Finally, you can use this VMOD by importing it into your VCL code:
 
 .. code-block:: VCL
 
-  import hashtwo;
+  import xkey;
 
-VCL example code for hashtwo:
+VCL example code for xkey:
 
 .. code-block:: VCL
 
-  import hashtwo;
+    import xkey;
 
-  sub vcl_recv {
-    if (req.http.X-HashTwo-Purge) {
-      if (hashtwo.purge(req.http.X-HashTwo-Purge) != 0) {
-         return (purge);
-      } else {
-        return (synth(404, "Key not found"));
-      }
+    backend default { .host = "192.0.2.11"; .port = "8080"; }
+
+    acl purgers {
+        "203.0.113.0"/24;
     }
-  }
+
+    sub vcl_recv {
+        if (req.method == "PURGE") {
+            if (client.ip !~ purgers) {
+                return (synth(403, "Forbidden"));
+            }
+            set req.http.n-gone = xkey.purge(req.http.key);
+            # or: set req.http.n-gone = xkey.softpurge(req.http.key)
+
+            return (synth(200, "Invalidated "+req.http.n-gone+" objects"));
+        }
+    }
 
 Normally the backend is responsible for setting these headers.
 If you were to do it in VCL, it would look something like this:
@@ -236,7 +246,7 @@ If you were to do it in VCL, it would look something like this:
 .. code-block:: VCL
 
   sub vcl_backend_response {
-    set beresp.http.X-HashTwo = "secondary_hash_key";
+    set beresp.http.xkey = "secondary_hash_key";
   }
 
 source: http://book.varnish-software.com/4.0/chapters/Cache_Invalidation.html
