@@ -44,7 +44,7 @@ To see which URLs the client is requesting:
   varnishtop -i ReqURL
 
 
-To see the most popular accept-encoding header the client is sending:
+To see the most popular Accept-Encoding header the client is sending:
 
 .. code-block:: VCL
 
@@ -151,7 +151,7 @@ Varnish will not cache the page when using the default configuration. Instead it
 will create a `hit-for-pass` object.
 
 In such a case if the backend server ends up caching unnecessary cookies, just
-unset the set-cookie header as shown in the example below.
+unset the Set-Cookie header as shown in the example below.
 
 .. code-block:: VCL
 
@@ -234,48 +234,48 @@ will be stored in cache for 7 days and Varnish will not cache it for 7 days.
   }
 
 
-HTTP vary
+HTTP Vary
 ---------
 
-The HTTP vary header is the least-well-understood header on the internet.
-But the HTTP vary header is used for caching, so in order to cache it is advised
+The HTTP Vary header is the least-well-understood header on the internet.
+But the HTTP Vary header is used for caching, so in order to cache it is advised
 to understand it. It is also capable of doing many other wonderful things.
 
 **Warning**
 
 Varnish does not necessarily understand the semantics of a header, or
 what part triggers different variants of a response. In other words, an
-inappropriate use of vary might create a very large number of cached objects,
+inappropriate use of Vary might create a very large number of cached objects,
 and reduce the efficiency of your cache server. Therefore, you must be extremely
-cautious when using vary.
+cautious when using Vary.
 
-In Varnish the vary response header can be used to store responses that are based
+In Varnish the Vary response header can be used to store responses that are based
 on the value of cookies.
 
-Refer to `Header Field Definitions, section 14.44` to understand vary better.
+Refer to `Header Field Definitions, section 14.44` to understand Vary better.
 
 As you may already know, the URL can be used as a parameter by Varnish for caching
 purposes. Also it is possible to add custom header values to hash in the `vcl_hash`
 subroutine. So in this context if you want your cache to be based on headers, you
-can set the vary header to various types: cookies, accept-encoding, X-Varnish,
-user-agent, accept-language, etc.
+can set the Vary header to various types: cookies, Accept-Encoding, X-Varnish,
+User-Agent, Accept-Language, etc.
 
 This way, different values of your custom header will have different hash values
-for each cached resource. But remember that variations containing the vary response
+for each cached resource. But remember that variations containing the Vary response
 header share the same hash value.
 
 An example would be when servers issue a `Vary: Accept-Encoding` (it is the most
-common usage of vary) it tells Varnish that it needs to cache a separate version
-for every different accept-encoding that is coming from the different clients.
+common usage of Vary) it tells Varnish that it needs to cache a separate version
+for every different Accept-Encoding that is coming from the different clients.
 
 This could lower your server's performance but enhance user experience.
 
 But this could also lead to Varnish caching a whole bunch of different types of
 headers and reducing efficiency and performance as a whole. Normalizing the
-accept-encoding header ensures that this problem is solved by storing the fewest variants
+Accept-Encoding header ensures that this problem is solved by storing the fewest variants
 possible.
 
-The following VCL code shows how to normalize the accept-encoding headers:
+The following VCL code shows how to normalize the Accept-Encoding headers:
 
 .. literalinclude:: /content/examples/vclex_normalize_AcceptEncoding.vcl
   :language: VCL
@@ -285,11 +285,11 @@ Another example for normalizing `Accept-Language` header:
 .. literalinclude:: /content/examples/vclex_normalize_AcceptLanguage.vcl
   :language: VCL
 
-One of the best ways to take advantage of vary would be to build the response
+One of the best ways to take advantage of Vary would be to build the response
 header based on cached and non-cached objects. This brings us to the next topic:
 Compression!
 
-Note: Some application servers send vary with user-agent. This, as you can tell,
+Note: Some application servers send Vary with User-Agent. This, as you can tell,
 orders Varnish to cache a separate copy for every variant client/user-agent there
 is. This could be a disaster depending on the number of variation of clients you
 serve on a regular basis.
