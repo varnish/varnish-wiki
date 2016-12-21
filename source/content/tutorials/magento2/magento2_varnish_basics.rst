@@ -80,10 +80,10 @@ As mentioned in the Varnish book, allowance is the validation of the `cache-hit`
 Varnish also offers the option for users to choose how long an object should be in
 cache and when to serve from the cache and when not to as well as whether a cached object should
 be reserved or not. This validation process is done by checking whether the
-request contains the `no-cache` directive. In such a cache the HTTP cache-control
+request contains the `no-cache` directive. In such a cache the HTTP Cache-Control
 header is checked for the presence of `no-cache`.
 
-Read more about the `cache-control header`_ in the Varnish book.
+Read more about the `Cache-Control header`_ in the Varnish book.
 
 
 3.Freshness of data
@@ -95,7 +95,7 @@ expired object or not is the question.
 
 There are two kinds of objects:
 
-`fresh objects` - age has not exceeded the freshness lifetime
+`fresh objects` - age has not exceeded hthe freshness lifetime
 `stale objects` - age has exceeded the freshness lifetime, i.e. it is now an
 `expired object`.
 
@@ -145,6 +145,6 @@ please feel free to contact us.
 .. _`HTTP Basics`: http://book.varnish-software.com/4.0/chapters/HTTP.html#resources-and-representations
 .. _`cache related header fields of HTTP`: http://book.varnish-software.com/4.0/chapters/HTTP.html#cache-related-headers-fields
 .. _`Freshness`: http://book.varnish-software.com/4.0/chapters/HTTP.html#freshness
-.. _`cache-control header`: http://book.varnish-software.com/4.0/chapters/HTTP.html#cache-control
+.. _`Cache-Control header`: http://book.varnish-software.com/4.0/chapters/HTTP.html#cache-control
 .. _`Content Composition`: http://book.varnish-software.com/4.0/chapters/Content_Composition.html
 .. _`RFC 7540`: https://www.rfc-editor.org/rfc/rfc7540.txt
