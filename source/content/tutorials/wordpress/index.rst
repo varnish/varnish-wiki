@@ -53,11 +53,11 @@ Integration
 Log in to your WordPress administration page at http://yourdomain.com/wp-admin
 using the username and password you configured.
 
-- Select Pplugins
-- Add new from the left sidebar menu
+- Select Plugins
+- Add New from the left sidebar menu
 - Search for Varnish plugins
 - Choose plugin
-- Click on add plugin
+- Click on Add Plugin
 - After the plugin is added, activate plugin
 
 
