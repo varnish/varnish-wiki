@@ -129,7 +129,7 @@ and add the following before we remove the cookies from the previous step.
 10. Extend caching
 ------------------
 
-Varnish uses the max-age parameter in the cache-control HTTP header to establish
+Varnish uses the max-age parameter in the Cache-Control HTTP header to establish
 how long the content is considered fresh before contacting the backend again.
 Varnish will use 120 seconds by default if this value is missing or is equal to
 zero. To extend this period to one hour we could update /etc/varnish/default.vcl.
