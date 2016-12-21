@@ -31,7 +31,7 @@ Migrating Varnish 3to4
 https://github.com/fgsch/varnish3to4/
 
 
-Varnish 4.0 Configuration Templates
+Varnish 4.0 configuration templates
 -----------------------------------
 
 https://github.com/mattiasgeniar/varnish-4.0-configuration-templates
@@ -44,7 +44,7 @@ https://github.com/cosimo/vlogdump
 .. _vcl_resources:
 
 
-Examples for VCL
+Examples of VCL
 ----------------
 
 -  https://github.com/espebra/varnish-vcl-snippets
@@ -58,7 +58,7 @@ Examples for VCL
 
 .. _Introduction to Varnish VCL: http://www.slideshare.net/paxdickinson/introduction-to-varnish-vcl
 
-HowTo Modules
+HowTo modules
 -------------
 
 -  `Testing VMODs with Travis.CI, 2013.09`_
@@ -95,7 +95,7 @@ HowTo Modules
 -  `Using Varnish For Paywalls: Moving Logic To The Edge`_
 -  `Withstanding DDOS attacks with Varnish and COTS hardware, 2013.04`_
 
-Invalidation/Purging
+Invalidation/purging
 --------------------
 
 -  `Tagged Cache Invalidation, 2012.09`_
