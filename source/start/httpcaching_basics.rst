@@ -121,7 +121,7 @@ Cache-related headers
 HTTP has a whole list of headers dedicated to cache invalidation and page caching.
 The ones that need the most attention are:
 - Expires
-- Cache Control
+- Cache-Control
 - Etag
 - Last-Modified
 - If-Modified-Since
@@ -147,13 +147,13 @@ The syntax for this header is:
 - Usually a timeframe of 1 year is enough.
 - In this timeframe the resource can be updated.
 
-**Cache-control**
+**Cache-Control**
 
-Example of a cache-control header:
+Example of a Cache-Control header:
 
   Cache-Control: public, must-revalidate, max-age=2592000
 
-The cache-control header is where the caching policy is defined.
+The Cache-Control header is where the caching policy is defined.
 It is both a *request and a *response* header.
 This policy specifies which responses go to cache and which are not based
 on the conditions in its policy. It accepts a number of arguments
@@ -166,7 +166,7 @@ as listed below:
 - **s-maxage:** like *max-age* but only used in public caches
 - **must-revalidate:** indicates that the object maybe stale and should be revalidated first
 
-Below is a table from the Varnish Book showing the arguments used by the cache-control
+Below is a table from the Varnish Book showing the arguments used by the Cache-Control
 header:
 
 .. csv-table:: **Cache Control header Arguments**
@@ -186,9 +186,9 @@ The Etag response header provides the current value of the entity tag for the
 requested variant. It provides a unique value for a resource's content.
 
 
-**Last-modified**
+**Last-Modified**
 
-Example of a last-modified header:
+Example of a Last-Modified header:
 
   Last-Modified: Wed, 01 Sep 2004 13:24:52 GMT
 
@@ -199,9 +199,9 @@ used in conjunction with:
 - If-Modified-Since
 - If-None-Match
 
-**If-modified-since**
+**If-Modified-Since**
 
-Example of an if-modified-since header:
+Example of an If-Modified-Since header:
 
   If-Modified-Since: Wed, 01 Sep 2004 13:24:52 GMT
 
@@ -211,20 +211,20 @@ This **request header** is used with a method to make it conditional:
 - **instead**, a 304 (not modified) response will be returned without any message body.
 
 
-**If-none-match**
+**If-None-Match**
 
-Example of an If-none-match header:
+Example of an If-None-Match header:
 
   If-None-Match: "1edec-3e3073913b100"
 
-The if-none-match **request header** field is used with a method to make it
+The If-None-Match **request header** field is used with a method to make it
 conditional. The purpose of this feature is to allow efficient updates of cached
 information with a minimum amount of transaction overhead.
 
 
 **Vary**
 
-The vary response header indicates the response returned by the origin server
+The Vary response header indicates the response returned by the origin server
 - may vary depending on headers received in the request.
 - The most common usage of vary is to use
 
@@ -236,9 +236,9 @@ The vary response header indicates the response returned by the origin server
 
 **Age**
 
-- A cache server can send an additional response header, age, to indicate the age of the response.
+- A cache server can send an additional response header, Age, to indicate the age of the response.
 - Varnish (and other caches) does this.
-- Browsers (and Varnish) will use the age-header to determine how long to cache content.
+- Browsers (and Varnish) will use the Age header to determine how long to cache content.
 - For example, for a max-age-based equation: cache duration = max-age - Age
 - If you allow Varnish to cache for a long time, the age-header could effectively disallow client-side caches.
 
