@@ -174,7 +174,7 @@ html_theme_options = {
 
     # Location of link to source.
     # Options are "nav" (default), "footer" or anything else to exclude.
-    'source_link_position': "sidebar",
+    #'source_link_position': "sidebar",
 
     # Bootswatch (http://bootswatch.com/) theme.
     #
@@ -228,7 +228,7 @@ html_theme_path = sphinx_bootstrap_theme.get_html_theme_path()
 
 # Custom sidebar templates, maps document names to template names.
 #
-html_sidebars = { '**': ['sidebar.html','searchbox.html','sourcelink.html'] }
+html_sidebars = { '**': ['searchbox.html','sourcelink.html'] }
 
 # Additional templates that should be rendered to pages, maps page names to
 # template names.
