@@ -3,7 +3,8 @@
 Varnish web developer FAQ
 ==========================
 
-**What is Varnish?**
+What is Varnish?
+----------------
 
 Varnish Cache is a web application accelerator also known as a caching
 HTTP reverse proxy. You install it in front of any HTTP server and
@@ -15,7 +16,8 @@ seen in `this video <https://www.youtube.com/watch?v=fGD14ChpcL4>`_.
 You can read a general overview of `The Big Varnish Picture`_ in the
 official Varnish documentation. :)
 
-**What is Varnish's superpower?**
+What is Varnish's superpower?
+-----------------------------
 
 It's insanely flexible!
 
@@ -32,7 +34,8 @@ Varnish is designed with security, performance and flexibility in mind.
 For an in-depth look at this you can read `The Design Principle of Varnish`_
 chapter in the Varnish Book.
 
-**Should I use Varnish for my site?**
+Should I use Varnish for my site?
+---------------------------------
 
 If you are wondering why you are on our website reading about our product,
 you are in the right section. We'll help you answer the why Varnish question.
@@ -62,7 +65,8 @@ Wikipedia <http://en.wikipedia.org/wiki/Varnish_(software)>`_.
 
 .. _varnish_memcache:
 
-**What is the relation between Varnish and Memcache?**
+What is the relation between Varnish and Memcache?
+--------------------------------------------------
 
 Memcache is a key value store, more or less a rather simple database. It doesn't
 persist data and only stores it in memory. It also doesn't really care if it
@@ -96,7 +100,8 @@ easier job to do and it is faster because of it.
 
 There are no good reasons not to use both.
 
-**What is the difference in caching architectures between Varnish and Squid?**
+What is the difference in caching architectures between Varnish and Squid?
+--------------------------------------------------------------------------
 
 The most fundamental difference between Squid and Varnish is that Squid is a
 forward proxy that can be a configured as a reverse proxy whereas Varnish is built
@@ -120,7 +125,8 @@ On the other hand, Varnish has:
 - Better and more flexible invalidation support. With Varnish you can invalidate content from cache based on more or less anything. Literally.
 - VMODs, Varnish modules which can easily extend Varnish's VCL capabilities and add new features, can be written in a matter of hours. Which makes VCL very powerful.
 
-**What is the difference between caching and memoization?**
+What is the difference between caching and memoization?
+-------------------------------------------------------
 
 Memoization is a way of caching results of a function to avoid recalculating the
 the next time the same function is called. The technique is that the function is executed, the result gets added to an
