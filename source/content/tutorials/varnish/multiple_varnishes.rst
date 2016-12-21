@@ -1,23 +1,23 @@
 
 .. _multiple_varnishes:
 
-Dealing with Multiple Varnishes
-===============================
+Dealing with multiple Varnish instances
+=======================================
 
-If you are considering or already have more than one Varnish cache.
-You definitely have a huge network to **manage!**
+If you are considering or already have more than one Varnish cache,
+you definitely have a huge network to **manage!**
 
-Having Multiple backends
+Having multiple backends
 ------------------------
 
 Multiple backends means serving from several servers.
-You want Varnish to map all the URL into one single host. There are lot of options.
+You want Varnish to map all the URLs into one single host. There are many options for doing this.
 
-Lets take a PHP Applciation website and you would like to add a Java application
-into it.. Lets say your Java application should handle URL beginning with /java/.
+Let's take a PHP applciation website to which you would like to add a Java application.
+Let's say your Java application should handle URLs beginning with /java/.
 
 Assuming that you already have a backend running at 8080 and serving content to
-user through port 80. This is your default vcl:
+users through port 80. This is your default VCL:
 
 .. code-block:: vcl
 
@@ -26,7 +26,7 @@ user through port 80. This is your default vcl:
       .port = "8080";
   }
 
-Now lets add a new backend:
+Now let's add a new backend:
 
 .. code-block:: vcl
 
@@ -35,30 +35,30 @@ Now lets add a new backend:
       .port = "8000";
   }
 
-Now we need to tell Varnish where to send the different URL. here is what you
+Now we need to tell Varnish where to send the different URL. Here is what you
 need in your **vcl_recv** :
 
 .. literalinclude:: /content/examples/vcl_backend_hint.vcl
   :language: VCL
 
 As you can see you can define how to choose backends based on really arbitrary data.
-if you want to send mobile devices to a different backend, a little bit more of
-VCl should do the trick.
+If you want to send mobile devices to a different backend, a little bit more
+VCL should do the trick.
 
 .. code-block:: vcl
 
   if (req.http.User-agent ~ /mobile/)
   ..
 
-If there is no backend defined, varnish uses the default backend. If there is
-no backend named default, varnish will use the first backend found in the vcl.
+If there is no backend defined, Varnish uses the default backend. If there is
+no backend named default, Varnish will use the first backend found in the VCL.
 
-Backends and Virtual Hosts in Varnish
+Backends and virtual hosts in Varnish
 -------------------------------------
 
 Varnish fully supports virtual hosts!
 
-They might however work in a somewhat *counter-intuitive fashion* since they are
+Virtual hosts might however work in a somewhat *counterintuitive fashion* since they are
 never declared explicitly. You have to set up the routing of incoming HTTP requests
 in `vcl_recv`. If you want this routing to be done on the basis of virtual hosts,
 you just need to inspect req.http.host.
@@ -71,7 +71,7 @@ You can have something like this:
 Note that the first regular expressions will match "foo.com", "www.foo.com",
 "zoop.foo.com" and any other host ending in "foo.com".
 
-In this example this is intentional but you might want it to be a bit more tight,
+In this example this is intentional but you might want it to be a bit tighter,
 maybe relying on the **==** operator instead, like this:
 
 .. literalinclude:: /content/examples/vcl_backend_virtualhosts2.vcl
@@ -80,7 +80,7 @@ maybe relying on the **==** operator instead, like this:
 Directors
 ---------
 
-You can also group several backend into a group of backends.
+You can also group several backends into a group of backends.
 These groups are called **directors**. This will give you increased performance
 and resilience.
 
@@ -94,17 +94,17 @@ actions in vcl_init.:
 
 This director is a round-robin director. This means the director will distribute
 the incoming requests on a round-robin basis. There is also a random director
-which distributes requests in a, you guessed it, random fashion. If that is not
+that distributes requests in a, you guessed it, random fashion. If that is not
 enough, you can also write your own director (see Writing a Director).
 
 But what if one of your servers goes down? Can Varnish direct all the requests
-to the healthy server? Sure it can. This is where the Health Checks come into
+to the healthy server? Sure it can. This is where the health checks come into
 play.
 
-Health Checks
+Health checks
 -------------
 
-Lets set up a director with two backends and health checks.
+Let's set up a director with two backends and health checks.
 First let us define the backends:
 
 .. literalinclude:: /content/examples/vcl_backend_healthcheck.vcl
@@ -135,7 +135,7 @@ with a simple backend. Varnish will not send traffic to hosts that are marked as
 unhealthy.
 
 Varnish can also serve stale content if all the backends are down.
-See **Misbehaving servers** in the varnish documentation for more information
+See **Misbehaving servers** in the Varnish documentation for more information
 on how to enable this.
 
 Please note that Varnish will keep health probes running for all loaded VCLs.
@@ -143,6 +143,6 @@ Varnish will coalesce probes that seem identical - so be careful not to change
 the probe config if you do a lot of VCL loading. Unloading the VCL will discard
 the probes.
 
-source and more details `here`_ .
+Source and more details `here`_ .
 
 .. _here: https://www.varnish-cache.org/docs/trunk/users-guide/vcl-backends.html?highlight=multiple%20varnish
