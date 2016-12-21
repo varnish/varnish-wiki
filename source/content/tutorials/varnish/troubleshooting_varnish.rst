@@ -4,9 +4,9 @@
 Troubleshooting Varnish
 =======================
 
-**Have you tried turning your varnish off and on again?**
+**Have you tried turning your Varnish off and on again?**
 
-Reload varnish
+Reload Varnish
 ..............
 
 .. code-block:: bash
@@ -14,7 +14,7 @@ Reload varnish
   sudo systemctl reload varnish.service
 
 
-Stop and Start Varnish
+Stop and start Varnish
 ......................
 
 .. code-block:: bash
@@ -48,8 +48,8 @@ For systemd users:
 Varnish is crashing?
 --------------------
 
-IF your varnish is crashing it might be due to a number of reasons.
-Here are a few thigns you can try.
+If your Varnish is crashing it might be due to a number of reasons.
+Here are a few things you can try.
 
 panics
 ......
@@ -64,7 +64,7 @@ You can inspect any panic messages by typing the following in the CLI:
 segfaults
 .........
 
-This is a varnish segmentation error. When this happens with the child process
+This is a Varnish segmentation error. When this happens with the child process
 it is logged, the core is dumped and the child process starts up again.
 
 If you need help solving your segfaults issue and can log onto our IRC channel
@@ -75,7 +75,8 @@ you fix it.
 Varnish gives me Guru Meditation
 --------------------------------
 
-To solve a issue like this, checkout varnishhlog.
+This means that your backends might be experiencing some kind of issue. To solve 
+an issue like this, checkout varnishhlog.
 
 You can set varnishlog to log all your 503 errors by issuing the following command:
 
@@ -92,14 +93,14 @@ memory log just add the '-d' parameter:
   $ varnishlog -d -q 'RespStatus == 503' -g request
 
 
-Varnish is not Caching
+Varnish is not caching
 ----------------------
 
-If your varnish is not caching you can follow our simple steps to receive high hit-rate or
+If your Varnish is not caching you can follow our simple steps to receive high hit rate or
 follow the detailed `User Guide`_
 
 
-For details on troubleshooting varnish, look at the user guide
+For details on troubleshooting Varnish, look at the user guide
 `Troubleshooting Varnish Section`_
 
 .. _`User Guide`: https://www.varnish-cache.org/docs/4.1/users-guide/increasing-your-hitrate.html#users-guide-increasing-your-hitrate
