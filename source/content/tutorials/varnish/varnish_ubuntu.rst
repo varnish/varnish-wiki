@@ -74,7 +74,8 @@ Description:
 		If you plan to change the name of the default policy file,
 		be sure to come here and change the default.vcl to the correct name.
 
-		~S : refers to the file containing private information, such as passwords, etc.
+		~S : refers to the file containing private information, such as passwords, etc. 
+		also known as the shared-secret file.
 
 		~s : refers to the space Varnish Cache is allocated. 256m”
 		is decided based on the current server's RAM of 1GB.
