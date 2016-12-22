@@ -21,8 +21,8 @@ You can read more in greater detail on the `varnish-cache.org`_ site.
 Achieving a high hit rate!
 --------------------------
 
- To understand your Varnish set-up better and be able to manage it, there are
- quite a few tools that Varnish provides.
+To understand your Varnish set-up better and be able to manage it, there are
+quite a few tools that Varnish provides.
 
 `varnishtop`_
 .............
