@@ -65,30 +65,6 @@ To make your life easier, there is a script:
 
 VCL Migrator, which can help you upgrade from Varnish 3 to Varnish 4.
 
-
-Our recommended plugins for Magento2
--------------------------------------
-
-1. Fastly-Magento
-
-Fastly’s Magento plugin lets you directly manage the Magento control panel.
-It takes less than 30 minutes to install and configure.
-Features include:
-
-- Instant purge
-- Soft purge
-- ESI (dynamic website acceleration)
-- geoIP / location detection
-
-and more ...
-
-This plugin provides great performance with the combined power of Fastly's Varnish
-Extension and Magento's e-commerce platform.
-
-The github repository can be found here:
-
-  https://github.com/fastly/fastly-magento2
-
 .. _magento2_resources:
 
 Magento 2 resources
@@ -119,4 +95,3 @@ Magento 2 resources
 .. _`A Magento-Varnish Repo`: https://github.com/huguesalary/Magento-Varnish
 .. _`Quick Install Magento2`: http://devdocs.magento.com/guides/v2.1/install-gde/install-quick-ref.html
 .. _`Magento Stackexchage`: http://magento.stackexchange.com/questions/91087/magento-2-admin-url-not-working-and-loaded-frontend-is-all-messy
-.. _`Introducing Fastlys Magento 1 extension`: https://www.fastly.com/blog/introducing-fastlys-magento-1-extension
