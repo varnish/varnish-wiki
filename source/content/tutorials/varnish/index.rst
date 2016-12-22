@@ -1,7 +1,7 @@
 .. _varnish:
 
-How to get Varnish
-==================
+Use Varnish on your Website
+===========================
 
 .. toctree::
   :hidden:
@@ -17,8 +17,11 @@ How to get Varnish
   vcl
   vcl_examples
 
-Before you get to Varnish, You want to **get Varnish**.
-You have two choices:
+Varnish can cache any web based content, meaning any CMS, intranet, ReST/Web API, 
+or Streaming media content can literally gain performance increases in the range 
+of 300-1000x times compared to what standard web servers can provide.
+
+But, before you get to Varnish, You want to **get Varnish**. You have two choices:
 
 - Install **binary packages**
 - Compile it yourself from **source code**
