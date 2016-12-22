@@ -4,15 +4,22 @@
     <div class="sidebar-wrapper">
       <h4>{{ _('&nbsp;&nbsp;Contribute') }}</h4>
       <ul class="this-page-menu">
-        <li><a href="{{ pathto('_sources/' + sourcename, true)|e }}"
-               rel="nofollow">{{ _('Show Source') }}</a></li>
+        <li>
+          <a href="{{ pathto('_sources/' + sourcename, true)|e }}" rel="nofollow">{{ _('Show Source (RST)') }}</a>
+        </li>
       {%- if show_on_github_url %}
-        <li><a href="{{ show_on_github_url }}"
-               rel="nofollow">{{ _('Show on GitHub') }}</a></li>
+        <li>
+          <a href="{{ show_on_github_url }}" rel="nofollow">{{ _('Show on GitHub&nbsp;') }}
+           <img src="https://raw.githubusercontent.com/huayra/varnish-wiki/master/source/image/github.png" alt="See the source in our repository">
+          </a>
+        </li>
       {%- endif %}
       {%- if edit_on_github_url %}
-        <li><a href="{{ edit_on_github_url }}"
-               rel="nofollow">{{ _('Edit on GitHub') }}</a></li>
+        <li>
+          <a href="{{ edit_on_github_url }}" rel="nofollow">{{ _('Edit on GitHub&nbsp;') }} 
+           <img src="https://raw.githubusercontent.com/huayra/varnish-wiki/master/source/image/edit.png" alt="Help us improve the wiki!">
+          </a>
+        </li>
       {%- endif %}
       </ul>
     </div>
