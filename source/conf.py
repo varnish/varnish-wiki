@@ -370,5 +370,5 @@ nitpicky = True
 # githubpages
 # Edit on GitHub
 #
-edit_on_github_project = 'huayra/wiki_varnish'
+edit_on_github_project = 'varnish/varnish-wiki'
 edit_on_github_branch = 'master/source'
