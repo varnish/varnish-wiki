@@ -244,7 +244,7 @@ The Vary response header indicates the response returned by the origin server
 
 
 Cache hits and misses
-....................
+.....................
 
 **Cache hit**
 
