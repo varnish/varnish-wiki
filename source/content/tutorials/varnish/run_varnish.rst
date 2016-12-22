@@ -1,7 +1,7 @@
 .. _run_varnish:
 
 Let's run Varnish!
-=================
+==================
 
 Once you have installed Varnish, you can take advantage of a few tips to help you get started with
 running it.
