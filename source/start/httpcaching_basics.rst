@@ -251,7 +251,7 @@ Cache hits and misses
 There is a cache hit when Varnish returns a page from its cache instead of
 forwarding the request to the origin server.
 
-.. image:: image/httpcachehit.png
+.. image:: ../image/httpcachehit.png
   :alt: Sphinx Neo-Hittite
   :align: center
   :width: 400px
@@ -261,7 +261,7 @@ forwarding the request to the origin server.
 There is a cache miss when Varnish has to forward the request to the origin
 server so the page can be served.
 
-.. image:: image/httpcachemiss.png
+.. image:: ../image/httpcachemiss.png
   :alt: Sphinx Neo-Hittite
   :align: center
   :width: 400px
