@@ -27,8 +27,12 @@ we recommend you use Ubuntu LTS 16.04 (Xenial) as the OS as well as:
  * sphinx (tested with 1.3.6 and 1.4.8)
  * sphinx_bootstrap_theme
 * Git (to fetch from and send your changes to Github)
-* Mercurial (to clone the Pygments repo from Bitbucket)
-* Pygments, but you cannot install it with 'pip' as you will need the yet-to-be-released 2.2 which includes VCL lexers thanks to @KristianLyng. Install this by cloning the pygments repo and doing a local (user) install::
+
+Optional
+........
+
+* Mercurial (Optional, to clone the Pygments repo from Bitbucket)
+* Pygments (Optional). You cannot install it with 'pip' as you will need the yet-to-be-released 2.2 which includes VCL lexers thanks to @KristianLyng. Install this by cloning the pygments repo and doing a local (user) install::
 
         $ hg clone https://bitbucket.org/birkenfeld/pygments-main
         $ cd pygments-main
@@ -42,10 +46,9 @@ Copyright
 * © 2016, Varnish Software Group
 
 Authors
-~~~~~~
+~~~~~~~
 
-* Taiyeba Syeda Haroon
-* Ruben Romero
+See AUTHORS file
 
 License
 ~~~~~~
