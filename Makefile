@@ -50,11 +50,11 @@ help:
 .PHONY: clean
 clean:
 	rm -rf $(BUILDDIR)/*
+	$ cd source/_templates && rm header.html*
+	$ cd source/_templates && rm footer.html*
 
 .PHONY: html
 html:
-	$ cd source/_templates && rm header.html*
-	$ cd source/_templates && rm footer.html*
 	$ cd source/_templates && wget http://www.varnish-software.com/wp-content/uploads/varnish-theme-integrator/header.html
 	$ cd source/_templates && wget http://www.varnish-software.com/wp-content/uploads/varnish-theme-integrator/footer.html
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
