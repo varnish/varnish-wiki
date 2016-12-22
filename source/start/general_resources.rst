@@ -64,15 +64,14 @@ HowTo modules
 -  `Testing VMODs with Travis.CI, 2013.09`_
 -  `The essential vmods all Varnish users should know about, 2013.07`_
 -  `Building a Varnish VMOD on Debian, 2013.07`_
--  [Setting client.ip in Varnish VCL with libvmod-ipcast,
-   2013.07](http://lassekarstensen.wordpress.com/2013/07/22/setting-client-ip-in-varnish-vcl-with-libvmod-ipcast$
+-  `Setting client.ip in Varnish VCL with libvmod-ipcast, 2013.07`_
 -  `Creating a Varnish 4 module, 2013.07`_
 
 .. _Testing VMODs with Travis.CI, 2013.09: http://lassekarstensen.wordpress.com/2013/09/10/testing-vmods-with-travis-travis-ci-org/
 .. _The essential vmods all Varnish users should know about, 2013.07: https://www.varnish-software.com/blog/essential-vmods-all-varnish-users-should-know-about
 .. _Building a Varnish VMOD on Debian, 2013.07: http://lassekarstensen.wordpress.com/2013/07/29/building-a-varnish-vmod-on-debian/
 .. _Creating a Varnish 4 module, 2013.07: http://blog.zenika.com/index.php?post/2013/07/31/Creating-a-Varnish-4-module
-
+.. _Setting client.ip in Varnish VCL with libvmod-ipcast, 2013.07: http://lassekarstensen.wordpress.com/2013/07/22/setting-client-ip-in-varnish-vcl-with-libvmod-ipcast
 
 
 -  `Creating Deb Package with all the popular VMODS, 2013.09`_
@@ -80,8 +79,7 @@ HowTo modules
 -  `Scaling Django to 8 Billion Page Views, 2013.09 (disqus)`_
 -  `Global Varnish Cluster with GeoDNS`_
 
--  [How to build your own CDN using BIND, GeoIP, Nginx, and Varnish,
-   2010.07](http://blog.unixy.net/2010/07/how-to-build-your-own-cdn-using-bind-geoip-nginx-and-varnis$
+-  `How to build your own CDN using BIND, GeoIP, Nginx, and Varnish, 2010.07`_
 
 -  `Ultra-Performant Dynamic Websites with Varnish - Lidl.de, 2012.01`_
 -  `Realtime stats from Varnish, 2013.02`_
@@ -126,6 +124,7 @@ Slides
 .. _Creating Deb Package with all the popular VMODS, 2013.09: https://github.com/mindreframer/vagrant-varnish-vmods-builder
 .. _Scaling Django to 8 Billion Page Views, 2013.09 (disqus): http://blog.disqus.com/post/62187806135/scaling-django-to-8-billion-page-views
 .. _Global Varnish Cluster with GeoDNS: http://www.slideshare.net/kimlindholm/globalvarnish-cluster-with-geodns
+.. _How to build your own CDN using BIND, GeoIP, Nginx, and Varnish, 2010.07: http://blog.unixy.net/2010/07/how-to-build-your-own-cdn-using-bind-geoip-nginx-and-varnish
 .. _Ultra-Performant Dynamic Websites with Varnish - Lidl.de, 2012.01: http://blog.mgm-tp.com/2012/01/varnish-web-cache/
 .. _Realtime stats from Varnish, 2013.02: http://jiboumans.wordpress.com/2013/02/27/realtime-stats-from-varnish/
 .. _Context-aware HTTP caching, 2012.09: http://asm89.github.io/2012/09/26/context-aware-http-caching.html
@@ -158,14 +157,12 @@ Misc
 -----
 
 -  `Varnish Utilities`_
--  [The Varnish Agent is a REST interface to the Varnish CLI and shmlog,
+-  `The Varnish Agent is a REST interface to the Varnish CLI and shmlog,
    adding a bit of persistence to allow remote control of
-   Varnish](https://github.com/varnish/vag$
+   Varnish`_
 -  `Test framework written in Ruby to test varnish-cache routing and
    caching logic`_
--  [Varnish Bans Manager (VBM) is a simple server and web UI designed to
-   ease management of bans in complex Varnish
-   deployments](https://github.com/dot2code/varnish-ba$
+-  `Varnish Bans Manager (VBM) is a simple server and web UI designed to ease management of bans in complex Varnish deployments`_
 -  `Varnish Security Firewall`_
 -  `Re-format tool for vsl(varnishlog)`_
 -  `Learn Varnish + Django simple docs`_
@@ -175,7 +172,10 @@ Misc
 ..  _`Balancer in general`: https://github.com/observing/balancerbattle
 .. _Varnish Utilities: https://www.varnish-cache.org/utilities
 .. _Test framework written in Ruby to test varnish-cache routing and caching logic: https://github.com/TV4/Urushiol.git
+.. _The Varnish Agent is a REST interface to the Varnish CLI and shmlog, adding a bit of persistence to allow remote control of
+   Varnish: https://github.com/varnish/vagent2
 .. _Varnish Security Firewall: https://github.com/comotion/VSF.git
+.. _Varnish Bans Manager (VBM) is a simple server and web UI designed to ease management of bans in complex Varnish deployments: https://github.com/allenta/varnish-bans-manager
 .. _Re-format tool for vsl(varnishlog): https://github.com/xcir/vsltrans.git
 .. _Learn Varnish + Django simple docs: https://github.com/nychng/learn-varnish
 
