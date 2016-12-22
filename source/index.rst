@@ -3,8 +3,8 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Varnish Wiki!
-========================
+Varnish Web Developer Wiki Documentation
+========================================
 
 Here you will find all the resources you need to start using Varnish.
 Let's get you started from development to production!
