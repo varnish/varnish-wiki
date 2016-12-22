@@ -159,7 +159,7 @@ ByPassing cache for debug purposes
   :lines: 124,405-408,414
 
 Bypassing built-in logic
-.......................
+........................
 
 **Warning: NOT RECOMMENDED**
 
