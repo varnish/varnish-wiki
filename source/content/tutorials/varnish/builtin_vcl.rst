@@ -1,14 +1,14 @@
 .. _builtin_vcl:
 
 What's in the built-in VCL?
-==========================
+===========================
 
 .. literalinclude:: /content/templates/builtin.vcl
   :language: VCL
   :lines: 41-202
 
 An overview of the built-in VCL
-................................
+...............................
 
 This is the built-in VCL that comes with your Varnish installation.
 This is also the VCL configuration Varnish automatically appends to your VCL
