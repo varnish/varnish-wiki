@@ -3,6 +3,8 @@
 Sample VCLs
 ===========
 
+Based on the fantastic work of Mattias Geniar: https://github.com/mattiasgeniar/varnish-4.0-configuration-templates/
+
 Configuring Varnish
 -------------------
 
