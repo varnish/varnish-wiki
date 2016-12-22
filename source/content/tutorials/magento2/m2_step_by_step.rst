@@ -45,13 +45,10 @@ Configuring Magento
 
 1. Visit the Magento2 admin page and go to:
 
- 	-> Stores
-
-	-> Advanced
-
-	-> System
-
-	-> Full Page Cache
+- > Stores
+- > Advanced
+- > System
+- > Full Page Cache
 
 Here switch caching application to **Varnish**
 
