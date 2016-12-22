@@ -61,7 +61,7 @@ Tutorials
     :alt: web-developer-faq
 .. _webdevfaq: ./faq/index.html
 .. |webdevfaqtext| replace:: **Varnish Web Developer FAQ**
-.. _webdevfaqtext: ./start/index.html
+.. _webdevfaqtext: ./faq/index.html
 
 .. |varnishany| image:: https://raw.githubusercontent.com/varnish/varnish-wiki/master/source/image/varnish-bunny.png
     :height: 100px
