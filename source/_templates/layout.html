@@ -21,7 +21,7 @@
 
 	{# FAVICON #}
 	{% if favicon %}
-		<link rel="shortcut icon" href="{{ pathto('_static/' + favicon, 1) }}"/>
+		<link rel="shortcut icon" href="{{ pathto('{{ main_site_url }}/wiki/_static/' + favicon, 1) }}"/>
 	{% endif %}
 
 	{# CSS #}
@@ -36,12 +36,12 @@
           SOURCELINK_SUFFIX: '.txt'
         };
 	</script>
-	<script type="text/javascript" src="_static/jquery.js"></script>
-	<script type="text/javascript" src="_static/underscore.js"></script>
-	<script type="text/javascript" src="_static/doctools.js"></script>
-	<script type="text/javascript" src="_static/searchtools.js"></script>
-	<script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
-	<script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+	<script type="text/javascript" src="{{ main_site_url }}/wiki/_static/jquery.js"></script>
+	<script type="text/javascript" src="{{ main_site_url }}/wiki/_static/underscore.js"></script>
+	<script type="text/javascript" src="{{ main_site_url }}/wiki/_static/doctools.js"></script>
+	<script type="text/javascript" src="{{ main_site_url }}/wiki/_static/searchtools.js"></script>
+	<script type="text/javascript" src="{{ main_site_url }}/wiki/_static/js/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="{{ main_site_url }}/wiki/_static/js/jquery-fix.js"></script>
 	<link rel="search" title="Search" href="#" />
 	<script type="text/javascript">jQuery(function() { Search.loadIndex("searchindex.js"); });</script>
 	<script type="text/javascript" id="searchindexloader"></script>
