@@ -51,13 +51,13 @@ FreeBSD
 
 Binary package:
 
-.. code-block: bash
+.. code-block:: bash
 
   pkg_add -r varnish
 
 From source:
 
-.. code-block: bash
+.. code-block:: bash
 
   cd /usr/ports/varnish && make install clean
 
@@ -82,7 +82,7 @@ Varnish is distributed with both Debian and Ubuntu.
 
 Try
 
-.. code-block: bash
+.. code-block:: bash
 
   sudo apt-get install varnish
 
@@ -90,7 +90,7 @@ Please note that this might not be the latest version of Varnish.
 If you need a newer version of Varnish for the OS version you are using,
 please follow the instructions in the Varnish Book or as shown below.
 
-.. code-block: bash
+.. code-block:: bash
 
   $ curl https://repo.varnish-cache.org/ubuntu/GPG-key.txt | apt-key add -
   $ echo "deb https://repo.varnish-cache.org/ubuntu/ trusty varnish-4.0" >> \
@@ -111,7 +111,7 @@ Download the appropriate release tarball, which you can find on the `repository 
 
 Alternatively, if you want to hack on Varnish, you should clone our git repository by doing:
 
-.. code-block: bash
+.. code-block:: bash
 
   git clone https://github.com/varnishcache/varnish-cache
 
@@ -126,7 +126,7 @@ Build dependencies on Debian / Ubuntu
 In order to build Varnish from source you need a number of packages installed.
 On a Debian or Ubuntu system these are:
 
-.. code-block: bash
+.. code-block:: bash
 
   automake
   autotools-dev
@@ -145,7 +145,7 @@ Build dependencies on Red Hat / CentOS
 
 To build Varnish on a Red Hat or CentOS system you need the following packages installed:
 
-.. code-block: bash
+.. code-block:: bash
 
   autoconf
   automake
@@ -165,7 +165,7 @@ Build dependencies on a SmartOS Zone
 
 As of SmartOS pkgsrc 2015Q4, install the following packages:
 
-.. code-block: bash
+.. code-block:: bash
 
         pkgin in autoconf automake libedit libtool ncurses \
         pcre graphviz py27-sphinx python27 gmake gcc49 \
@@ -173,7 +173,7 @@ As of SmartOS pkgsrc 2015Q4, install the following packages:
 
 Optionally, to pull from a repository:
 
-.. code-block: bash
+.. code-block:: bash
 
   pkgin in git
 
@@ -184,7 +184,7 @@ Building Varnish
 Finally if you have all of the above **dependencies satisfied**. You can move on to
 building your Varnish from *scratch*.
 
-.. code-block: bash
+.. code-block:: bash
 
   cd varnish-cache
   sh autogen.sh
@@ -197,7 +197,7 @@ about that for now, almost everything in Varnish can be tweaked with runtime par
 Before you install, you may want to run the test suite, and make a cup of tea while
 it runs, as it usually takes a couple of minutes:
 
-.. code-block: bash
+.. code-block:: bash
 
   make check
 
@@ -216,7 +216,7 @@ Installing
 
 And finally, the true test of a **brave heart!**
 
-.. code-block: bash
+.. code-block:: bash
 
   sudo make install
 
@@ -225,7 +225,7 @@ And finally, the true test of a **brave heart!**
 - To make sure that the necessary links and caches of the most recent shared
     libraries are found, run
 
-.. code-block: bash
+.. code-block:: bash
 
   sudo ldconfig
 
