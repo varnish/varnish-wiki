@@ -43,7 +43,7 @@ Optional
 Copyright
 ~~~~~~~~
 
-* © 2016, Varnish Software Group
+* © 2016-2017, Varnish Software Group
 
 Authors
 ~~~~~~~
