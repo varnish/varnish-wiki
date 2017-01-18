@@ -106,7 +106,7 @@ These are all the configuration changes required in this file.
  
 - Locate the line containing port 80 and change it to 8080
 
-.. code-block:: VCL
+.. code-block:: bash
  
  	ExecStart=/usr/sbin/varnishd -a :80 -T localhost:6082 -f /etc/varnish/default.vcl
  	-S /etc/varnish/secret -s malloc,256m
