@@ -38,7 +38,9 @@ Varnish comes with two configuration files:
 
 **One with the starter parameter:**
 
- ``/etc/default/varnish``
+.. code-block:: bash
+
+	/etc/default/varnish
 
 This file contains all the starter parameters.
 
@@ -47,11 +49,15 @@ This file contains all the starter parameters.
 For systemd, the VCL file is directed in a different manner.
 It will be located in:
 
- ``/etc/systemd/system/varnish.service``
+.. code-block:: bash
+
+	/etc/systemd/system/varnish.service
 
 which will point to:
 
- ``/etc/varnish/default.vcl``
+.. code-block:: bash
+
+	/etc/varnish/default.vcl
 
 This default.vcl contains the *default* policies that the *user includes*.
 It also tells Varnish where to find the web content.
@@ -66,18 +72,18 @@ in this default.vcl.
 .. literalinclude:: /content/examples/default_varnish_1.vcl
 	:language: VCL
 
-Description:
+**Description:**
 
- ~T : refers to which port manages this.
+-T : refers to which port manages this.
 
- ~f : refers to the other configuration file containing all the default policies.
+-f : refers to the other configuration file containing all the default policies.
  If you plan to change the name of the default policy file,
  be sure to come here and change the default.vcl to the correct name.
 
- ~S : refers to the file containing private information, such as passwords, etc. 
+-S : refers to the file containing private information, such as passwords, etc. 
  also known as the shared-secret file.
 
- ~s : refers to the space Varnish Cache is allocated. 256m”
+-s : refers to the space Varnish Cache is allocated. 256m”
  is decided based on the current server's RAM of 1GB.
 
 - Set the Varnish listen port to 80
@@ -90,14 +96,18 @@ These are all the configuration changes required in this file.
 
 2. Copy the default file named **varnish.service**
 
- ``cp /lib/systemd/system/varnish.service /etc/systemd/system/``
+.. code-block:: bash
 
- Edit /etc/systemd/system/varnish.service
+	cp /lib/systemd/system/varnish.service /etc/systemd/system/
 
+ Edit ``/etc/systemd/system/varnish.service``
+ 
  Locate the line containing port 80 and change it to 8080
 
- ExecStart=/usr/sbin/varnishd -a :80 -T localhost:6082 -f /etc/varnish/default.vcl
- -S /etc/varnish/secret -s malloc,256m
+ .. code-block:: VCL
+ 
+ 	ExecStart=/usr/sbin/varnishd -a :80 -T localhost:6082 -f /etc/varnish/default.vcl
+ 	-S /etc/varnish/secret -s malloc,256m
 
 Note that this file points to the /etc/varnish/default.vcl file.
 
@@ -110,7 +120,9 @@ To minimally configure Varnish:
 
 - Back up default.vcl
 
- ``cp /etc/varnish/default.vcl /etc/varnish/default.vcl.bak``
+.. code-block:: bash
+
+	cp /etc/varnish/default.vcl /etc/varnish/default.vcl.bak``
 
 - Open ``/etc/varnish/default.vcl`` in a text editor.
 
@@ -157,17 +169,17 @@ If you have more than one backend, you can put them on another port, such as por
 
 To change the Apache listen port:
 
- ~ Open /etc/apache2/ports.conf in a text editor
+ - Open ``/etc/apache2/ports.conf`` in a text editor
 
- ~ Locate the listen directive
+ - Locate the listen directive
  
- ~ Change the value of the listen port to 8080 (you can use any available listen port)
+ - Change the value of the listen port to 8080 (you can use any available listen port)
  
- ~ Save your changes to ports.conf and exit the text editor
+ - Save your changes to ports.conf and exit the text editor
  
- ~ Also edit /etc/apache2/sites-available/000-default.conf
+ - Also edit ``/etc/apache2/sites-available/000-default.conf``
  
- ~ Change the VirtualHost port to 8080:
+ - Change the VirtualHost port to 8080:
  
  `<VirtualHost 127.0.0.1:8080>`
 
@@ -216,7 +228,8 @@ Step 6: Troubleshooting
 
 If Varnish fails to start, try running it from the command line as follows:
 
-	``varnishd ~d ~f /etc/varnish/default.vcl``
+.. code-block:: bash
+	varnishd ~d ~f /etc/varnish/default.vcl
 
 This should display any error messages.
 
