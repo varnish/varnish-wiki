@@ -74,17 +74,17 @@ in this default.vcl.
 
 **Description:**
 
--T : refers to which port manages this.
+	-T : refers to which port manages this.
 
--f : refers to the other configuration file containing all the default policies.
- If you plan to change the name of the default policy file,
- be sure to come here and change the default.vcl to the correct name.
+	-f : refers to the other configuration file containing all the default policies.
+ 		If you plan to change the name of the default policy file,
+ 		be sure to come here and change the default.vcl to the correct name.
 
--S : refers to the file containing private information, such as passwords, etc. 
- also known as the shared-secret file.
+	-S : refers to the file containing private information, such as passwords, etc. 
+ 		also known as the shared-secret file.
 
--s : refers to the space Varnish Cache is allocated. 256m”
- is decided based on the current server's RAM of 1GB.
+	-s : refers to the space Varnish Cache is allocated. 256m”
+ 		is decided based on the current server's RAM of 1GB.
 
 - Set the Varnish listen port to 80
 - Replace the ``-f`` line with ``-b 95.85.10.242:8080`` as shown below
@@ -181,7 +181,9 @@ To change the Apache listen port:
  
  - Change the VirtualHost port to 8080:
  
- `<VirtualHost 127.0.0.1:8080>`
+.. code-block:: bash
+
+	<VirtualHost 127.0.0.1:8080>
 
 
 Setting up multiple backends (skip this section if you have one backend)
@@ -229,6 +231,7 @@ Step 6: Troubleshooting
 If Varnish fails to start, try running it from the command line as follows:
 
 .. code-block:: bash
+
 	varnishd ~d ~f /etc/varnish/default.vcl
 
 This should display any error messages.
@@ -238,10 +241,15 @@ Step 7: The management interface
 --------------------------------
 
 Varnish has a command line interface (CLI) to control any Varnish instance. It can be used to:
+
 - Reload VCL without restarting
+
 - Start/stop cache process
+
 - Change configuration parameters without restarting
+
 - View up-to-date documentation for parameters, etc.
+
 - Implement a list of management commands in the `varnishadm` (`varnishadm` establishes a connection to the Varnish deamon `varnishd`)
 
 
