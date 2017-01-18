@@ -124,7 +124,7 @@ To minimally configure Varnish:
 
 .. code-block:: bash
 
-	cp /etc/varnish/default.vcl /etc/varnish/default.vcl.bak``
+	cp /etc/varnish/default.vcl /etc/varnish/default.vcl.bak
 
 - Open ``/etc/varnish/default.vcl`` in a text editor.
 
