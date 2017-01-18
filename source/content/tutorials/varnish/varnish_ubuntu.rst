@@ -74,19 +74,20 @@ in this default.vcl.
 
 **Description:**
 
-	-T : refers to which port manages this.
+ -T : refers to which port manages this.
 
-	-f : refers to the other configuration file containing all the default policies.
- 		If you plan to change the name of the default policy file,
- 		be sure to come here and change the default.vcl to the correct name.
+ -f : refers to the other configuration file containing all the default policies.
+ If you plan to change the name of the default policy file, 
+ be sure to come here and change the default.vcl to the correct name.
 
-	-S : refers to the file containing private information, such as passwords, etc. 
- 		also known as the shared-secret file.
+ -S : refers to the file containing private information, such as passwords, etc. 
+ also known as the shared-secret file.
 
-	-s : refers to the space Varnish Cache is allocated. 256m”
- 		is decided based on the current server's RAM of 1GB.
+ -s : refers to the space Varnish Cache is allocated. 256m”
+ is decided based on the current server's RAM of 1GB.
 
 - Set the Varnish listen port to 80
+
 - Replace the ``-f`` line with ``-b 95.85.10.242:8080`` as shown below
 
 .. literalinclude:: /content/examples/default_varnish_2.vcl
@@ -100,11 +101,12 @@ These are all the configuration changes required in this file.
 
 	cp /lib/systemd/system/varnish.service /etc/systemd/system/
 
- Edit ``/etc/systemd/system/varnish.service``
- 
- Locate the line containing port 80 and change it to 8080
 
- .. code-block:: VCL
+- Edit ``/etc/systemd/system/varnish.service``
+ 
+- Locate the line containing port 80 and change it to 8080
+
+.. code-block:: VCL
  
  	ExecStart=/usr/sbin/varnishd -a :80 -T localhost:6082 -f /etc/varnish/default.vcl
  	-S /etc/varnish/secret -s malloc,256m
