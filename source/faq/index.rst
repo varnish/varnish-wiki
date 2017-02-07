@@ -150,7 +150,7 @@ If you want to help fix our bugs or want to know about bugs in the project, chec
 
 - https://scan.coverity.com/projects/varnish
 
-.. _`Is My Varnish Working?`: http://www.ismyvarnishworking.com
+.. _`Is My Varnish Working?`: http://www.isvarnishworking.com/
 .. _`The Design principle of Varnish`: http://book.varnish-software.com/4.0/chapters/Design_Principles.html
 .. _`Tutorial at varnish-cache.org`: https://www.varnish-cache.org/docs/trunk/tutorial/
 .. _`The Big Varnish Picture`: https://www.varnish-cache.org/docs/4.1/users-guide/intro.html#users-intro
