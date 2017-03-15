@@ -45,7 +45,7 @@ and confirm. Finally, activate it.
 
 For the Varnish HTTP purge plugin to work correctly we need to enable mod_rewrite
 and use a custom URL structure for permalinks and archives. In the WordPress
-dashboard click on Settings Permalinks and select ‘Custom Structure’.
+dashboard click on Settings Permalinks and select any structure that is different from ‘Plain’.
 
 Then type /%year%/%monthnum%/%post_id% and click on ‘Save Changes’.
 To finalize, open a command prompt and run the following as root.
