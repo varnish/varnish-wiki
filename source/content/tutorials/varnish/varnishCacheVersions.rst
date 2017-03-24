@@ -6,9 +6,16 @@ Which version of Varnish to use?
 
 We recommend that you always choose to use the latest stable release.
 
-
 **Varnish 3** - *end of life*
 
+
+If you are still using varnish 3, it's time to let it go and mvoe on to varnish 4.
+
+The most viral change from varnish 3 to 4 is how the complete thread model has changed;
+In Varnish 3 - one thread served each client whether from the backend or the cache.
+In Varnish 4 - there are two threads: one for client, one for backend.
+This allows varnish to serve stale content to the client while refreshing
+content in the background. 
 
 `What is new in Varnish 4?`_
 
