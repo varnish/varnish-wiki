@@ -15,6 +15,14 @@ Getting started
 
 Let's get started with Varnishing your website!
 
+Varnish Software Training
+.........................
+
+`Free E-learning course: Getting started with Varnish <https://training.varnish-software.com/>`_
+
+`Varnish Software Course Calendar <https://info.varnish-software.com/varnish-administration-course/>`_
+
+
 Installing and configuring Varnish
 ..................................
 
