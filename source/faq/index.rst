@@ -34,6 +34,10 @@ Varnish is designed with security, performance and flexibility in mind.
 For an in-depth look at this you can read `The Design Principle of Varnish`_
 chapter in the Varnish Book.
 
+Varnish Software has recently sponsored the O'Reilly book `Getting started 
+with Varnish Cache written by Thijs Feryn. You can download it for free from 
+the company's website <https://info.varnish-software.com/getting-started-with-varnish-cache-oreilly-book>`_.
+
 Should I use Varnish for my site?
 ---------------------------------
 
@@ -145,6 +149,7 @@ Useful external resources:
 
 - `Is My Varnish Working?`_
 - This Varnish checking website is hosted by `Acquia`_
+- Varnish Software sponsored O'Reilly book `Getting started with Varnish Cache by Thijs Feryn <https://info.varnish-software.com/getting-started-with-varnish-cache-oreilly-book>`_.
 
 If you want to help fix our bugs or want to know about bugs in the project, check out:
 
