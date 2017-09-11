@@ -1,7 +1,6 @@
-sudo curl http://repo.varnish~cache.org/debian/GPG~key.txt | sudo apt~key add ~
+curl -L https://packagecloud.io/varnishcache/varnish41/gpgkey | sudo apt-key add -
 
-sudo nano /etc/apt/sources.list
+sudo nano /etc/apt/sources.list.d/varnishcache_varnish41.list	
 
-deb http://repo.varnish~cache.org/ubuntu/ trusty varnish~4.1
-
-
+deb https://packagecloud.io/varnishcache/varnish41/ubuntu/ trusty main
+deb-src https://packagecloud.io/varnishcache/varnish41/ubuntu/ trusty main
