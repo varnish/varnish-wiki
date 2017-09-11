@@ -30,6 +30,9 @@ It is recommended that you install the Varnish package from its repository.
 
 .. literalinclude:: /content/examples/update_install_varnish
 	:language: bash
+For more information visit the `packagecloud`_ page.
+
+.. _`packagecloud`: https://packagecloud.io/varnishcache/varnish41
 
 Step 2: Configure Varnish
 --------------------------
