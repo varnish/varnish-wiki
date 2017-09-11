@@ -1,2 +1,2 @@
-sudo apt~get update
-sudo apt~get install varnish
+sudo apt-get update
+sudo apt-get install varnish
