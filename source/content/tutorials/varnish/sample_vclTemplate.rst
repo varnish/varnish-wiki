@@ -208,7 +208,7 @@ Enabling cache for static files
 ...............................
 
 .. literalinclude:: /content/templates/vcl_defaultSample_mattias.vcl
-  :lines: 298,310-312,349,348-349
+  :lines: 298,310-312,348-349
 
 Streaming
 .........
