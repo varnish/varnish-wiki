@@ -1,6 +1,9 @@
-apt-get install apt-transport-https
-curl https://repo.varnish-cache.org/GPG-key.txt | apt-key add -
-echo "deb https://repo.varnish-cache.org/ubuntu/ trusty varnish-4.1" \
-     >> /etc/apt/sources.list.d/varnish-cache.list
+curl -L https://packagecloud.io/varnishcache/varnish41/gpgkey | sudo apt-key add -
+
+sudo nano /etc/apt/sources.list.d/varnishcache_varnish41.list
+
+deb https://packagecloud.io/varnishcache/varnish41/ubuntu/ trusty main
+deb-src https://packagecloud.io/varnishcache/varnish41/ubuntu/ trusty main
+
 apt-get update
 apt-get install varnish
