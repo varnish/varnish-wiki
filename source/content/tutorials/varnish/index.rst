@@ -17,8 +17,8 @@ Use Varnish on your Website
   vcl
   vcl_examples
 
-Varnish can cache any web based content, meaning any CMS, intranet, ReST/Web API, 
-or Streaming media content can literally gain performance increases in the range 
+Varnish can cache any web based content, meaning any CMS, intranet, ReST/Web API,
+or Streaming media content can literally gain performance increases in the range
 of 300-1000x times compared to what standard web servers can provide.
 
 But, before you get to Varnish, You want to **get Varnish**. You have two choices:
@@ -65,7 +65,7 @@ From source:
 Red Hat / CentOS
 ................
 
-The latest version is available as prebuilt RPMs (el5 and el6) on `repo.varnish-cache.org`_ .
+The latest version is available as prebuilt RPMs (el5 and el6) on `https://packagecloud.io/varnishcache/`_ .
 
 See the online Red Hat installation instructions for more information.
 
@@ -90,13 +90,20 @@ Please note that this might not be the latest version of Varnish.
 If you need a newer version of Varnish for the OS version you are using,
 please follow the instructions in the Varnish Book or as shown below.
 
-.. code-block:: bash
+- Start by grabbing the repository
 
-  $ curl https://repo.varnish-cache.org/ubuntu/GPG-key.txt | apt-key add -
-  $ echo "deb https://repo.varnish-cache.org/ubuntu/ trusty varnish-4.0" >> \
-  /etc/apt/sources.list.d/varnish-cache.list
+- Add the repository to the source list and save
 
-If you are installing Varnish Cache 4.1, replace varnish-4.0 for varnish-4.1 in
+.. literalinclude:: /content/examples/varnish_install_repo
+	:language: bash
+
+- Run update and install
+
+.. literalinclude:: /content/examples/update_install_varnish
+	:language: bash
+For more information visit the `packagecloud`_ page.
+
+If you are installing Varnish Cache 4.0, replace varnish41 for varnish40 in
 the command above. Instructions for Debian and Ubuntu are the same.
 
 
@@ -232,5 +239,5 @@ And finally, the true test of a **brave heart!**
 Using source: https://www.varnish-cache.org/docs/trunk/installation/install.html#compiling-varnish-from-source
 
 .. _`products at our website`: https://www.varnish-software.com/products/varnish-plus
-.. _`repo.varnish-cache.org`: https://repo.varnish-cache.org
-.. _`repository source`: http://repo.varnish-cache.org/source/
+.. _`repository source`: https://varnish-cache.org/releases/
+.. _`packagecloud`: https://packagecloud.io/varnishcache
