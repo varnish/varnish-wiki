@@ -25,7 +25,7 @@ http://vsltrans.varnish.jp/ on github https://github.com/xcir/vsltrans
 .. _`Xcir presentation on Varnish`: http://www.slideshare.net/xcir/varnish-user-group-meeting-7final-ver
 
 
-Migrating Varnish 3to4
+Migrating Varnish from 3 to 4
 ----------------------
 
 https://github.com/fgsch/varnish3to4/
@@ -58,7 +58,7 @@ Examples of VCL
 
 .. _Introduction to Varnish VCL: http://www.slideshare.net/paxdickinson/introduction-to-varnish-vcl
 
-HowTo modules
+How To modules
 -------------
 
 -  `Testing VMODs with Travis.CI, 2013.09`_
@@ -78,8 +78,6 @@ HowTo modules
 
 -  `Scaling Django to 8 Billion Page Views, 2013.09 (disqus)`_
 -  `Global Varnish Cluster with GeoDNS`_
-
--  `How to build your own CDN using BIND, GeoIP, Nginx, and Varnish, 2010.07`_
 
 -  `Ultra-Performant Dynamic Websites with Varnish - Lidl.de, 2012.01`_
 -  `Realtime stats from Varnish, 2013.02`_
@@ -193,7 +191,10 @@ Misc
 
 Books
 -----
-
+-  `The Varnish Book`_
 -  `Varnish Cache inline-C/VMOD guide book`_
+-  `Getting started with Varnish Cache`_
 
 .. _Varnish Cache inline-C/VMOD guide book: https://github.com/xcir/C81-VarnishCache-inline-C-VMOD-guidebook
+.. _Getting started with Varnish Cache: https://info.varnish-software.com/getting-started-with-varnish-cache-oreilly-book
+.. _The Varnish Book: http://book.varnish-software.com/4.0/
