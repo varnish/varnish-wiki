@@ -82,15 +82,17 @@ Recipes for cache invalidation
 Below is a list of resources that can help you understand and manage Varnish better:
 
 1. `The Varnish Book`_ - The book is one of our best training manuals/reference sources, which includes in-depth details and exercises.
-2. `The Varnish Tutorial`_ - The tutorial explains Varnish basics and gets you started with Varnish.
-3. `The Varnish User Guide`_ - The user guide explains how Varnish works and how you can use it to improve your website.
-4. `The Varnish Reference Manual`_ - The reference manual contains hard facts and is useful for looking up specific questions.
-5. :doc:`Relevant Resources <general_resources>` - The resources document contains links to useful information collected from sources outside our website.
+2. `Getting started with Varnish Cache`_ - This guide helps you master Varnish basics so you can get up and running in no time - without the steep learning curve.
+3. `The Varnish Tutorial`_ - The tutorial explains Varnish basics and gets you started with Varnish.
+4. `The Varnish User Guide`_ - The user guide explains how Varnish works and how you can use it to improve your website.
+5. `The Varnish Reference Manual`_ - The reference manual contains hard facts and is useful for looking up specific questions.
+6. :doc:`Relevant Resources <general_resources>` - The resources document contains links to useful information collected from sources outside our website.
 
-**Last but not least this little wiki will give you a hands-on guide to making your website fly!**
+**Last but not least this wiki will give you a hands-on guide to making your digital content fly!**
 
 .. _`The Varnish Book`: http://book.varnish-software.com/4.0/
 .. _`The Varnish Tutorial`: https://www.varnish-cache.org/docs/4.1/tutorial/index.html#tutorial-index
 .. _`The Varnish User Guide`: https://www.varnish-cache.org/docs/4.1/users-guide/index.html#users-guide-index
 .. _`The Varnish Reference Manual`: https://www.varnish-cache.org/docs/4.1/reference/index.html#reference-index
 .. _`Our Webinar on Cache Invalidation Strategies`: https://info.varnish-software.com/webinars_fm/cache-invalidation-strategies
+.. _`Getting started with Varnish Cache`: https://info.varnish-software.com/getting-started-with-varnish-cache-oreilly-book
