@@ -194,8 +194,6 @@ Misc
 Books
 -----
 
--  `Varnish System Administration`_
 -  `Varnish Cache inline-C/VMOD guide book`_
 
-.. _Varnish System Administration: https://www.varnish-software.com/static/pdfs/varnish-book-4.2-dirty.pdf
 .. _Varnish Cache inline-C/VMOD guide book: https://github.com/xcir/C81-VarnishCache-inline-C-VMOD-guidebook
