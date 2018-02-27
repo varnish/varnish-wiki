@@ -5,6 +5,9 @@ This project is a Varnish Software initiative for the purpose of creating
 better documentation for the general Web Developer and Varnish Community.
 The material supports Varnish Cache and Varnish Cache Plus 4.1.
 
+The live site is currently online: https://www.varnish-software.com/wiki/
+
+
 Requirements
 ~~~~~~~~~~~~
 
