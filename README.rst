@@ -52,7 +52,7 @@ Configuration for this can be see in the Varnish Software Intranet, The HTML wik
 
 * Bucket: varni.sh-docs
 * Public URL: https://www.varnish-software.com/wiki
-* S3 URL: http://varni.sh-docs.s3-website.eu-central-1.amazonaws.com/ (do not link to this directly)
+* S3 URL: http://varni.sh-docs.s3-website.eu-central-1.amazonaws.com
 * Access Key ID: [private]
 * Secret Access Key: [private]
 
