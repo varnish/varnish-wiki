@@ -1,0 +1,163 @@
+/* top_bar logo and title */
+.logo {
+    max-width: 12em;
+    min-height: 4em;
+    margin-bottom: -0.7em;
+}
+.title {
+    margin-top: 0.25em;
+    font-size: 2em;
+    font-weight: 300;
+    line-height: 120%;
+}
+@media (min-width: 768px) {
+  .title {
+      float: right;
+      margin-top: 0.5em;
+      line-height: 100%;
+  }
+  .hrhead {
+      display: none;
+  }
+  .news {
+      text-align: right;
+  }
+}
+
+/* Make h1 section header smaller */
+.display-4 {
+    font-size: 2.5rem;
+}
+
+
+.jumbotron {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    margin-bottom: 2em;
+}
+
+.jumbotron .container {
+    max-width: 40rem;
+}
+
+/* Handles the different pages to haev a coehrent heading style*/
+h1, h2 {
+    padding: 0.4em 0em 0.4em 0em;
+}
+
+h1 {
+    font-size: 2.0rem;
+}
+
+h2 {
+    font-size: 1.6rem;
+}
+
+h3 {
+    font-size: 1.3rem;
+}
+
+h4 {
+    font-size: 1.2rem;
+}
+
+/* Gets theLinks with a more dark blue */
+
+.btn-primary {
+    color: #fff;
+    background-color: #0275d8;
+    border-color: #0275d8;
+}
+
+a {
+    color: #0275d8;
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects
+}
+
+/* *** */
+
+a:focus,a:hover {
+    color: #014c8c;
+    text-decoration: underline
+}
+*/
+
+#TableOfContents {
+    line-height: 1.8em;
+    padding: 0em 0em 2.0em 0em;
+}
+
+body {
+    line-height: 1.6em;
+    letter-spacing: 0.01em;
+}
+
+.side-menu-level-0 {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.side-menu-level-1 {
+    text-transform: uppercase;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.side-menu-level-2 {
+    padding-left: 3.0em;
+    text-indent: -1.5em;
+    font-size: 0.9em;
+    display: inline-block;
+}
+
+.side-menu-level-3 {
+    padding-left: 1em;
+    font-size: 0.8em;
+}
+
+.side-menu-level-4 {
+    padding-left: 1.5em;
+}
+
+.side-menu-item {
+    border: 0;
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+}
+
+/* Do not wrap table headings */
+th {
+    white-space: nowrap;
+}
+
+/* Styling anchor links */
+.anchor:hover {
+    color: #000;
+}
+.anchor {
+    color: #FFF;
+}
+
+/* Card layout on front page */
+@media (min-width: 576px) {
+  .card-columns-front {
+    column-count: 1;
+  }
+}
+@media (min-width: 768px) {
+  .card-columns-front {
+    column-count: 2;
+  }
+  .card-block-front {
+    min-height: 13em;
+  }
+}
+@media (min-width: 992px) {
+  .card-columns-front {
+    column-count: 3;
+  }
+}
+@media (min-width: 1200px) {
+}
