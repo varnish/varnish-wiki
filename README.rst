@@ -32,10 +32,59 @@ we recommend you use Ubuntu LTS 16.04 (Xenial) as the OS as well as:
  * pygments (2.2.0 or newer)
 * Git (to fetch from and send your changes to Github)  
 
+Deployment
+~~~~~~~~~~
+
+Create the static HTML from the GitHub repo
+...........................................
+
+1. git clone https://github.com/varnish/varnish-wiki/
+2. See the README.rst (this document): https://github.com/varnish/varnish-wiki/blob/master/README.rst
+3. Build the static site by using "make html"
+4. Test that it works (specially random links and the search function)
+
+You're done. Now you need to upload this to AWS S3 where the wiki is hosted.
+
+Wiki Hosting in S3
+..................
+
+Configuration for this can be see in the Varnish Software Intranet, The HTML wiki is a S3 bucket:
+
+* Bucket: varni.sh-docs
+* Public URL: https://www.varnish-software.com/wiki
+* S3 URL: http://varni.sh-docs.s3-website.eu-central-1.amazonaws.com/ (do not link to this directly)
+* Access Key ID: [private]
+* Secret Access Key: [private]
+
+To manage files in S3 we recommend you use awscli. To install latest version of awscli run:
+
+* easy_install pip
+* pip install awscli
+
+To configure aws:
+
+* cat s3
+* aws configure
+* AWS Access Key ID [********************]:
+* AWS Secret Access Key [********************]:
+* Default region name [None]: eu-central-1
+
+To delete files:
+
+* aws s3 rm --recursive s3://varni.sh-docs/
+
+To upload files:
+
+* aws s3 cp --recursive --acl public-read /directory-were-you-have--built-the-wiki-root/varnish-wiki/build/html/ s3://varni.sh-docs/
+
+To list files:
+
+* aws s3 ls s3://varni.sh-docs/
+
 Copyright
 ~~~~~~~~
 
-* © 2016-2017, Varnish Software Group
+* © 2016-2018, Varnish Software Group
 
 Authors
 ~~~~~~~
