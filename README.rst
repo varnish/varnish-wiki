@@ -75,7 +75,7 @@ To delete files:
 
 To upload files:
 
-* aws s3 cp --recursive --acl public-read /directory-were-you-have--built-the-wiki-root/varnish-wiki/build/html/ s3://varni.sh-docs/
+* aws s3 cp --recursive --acl public-read /directory-where-you-have-built-the-wiki-root/varnish-wiki/build/html/ s3://varni.sh-docs/
 
 To list files:
 
