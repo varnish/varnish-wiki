@@ -25,11 +25,11 @@ Building the wiki
 This wiki is a statically generated site. If you want to build it yourself
 we recommend you use Ubuntu LTS 16.04 (Xenial) as the OS as well as:
 
-* Python 2.7 and friends:
- * pip
- * sphinx (tested with 1.3.6 and 1.4.8)
- * sphinx_bootstrap_theme
- * pygments (2.2.0 or newer)
+* Python 2.7, pip and friends:
+ * easy_install pip
+ * pip install sphinx (tested with 1.3.6 and 1.4.8)
+ * pip install sphinx_bootstrap_theme
+ * pip install pygments (2.2.0 or newer)
 * Git (to fetch from and send your changes to Github)  
 
 Deployment
@@ -69,17 +69,17 @@ To configure aws:
 * AWS Secret Access Key [********************]:
 * Default region name [None]: eu-central-1
 
+To list files:
+
+* aws s3 ls s3://varni.sh-docs/wiki/
+
 To delete files:
 
 * aws s3 rm --recursive s3://varni.sh-docs/
 
 To upload files:
 
-* aws s3 cp --recursive --acl public-read /directory-where-you-have-built-the-wiki-root/varnish-wiki/build/html/ s3://varni.sh-docs/
-
-To list files:
-
-* aws s3 ls s3://varni.sh-docs/
+* aws s3 cp --recursive --acl public-read /directory-where-you-have-built-the-wiki-root/varnish-wiki/build/html/ s3://varni.sh-docs/wiki/
 
 Copyright
 ~~~~~~~~
