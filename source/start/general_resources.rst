@@ -109,7 +109,6 @@ Slides
 -  `Lost in Translation:varnishlog, varnishtest(VUG7), 2013.05`_
 -  `How Varnish & MongoDB Scale Business Insider, 2013.05`_
 -  `Varnish at the BBC, 2012.10`_
--  `Varnish @ VGnet`_
 -  `Varnish @ Holiday-extras.com`_
 -  `Varnish @ Opera`_
 -  `dClass and Varnish`_
@@ -140,7 +139,6 @@ Slides
 .. _`Lost in Translation:varnishlog, varnishtest(VUG7), 2013.05`: http://www.slideshare.net/xcir/varnish-user-group-meeting-7final-ver
 .. _How Varnish & MongoDB Scale Business Insider, 2013.05: http://www.slideshare.net/paxdickinson/scaling-business-insider
 .. _Varnish at the BBC, 2012.10: http://www.slideshare.net/grahamlyons/varnish-at-the-bbc
-.. _Varnish @ VGnet: http://www.vg.no/presentations/slides/VUG2012.html
 
 .. _Varnish @ Holiday-extras.com: https://www.varnish-cache.org/sites/default/files/10_Varnish_Presentation_Holidays-Extras.pdf
 .. _Varnish @ Opera: http://www.slideshare.net/cstrep/vug5-varnish-at-opera-software/
