@@ -32,6 +32,14 @@ we recommend you use Ubuntu LTS 16.04 (Xenial) as the OS as well as:
  * pip install pygments (2.2.0 or newer)
 * Git (to fetch from and send your changes to Github)  
 
+Using CentOS 7, the steps are:
+
+* sudo yum install python-virtualenv
+* virtualenv venv
+* source venv/bin/activate
+* pip install sphinx sphinx_bootstrap_theme pygments
+* make html # In the wiki source directory
+
 Deployment
 ~~~~~~~~~~
 
