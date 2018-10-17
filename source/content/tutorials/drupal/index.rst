@@ -125,16 +125,12 @@ Drupal resources
 
 `Varnish for beginners`_
 
-`Caching with Varnish and Drupal 7`_
-
 `Configuring Varnish 3 for Drupal 7`_
 
 
 .. _`Jeff Geerling's Post on Drupal 8 and Varnish`: http://www.jeffgeerling.com/blog/2016/use-drupal-8-cache-tags-varnish-and-purge
 
 .. _`Caching Overview from Drupal`: https://www.drupal.org/docs/7/managing-site-performance-and-scalability/caching-to-improve-performance/caching-overview
-
-.. _`Caching with Varnish and Drupal 7`: http://www.wunderkraut.com/blog/caching-with-varnish-drupal-7-and-cache-actions/2012-01-31
 
 .. _`Whole new Drupal-Varnish Configuration`: https://www.drupal.org/docs/7/caching-to-improve-performance/varnish-cache
 
