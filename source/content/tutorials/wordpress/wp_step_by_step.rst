@@ -217,4 +217,4 @@ Check out the links on our main WordPress page to take your WordPress-Varnish si
 
 .. _`varnish cache website`: https://varnish-cache.org
 .. _`Varnish HTTP Purge Plugin`: https://WordPress.org/plugins/varnish-http-purge/
-.. _`Step-by-step: Speed Up Wordpress with Varnish Software`:  https://info.varnish-software.com/blog/step-step-speed-wordpress-varnish-software"
+.. _`Step-by-step: Speed Up Wordpress with Varnish Software`:  https://info.varnish-software.com/blog/step-step-speed-wordpress-varnish-software
