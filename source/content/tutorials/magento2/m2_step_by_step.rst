@@ -184,6 +184,6 @@ about in Marko's blog post about placing Magento2 behind Varnish `marko_magento2
 
 .. _marko_magento2post: http://www.techytalk.info/magento-2-behind-varnish-reverse-proxy/
 
-.. _`Magento Site`: http://devdocs.magento.com/guides/v2.0/config-guide/varnish/config-varnish-magento.html
+.. _`Magento Site`: https://devdocs.magento.com/guides/v2.0/config-guide/varnish/config-varnish.html
 
 .. _`Magento-Site`: http://devdocs.magento.com/guides/v2.1/install-gde/bk-install-guide.html
