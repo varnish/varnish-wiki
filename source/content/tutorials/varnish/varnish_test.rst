@@ -223,7 +223,7 @@ field engineer, Arianna Aondio
 
 `Getting started with VarnishTest`_
 
-.. _`Getting started with VarnishTest`: http://www.clock.co.uk/blog/getting-started-with-varnishtest
+.. _`Getting started with VarnishTest`: https://open.blogs.nytimes.com/2016/08/29/testing-varnish-using-varnishtest/
 .. _`Clone`: https://github.com/varnishcache/varnish-cache.git
 .. _`varnish-cache repository from github`: https://github.com/varnishcache/varnish-cache
 .. _`VarnishTest for Humans`: https://github.com/xcir/vtctrans
