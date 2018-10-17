@@ -239,4 +239,4 @@ vcl.load/vcl.discard
 More details `subroutines here`_
 
 .. _`subroutines here`: https://www.varnish-cache.org/docs/trunk/users-guide/vcl-built-in-subs.html
-.. _`functions, legal return actions and variables`: https://www.varnish-cache.org/docs/4.0/reference/vcl.html
+.. _`functions, legal return actions and variables`: https://www.varnish-cache.org/docs/6.0/reference/vcl.html
