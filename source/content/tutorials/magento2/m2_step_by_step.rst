@@ -172,7 +172,7 @@ You can always refer to the `Configure and Use Varnish <http://devdocs.magento.c
 at the Magento site.
 
 To see the guide on installing and configuring Magento with Varnish on web servers,
-please look at `here <http://devdocs.magento.com/guides/v2.0/config~guide/varnish/config~varnish~configure.html>`_.
+please look at `here <https://devdocs.magento.com/guides/v2.0/config-guide/varnish/config-varnish.html>`_.
 
 If you are interested in trying out an installation try downloading Marko's
 Vagrant Box `marko_magento2github`_.
