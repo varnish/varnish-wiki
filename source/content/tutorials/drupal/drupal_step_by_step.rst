@@ -7,7 +7,7 @@ Step-by-step guide to making your Drupal website fly
 Let's go through some of the common steps required to install and configure Varnish
 and integrate it with Drupal to take your site to the next level.
 
-This article assumes that you have a running instance of Magento2 and that you
+This article assumes that you have a running instance of Drupal and that you
 have administrator rights for said instance, both at the OS and application level.
 We have tested this using Ubuntu LTS 16.04, Varnish Cache 4.1 and Drupal 8.
 
