@@ -13,7 +13,7 @@ Having multiple backends
 Multiple backends means serving from several servers.
 You want Varnish to map all the URLs into one single host. There are many options for doing this.
 
-Let's take a PHP applciation website to which you would like to add a Java application.
+Let's take a PHP application website to which you would like to add a Java application.
 Let's say your Java application should handle URLs beginning with /java/.
 
 Assuming that you already have a backend running at 8080 and serving content to
