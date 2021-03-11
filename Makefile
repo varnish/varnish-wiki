@@ -55,8 +55,8 @@ clean:
 
 .PHONY: html
 html:
-	$ cd source/_templates && wget http://www.varnish-software.com/wp-content/uploads/varnish-theme-integrator/header.html
-	$ cd source/_templates && wget http://www.varnish-software.com/wp-content/uploads/varnish-theme-integrator/footer.html
+	#$ cd source/_templates && wget http://www.varnish-software.com/wp-content/uploads/varnish-theme-integrator/header.html
+	#$ cd source/_templates && wget http://www.varnish-software.com/wp-content/uploads/varnish-theme-integrator/footer.html
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
