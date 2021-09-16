@@ -294,7 +294,7 @@ must be revalidated from the origin server.
 This is very similar to the max-age setting; it indicates the time that content can
 be cached.
 
-**must-revaldiate**
+**must-revalidate**
 Stale contents should not served to a user unless the server is down.
 This indicates that the values set in max-age, s-maxage or expires is how
 long the object will be fresh, and after the expiration it must be revalidated.
